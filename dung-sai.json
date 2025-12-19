@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Mặt trăng tự phát ra ánh sáng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Số 2 là số nguyên tố chẵn duy nhất.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  }
+]
