@@ -1,137 +1,140 @@
-const CONFIG = {
-    mcq: { url: 'questions.json' },
-    tf:  { url: 'dungsai.json' }
-};
+let quizData = []; 
+let userQuestions = []; 
+let currentQuiz = 0;
+let score = 0;
+let wrongAnswers = [];
+let isAnswered = false; // Trạng thái đã chốt câu trả lời chưa
+let currentFailed = false; // Đánh dấu nếu câu này từng chọn sai
 
-let state = {
-    data: [],
-    mode: 'mcq',
-    index: 0,
-    score: 0,
-    isAnswered: false,
-    hasError: false
-};
-
-const dom = {
-    home: document.getElementById('home-screen'),
+const UI = {
+    loading: document.getElementById('loading-screen'),
     quiz: document.getElementById('quiz-screen'),
     result: document.getElementById('result-screen'),
-    btnStart: document.getElementById('btn-start'),
-    btnNext: document.getElementById('btn-next'),
-    qText: document.getElementById('question-text'),
-    oBox: document.getElementById('options-container'),
-    progress: document.getElementById('progress-fill'),
-    liveScore: document.getElementById('live-score'),
-    currentIdx: document.getElementById('current-idx'),
-    totalIdx: document.getElementById('total-idx'),
-    feedback: document.getElementById('feedback-msg')
+    optionsGrid: document.getElementById('options-grid'),
+    nextBtn: document.getElementById('submit'),
+    progressBar: document.getElementById('progress-bar')
 };
 
-// Khởi tạo chế độ chơi
-document.querySelectorAll('.mode-item').forEach(el => {
-    el.onclick = () => {
-        document.querySelectorAll('.mode-item').forEach(i => i.classList.remove('active'));
-        el.classList.add('active');
-        state.mode = el.dataset.mode;
-    };
-});
-
-// Bắt đầu thi
-dom.btnStart.onclick = async () => {
+// 1. TẢI DỮ LIỆU
+async function init() {
     try {
-        const res = await fetch(CONFIG[state.mode].url);
-        state.data = await res.json();
-        if (document.getElementById('shuffle-check').checked) {
-            state.data.sort(() => Math.random() - 0.5);
-        }
-        state.index = 0;
-        state.score = 0;
-        dom.home.classList.add('hidden');
-        dom.quiz.classList.remove('hidden');
-        renderQuestion();
-    } catch (e) {
-        alert("Lỗi tải dữ liệu. Vui lòng kiểm tra file JSON.");
+        const response = await fetch('questions.json');
+        quizData = await response.json();
+        document.getElementById('status-text').innerText = "Dữ liệu sẵn sàng!";
+        document.getElementById('setup-options').classList.remove('hidden');
+    } catch (error) {
+        document.getElementById('status-text').innerText = "Lỗi tải file questions.json!";
     }
+}
+init();
+
+// 2. BẮT ĐẦU
+document.getElementById('start-btn').onclick = () => {
+    userQuestions = document.getElementById('shuffle-checkbox').checked 
+        ? [...quizData].sort(() => Math.random() - 0.5) 
+        : [...quizData];
+    
+    UI.loading.classList.add('hidden');
+    UI.quiz.classList.remove('hidden');
+    loadQuestion();
 };
 
-function renderQuestion() {
-    state.isAnswered = false;
-    state.hasError = false;
-    dom.btnNext.disabled = true;
-    dom.feedback.classList.add('hidden');
+// 3. HIỂN THỊ CÂU HỎI
+function loadQuestion() {
+    isAnswered = false;
+    currentFailed = false;
+    UI.nextBtn.disabled = true;
+    UI.optionsGrid.innerHTML = '';
     
-    const q = state.data[state.index];
-    dom.currentIdx.innerText = state.index + 1;
-    dom.totalIdx.innerText = state.data.length;
-    dom.liveScore.innerText = state.score;
-    dom.progress.style.width = `${(state.index / state.data.length) * 100}%`;
+    const q = userQuestions[currentQuiz];
+    document.getElementById('question').innerText = `Câu ${currentQuiz + 1}: ${q.question}`;
     
-    dom.qText.innerText = q.question;
-    dom.oBox.innerHTML = '';
-    
-    if (state.mode === 'mcq') {
-        dom.oBox.className = '';
-        ['a', 'b', 'c', 'd'].forEach(key => {
-            if(q.options[key]) createOption(q.options[key], key, q.answer);
+    // Render đáp án (Tự động nhận diện MCQ hoặc Đúng/Sai)
+    if (q.options) {
+        // Nếu là MCQ (a, b, c, d)
+        Object.keys(q.options).forEach(key => {
+            createOptionElement(q.options[key], key, q.answer);
         });
     } else {
-        dom.oBox.className = 'tf-mode';
-        createOption("ĐÚNG", true, q.answer);
-        createOption("SAI", false, q.answer);
+        // Nếu là Đúng/Sai (dữ liệu chỉ có answer)
+        createOptionElement("ĐÚNG", true, q.answer);
+        createOptionElement("SAI", false, q.answer);
     }
+
+    // Cập nhật Progress
+    UI.progressBar.style.width = `${(currentQuiz / userQuestions.length) * 100}%`;
+    document.getElementById('current-count').innerText = currentQuiz + 1;
+    document.getElementById('total-count').innerText = userQuestions.length;
+    document.getElementById('live-score').innerText = score;
 }
 
-function createOption(text, val, correct) {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerText = text;
-    btn.onclick = () => checkAnswer(val, correct, btn);
-    dom.oBox.appendChild(btn);
+function createOptionElement(text, value, correctValue) {
+    const div = document.createElement('div');
+    div.className = 'option-item';
+    div.innerText = text;
+    div.onclick = () => checkLogic(value, correctValue, div);
+    UI.optionsGrid.appendChild(div);
 }
 
-// HÀM KIỂM TRA QUAN TRỌNG NHẤT
-function checkAnswer(userVal, correctVal, btn) {
-    if (state.isAnswered) return;
+// 4. LOGIC KIỂM TRA (ĐIỂM MẠNH: XÓA MÀU CŨ & SỬA LỖI SO SÁNH)
+function checkLogic(userVal, correctVal, element) {
+    if (isAnswered) return;
 
-    // ÉP KIỂU VỀ STRING ĐỂ SO SÁNH (Khắc phục lỗi Boolean vs String)
+    // XÓA MÀU CÁC LỰA CHỌN CŨ (Cho phép người dùng đổi ý trước khi bấm Tiếp tục)
+    Array.from(UI.optionsGrid.children).forEach(child => {
+        child.classList.remove('correct', 'wrong');
+    });
+
+    // CHUẨN HÓA SO SÁNH (Sửa lỗi triệt để Đúng/Sai)
     const u = String(userVal).toLowerCase().trim();
     const c = String(correctVal).toLowerCase().trim();
 
     if (u === c) {
-        btn.classList.add('correct');
-        state.isAnswered = true;
-        if (!state.hasError) state.score++;
+        element.classList.add('correct');
+        isAnswered = true; // Chốt câu này
+        if (!currentFailed) score++; // Chỉ cộng điểm nếu không sai lần nào ở câu này
         
-        // Khóa tất cả các nút
-        Array.from(dom.oBox.children).forEach(b => b.disabled = true);
-        dom.btnNext.disabled = false;
-        
-        showFeedback("CHÍNH XÁC!", "var(--success)");
+        UI.nextBtn.disabled = false;
+        // Khóa không cho nhấn nữa sau khi đã đúng
+        Array.from(UI.optionsGrid.children).forEach(child => child.style.pointerEvents = 'none');
     } else {
-        btn.classList.add('wrong');
-        btn.disabled = true;
-        state.hasError = true;
-        showFeedback("THỬ LẠI!", "var(--error)");
+        element.classList.add('wrong');
+        currentFailed = true; // Đánh dấu đã từng sai
+        UI.nextBtn.disabled = true; // Bắt buộc phải chọn lại cho đúng mới được qua
+
+        // Lưu vào danh sách sai để review (chỉ lưu 1 lần)
+        const qData = userQuestions[currentQuiz];
+        if (!wrongAnswers.find(x => x.q === qData.question)) {
+            wrongAnswers.push({
+                q: qData.question,
+                userAns: element.innerText,
+                correctAns: qData.options ? qData.options[correctVal] : (correctVal ? "Đúng" : "Sai")
+            });
+        }
     }
 }
 
-function showFeedback(txt, color) {
-    dom.feedback.innerText = txt;
-    dom.feedback.style.color = color;
-    dom.feedback.classList.remove('hidden');
-}
-
-dom.btnNext.onclick = () => {
-    state.index++;
-    if (state.index < state.data.length) renderQuestion();
-    else showResult();
+// 5. TIẾP TỤC
+UI.nextBtn.onclick = () => {
+    currentQuiz++;
+    if (currentQuiz < userQuestions.length) loadQuestion();
+    else showFinal();
 };
 
-function showResult() {
-    dom.quiz.classList.add('hidden');
-    dom.result.classList.remove('hidden');
-    document.getElementById('final-score').innerText = `${state.score}/${state.data.length}`;
-    if (state.score / state.data.length >= 0.8) confetti({ particleCount: 150, spread: 70 });
-}
+function showFinal() {
+    UI.quiz.classList.add('hidden');
+    UI.result.classList.remove('hidden');
+    document.getElementById('final-score').innerText = `${score} / ${userQuestions.length}`;
+    
+    if (score / userQuestions.length >= 0.8) confetti({ particleCount: 150, spread: 70 });
 
-document.getElementById('btn-home').onclick = () => confirm("Thoát?") && location.reload();
+    const review = document.getElementById('review-container');
+    review.innerHTML = wrongAnswers.length > 0 
+        ? wrongAnswers.map(item => `
+            <div class="review-item">
+                <p><strong>${item.q}</strong></p>
+                <p style="color:var(--error-text)">✘ Bạn chọn: ${item.userAns}</p>
+                <p style="color:var(--success-text)">✔ Đáp án: ${item.correctAns}</p>
+            </div>`).join('')
+        : "<p style='text-align:center; color:var(--success-text)'>Bạn thật tuyệt vời! Không sai câu nào.</p>";
+}
