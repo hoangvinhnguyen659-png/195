@@ -4,152 +4,133 @@ const CONFIG = {
 };
 
 let state = {
-    quizData: [],
-    currentMode: 'mcq',
-    currentIndex: 0,
+    data: [],
+    mode: 'mcq',
+    index: 0,
     score: 0,
-    isSolved: false,      
-    hasClickedWrong: false 
+    isAnswered: false,
+    wrongAtThisQuestion: false
 };
 
-const els = {
-    loadingScreen: document.getElementById('loading-screen'),
-    quizScreen: document.getElementById('quiz-screen'),
-    resultScreen: document.getElementById('result-screen'),
-    startBtn: document.getElementById('start-btn'),
-    modeCards: document.querySelectorAll('.mode-card'),
-    shuffleCheck: document.getElementById('shuffle-checkbox'),
-    questionText: document.getElementById('question-text'),
-    optionsContainer: document.getElementById('options-container'),
-    submitBtn: document.getElementById('submit-btn'),
-    progressBar: document.getElementById('progress-bar'),
-    currentCount: document.getElementById('current-count'),
-    totalCount: document.getElementById('total-count'),
-    liveScore: document.getElementById('live-score'),
-    feedbackMsg: document.getElementById('feedback-msg'),
-    homeBtnIngame: document.getElementById('home-btn-ingame'),
-    homeBtnResult: document.getElementById('home-btn-result'),
+const dom = {
+    home: document.getElementById('home-screen'),
+    quiz: document.getElementById('quiz-screen'),
+    result: document.getElementById('result-screen'),
+    modes: document.querySelectorAll('.mode-item'),
+    btnStart: document.getElementById('btn-start'),
+    btnNext: document.getElementById('btn-next'),
+    btnHome: document.getElementById('btn-home'),
+    qBox: document.getElementById('question-box'),
+    oBox: document.getElementById('options-box'),
+    progress: document.getElementById('progress-fill'),
+    idxText: document.getElementById('idx-text'),
+    totalText: document.getElementById('total-text'),
+    scoreText: document.getElementById('score-text'),
     finalScore: document.getElementById('final-score'),
-    resultMsg: document.getElementById('result-message')
+    shuffle: document.getElementById('shuffle-check')
 };
 
-// 1. CHỌN CHẾ ĐỘ
-els.modeCards.forEach(card => {
-    card.addEventListener('click', () => {
-        els.modeCards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        state.currentMode = card.dataset.mode;
-    });
+// Chọn chế độ
+dom.modes.forEach(m => {
+    m.onclick = () => {
+        dom.modes.forEach(x => x.classList.remove('active'));
+        m.classList.add('active');
+        state.mode = m.dataset.mode;
+    };
 });
 
-// 2. BẮT ĐẦU
-els.startBtn.addEventListener('click', async () => {
+// Bắt đầu thi
+dom.btnStart.onclick = async () => {
     try {
-        const res = await fetch(CONFIG[state.currentMode].url);
-        state.quizData = await res.json();
+        const res = await fetch(CONFIG[state.mode].url);
+        state.data = await res.json();
         
-        if (els.shuffleCheck.checked) {
-            state.quizData.sort(() => Math.random() - 0.5);
-        }
+        if (dom.shuffle.checked) state.data.sort(() => Math.random() - 0.5);
 
-        state.currentIndex = 0;
+        state.index = 0;
         state.score = 0;
-        els.loadingScreen.classList.add('hidden');
-        els.quizScreen.classList.remove('hidden');
-        renderQuiz();
-    } catch (err) {
-        alert("Lỗi tải file dữ liệu!");
+        dom.home.classList.add('hidden');
+        dom.quiz.classList.remove('hidden');
+        loadQuestion();
+    } catch (e) {
+        alert("Không tải được dữ liệu!");
     }
-});
+};
 
-// 3. RENDER CÂU HỎI
-function renderQuiz() {
-    state.isSolved = false;
-    state.hasClickedWrong = false;
-    els.submitBtn.disabled = true;
-    els.feedbackMsg.classList.add('hidden');
-
-    const data = state.quizData[state.currentIndex];
+function loadQuestion() {
+    state.isAnswered = false;
+    state.wrongAtThisQuestion = false;
+    dom.btnNext.disabled = true;
     
-    els.currentCount.innerText = state.currentIndex + 1;
-    els.totalCount.innerText = state.quizData.length;
-    els.liveScore.innerText = state.score;
-    els.progressBar.style.width = `${(state.currentIndex / state.quizData.length) * 100}%`;
+    const q = state.data[state.index];
+    dom.idxText.innerText = state.index + 1;
+    dom.totalText.innerText = state.data.length;
+    dom.scoreText.innerText = state.score;
+    dom.progress.style.width = `${(state.index / state.data.length) * 100}%`;
     
-    els.questionText.innerText = data.question;
-    els.optionsContainer.innerHTML = '';
+    dom.qBox.innerText = q.question;
+    dom.oBox.innerHTML = '';
     
-    if (state.currentMode === 'mcq') {
-        els.optionsContainer.classList.remove('tf-mode');
+    if (state.mode === 'mcq') {
+        dom.oBox.className = '';
         ['a', 'b', 'c', 'd'].forEach(key => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerText = data.options[key];
-            btn.onclick = () => handleAction(key, data.answer, btn);
-            els.optionsContainer.appendChild(btn);
+            createBtn(q.options[key], key, q.answer);
         });
     } else {
-        els.optionsContainer.classList.add('tf-mode');
-        [true, false].forEach(val => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn tf-btn';
-            btn.innerText = val ? "ĐÚNG" : "SAI";
-            btn.onclick = () => handleAction(val, data.answer, btn);
-            els.optionsContainer.appendChild(btn);
-        });
+        dom.oBox.className = 'tf-grid';
+        createBtn("ĐÚNG", true, q.answer);
+        createBtn("SAI", false, q.answer);
     }
 }
 
-// 4. XỬ LÝ CLICK ĐÁP ÁN (Sửa lỗi logic tại đây)
-function handleAction(userVal, correctVal, btn) {
-    if (state.isSolved) return;
+function createBtn(text, value, correct) {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerText = text;
+    btn.onclick = () => check(value, correct, btn);
+    dom.oBox.appendChild(btn);
+}
 
-    // Ép kiểu về String để so sánh chính xác tuyệt đối (tránh lỗi true vs "true")
-    const isCorrect = String(userVal).toLowerCase() === String(correctVal).toLowerCase();
+// HÀM KIỂM TRA ĐÁP ÁN (Đã sửa lỗi Boolean)
+function check(userVal, correctVal, btn) {
+    if (state.isAnswered) return;
 
-    if (isCorrect) {
-        btn.className = 'option-btn correct' + (state.currentMode === 'tf' ? ' tf-btn' : '');
-        state.isSolved = true;
+    // Chuẩn hóa dữ liệu về String thường để so sánh chính xác tuyệt đối
+    const u = String(userVal).toLowerCase().trim();
+    const c = String(correctVal).toLowerCase().trim();
+
+    if (u === c) {
+        // ĐÚNG
+        btn.classList.add('correct');
+        state.isAnswered = true;
         
-        if (!state.hasClickedWrong) {
+        // Chỉ cộng điểm nếu chưa bấm sai câu này
+        if (!state.wrongAtThisQuestion) {
             state.score++;
-            els.liveScore.innerText = state.score;
         }
 
-        Array.from(els.optionsContainer.children).forEach(b => b.disabled = true);
-        els.submitBtn.disabled = false;
-        els.submitBtn.focus();
-        showFeedback("CHÍNH XÁC", "var(--success)");
+        // Khóa các nút khác và mở nút Tiếp tục
+        Array.from(dom.oBox.children).forEach(b => b.disabled = true);
+        dom.btnNext.disabled = false;
     } else {
-        btn.className = 'option-btn wrong' + (state.currentMode === 'tf' ? ' tf-btn' : '');
-        btn.disabled = true; 
-        state.hasClickedWrong = true;
-        showFeedback("THỬ LẠI", "var(--error)");
+        // SAI
+        btn.classList.add('wrong');
+        btn.disabled = true;
+        state.wrongAtThisQuestion = true;
     }
 }
 
-function showFeedback(text, color) {
-    els.feedbackMsg.innerText = text;
-    els.feedbackMsg.style.color = color;
-    els.feedbackMsg.classList.remove('hidden');
+dom.btnNext.onclick = () => {
+    state.index++;
+    if (state.index < state.data.length) loadQuestion();
+    else finish();
+};
+
+function finish() {
+    dom.quiz.classList.add('hidden');
+    dom.result.classList.remove('hidden');
+    dom.finalScore.innerText = `${state.score}/${state.data.length}`;
+    if (state.score / state.data.length >= 0.8) confetti({ particleCount: 100, spread: 70 });
 }
 
-// 5. KẾT THÚC & HOME
-els.submitBtn.addEventListener('click', () => {
-    state.currentIndex++;
-    if (state.currentIndex < state.quizData.length) renderQuiz();
-    else finishQuiz();
-});
-
-function finishQuiz() {
-    els.quizScreen.classList.add('hidden');
-    els.resultScreen.classList.remove('hidden');
-    els.finalScore.innerText = `${state.score}/${state.quizData.length}`;
-    
-    const p = state.score / state.quizData.length;
-    els.resultMsg.innerText = p === 1 ? "TUYỆT ĐỐI!" : (p >= 0.7 ? "RẤT TỐT!" : "CỐ GẮNG HƠN!");
-    if(p >= 0.8) confetti({ particleCount: 150, spread: 70 });
-}
-
-els.homeBtnIngame.onclick = () => confirm("Thoát bài làm?") && location.reload();
-els.homeBtnResult.onclick = () => location.reload();
+dom.btnHome.onclick = () => confirm("Thoát bài làm?") && location.reload();
