@@ -2,33 +2,31 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Trắc Nghiệm Pro - Optimized</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm Pro</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <div id="loading-screen">
-            <h1 class="brand-title">Trắc Nghiệm Pro</h1>
+            <h1 class="main-title">Trắc Nghiệm Pro</h1>
             <p id="status-text">Đang tải dữ liệu...</p>
             <div id="setup-options" class="hidden">
                 <div class="setup-group">
-                    <label class="checkbox-container">
+                    <label class="shuffle-label">
                         <input type="checkbox" id="shuffle-checkbox">
-                        <span class="checkmark"></span>
-                        Trộn câu hỏi
+                        <span>Trộn câu hỏi</span>
                     </label>
                 </div>
-                <button class="btn-main" id="start-btn">BẮT ĐẦU</button>
+                <button class="btn-start" id="start-btn">BẮT ĐẦU</button>
             </div>
         </div>
 
         <div id="quiz-screen" class="hidden">
             <div class="quiz-header">
                 <div class="progress-container"><div id="progress-bar"></div></div>
-                <div class="quiz-stats">
+                <div class="quiz-info">
                     <span>CÂU: <span id="current-count">0</span> / <span id="total-count">0</span></span>
                     <span>ĐÚNG: <span id="live-score">0</span></span>
                 </div>
@@ -36,21 +34,20 @@
             
             <div class="quiz-body">
                 <h2 id="question">Vui lòng đợi...</h2>
-                <div class="option-list" id="options-grid">
+                <div id="options-container">
                     </div>
             </div>
 
             <div class="quiz-footer">
-                <button id="submit" class="btn-main" disabled>Tiếp tục &raquo;</button>
+                <button id="submit" disabled>Tiếp tục &raquo;</button>
             </div>
         </div>
 
         <div id="result-screen" class="hidden">
-            <h2 class="brand-title">KẾT QUẢ</h2>
+            <h2>KẾT QUẢ</h2>
             <div id="final-score">0/0</div>
-            <p class="review-title">Xem lại các câu sai:</p>
             <div id="review-container"></div>
-            <button class="btn-main" onclick="location.reload()" style="margin-top: 25px;">LÀM LẠI</button>
+            <button class="btn-start" onclick="location.reload()" style="margin-top: 25px;">Vô Lại</button>
         </div>
     </div>
 
