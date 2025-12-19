@@ -1,70 +1,80 @@
 :root {
-    --bg: #f0f2f5;
-    --card: #ffffff;
-    --primary: #2d3436;
-    --accent: #0984e3;
-    --success: #00b894;
-    --error: #d63031;
-    --text: #2d3436;
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --error-bg: #fee2e2;
+    --error-text: #991b1b;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --border: #e2e8f0;
     --radius: 16px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-body { background: var(--bg); color: var(--text); display: flex; justify-content: center; min-height: 100vh; }
-
-.app-container {
-    width: 100%; max-width: 500px; background: var(--card);
-    display: flex; flex-direction: column; position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; padding: 15px;
 }
 
-.screen { padding: 30px 20px; flex: 1; display: flex; flex-direction: column; animation: fadeIn 0.3s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.container {
+    background: #fff; width: 100%; max-width: 550px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .hidden { display: none !important; }
 
-/* HOME */
-.brand { text-align: center; font-size: 1.8rem; font-weight: 800; margin: 40px 0 10px; }
-.desc { text-align: center; color: #636e72; margin-bottom: 40px; font-size: 0.9rem; }
-.mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-.mode-item {
-    padding: 25px 10px; border: 2px solid #dfe6e9; border-radius: var(--radius);
-    text-align: center; font-weight: 700; cursor: pointer; transition: 0.2s;
+/* Header & Progress */
+.quiz-header { padding: 25px 25px 10px; }
+.progress-container { background: var(--border); height: 8px; border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
+#progress-bar { 
+    background: linear-gradient(90deg, var(--primary), #a29bfe); 
+    height: 100%; width: 0%; transition: width 0.4s ease; 
 }
-.mode-item.active { border-color: var(--primary); background: #f8f9fa; }
+.quiz-stats { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 800; color: #94a3b8; }
 
-/* PROGRESS */
-.header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-.progress-bar { flex: 1; height: 8px; background: #dfe6e9; border-radius: 10px; overflow: hidden; }
-#progress-fill { height: 100%; width: 0%; background: var(--accent); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-.header-info { display: flex; justify-content: space-between; font-weight: 800; font-size: 0.85rem; color: #636e72; }
+/* Body & Question */
+.quiz-body { padding: 20px 25px; }
+#question { font-size: 1.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.6; }
 
-/* QUIZ BODY */
-#question-text { font-size: 1.3rem; font-weight: 700; line-height: 1.5; margin: 30px 0; min-height: 80px; }
-#options-container { display: grid; gap: 12px; }
-.tf-mode { grid-template-columns: 1fr 1fr; }
-
-.option-btn {
-    padding: 18px; border: 2px solid #dfe6e9; border-radius: 12px;
-    background: white; font-size: 1rem; font-weight: 600; cursor: pointer;
-    transition: all 0.1s ease; text-align: left;
+/* Đáp án tối ưu: Xóa icon radio, dùng box rộng */
+.option-item {
+    border: 2px solid var(--border); border-radius: 12px; 
+    padding: 18px; margin-bottom: 12px; cursor: pointer; 
+    display: block; transition: all 0.2s ease;
+    font-weight: 500; font-size: 16px;
 }
-.option-btn.correct { background: var(--success) !important; border-color: var(--success) !important; color: white; }
-.option-btn.wrong { background: var(--error) !important; border-color: var(--error) !important; color: white; }
-.option-btn:disabled { cursor: default; }
 
-/* FOOTER */
-.quiz-footer { margin-top: auto; padding-top: 20px; }
+.option-item:hover { transform: translateX(5px); border-color: var(--primary); background: #f0f7ff; }
+
+/* Màu sắc Pastel phản hồi */
+.option-item.correct { background-color: var(--success-bg) !important; border-color: transparent !important; color: var(--success-text); font-weight: 700; }
+.option-item.wrong { background-color: var(--error-bg) !important; border-color: transparent !important; color: var(--error-text); }
+
+/* Nút bấm 3D phong cách của bạn */
+.quiz-footer { padding: 20px; background: #f8fafc; text-align: right; }
 .btn-main {
-    width: 100%; padding: 18px; border: none; border-radius: 14px;
-    background: var(--primary); color: white; font-weight: 800; cursor: pointer; transition: 0.2s;
+    background: var(--primary); color: white; border: none;
+    padding: 15px 35px; border-radius: 12px; cursor: pointer;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+    box-shadow: 0 5px 0 var(--primary-dark);
+    transition: all 0.1s ease;
 }
-.btn-main:disabled { background: #dfe6e9; color: #b2bec3; cursor: not-allowed; }
 
-#feedback-msg { text-align: center; margin-top: 15px; font-weight: 700; font-size: 0.9rem; }
+.btn-main:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--primary-dark); }
+.btn-main:disabled { background: #cbd5e0; box-shadow: 0 5px 0 #a0aec0; cursor: not-allowed; transform: none; }
 
-/* RESULT */
-.result-title { text-align: center; margin-top: 50px; }
-#final-score { font-size: 4.5rem; font-weight: 900; text-align: center; color: var(--accent); margin: 20px 0; }
-.result-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 40px; }
-.btn-secondary { background: #dfe6e9; border: none; border-radius: 14px; font-weight: 700; cursor: pointer; }
+/* Review Screen */
+#final-score { font-size: 4rem; color: var(--primary); font-weight: 900; margin: 15px 0; }
+#review-container { max-height: 300px; overflow-y: auto; padding-right: 10px; }
+.review-item { padding: 15px; border-radius: 12px; background: #f8fafc; border-left: 4px solid var(--primary); margin-bottom: 10px; font-size: 14px; }
+
+@media (max-width: 480px) { .container { border-radius: 0; min-height: 100vh; } }
