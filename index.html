@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Trắc Nghiệm Thông Minh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="menu-screen">
+            <header>
+                <h1>Hệ Thống Ôn Thi</h1>
+                <p>Vui lòng chọn một chế độ để bắt đầu</p>
+            </header>
+            <div class="menu-grid">
+                <div class="menu-card" onclick="startQuiz('multiple-choice')">
+                    <div class="icon bg-blue">A</div>
+                    <h3>Trắc Nghiệm</h3>
+                    <p>Lấy dữ liệu từ file trac-nghiem.json</p>
+                </div>
+                <div class="menu-card" onclick="startQuiz('true-false')">
+                    <div class="icon bg-green">✓</div>
+                    <h3>Đúng / Sai</h3>
+                    <p>Lấy dữ liệu từ file dung-sai.json</p>
+                </div>
+                <div class="menu-card" onclick="startQuiz('mixed')">
+                    <div class="icon bg-purple">∞</div>
+                    <h3>Trộn Câu Hỏi</h3>
+                    <p>Kết hợp và xáo trộn cả 2 loại câu hỏi</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="quiz-box">
+                <div class="quiz-header-info">
+                    <span id="question-counter">Câu hỏi: 0/0</span>
+                    <span id="live-score">Đúng: 0</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <h2 id="question-text">Đang tải câu hỏi...</h2>
+                <div id="options-container"></div>
+
+                <div id="navigation-area" class="hidden">
+                    <button class="nav-btn" onclick="nextQuestion()">Tiếp tục →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <div class="result-card">
+                <div class="result-icon">🏆</div>
+                <h2>Kết Quả Bài Thi</h2>
+                <div class="score-circle">
+                    <span id="score-number">0</span>
+                    <small>câu đúng</small>
+                </div>
+                <p id="final-stats"></p>
+                <button class="nav-btn" onclick="location.reload()">Làm lại từ đầu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
