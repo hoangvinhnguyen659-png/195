@@ -2,75 +2,75 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hệ Thống Ôn Thi Thông Minh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm Pro - Đa Chế Độ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container">
-        <main id="menu-screen" class="screen active">
-            <div class="header-content">
-                <h1>Chào mừng bạn 👋</h1>
-                <p>Hãy chọn một học phần để bắt đầu</p>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-card" onclick="startQuiz('multiple-choice')">
-                    <div class="card-icon blue">A</div>
-                    <div class="card-info">
-                        <h3>Trắc Nghiệm</h3>
-                        <p>Dữ liệu từ tracnghiem.json</p>
-                    </div>
-                </div>
-                <div class="menu-card" onclick="startQuiz('true-false')">
-                    <div class="card-icon green">✓</div>
-                    <div class="card-info">
-                        <h3>Đúng / Sai</h3>
-                        <p>Dữ liệu từ dungsai.json</p>
-                    </div>
-                </div>
-                <div class="menu-card" onclick="startQuiz('mixed')">
-                    <div class="card-icon purple">∞</div>
-                    <div class="card-info">
-                        <h3>Đề Tổng Hợp</h3>
-                        <p>Đảo câu hỏi từ cả 2 file</p>
-                    </div>
-                </div>
-            </div>
-        </main>
 
-        <main id="quiz-screen" class="screen">
+    <div class="container">
+        <div id="loading-screen">
+            <h1 class="logo-title">Trắc Nghiệm Pro</h1>
+            <p class="subtitle">Chọn chế độ thi để bắt đầu</p>
+            
+            <div id="setup-options">
+                <div class="mode-selection">
+                    <label class="mode-card active" data-mode="mcq">
+                        <span class="icon">📝</span>
+                        <span>Trắc nghiệm (4 Đáp án)</span>
+                        <input type="radio" name="quizMode" value="mcq" checked hidden>
+                    </label>
+                    <label class="mode-card" data-mode="tf">
+                        <span class="icon">⚖️</span>
+                        <span>Đúng / Sai</span>
+                        <input type="radio" name="quizMode" value="tf" hidden>
+                    </label>
+                </div>
+
+                <div class="settings-group">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="shuffle-checkbox">
+                        <span class="slider"></span>
+                        <span class="label-text">Trộn câu hỏi</span>
+                    </label>
+                </div>
+
+                <button class="btn-primary btn-lg" id="start-btn">Bắt đầu ngay</button>
+                <p id="status-text"></p>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
             <div class="quiz-header">
-                <div class="quiz-stats">
-                    <span id="q-counter">Câu: 1/10</span>
-                    <span id="score-counter">Đúng: 0</span>
-                </div>
-                <div class="progress-container">
-                    <div id="progress-bar" class="progress-bar"></div>
+                <div class="progress-container"><div id="progress-bar"></div></div>
+                <div class="stats-bar">
+                    <span class="badge">Câu: <span id="current-count">0</span>/<span id="total-count">0</span></span>
+                    <span class="badge score-badge">Điểm: <span id="live-score">0</span></span>
                 </div>
             </div>
-            <div class="question-box">
-                <h2 id="q-text">Đang tải câu hỏi...</h2>
+            
+            <div class="quiz-body">
+                <h2 id="question-text">Đang tải câu hỏi...</h2>
+                
+                <div id="options-container" class="options-grid"></div>
             </div>
-            <div id="options-list" class="options-list"></div>
-            <div id="footer-nav" class="footer-nav hidden">
-                <button class="next-btn" onclick="handleNext()">Tiếp tục (Enter) →</button>
-            </div>
-        </main>
 
-        <main id="result-screen" class="screen">
-            <div class="result-card">
-                <div class="trophy-icon">🏆</div>
-                <h2>Kết Quả Tuyệt Vời!</h2>
-                <div class="score-display">
-                    <span id="res-score">0</span>
-                    <small>câu đúng</small>
-                </div>
-                <p id="res-msg"></p>
-                <button class="primary-btn" onclick="location.reload()">Làm bài khác</button>
+            <div class="quiz-footer">
+                <button id="submit-btn" class="btn-primary" disabled>Tiếp tục &raquo;</button>
             </div>
-        </main>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>KẾT QUẢ</h2>
+            <div id="final-score">0/0</div>
+            <p class="review-label">Chi tiết bài làm:</p>
+            <div id="review-container"></div>
+            <button class="btn-primary btn-lg" onclick="location.reload()" style="margin-top: 20px;">Làm lại</button>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
