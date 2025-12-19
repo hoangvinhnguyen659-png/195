@@ -1,12 +1,1432 @@
 [
   {
-    "question": "Hành tinh nào gần Mặt trời nhất?",
-    "options": ["Kim tinh", "Thủy tinh", "Hỏa tinh", "Trái đất"],
-    "answer": "Thủy tinh"
+    "id": 1,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Biết",
+    "question": "Thuật ngữ \"Trí tuệ nhân tạo\" (AI) chính thức được đưa ra tại sự kiện nào?",
+    "options": {
+      "a": "Phép thử Turing năm 1950.",
+      "b": "Hội thảo Dartmouth năm 1956.",
+      "c": "Sự ra đời của Robot Sophia năm 2016.",
+      "d": "Khi ChatGPT ra mắt năm 2022."
+    },
+    "answer": "b"
   },
   {
-    "question": "Đơn vị đo cường độ dòng điện là gì?",
-    "options": ["Vôn (V)", "Ohm (Ω)", "Ampe (A)", "Watt (W)"],
-    "answer": "Ampe (A)"
+    "id": 2,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Biết",
+    "question": "Hệ chuyên gia MYCIN (1970) là ví dụ điển hình của loại AI nào?",
+    "options": {
+      "a": "AI mạnh.",
+      "b": "AI tổng quát.",
+      "c": "AI yếu (AI hẹp).",
+      "d": "Siêu trí tuệ nhân tạo."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 3,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Hiểu",
+    "question": "Đặc trưng \"Khả năng học\" của AI được thể hiện rõ nhất qua ví dụ nào sau đây trong đề cương?",
+    "options": {
+      "a": "Robot Sophia có khả năng biểu hiện cảm xúc.",
+      "b": "ChatGPT đưa ra phản hồi bằng ngôn ngữ tự nhiên.",
+      "c": "Youtube đề xuất video dựa trên lịch sử tìm kiếm của người dùng.",
+      "d": "Phép thử Turing dùng để kiểm tra trí thông minh của máy tính."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 4,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Hiểu",
+    "question": "Tại sao AI có khả năng \"Suy luận\" trong y tế?",
+    "options": {
+      "a": "Vì AI có thể ghi nhớ tất cả tên các loại thuốc.",
+      "b": "Vì AI dựa vào các triệu chứng (thông tin đầu vào) để đưa ra kết luận bệnh lí (kết quả).",
+      "c": "Vì AI có thể thực hiện phẫu thuật thay thế bác sĩ.",
+      "d": "Vì AI có thể tự cảm nhận được nỗi đau của bệnh nhân."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 5,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Hiểu",
+    "question": "Sự khác biệt chính giữa AI yếu và AI mạnh là gì?",
+    "options": {
+      "a": "AI yếu chỉ làm được một số nhiệm vụ cụ thể, AI mạnh có thể thích nghi và giải quyết mọi vấn đề như con người.",
+      "b": "AI yếu chạy chậm hơn AI mạnh.",
+      "c": "AI yếu không cần dữ liệu, AI mạnh cần rất nhiều dữ liệu.",
+      "d": "AI yếu là phần mềm, AI mạnh bắt buộc phải là Robot."
+    },
+    "answer": "a"
+  },
+  {
+    "id": 6,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Hiểu",
+    "question": "Khả năng \"Nhận thức\" của AI được hiểu là gì?",
+    "options": {
+      "a": "Khả năng tính toán các con số phức tạp.",
+      "b": "Khả năng cảm nhận và hiểu môi trường quanh (như âm thanh, hình ảnh).",
+      "c": "Khả năng lưu trữ dữ liệu dung lượng lớn.",
+      "d": "Khả năng tự bật/tắt máy tính khi không sử dụng."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 7,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Hiểu",
+    "question": "Robot Sophia (2016) được nhắc đến trong đề cương với khả năng đặc biệt nào?",
+    "options": {
+      "a": "Tự lái xe trên đường phố.",
+      "b": "Nhận dạng khuôn mặt, giao tiếp và biểu hiện cảm xúc.",
+      "c": "Viết mã nguồn phần mềm thay lập trình viên.",
+      "d": "Chẩn đoán bệnh chính xác hơn hệ chuyên gia MYCIN."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 8,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Vận dụng",
+    "question": "Khi sử dụng một ứng dụng dịch thuật (như Google Dịch), ứng dụng này đang thực hiện công việc mang tính trí tuệ nào của con người?",
+    "options": {
+      "a": "Khả năng vận động linh hoạt.",
+      "b": "Khả năng hiểu và xử lý ngôn ngữ.",
+      "c": "Khả năng sáng tạo nghệ thuật.",
+      "d": "Khả năng giao tiếp xã hội trực tiếp."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 9,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Vận dụng",
+    "question": "Một hệ thống nhận dạng khuôn mặt trên điện thoại thông minh thực hiện việc \"phân tích các điểm đặc trưng\" để mở khóa máy. Đây là bước vận dụng đặc trưng nào của AI?",
+    "options": {
+      "a": "Khả năng giải quyết vấn đề.",
+      "b": "Khả năng nhận thức (qua hình ảnh).",
+      "c": "Khả năng di chuyển.",
+      "d": "Khả năng học sâu."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 10,
+    "topic": "Trí tuệ nhân tạo (AI)",
+    "level": "Vận dụng",
+    "question": "Theo định nghĩa về AI trong đề cương, việc máy tính có thể tự đưa ra quyết định dựa trên dữ liệu đã học được gọi là:",
+    "options": {
+      "a": "Lập trình lặp lại.",
+      "b": "Trí tuệ nhân tạo.",
+      "c": "Xử lý văn bản.",
+      "d": "Điều khiển từ xa."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 11,
+    "topic": "Ứng dụng AI",
+    "level": "Biết",
+    "question": "Trong lĩnh vực y học, AI có khả năng nào sau đây để hỗ trợ bác sĩ?",
+    "options": {
+      "a": "Thay thế hoàn toàn bác sĩ trong mọi ca phẫu thuật.",
+      "b": "Phân tích hình ảnh X-quang, MRI để phát hiện sớm các khối u.",
+      "c": "Tự đưa ra quyết định điều trị mà không cần sự giám sát của con người.",
+      "d": "Thay đổi cấu trúc gen của bệnh nhân theo ý muốn."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 12,
+    "topic": "Ứng dụng AI",
+    "level": "Biết",
+    "question": "Ứng dụng nào của AI giúp cá nhân hóa lộ trình học tập cho từng học sinh?",
+    "options": {
+      "a": "Phần mềm soạn thảo văn bản.",
+      "b": "Hệ thống học tập trực tuyến thông minh (như Khan Academy, Coursera).",
+      "c": "Trình duyệt web Chrome.",
+      "d": "Các trò chơi điện tử đơn giản."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 13,
+    "topic": "Ứng dụng AI",
+    "level": "Hiểu",
+    "question": "Tại sao AI được coi là công cụ đắc lực trong nghiên cứu khoa học, ví dụ như thiên văn học?",
+    "options": {
+      "a": "Vì AI có thể bay vào không gian để chụp ảnh.",
+      "b": "Vì AI có khả năng xử lý và phân tích khối lượng dữ liệu khổng lồ từ các kính thiên văn để tìm kiếm các hành tinh mới.",
+      "c": "Vì AI có thể thay đổi quỹ đạo của các ngôi sao.",
+      "d": "Vì AI làm cho các kính thiên văn hoạt động không cần điện."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 14,
+    "topic": "Ứng dụng AI",
+    "level": "Hiểu",
+    "question": "Trong sản xuất, việc sử dụng cánh tay Robot tích hợp AI giúp ích gì cho doanh nghiệp?",
+    "options": {
+      "a": "Chỉ để trang trí cho nhà máy hiện đại hơn.",
+      "b": "Giúp tăng độ chính xác, tốc độ và làm việc được trong môi trường độc hại thay con người.",
+      "c": "Làm tăng chi phí sản xuất lên gấp nhiều lần.",
+      "d": "Giúp robot có thể trò chuyện tán gẫu với công nhân."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 15,
+    "topic": "Ứng dụng AI",
+    "level": "Hiểu",
+    "question": "Lợi ích của AI trong lĩnh vực giao thông (xe tự lái) là gì?",
+    "options": {
+      "a": "Cho phép người lái xe ngủ quên mà không cần quan tâm đến đường đi.",
+      "b": "Tối ưu hóa lộ trình, giảm ùn tắc và hạn chế tai nạn do lỗi chủ quan của con người.",
+      "c": "Làm cho xe chạy nhanh hơn tốc độ cho phép của pháp luật.",
+      "d": "Chỉ để xe trông sang trọng và đắt tiền hơn."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 16,
+    "topic": "Ứng dụng AI",
+    "level": "Hiểu",
+    "question": "Đặc trưng nào của AI giúp các trang thương mại điện tử đề xuất đúng sản phẩm bạn đang quan tâm?",
+    "options": {
+      "a": "Khả năng tính toán giá tiền nhanh.",
+      "b": "Khả năng phân tích hành vi, sở thích và lịch sử mua hàng của người dùng.",
+      "c": "Khả năng hiển thị nhiều hình ảnh sản phẩm.",
+      "d": "Khả năng kết nối với thẻ ngân hàng."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 17,
+    "topic": "Ứng dụng AI",
+    "level": "Hiểu",
+    "question": "Trong lĩnh vực tài chính, AI giúp các ngân hàng điều gì?",
+    "options": {
+      "a": "Tự động in tiền khi khách hàng cần.",
+      "b": "Phát hiện các giao dịch bất thường và gian lận thẻ tín dụng dựa trên mô hình chi tiêu.",
+      "c": "Thay đổi lãi suất tiết kiệm hàng giờ theo ý thích.",
+      "d": "Cho phép khách hàng rút tiền mà không cần số dư."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 18,
+    "topic": "Ứng dụng AI",
+    "level": "Vận dụng",
+    "question": "Nếu bạn sử dụng một phần mềm học ngoại ngữ có tính năng nhận diện giọng nói và sửa lỗi phát âm, đó là ứng dụng của AI trong lĩnh vực nào?",
+    "options": {
+      "a": "Sản xuất.",
+      "b": "Y tế.",
+      "c": "Giáo dục.",
+      "d": "Thiên văn học."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 19,
+    "topic": "Ứng dụng AI",
+    "level": "Vận dụng",
+    "question": "Một nông trại thông minh sử dụng camera và AI để phát hiện sớm sâu bệnh trên từng lá cây để phun thuốc chính xác. Đây là sự kết hợp của AI trong:",
+    "options": {
+      "a": "Công nghiệp nặng.",
+      "b": "Nông nghiệp công nghệ cao.",
+      "c": "Dịch vụ giải trí.",
+      "d": "Tài chính ngân hàng."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 20,
+    "topic": "Ứng dụng AI",
+    "level": "Vận dụng",
+    "question": "Khi bạn yêu cầu một trợ lý ảo (như Siri hoặc Google Assistant) \"Nhắc tôi đi họp lúc 2 giờ chiều\", AI đã thực hiện quy trình nào?",
+    "options": {
+      "a": "Nghe hiểu ngôn ngữ tự nhiên -> Xử lý thông tin -> Thực hiện hành động (đặt nhắc nhở).",
+      "b": "Tự động gọi điện cho sếp của bạn để báo nghỉ.",
+      "c": "Chụp ảnh màn hình điện thoại.",
+      "d": "Gửi tin nhắn ngẫu nhiên cho bạn bè."
+    },
+    "answer": "a"
+  },
+  {
+    "id": 21,
+    "topic": "Thiết bị mạng",
+    "level": "Biết",
+    "question": "Thiết bị mạng nào có chức năng kết nối các thiết bị trong cùng mạng LAN và gửi dữ liệu từ một thiết bị đến tất cả các thiết bị khác trong mạng đó?",
+    "options": {
+      "a": "Router.",
+      "b": "Hub.",
+      "c": "Modem.",
+      "d": "Wireless Access Point."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 22,
+    "topic": "Thiết bị mạng",
+    "level": "Biết",
+    "question": "Thiết bị nào sau đây dùng để kết nối các mạng LAN với nhau hoặc kết nối mạng LAN với Internet?",
+    "options": {
+      "a": "Switch.",
+      "b": "Hub.",
+      "c": "Router.",
+      "d": "Modem."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 23,
+    "topic": "Thiết bị mạng",
+    "level": "Biết",
+    "question": "Loại Modem nào sử dụng cáp quang để truyền dẫn dữ liệu?",
+    "options": {
+      "a": "Modem ADSL.",
+      "b": "Modem GSM.",
+      "c": "Modem quang.",
+      "d": "Modem quay số."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 24,
+    "topic": "Thiết bị mạng",
+    "level": "Hiểu",
+    "question": "Tại sao Switch được coi là thiết bị kết nối thông minh và hiệu quả hơn Hub trong mạng LAN?",
+    "options": {
+      "a": "Vì Switch có giá thành rẻ hơn Hub.",
+      "b": "Vì Switch gửi dữ liệu đến tất cả các thiết bị cùng lúc.",
+      "c": "Vì Switch gửi dữ liệu chính xác đến thiết bị đích nhờ địa chỉ MAC, giúp giảm xung đột tín hiệu.",
+      "d": "Vì Switch không cần sử dụng dây cáp mạng."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 25,
+    "topic": "Thiết bị mạng",
+    "level": "Hiểu",
+    "question": "Chức năng chính của Modem trong việc kết nối Internet là gì?",
+    "options": {
+      "a": "Kết nối các máy tính trong mạng nội bộ.",
+      "b": "Chuyển đổi tín hiệu số thành tín hiệu tương tự và ngược lại để truyền qua hạ tầng của nhà cung cấp dịch vụ.",
+      "c": "Định tuyến đường đi cho các gói tin.",
+      "d": "Phát sóng wifi cho các thiết bị di động."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 26,
+    "topic": "Thiết bị mạng",
+    "level": "Hiểu",
+    "question": "Wireless Access Point (WAP) có vai trò gì trong hệ thống mạng?",
+    "options": {
+      "a": "Kết nối các thiết bị trong mạng LAN không dây bằng sóng vô tuyến.",
+      "b": "Kết nối trực tiếp mạng LAN với nhà cung cấp dịch vụ Internet.",
+      "c": "Thay thế hoàn toàn cho Switch có dây.",
+      "d": "Cấp địa chỉ IP cho các máy tính."
+    },
+    "answer": "a"
+  },
+  {
+    "id": 27,
+    "topic": "Thiết bị mạng",
+    "level": "Hiểu",
+    "question": "Một thiết bị được gọi là \"Router Wifi\" thường tích hợp những chức năng của các thiết bị nào?",
+    "options": {
+      "a": "Chỉ có chức năng định tuyến.",
+      "b": "Tích hợp chức năng của Router, Switch và bộ thu phát wifi.",
+      "c": "Tích hợp chức năng của Modem và Hub.",
+      "d": "Chỉ có chức năng phát sóng không dây."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 28,
+    "topic": "Thiết bị mạng",
+    "level": "Vận dụng",
+    "question": "Để mở rộng một mạng LAN có dây cho nhiều người dùng hơn trong cùng một văn phòng mà vẫn đảm bảo tốc độ và hạn chế xung đột, bạn nên sử dụng thêm thiết bị nào?",
+    "options": {
+      "a": "Hub.",
+      "b": "Switch.",
+      "c": "Modem GSM.",
+      "d": "Cáp điện thoại."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 29,
+    "topic": "Thiết bị mạng",
+    "level": "Vận dụng",
+    "question": "Khi dữ liệu được gửi từ một máy tính trong mạng LAN này sang một máy tính ở mạng LAN khác, thiết bị nào sẽ chịu trách nhiệm chọn đường đi dựa trên bảng định tuyến và địa chỉ IP?",
+    "options": {
+      "a": "Switch.",
+      "b": "Hub.",
+      "c": "Router.",
+      "d": "Wireless Access Point."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 30,
+    "topic": "Thiết bị mạng",
+    "level": "Vận dụng",
+    "question": "Gia đình bạn mới lắp đặt mạng Internet cáp quang. Thiết bị được nhân viên kỹ thuật đặt giữa đường dây cáp quang của nhà mạng và chiếc Router Wifi của gia đình bạn là gì?",
+    "options": {
+      "a": "Switch.",
+      "b": "Modem quang.",
+      "c": "Hub.",
+      "d": "Modem GSM."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 31,
+    "topic": "Giao thức mạng",
+    "level": "Biết",
+    "question": "Giao thức mạng (Network Protocol) được định nghĩa là gì?",
+    "options": {
+      "a": "Một loại phần cứng dùng để kết nối các máy tính.",
+      "b": "Tập hợp các quy định về cách thức giao tiếp và truyền dữ liệu giữa các thiết bị trong mạng.",
+      "c": "Một phần mềm dùng để diệt virus khi truy cập Internet.",
+      "d": "Tên gọi khác của dây cáp mạng."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 32,
+    "topic": "Giao thức mạng",
+    "level": "Biết",
+    "question": "Bộ giao thức phổ biến nhất được sử dụng trên Internet hiện nay là gì?",
+    "options": {
+      "a": "HTTP/HTTPS.",
+      "b": "TCP/IP.",
+      "c": "FTP/SMTP.",
+      "d": "DNS/IP."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 33,
+    "topic": "Giao thức mạng",
+    "level": "Hiểu",
+    "question": "Chức năng chính của giao thức IP (Internet Protocol) trong bộ giao thức TCP/IP là gì?",
+    "options": {
+      "a": "Đảm bảo dữ liệu gửi đi không bị lỗi.",
+      "b": "Chia nhỏ dữ liệu thành các gói tin.",
+      "c": "Định địa chỉ và định tuyến các gói tin dữ liệu qua mạng đến đúng đích.",
+      "d": "Hiển thị nội dung trang web cho người dùng."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 34,
+    "topic": "Giao thức mạng",
+    "level": "Hiểu",
+    "question": "Giao thức TCP (Transmission Control Protocol) đóng vai trò gì trong quá trình truyền dữ liệu?",
+    "options": {
+      "a": "Quy định hình dáng của các thiết bị mạng.",
+      "b": "Thiết lập kết nối giữa hai thiết bị, kiểm soát lỗi và đảm bảo dữ liệu được truyền đi đầy đủ, đúng thứ tự.",
+      "c": "Cung cấp địa chỉ nhà cho mỗi máy tính.",
+      "d": "Tăng tốc độ đường truyền internet lên mức tối đa."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 35,
+    "topic": "Giao thức mạng",
+    "level": "Hiểu",
+    "question": "Tại sao mỗi thiết bị khi kết nối vào mạng Internet đều cần phải có một địa chỉ IP duy nhất?",
+    "options": {
+      "a": "Để nhà mạng có thể thu tiền cước hàng tháng.",
+      "b": "Để các thiết bị khác có thể nhận diện và gửi dữ liệu chính xác đến thiết bị đó.",
+      "c": "Để máy tính chạy nhanh hơn.",
+      "d": "Để bảo vệ máy tính khỏi các phần mềm độc hại."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 36,
+    "topic": "Giao thức mạng",
+    "level": "Hiểu",
+    "question": "Sự khác biệt cơ bản giữa địa chỉ IPv4 và IPv6 là gì?",
+    "options": {
+      "a": "IPv4 có độ bảo mật cao hơn IPv6.",
+      "b": "IPv4 sử dụng 32 bit (khoảng 4 tỷ địa chỉ), còn IPv6 sử dụng 128 bit (không gian địa chỉ khổng lồ hơn).",
+      "c": "IPv4 chỉ dùng cho máy tính, IPv6 chỉ dùng cho điện thoại.",
+      "d": "IPv4 là địa chỉ có dây, IPv6 là địa chỉ không dây."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 37,
+    "topic": "Giao thức mạng",
+    "level": "Hiểu",
+    "question": "Giao thức nào sau đây thường được sử dụng để truyền tải dữ liệu trang web một cách bảo mật (có mã hóa)?",
+    "options": {
+      "a": "HTTP.",
+      "b": "HTTPS.",
+      "c": "FTP.",
+      "d": "SMTP."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 38,
+    "topic": "Giao thức mạng",
+    "level": "Vận dụng",
+    "question": "Khi bạn gửi một bức thư điện tử (email) từ máy tính của mình đến một người bạn, giao thức nào thường đóng vai trò gửi thư đi?",
+    "options": {
+      "a": "HTTP.",
+      "b": "IP.",
+      "c": "SMTP.",
+      "d": "TCP."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 39,
+    "topic": "Giao thức mạng",
+    "level": "Vận dụng",
+    "question": "Một máy tính có địa chỉ IP là 192.168.1.15. Đây là ví dụ của loại địa chỉ nào?",
+    "options": {
+      "a": "IPv6.",
+      "b": "Địa chỉ MAC.",
+      "c": "IPv4.",
+      "d": "Tên miền (Domain name)."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 40,
+    "topic": "Giao thức mạng",
+    "level": "Vận dụng",
+    "question": "Nếu giao thức TCP phát hiện một gói tin bị mất hoặc bị lỗi trong quá trình truyền, nó sẽ làm gì?",
+    "options": {
+      "a": "Bỏ qua gói tin đó và tiếp tục truyền gói tiếp theo.",
+      "b": "Yêu cầu phía gửi truyền lại gói tin bị lỗi hoặc bị mất đó.",
+      "c": "Tự động ngắt kết nối mạng ngay lập tức.",
+      "d": "Xóa toàn bộ dữ liệu đã nhận được trước đó."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 41,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Biết",
+    "question": "Hành vi nào sau đây được coi là vi phạm đạo đức, pháp luật và văn hóa khi giao tiếp trên mạng?",
+    "options": {
+      "a": "Chia sẻ các kiến thức học tập bổ ích từ nguồn tin chính thống.",
+      "b": "Sử dụng ngôn ngữ thô tục, xúc phạm danh dự, nhân phẩm của người khác.",
+      "c": "Gửi lời cảm ơn khi nhận được sự giúp đỡ trên diễn đàn.",
+      "d": "Tham gia các nhóm học tập trực tuyến lành mạnh."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 42,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Biết",
+    "question": "\"Netiquette\" (Quy tắc ứng xử trên mạng) có mục đích chính là gì?",
+    "options": {
+      "a": "Giúp máy tính chạy nhanh hơn.",
+      "b": "Quy định cách cài đặt các phần mềm mạng.",
+      "c": "Hướng dẫn con người cách ứng xử lịch sự, tôn trọng và có trách nhiệm khi giao tiếp trên mạng.",
+      "d": "Hạn chế số lượng người tham gia mạng xã hội."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 43,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Hiểu",
+    "question": "Tại sao chúng ta cần phải kiểm chứng thông tin trước khi chia sẻ trên mạng xã hội?",
+    "options": {
+      "a": "Để thông tin đó có nhiều lượt \"Like\" hơn.",
+      "b": "Để tránh lan truyền tin giả (fake news), gây hoang mang dư luận hoặc vi phạm pháp luật.",
+      "c": "Để chứng tỏ mình là người biết nhiều tin tức.",
+      "d": "Vì các trang mạng xã hội yêu cầu như vậy."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 44,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Hiểu",
+    "question": "Việc ẩn danh trên không gian mạng có thể dẫn đến hệ lụy nào sau đây?",
+    "options": {
+      "a": "Làm cho người dùng tự tin hơn trong giao tiếp.",
+      "b": "Giúp thông tin cá nhân được bảo mật tuyệt đối.",
+      "c": "Dễ dẫn đến việc thiếu trách nhiệm trong phát ngôn, bắt nạt qua mạng hoặc thực hiện hành vi xấu.",
+      "d": "Giúp tăng tốc độ kết nối Internet."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 45,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Hiểu",
+    "question": "Khi nhận được một tin nhắn từ người lạ yêu cầu cung cấp thông tin cá nhân hoặc mã OTP, bạn nên làm gì để ứng xử đúng mực và an toàn?",
+    "options": {
+      "a": "Cung cấp ngay để thể hiện sự nhiệt tình.",
+      "b": "Từ chối và tuyệt đối không cung cấp thông tin, đồng thời cảnh báo cho người thân.",
+      "c": "Gửi thông tin cá nhân nhưng giữ lại mã OTP.",
+      "d": "Chửi bới người gửi tin nhắn bằng ngôn ngữ thô tục."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 46,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Hiểu",
+    "question": "Tôn trọng quyền sở hữu trí tuệ trên không gian mạng được thể hiện qua hành vi nào?",
+    "options": {
+      "a": "Tự ý tải ảnh của người khác về làm sản phẩm thương mại mà không xin phép.",
+      "b": "Trích dẫn nguồn đầy đủ khi sử dụng thông tin, bài viết hoặc hình ảnh của người khác.",
+      "c": "Sao chép bài văn của bạn trên mạng về làm bài kiểm tra của mình.",
+      "d": "Chia sẻ các phần mềm \"lậu\" (đã bẻ khóa) cho mọi người dùng miễn phí."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 47,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Hiểu",
+    "question": "Hành động nào sau đây thể hiện sự văn minh khi tham gia thảo luận trong một nhóm trực tuyến?",
+    "options": {
+      "a": "Cố gắng tranh cãi bằng được để bảo vệ ý kiến sai lầm của mình.",
+      "b": "Lắng nghe, sử dụng ngôn ngữ lịch sự và phản hồi mang tính xây dựng.",
+      "c": "Spam (gửi tin rác) liên tục vào mục bình luận.",
+      "d": "Sử dụng phím Caps Lock (viết chữ hoa toàn bộ) để gây chú ý khi tranh luận."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 48,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Vận dụng",
+    "question": "Bạn thấy một bài đăng có nội dung sai sự thật về một người bạn trong lớp trên Facebook. Cách xử lý nào sau đây là phù hợp nhất với quy tắc ứng xử mạng?",
+    "options": {
+      "a": "Nhấn \"Like\" và \"Share\" để nhiều người biết và cùng bàn tán.",
+      "b": "Bình luận thêm các chi tiết thêu dệt để bài viết hấp dẫn hơn.",
+      "c": "Không chia sẻ, khuyên người đăng gỡ bài và báo cáo bài viết vi phạm nếu cần thiết.",
+      "d": "Nhắn tin đe dọa người đã đăng bài viết đó."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 49,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Vận dụng",
+    "question": "Khi đăng ảnh tập thể của lớp lên mạng xã hội, để cư xử có văn hóa, bạn nên thực hiện việc gì trước tiên?",
+    "options": {
+      "a": "Chỉnh sửa ảnh thật đẹp cho riêng mình.",
+      "b": "Hỏi ý kiến và được sự đồng ý của các thành viên có mặt trong ảnh.",
+      "c": "Đăng ảnh ngay lập tức để lấy \"tương tác\".",
+      "d": "Gắn thẻ (tag) tất cả mọi người vào ảnh mà không cần hỏi."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 50,
+    "topic": "Văn hóa và Đạo đức mạng",
+    "level": "Vận dụng",
+    "question": "Một người bạn gửi cho bạn một liên kết (link) lạ và bảo \"Bấm vào đây để nhận quà\". Bạn nghi ngờ đây là link lừa đảo. Cách ứng xử an toàn nhất là:",
+    "options": {
+      "a": "Bấm thử xem quà là gì rồi thoát ra ngay.",
+      "b": "Gửi link đó cho nhiều người khác để họ kiểm tra giúp.",
+      "c": "Không bấm vào link, báo cho bạn mình biết tài khoản của họ có thể đã bị chiếm quyền điều khiển (hack).",
+      "d": "Xóa tin nhắn và chặn luôn người bạn đó mà không nói gì."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 51,
+    "topic": "HTML Cơ bản",
+    "level": "Biết",
+    "question": "HTML là viết tắt của cụm từ nào sau đây?",
+    "options": {
+      "a": "High Text Markup Language.",
+      "b": "HyperLink and Text Markup Language.",
+      "c": "HyperText Markup Language.",
+      "d": "Home Tool Markup Language."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 52,
+    "topic": "HTML Cơ bản",
+    "level": "Biết",
+    "question": "Cặp thẻ nào sau đây bao quanh toàn bộ nội dung của một trang web HTML?",
+    "options": {
+      "a": "<html> ... </html>",
+      "b": "<head> ... </head>",
+      "c": "<body> ... </body>",
+      "d": "<title> ... </title>"
+    },
+    "answer": "a"
+  },
+  {
+    "id": 53,
+    "topic": "HTML Cơ bản",
+    "level": "Biết",
+    "question": "Phần tử nào trong HTML chứa các thông tin cấu hình như tiêu đề trang, bảng mã kí tự, nhưng không hiển thị trực tiếp trên nội dung cửa sổ trình duyệt?",
+    "options": {
+      "a": "<body>",
+      "b": "<div>",
+      "c": "<head>",
+      "d": "<footer>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 54,
+    "topic": "HTML Cơ bản",
+    "level": "Hiểu",
+    "question": "Chức năng chính của ngôn ngữ HTML trong việc tạo lập trang web là gì?",
+    "options": {
+      "a": "Dùng để lập trình các phép toán phức tạp.",
+      "b": "Dùng để thiết kế cấu trúc và định dạng nội dung của trang web thông qua các thẻ.",
+      "c": "Dùng để bảo mật thông tin người dùng trên internet.",
+      "d": "Dùng để tăng tốc độ kết nối mạng."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 55,
+    "topic": "HTML Cơ bản",
+    "level": "Hiểu",
+    "question": "Nội dung hiển thị trên trình duyệt web (như văn bản, hình ảnh, video) phải được đặt trong cặp thẻ nào?",
+    "options": {
+      "a": "<head> ... </head>",
+      "b": "<meta> ... </meta>",
+      "c": "<body> ... </body>",
+      "d": "<script> ... </script>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 56,
+    "topic": "HTML Cơ bản",
+    "level": "Hiểu",
+    "question": "Thẻ <title> có vai trò gì trong cấu trúc một tệp HTML?",
+    "options": {
+      "a": "Tạo một tiêu đề lớn xuất hiện ở đầu trang web.",
+      "b": "Xác định tiêu đề của trang web, được hiển thị trên thanh tiêu đề của trình duyệt hoặc tab trình duyệt.",
+      "c": "Dùng để in đậm văn bản trong trang web.",
+      "d": "Dùng để chèn tiêu đề cho một bức ảnh."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 57,
+    "topic": "HTML Cơ bản",
+    "level": "Hiểu",
+    "question": "Một phần tử HTML thường có cấu tạo gồm những thành phần nào?",
+    "options": {
+      "a": "Chỉ có thẻ mở và nội dung.",
+      "b": "Thẻ mở, nội dung và thẻ đóng.",
+      "c": "Chỉ có thẻ đóng và thuộc tính.",
+      "d": "Thẻ mở và các thuộc tính đi kèm."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 58,
+    "topic": "HTML Cơ bản",
+    "level": "Vận dụng",
+    "question": "Khi viết mã HTML, nếu bạn muốn trình duyệt hiểu đây là một tệp chuẩn HTML5, bạn cần bắt đầu dòng đầu tiên của tệp bằng khai báo nào?",
+    "options": {
+      "a": "<html>",
+      "b": "<head>",
+      "c": "<!DOCTYPE html>",
+      "d": "<meta charset=\"UTF-8\">"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 59,
+    "topic": "HTML Cơ bản",
+    "level": "Vận dụng",
+    "question": "Trong cấu trúc trang web, phần thường chứa các liên kết điều hướng (menu) trên cùng của trang được gọi là gì?",
+    "options": {
+      "a": "Body.",
+      "b": "Header.",
+      "c": "Footer.",
+      "d": "Section."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 60,
+    "topic": "HTML Cơ bản",
+    "level": "Vận dụng",
+    "question": "Bạn đang soạn thảo một trang web và muốn đặt tên cho tab trình duyệt là \"Ôn tập Tin học 12\". Bạn sẽ đặt văn bản đó vào giữa cặp thẻ nào?",
+    "options": {
+      "a": "<h1> ... </h1>",
+      "b": "<p> ... </p>",
+      "c": "<title> ... </title>",
+      "d": "<meta> ... </meta>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 61,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Biết",
+    "question": "Trong HTML, các thẻ tiêu đề được ký hiệu từ mức độ nào đến mức độ nào?",
+    "options": {
+      "a": "Từ <h1> đến <h1>0.",
+      "b": "Từ <h1> đến <h6>.",
+      "c": "Từ <p1> đến <p6>.",
+      "d": "Từ <head1> đến <head6>."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 62,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Biết",
+    "question": "Cặp thẻ nào sau đây được sử dụng để tạo một đoạn văn bản (Paragraph)?",
+    "options": {
+      "a": "<br> ... </br>",
+      "b": "<div> ... </div>",
+      "c": "<p> ... </p>",
+      "d": "<span> ... </span>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 63,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Biết",
+    "question": "Thẻ nào dùng để chèn một hình ảnh vào trang web?",
+    "options": {
+      "a": "<picture>",
+      "b": "<img>",
+      "c": "<image>",
+      "d": "<src>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 64,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Hiểu",
+    "question": "Sự khác biệt giữa thẻ <ul> và <ol> khi tạo danh sách là gì?",
+    "options": {
+      "a": "<ul> tạo danh sách có thứ tự (số), <ol> tạo danh sách không thứ tự (dấu đầu dòng).",
+      "b": "<ul> tạo danh sách không thứ tự (dấu đầu dòng), <ol> tạo danh sách có thứ tự (số).",
+      "c": "<ul> dùng cho hình ảnh, <ol> dùng cho văn bản.",
+      "d": "Cả hai thẻ đều cho kết quả hiển thị giống hệt nhau."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 65,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Hiểu",
+    "question": "Trong thẻ <img>, thuộc tính src có vai trò gì?",
+    "options": {
+      "a": "Quy định chiều rộng của ảnh.",
+      "b": "Quy định văn bản thay thế khi ảnh bị lỗi.",
+      "c": "Chỉ định đường dẫn (nguồn) đến tệp hình ảnh cần hiển thị.",
+      "d": "Tạo khung viền cho hình ảnh."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 66,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Hiểu",
+    "question": "Để xuống dòng trong một đoạn văn bản mà không tạo ra một khoảng cách đoạn mới, bạn sử dụng thẻ nào?",
+    "options": {
+      "a": "<p>",
+      "b": "<hr>",
+      "c": "<br>",
+      "d": "<enter>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 67,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Hiểu",
+    "question": "Thẻ nào dưới đây thường được sử dụng để làm nổi bật văn bản bằng cách in đậm?",
+    "options": {
+      "a": "<i>",
+      "b": "<u>",
+      "c": "<b> hoặc <strong>",
+      "d": "<s>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 68,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Nếu bạn muốn tạo một danh sách các bước nấu ăn theo thứ tự 1, 2, 3... bạn sẽ sử dụng cấu trúc thẻ nào sau đây?",
+    "options": {
+      "a": "<ul> kết hợp với <li>.",
+      "b": "<ol> kết hợp với <li>.",
+      "c": "<dl> kết hợp với <dt>.",
+      "d": "<list> kết hợp với <item>."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 69,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Mã HTML nào sau đây là đúng để chèn ảnh logo.png với chiều rộng 200 pixel?",
+    "options": {
+      "a": "<img src=\"logo.png\" width=\"200\">",
+      "b": "<img href=\"logo.png\" size=\"200\">",
+      "c": "<image src=\"logo.png\" width=\"200\">",
+      "d": "<img source=\"logo.png\" width=\"200\">"
+    },
+    "answer": "a"
+  },
+  {
+    "id": 70,
+    "topic": "HTML: Định dạng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Khi bạn muốn tiêu đề của bài viết là to nhất và nổi bật nhất, bạn nên sử dụng thẻ nào?",
+    "options": {
+      "a": "<h6>",
+      "b": "<h4>",
+      "c": "<h2>",
+      "d": "<h1>"
+    },
+    "answer": "d"
+  },
+  {
+    "id": 71,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Biết",
+    "question": "Thẻ nào sau đây được sử dụng để bắt đầu khai báo một bảng trong HTML?",
+    "options": {
+      "a": "<list>",
+      "b": "<table>",
+      "c": "<tab>",
+      "d": "<row>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 72,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Biết",
+    "question": "Để tạo một hàng trong bảng, ta sử dụng cặp thẻ nào?",
+    "options": {
+      "a": "<td> ... </td>",
+      "b": "<th> ... </th>",
+      "c": "<tr> ... </tr>",
+      "d": "<row> ... </row>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 73,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Biết",
+    "question": "Trong một danh sách, mỗi mục con (item) được đặt trong cặp thẻ nào?",
+    "options": {
+      "a": "<ul>",
+      "b": "<ol>",
+      "c": "<li>",
+      "d": "<list>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 74,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Hiểu",
+    "question": "Thuộc tính border trong thẻ <table> có tác dụng gì?",
+    "options": {
+      "a": "Quy định màu nền cho bảng.",
+      "b": "Quy định độ rộng của các cột.",
+      "c": "Quy định độ dày của đường viền bảng.",
+      "d": "Căn giữa dữ liệu trong các ô."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 75,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Hiểu",
+    "question": "Sự khác biệt giữa thẻ <th> và thẻ <td> là gì?",
+    "options": {
+      "a": "<th> dùng cho hàng, <td> dùng cho cột.",
+      "b": "<th> dùng cho ô tiêu đề (thường in đậm và căn giữa), <td> dùng cho ô dữ liệu thông thường.",
+      "c": "<th> chỉ dùng được trong thẻ <thead>.",
+      "d": "<td> có kích thước lớn hơn <th>."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 76,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Hiểu",
+    "question": "Để tạo một danh sách không có thứ tự (hiển thị bằng các dấu chấm đầu dòng), bạn phải sử dụng cặp thẻ nào bao ngoài?",
+    "options": {
+      "a": "<ol> ... </ol>",
+      "b": "<ul> ... </ul>",
+      "c": "<li> ... </li>",
+      "d": "<dl> ... </dl>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 77,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Hiểu",
+    "question": "Để thay đổi kiểu đánh số của danh sách có thứ tự (ví dụ chuyển từ 1, 2, 3 sang a, b, c), ta sử dụng thuộc tính nào trong thẻ <ol>?",
+    "options": {
+      "a": "style",
+      "b": "type",
+      "c": "start",
+      "d": "name"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 78,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Bạn muốn tạo một bảng gồm 3 hàng và 2 cột. Tổng cộng bạn cần sử dụng bao nhiêu thẻ <tr> và bao nhiêu thẻ <td>?",
+    "options": {
+      "a": "2 thẻ <tr> và 3 thẻ <td>.",
+      "b": "3 thẻ <tr> và 2 thẻ <td>.",
+      "c": "3 thẻ <tr> và 6 thẻ <td>.",
+      "d": "2 thẻ <tr> và 6 thẻ <td>."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 79,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Đoạn mã nào sau đây tạo ra một danh sách đánh số bằng chữ cái in hoa (A, B, C...)?",
+    "options": {
+      "a": "<ul type=\"A\">",
+      "b": "<ol type=\"1\">",
+      "c": "<ol type=\"A\">",
+      "d": "<li type=\"A\">"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 80,
+    "topic": "HTML: Bảng và Danh sách",
+    "level": "Vận dụng",
+    "question": "Quan sát đoạn mã sau: <tr> <td> Cam </td> <td> 20.000đ </td> </tr>. Đoạn mã này thực hiện công việc gì?",
+    "options": {
+      "a": "Tạo một cột gồm 2 dòng dữ liệu.",
+      "b": "Tạo một hàng trong bảng gồm 2 ô dữ liệu là \"Cam\" và \"20.000đ\".",
+      "c": "Tạo tiêu đề cho một bảng hoa quả.",
+      "d": "Tạo một danh sách liệt kê giá cả."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 81,
+    "topic": "HTML: Liên kết",
+    "level": "Biết",
+    "question": "Thẻ nào sau đây được sử dụng để tạo một liên kết (siêu liên kết) trong HTML?",
+    "options": {
+      "a": "<link>",
+      "b": "<a>",
+      "c": "<href>",
+      "d": "<url>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 82,
+    "topic": "HTML: Liên kết",
+    "level": "Biết",
+    "question": "Thuộc tính nào của thẻ <a> dùng để chỉ định địa chỉ (URL) của trang web mà liên kết trỏ tới?",
+    "options": {
+      "a": "src",
+      "b": "link",
+      "c": "href",
+      "d": "target"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 83,
+    "topic": "HTML: Liên kết",
+    "level": "Biết",
+    "question": "Văn bản nằm giữa cặp thẻ <a> ... </a> được gọi là gì?",
+    "options": {
+      "a": "Địa chỉ liên kết.",
+      "b": "Văn bản hiển thị của liên kết (Anchor text).",
+      "c": "Thuộc tính liên kết.",
+      "d": "Đường dẫn tuyệt đối."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 84,
+    "topic": "HTML: Liên kết",
+    "level": "Hiểu",
+    "question": "Để khi người dùng nhấp vào liên kết, trang web mới sẽ được mở trong một thẻ (tab) mới , ta cần sử dụng thuộc tính target với giá trị nào?",
+    "options": {
+      "a": "target=\"_self\"",
+      "b": "target=\"_parent\"",
+      "c": "target=\"_blank\"",
+      "d": "target=\"_top\""
+    },
+    "answer": "c"
+  },
+  {
+    "id": 85,
+    "topic": "HTML: Liên kết",
+    "level": "Hiểu",
+    "question": "Điểm khác biệt giữa đường dẫn tuyệt đối và đường dẫn tương đối là gì?",
+    "options": {
+      "a": "Đường dẫn tuyệt đối chỉ dùng cho hình ảnh, đường dẫn tương đối dùng cho văn bản.",
+      "b": "Đường dẫn tuyệt đối chứa địa chỉ đầy đủ (bao gồm http://...), đường dẫn tương đối chỉ ra vị trí tệp dựa trên thư mục hiện hành.",
+      "c": "Đường dẫn tuyệt đối ngắn hơn đường dẫn tương đối.",
+      "d": "Trình duyệt không thể đọc được đường dẫn tương đối."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 86,
+    "topic": "HTML: Liên kết",
+    "level": "Hiểu",
+    "question": "Khi bạn di chuyển con trỏ chuột vào một liên kết trên trang web, biểu tượng con trỏ thường chuyển thành hình gì?",
+    "options": {
+      "a": "Hình mũi tên.",
+      "b": "Hình dấu cộng.",
+      "c": "Hình bàn tay chỉ ngón trỏ.",
+      "d": "Hình vòng tròn xoay."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 87,
+    "topic": "HTML: Liên kết",
+    "level": "Hiểu",
+    "question": "Thẻ liên kết <a> có thể bao quanh những phần tử nào sau đây?",
+    "options": {
+      "a": "Chỉ văn bản.",
+      "b": "Chỉ hình ảnh.",
+      "c": "Cả văn bản, hình ảnh hoặc các khối (div).",
+      "d": "Chỉ các thẻ tiêu đề <h1>."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 88,
+    "topic": "HTML: Liên kết",
+    "level": "Vận dụng",
+    "question": "Mã HTML nào sau đây là đúng để tạo một liên kết đến trang Google?",
+    "options": {
+      "a": "<a url=\"https://google.com\"> Google </a>",
+      "b": "<a href=\"https://google.com\"> Google </a>",
+      "c": "<link href=\"https://google.com\"> Google </link>",
+      "d": "<a target=\"https://google.com\"> Google </a>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 89,
+    "topic": "HTML: Liên kết",
+    "level": "Vận dụng",
+    "question": "Bạn muốn tạo một liên kết trên trang web sao cho khi nhấn vào hình ảnh anh_dep.jpg, người dùng sẽ được dẫn đến trang album.html. Cấu trúc nào sau đây là đúng?",
+    "options": {
+      "a": "<a href=\"album.html\"> <img src=\"anh_dep.jpg\"> </a>",
+      "b": "<img src=\"anh_dep.jpg\"> <a href=\"album.html\"> </a>",
+      "c": "<a src=\"anh_dep.jpg\"> album.html </a>",
+      "d": "<a href=\"anh_dep.jpg\"> <img src=\"album.html\"> </a>"
+    },
+    "answer": "a"
+  },
+  {
+    "id": 90,
+    "topic": "HTML: Liên kết",
+    "level": "Vận dụng",
+    "question": "Giả sử bạn đang ở tệp index.html và muốn liên kết đến tệp gioithieu.html nằm cùng trong một thư mục. Cách viết nào sau đây là sử dụng đường dẫn tương đối đúng nhất?",
+    "options": {
+      "a": "<a href=\"C:/Users/Documents/gioithieu.html\"> Giới thiệu </a>",
+      "b": "<a href=\"gioithieu.html\"> Giới thiệu </a>",
+      "c": "<a href=\"http://localhost/gioithieu.html\"> Giới thiệu </a>",
+      "d": "<a link=\"gioithieu.html\"> Giới thiệu </a>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 91,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Biết",
+    "question": "Thẻ nào sau đây được sử dụng để chèn một tệp âm thanh vào trang web HTML?",
+    "options": {
+      "a": "<video>",
+      "b": "<audio>",
+      "c": "<sound>",
+      "d": "<music>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 92,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Biết",
+    "question": "Để nhúng một trang web khác hoặc một bản đồ Google Maps vào trong trang web của mình, ta sử dụng thẻ nào?",
+    "options": {
+      "a": "<frame>",
+      "b": "<embed>",
+      "c": "<iframe>",
+      "d": "<object>"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 93,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Biết",
+    "question": "Thuộc tính nào trong thẻ <video> và <audio> giúp trình duyệt hiển thị các nút chức năng như Play, Pause, Âm lượng?",
+    "options": {
+      "a": "play",
+      "b": "autoplay",
+      "c": "controls",
+      "d": "loop"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 94,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Hiểu",
+    "question": "Ý nghĩa của thẻ <source> đặt bên trong thẻ <video> là gì?",
+    "options": {
+      "a": "Dùng để ghi chú cho video.",
+      "b": "Dùng để cung cấp nhiều định dạng tệp khác nhau, giúp trình duyệt chọn loại tệp phù hợp nhất để phát.",
+      "c": "Dùng để quy định kích thước hiển thị của video.",
+      "d": "Dùng để chèn phụ đề cho video."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 95,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Hiểu",
+    "question": "Thuộc tính autoplay trong thẻ <video> có tác dụng gì?",
+    "options": {
+      "a": "Tự động lặp lại video khi kết thúc.",
+      "b": "Tự động phát video ngay khi trang web được tải xong.",
+      "c": "Tự động tắt tiếng khi video phát.",
+      "d": "Tự động thay đổi kích thước video cho vừa màn hình."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 96,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Hiểu",
+    "question": "Trong thẻ <iframe>, hai thuộc tính width và height được dùng để làm gì?",
+    "options": {
+      "a": "Xác định địa chỉ của trang web được nhúng.",
+      "b": "Xác định độ phân giải của trang web nguồn.",
+      "c": "Xác định chiều rộng và chiều cao của khung hiển thị nội tuyến.",
+      "d": "Xác định khoảng cách từ khung đến lề trang web."
+    },
+    "answer": "c"
+  },
+  {
+    "id": 97,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Hiểu",
+    "question": "Tại sao khi chèn video, chúng ta nên sử dụng thuộc tính loop?",
+    "options": {
+      "a": "Để video có chất lượng hình ảnh tốt hơn.",
+      "b": "Để video tự động phát lại từ đầu sau khi kết thúc.",
+      "c": "Để video hiển thị được trên điện thoại di động.",
+      "d": "Để người dùng không thể tua video."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 98,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Vận dụng",
+    "question": "Bạn muốn chèn một video có tên intro.mp4 vào trang web, video này phải có đầy đủ nút điều khiển và tự động lặp lại. Đoạn mã nào sau đây là đúng?",
+    "options": {
+      "a": "<video src=\"intro.mp4\" controls loop></video>",
+      "b": "<video src=\"intro.mp4\" play repeat></video>",
+      "c": "<video href=\"intro.mp4\" controls loop></video>",
+      "d": "<audio src=\"intro.mp4\" controls loop></audio>"
+    },
+    "answer": "a"
+  },
+  {
+    "id": 99,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Vận dụng",
+    "question": "Khi sử dụng thẻ <iframe>, nếu bạn muốn nhúng trang web của trường có địa chỉ thptcheghevara.edu.vn, bạn phải đặt địa chỉ này vào thuộc tính nào?",
+    "options": {
+      "a": "href",
+      "b": "link",
+      "c": "src",
+      "d": "data"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 100,
+    "topic": "HTML: Đa phương tiện",
+    "level": "Vận dụng",
+    "question": "Quan sát đoạn mã sau: <audio controls> <source src=\"music.mp3\" type=\"audio/mpeg\"> Trình duyệt không hỗ trợ </audio>. Dòng chữ \"Trình duyệt không hỗ trợ\" sẽ hiển thị khi nào?",
+    "options": {
+      "a": "Luôn luôn hiển thị bên dưới trình phát nhạc.",
+      "b": "Chỉ hiển thị khi trình duyệt của người dùng quá cũ, không đọc được thẻ <audio>.",
+      "c": "Chỉ hiển thị khi tệp music.mp3 bị xóa.",
+      "d": "Hiển thị khi người dùng nhấn nút Pause."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 101,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Biết",
+    "question": "Cặp thẻ nào sau đây được sử dụng để bắt đầu và kết thúc một biểu mẫu trong HTML?",
+    "options": {
+      "a": "<input> ... </input>",
+      "b": "<form> ... </form>",
+      "c": "<select> ... </select>",
+      "d": "<label> ... </label>"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 102,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Biết",
+    "question": "Để tạo một ô nhập văn bản một dòng (như nhập Họ tên, Tài khoản), ta sử dụng thẻ input với giá trị thuộc tính type là gì?",
+    "options": {
+      "a": "type=\"password\"",
+      "b": "type=\"checkbox\"",
+      "c": "type=\"text\"",
+      "d": "type=\"button\""
+    },
+    "answer": "c"
+  },
+  {
+    "id": 103,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Biết",
+    "question": "Phần tử nào sau đây dùng để tạo một danh sách thả xuống (drop-down list) cho phép người dùng chọn một trong các phương án có sẵn?",
+    "options": {
+      "a": "<textarea>",
+      "b": "<select> và <option>",
+      "c": "<input type=\"radio\">",
+      "d": "<input type=\"file\">"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 104,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Hiểu",
+    "question": "Sự khác biệt giữa type=\"radio\" và type=\"checkbox\" trong thẻ <input> là gì?",
+    "options": {
+      "a": "radio cho phép chọn nhiều giá trị, checkbox chỉ được chọn một.",
+      "b": "radio chỉ cho phép chọn một giá trị duy nhất trong nhóm, checkbox cho phép chọn một hoặc nhiều giá trị.",
+      "c": "radio dùng để nhập mật khẩu, checkbox dùng để nhập văn bản.",
+      "d": "radio tạo nút bấm, checkbox tạo danh sách thả xuống."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 105,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Hiểu",
+    "question": "Trong thẻ <input>, thuộc tính value có ý nghĩa gì đối với một nút bấm (type=\"submit\" hoặc type=\"button\")?",
+    "options": {
+      "a": "Là mã định danh của nút bấm.",
+      "b": "Là nội dung văn bản sẽ hiển thị trực tiếp trên nút bấm đó.",
+      "c": "Là địa chỉ trang web mà nút bấm trỏ tới.",
+      "d": "Là kích thước của nút bấm."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 106,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Hiểu",
+    "question": "Thẻ <textarea> khác với thẻ <input type=\"text\"> ở điểm nào?",
+    "options": {
+      "a": "<textarea> chỉ dùng để nhập số.",
+      "b": "<textarea> cho phép nhập văn bản nhiều dòng (như ghi chú, ý kiến), còn input type=\"text\" chỉ nhập được một dòng.",
+      "c": "<textarea> tự động mã hóa văn bản thành mật khẩu.",
+      "d": "<textarea> dùng để chèn hình ảnh vào biểu mẫu."
+    },
+    "answer": "b"
+  },
+  {
+    "id": 107,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Hiểu",
+    "question": "Để tạo nút cho phép người dùng chọn tệp tin từ máy tính và tải lên máy chủ, ta sử dụng loại input nào?",
+    "options": {
+      "a": "type=\"submit\"",
+      "b": "type=\"button\"",
+      "c": "type=\"file\"",
+      "d": "type=\"hidden\""
+    },
+    "answer": "c"
+  },
+  {
+    "id": 108,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Vận dụng",
+    "question": "Bạn muốn tạo một ô nhập mật khẩu sao cho khi người dùng gõ, các ký tự sẽ hiển thị dưới dạng dấu chấm hoặc dấu sao. Bạn phải viết mã như thế nào?",
+    "options": {
+      "a": "<input type=\"text\">",
+      "b": "<input type=\"password\">",
+      "c": "<input type=\"hidden\">",
+      "d": "<input type=\"secret\">"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 109,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Vận dụng",
+    "question": "Để tạo một nút nhấn mà khi người dùng click vào, toàn bộ dữ liệu trong biểu mẫu sẽ được gửi đến máy chủ xử lý, ta sử dụng thẻ nào?",
+    "options": {
+      "a": "<input type=\"button\" value=\"Gửi\">",
+      "b": "<input type=\"submit\" value=\"Gửi\">",
+      "c": "<input type=\"reset\" value=\"Gửi\">",
+      "d": "<input type=\"file\" value=\"Gửi\">"
+    },
+    "answer": "b"
+  },
+  {
+    "id": 110,
+    "topic": "HTML: Biểu mẫu",
+    "level": "Vận dụng",
+    "question": "Quan sát đoạn mã sau: <select name=\"tinh\"> <option value=\"bt\">Bến Tre</option> <option value=\"tg\">Tiền Giang</option> </select>. Nếu người dùng chọn \"Bến Tre\", giá trị nào sẽ được gửi về máy chủ?",
+    "options": {
+      "a": "Bến Tre",
+      "b": "tinh",
+      "c": "bt",
+      "d": "option"
+    },
+    "answer": "c"
   }
-]
+    ]
