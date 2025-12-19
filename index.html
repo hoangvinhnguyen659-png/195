@@ -2,75 +2,75 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Ôn Thi Pro - Tối Ưu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hệ Thống Ôn Thi Thông Minh</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="container">
-        <div id="menu-screen" class="screen fade-in">
-            <header>
-                <h1>Hệ Thống Ôn Thi</h1>
-                <p>Chọn chế độ để bắt đầu luyện tập</p>
-            </header>
+    <div class="app-container">
+        <main id="menu-screen" class="screen active">
+            <div class="header-content">
+                <h1>Chào mừng bạn 👋</h1>
+                <p>Hãy chọn một học phần để bắt đầu</p>
+            </div>
             <div class="menu-grid">
                 <div class="menu-card" onclick="startQuiz('multiple-choice')">
-                    <div class="icon bg-blue">A</div>
-                    <h3>Trắc Nghiệm</h3>
-                    <p>4 lựa chọn (A, B, C, D)</p>
+                    <div class="card-icon blue">A</div>
+                    <div class="card-info">
+                        <h3>Trắc Nghiệm</h3>
+                        <p>Dữ liệu từ tracnghiem.json</p>
+                    </div>
                 </div>
                 <div class="menu-card" onclick="startQuiz('true-false')">
-                    <div class="icon bg-green">✓</div>
-                    <h3>Đúng / Sai</h3>
-                    <p>Xác nhận nhận định</p>
+                    <div class="card-icon green">✓</div>
+                    <div class="card-info">
+                        <h3>Đúng / Sai</h3>
+                        <p>Dữ liệu từ dungsai.json</p>
+                    </div>
                 </div>
                 <div class="menu-card" onclick="startQuiz('mixed')">
-                    <div class="icon bg-purple">∞</div>
-                    <h3>Trộn Tổng Hợp</h3>
-                    <p>Ngẫu nhiên các dạng câu</p>
+                    <div class="card-icon purple">∞</div>
+                    <div class="card-info">
+                        <h3>Đề Tổng Hợp</h3>
+                        <p>Đảo câu hỏi từ cả 2 file</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <div id="quiz-screen" class="screen hidden">
-            <div class="quiz-box">
-                <div class="quiz-header">
-                    <span id="question-counter">Câu: 0/0</span>
-                    <span id="live-score">Đúng: 0</span>
+        <main id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-stats">
+                    <span id="q-counter">Câu: 1/10</span>
+                    <span id="score-counter">Đúng: 0</span>
                 </div>
-                
                 <div class="progress-container">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-
-                <div class="question-container">
-                    <h2 id="question-text">Đang tải...</h2>
-                </div>
-
-                <div id="options-container"></div>
-
-                <div id="navigation-area" class="hidden">
-                    <button class="nav-btn" onclick="nextQuestion()">Tiếp tục (Enter) →</button>
+                    <div id="progress-bar" class="progress-bar"></div>
                 </div>
             </div>
-        </div>
+            <div class="question-box">
+                <h2 id="q-text">Đang tải câu hỏi...</h2>
+            </div>
+            <div id="options-list" class="options-list"></div>
+            <div id="footer-nav" class="footer-nav hidden">
+                <button class="next-btn" onclick="handleNext()">Tiếp tục (Enter) →</button>
+            </div>
+        </main>
 
-        <div id="result-screen" class="screen hidden">
-            <div class="result-card fade-in">
-                <div class="result-icon">🏆</div>
-                <h2>Hoàn Thành!</h2>
-                <div class="score-circle">
-                    <span id="score-number">0</span>
+        <main id="result-screen" class="screen">
+            <div class="result-card">
+                <div class="trophy-icon">🏆</div>
+                <h2>Kết Quả Tuyệt Vời!</h2>
+                <div class="score-display">
+                    <span id="res-score">0</span>
                     <small>câu đúng</small>
                 </div>
-                <p id="final-stats"></p>
-                <button class="nav-btn" onclick="restart()">Làm bài mới</button>
+                <p id="res-msg"></p>
+                <button class="primary-btn" onclick="location.reload()">Làm bài khác</button>
             </div>
-        </div>
+        </main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
