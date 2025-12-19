@@ -11,19 +11,17 @@
 
     <div class="container">
         <div id="loading-screen">
-            <h1 class="logo-title">Trắc Nghiệm Pro</h1>
-            <p class="subtitle">Chọn chế độ để bắt đầu</p>
+            <h1 class="logo-title">TRẮC NGHIỆM</h1>
+            <p class="subtitle">Chọn chế độ và bắt đầu</p>
             
             <div id="setup-options">
                 <div class="mode-selection">
                     <label class="mode-card active" data-mode="mcq">
-                        <span class="icon">📝</span>
-                        <span>Trắc nghiệm</span>
+                        <span class="mode-label">TRẮC NGHIỆM</span>
                         <input type="radio" name="quizMode" value="mcq" checked hidden>
                     </label>
                     <label class="mode-card" data-mode="tf">
-                        <span class="icon">⚖️</span>
-                        <span>Đúng / Sai</span>
+                        <span class="mode-label">ĐÚNG / SAI</span>
                         <input type="radio" name="quizMode" value="tf" hidden>
                     </label>
                 </div>
@@ -36,7 +34,7 @@
                     </label>
                 </div>
 
-                <button class="btn-primary btn-lg" id="start-btn">Bắt đầu làm bài</button>
+                <button class="btn-primary btn-lg" id="start-btn">BẮT ĐẦU</button>
                 <p id="status-text"></p>
             </div>
         </div>
@@ -44,40 +42,37 @@
         <div id="quiz-screen" class="hidden">
             <div class="quiz-header">
                 <div class="header-top">
-                    <button id="home-btn-ingame" class="btn-icon" title="Về Menu">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <button id="home-btn-ingame" class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
                     </button>
                     <div class="progress-container"><div id="progress-bar"></div></div>
                 </div>
-                
                 <div class="stats-bar">
-                    <span class="badge">Câu: <span id="current-count">0</span>/<span id="total-count">0</span></span>
-                    <span class="badge score-badge">Điểm: <span id="live-score">0</span></span>
+                    <span>CÂU: <span id="current-count">0</span>/<span id="total-count">0</span></span>
+                    <span class="score-badge">ĐÚNG: <span id="live-score">0</span></span>
                 </div>
             </div>
             
             <div class="quiz-body">
-                <div class="question-box">
-                    <h2 id="question-text">Đang tải...</h2>
+                <div class="question-container">
+                    <h2 id="question-text">Đang tải nội dung câu hỏi...</h2>
                 </div>
-                
-                <div id="options-container" class="options-grid"></div>
+                <div id="options-container"></div>
                 <div id="feedback-msg" class="hidden"></div>
             </div>
 
             <div class="quiz-footer">
-                <button id="submit-btn" class="btn-primary" disabled>Tiếp tục &raquo;</button>
+                <button id="submit-btn" class="btn-primary" disabled>TIẾP TỤC</button>
             </div>
         </div>
 
         <div id="result-screen" class="hidden">
-            <h2>KẾT QUẢ</h2>
+            <h2 class="result-title">HOÀN THÀNH</h2>
             <div id="final-score">0/0</div>
-            <p class="subtitle" id="result-message">Hoàn thành!</p>
-            
+            <p id="result-message"></p>
             <div class="result-actions">
-                <button class="btn-secondary" id="home-btn-result">⬅ Về Menu</button>
-                <button class="btn-primary" onclick="location.reload()">🔄 Làm lại</button>
+                <button class="btn-secondary" id="home-btn-result">THOÁT</button>
+                <button class="btn-primary" onclick="location.reload()">LÀM LẠI</button>
             </div>
         </div>
     </div>
