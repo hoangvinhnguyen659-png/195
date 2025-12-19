@@ -9,33 +9,30 @@ let state = {
     index: 0,
     score: 0,
     isAnswered: false,
-    wrongAtThisQuestion: false
+    hasError: false
 };
 
 const dom = {
     home: document.getElementById('home-screen'),
     quiz: document.getElementById('quiz-screen'),
     result: document.getElementById('result-screen'),
-    modes: document.querySelectorAll('.mode-item'),
     btnStart: document.getElementById('btn-start'),
     btnNext: document.getElementById('btn-next'),
-    btnHome: document.getElementById('btn-home'),
-    qBox: document.getElementById('question-box'),
-    oBox: document.getElementById('options-box'),
+    qText: document.getElementById('question-text'),
+    oBox: document.getElementById('options-container'),
     progress: document.getElementById('progress-fill'),
-    idxText: document.getElementById('idx-text'),
-    totalText: document.getElementById('total-text'),
-    scoreText: document.getElementById('score-text'),
-    finalScore: document.getElementById('final-score'),
-    shuffle: document.getElementById('shuffle-check')
+    liveScore: document.getElementById('live-score'),
+    currentIdx: document.getElementById('current-idx'),
+    totalIdx: document.getElementById('total-idx'),
+    feedback: document.getElementById('feedback-msg')
 };
 
-// Chọn chế độ
-dom.modes.forEach(m => {
-    m.onclick = () => {
-        dom.modes.forEach(x => x.classList.remove('active'));
-        m.classList.add('active');
-        state.mode = m.dataset.mode;
+// Khởi tạo chế độ chơi
+document.querySelectorAll('.mode-item').forEach(el => {
+    el.onclick = () => {
+        document.querySelectorAll('.mode-item').forEach(i => i.classList.remove('active'));
+        el.classList.add('active');
+        state.mode = el.dataset.mode;
     };
 });
 
@@ -44,93 +41,97 @@ dom.btnStart.onclick = async () => {
     try {
         const res = await fetch(CONFIG[state.mode].url);
         state.data = await res.json();
-        
-        if (dom.shuffle.checked) state.data.sort(() => Math.random() - 0.5);
-
+        if (document.getElementById('shuffle-check').checked) {
+            state.data.sort(() => Math.random() - 0.5);
+        }
         state.index = 0;
         state.score = 0;
         dom.home.classList.add('hidden');
         dom.quiz.classList.remove('hidden');
-        loadQuestion();
+        renderQuestion();
     } catch (e) {
-        alert("Không tải được dữ liệu!");
+        alert("Lỗi tải dữ liệu. Vui lòng kiểm tra file JSON.");
     }
 };
 
-function loadQuestion() {
+function renderQuestion() {
     state.isAnswered = false;
-    state.wrongAtThisQuestion = false;
+    state.hasError = false;
     dom.btnNext.disabled = true;
+    dom.feedback.classList.add('hidden');
     
     const q = state.data[state.index];
-    dom.idxText.innerText = state.index + 1;
-    dom.totalText.innerText = state.data.length;
-    dom.scoreText.innerText = state.score;
+    dom.currentIdx.innerText = state.index + 1;
+    dom.totalIdx.innerText = state.data.length;
+    dom.liveScore.innerText = state.score;
     dom.progress.style.width = `${(state.index / state.data.length) * 100}%`;
     
-    dom.qBox.innerText = q.question;
+    dom.qText.innerText = q.question;
     dom.oBox.innerHTML = '';
     
     if (state.mode === 'mcq') {
         dom.oBox.className = '';
         ['a', 'b', 'c', 'd'].forEach(key => {
-            createBtn(q.options[key], key, q.answer);
+            if(q.options[key]) createOption(q.options[key], key, q.answer);
         });
     } else {
-        dom.oBox.className = 'tf-grid';
-        createBtn("ĐÚNG", true, q.answer);
-        createBtn("SAI", false, q.answer);
+        dom.oBox.className = 'tf-mode';
+        createOption("ĐÚNG", true, q.answer);
+        createOption("SAI", false, q.answer);
     }
 }
 
-function createBtn(text, value, correct) {
+function createOption(text, val, correct) {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.innerText = text;
-    btn.onclick = () => check(value, correct, btn);
+    btn.onclick = () => checkAnswer(val, correct, btn);
     dom.oBox.appendChild(btn);
 }
 
-// HÀM KIỂM TRA ĐÁP ÁN (Đã sửa lỗi Boolean)
-function check(userVal, correctVal, btn) {
+// HÀM KIỂM TRA QUAN TRỌNG NHẤT
+function checkAnswer(userVal, correctVal, btn) {
     if (state.isAnswered) return;
 
-    // Chuẩn hóa dữ liệu về String thường để so sánh chính xác tuyệt đối
+    // ÉP KIỂU VỀ STRING ĐỂ SO SÁNH (Khắc phục lỗi Boolean vs String)
     const u = String(userVal).toLowerCase().trim();
     const c = String(correctVal).toLowerCase().trim();
 
     if (u === c) {
-        // ĐÚNG
         btn.classList.add('correct');
         state.isAnswered = true;
+        if (!state.hasError) state.score++;
         
-        // Chỉ cộng điểm nếu chưa bấm sai câu này
-        if (!state.wrongAtThisQuestion) {
-            state.score++;
-        }
-
-        // Khóa các nút khác và mở nút Tiếp tục
+        // Khóa tất cả các nút
         Array.from(dom.oBox.children).forEach(b => b.disabled = true);
         dom.btnNext.disabled = false;
+        
+        showFeedback("CHÍNH XÁC!", "var(--success)");
     } else {
-        // SAI
         btn.classList.add('wrong');
         btn.disabled = true;
-        state.wrongAtThisQuestion = true;
+        state.hasError = true;
+        showFeedback("THỬ LẠI!", "var(--error)");
     }
+}
+
+function showFeedback(txt, color) {
+    dom.feedback.innerText = txt;
+    dom.feedback.style.color = color;
+    dom.feedback.classList.remove('hidden');
 }
 
 dom.btnNext.onclick = () => {
     state.index++;
-    if (state.index < state.data.length) loadQuestion();
-    else finish();
+    if (state.index < state.data.length) renderQuestion();
+    else showResult();
 };
 
-function finish() {
+function showResult() {
     dom.quiz.classList.add('hidden');
     dom.result.classList.remove('hidden');
-    dom.finalScore.innerText = `${state.score}/${state.data.length}`;
-    if (state.score / state.data.length >= 0.8) confetti({ particleCount: 100, spread: 70 });
+    document.getElementById('final-score').innerText = `${state.score}/${state.data.length}`;
+    if (state.score / state.data.length >= 0.8) confetti({ particleCount: 150, spread: 70 });
 }
 
-dom.btnHome.onclick = () => confirm("Thoát bài làm?") && location.reload();
+document.getElementById('btn-home').onclick = () => confirm("Thoát?") && location.reload();
