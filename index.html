@@ -3,76 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trắc Nghiệm Pro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Hệ Thống Trắc Nghiệm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div id="loading-screen">
-            <h1 class="logo-title">TRẮC NGHIỆM</h1>
-            <p class="subtitle">Chọn chế độ và bắt đầu</p>
+    <div class="app-container">
+        <div id="home-screen" class="screen">
+            <h1 class="brand">THI TRẮC NGHIỆM</h1>
+            <p class="desc">Chọn chế độ để bắt đầu luyện tập</p>
             
-            <div id="setup-options">
-                <div class="mode-selection">
-                    <label class="mode-card active" data-mode="mcq">
-                        <span class="mode-label">TRẮC NGHIỆM</span>
-                        <input type="radio" name="quizMode" value="mcq" checked hidden>
-                    </label>
-                    <label class="mode-card" data-mode="tf">
-                        <span class="mode-label">ĐÚNG / SAI</span>
-                        <input type="radio" name="quizMode" value="tf" hidden>
-                    </label>
-                </div>
-
-                <div class="settings-group">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="shuffle-checkbox">
-                        <span class="slider"></span>
-                        <span class="label-text">Trộn câu hỏi</span>
-                    </label>
-                </div>
-
-                <button class="btn-primary btn-lg" id="start-btn">BẮT ĐẦU</button>
-                <p id="status-text"></p>
+            <div class="mode-grid">
+                <div class="mode-item active" data-mode="mcq">TRẮC NGHIỆM</div>
+                <div class="mode-item" data-mode="tf">ĐÚNG / SAI</div>
             </div>
+
+            <div class="option-row">
+                <label class="switch-container">
+                    <input type="checkbox" id="shuffle-check">
+                    <span class="switch-slider"></span>
+                    <span class="switch-label">Xáo trộn câu hỏi</span>
+                </label>
+            </div>
+
+            <button id="btn-start" class="btn-main">BẮT ĐẦU NGAY</button>
         </div>
 
-        <div id="quiz-screen" class="hidden">
+        <div id="quiz-screen" class="screen hidden">
             <div class="quiz-header">
-                <div class="header-top">
-                    <button id="home-btn-ingame" class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <div class="top-nav">
+                    <button id="btn-home" class="btn-back">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                     </button>
-                    <div class="progress-container"><div id="progress-bar"></div></div>
+                    <div class="progress-wrapper">
+                        <div id="progress-fill"></div>
+                    </div>
                 </div>
-                <div class="stats-bar">
-                    <span>CÂU: <span id="current-count">0</span>/<span id="total-count">0</span></span>
-                    <span class="score-badge">ĐÚNG: <span id="live-score">0</span></span>
+                <div class="status-bar">
+                    <span>CÂU <span id="idx-text">0</span>/<span id="total-text">0</span></span>
+                    <span class="score-text">ĐÚNG: <span id="score-text">0</span></span>
                 </div>
             </div>
-            
-            <div class="quiz-body">
-                <div class="question-container">
-                    <h2 id="question-text">Đang tải nội dung câu hỏi...</h2>
-                </div>
-                <div id="options-container"></div>
-                <div id="feedback-msg" class="hidden"></div>
+
+            <div class="quiz-content">
+                <div id="question-box"></div>
+                <div id="options-box"></div>
             </div>
 
             <div class="quiz-footer">
-                <button id="submit-btn" class="btn-primary" disabled>TIẾP TỤC</button>
+                <button id="btn-next" class="btn-main" disabled>TIẾP TỤC</button>
             </div>
         </div>
 
-        <div id="result-screen" class="hidden">
-            <h2 class="result-title">HOÀN THÀNH</h2>
-            <div id="final-score">0/0</div>
-            <p id="result-message"></p>
-            <div class="result-actions">
-                <button class="btn-secondary" id="home-btn-result">THOÁT</button>
-                <button class="btn-primary" onclick="location.reload()">LÀM LẠI</button>
+        <div id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <h2 id="result-title">HOÀN THÀNH</h2>
+                <div id="final-score">0/0</div>
+                <p id="result-desc"></p>
+                <div class="result-btns">
+                    <button class="btn-alt" onclick="location.reload()">THOÁT</button>
+                    <button class="btn-main" onclick="location.reload()">LÀM LẠI</button>
+                </div>
             </div>
         </div>
     </div>
