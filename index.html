@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Trắc Nghiệm Thông Minh</title>
+    <title>Hệ Thống Ôn Thi Pro - Tối Ưu</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
-        <div id="menu-screen">
+        <div id="menu-screen" class="screen fade-in">
             <header>
                 <h1>Hệ Thống Ôn Thi</h1>
-                <p>Vui lòng chọn một chế độ để bắt đầu</p>
+                <p>Chọn chế độ để bắt đầu luyện tập</p>
             </header>
             <div class="menu-grid">
                 <div class="menu-card" onclick="startQuiz('multiple-choice')">
                     <div class="icon bg-blue">A</div>
                     <h3>Trắc Nghiệm</h3>
-                    <p>Lấy dữ liệu từ file trac-nghiem.json</p>
+                    <p>4 lựa chọn (A, B, C, D)</p>
                 </div>
                 <div class="menu-card" onclick="startQuiz('true-false')">
                     <div class="icon bg-green">✓</div>
                     <h3>Đúng / Sai</h3>
-                    <p>Lấy dữ liệu từ file dung-sai.json</p>
+                    <p>Xác nhận nhận định</p>
                 </div>
                 <div class="menu-card" onclick="startQuiz('mixed')">
                     <div class="icon bg-purple">∞</div>
-                    <h3>Trộn Câu Hỏi</h3>
-                    <p>Kết hợp và xáo trộn cả 2 loại câu hỏi</p>
+                    <h3>Trộn Tổng Hợp</h3>
+                    <p>Ngẫu nhiên các dạng câu</p>
                 </div>
             </div>
         </div>
 
-        <div id="quiz-screen" class="hidden">
+        <div id="quiz-screen" class="screen hidden">
             <div class="quiz-box">
-                <div class="quiz-header-info">
-                    <span id="question-counter">Câu hỏi: 0/0</span>
+                <div class="quiz-header">
+                    <span id="question-counter">Câu: 0/0</span>
                     <span id="live-score">Đúng: 0</span>
                 </div>
                 
@@ -44,25 +45,28 @@
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
 
-                <h2 id="question-text">Đang tải câu hỏi...</h2>
+                <div class="question-container">
+                    <h2 id="question-text">Đang tải...</h2>
+                </div>
+
                 <div id="options-container"></div>
 
                 <div id="navigation-area" class="hidden">
-                    <button class="nav-btn" onclick="nextQuestion()">Tiếp tục →</button>
+                    <button class="nav-btn" onclick="nextQuestion()">Tiếp tục (Enter) →</button>
                 </div>
             </div>
         </div>
 
-        <div id="result-screen" class="hidden">
-            <div class="result-card">
+        <div id="result-screen" class="screen hidden">
+            <div class="result-card fade-in">
                 <div class="result-icon">🏆</div>
-                <h2>Kết Quả Bài Thi</h2>
+                <h2>Hoàn Thành!</h2>
                 <div class="score-circle">
                     <span id="score-number">0</span>
                     <small>câu đúng</small>
                 </div>
                 <p id="final-stats"></p>
-                <button class="nav-btn" onclick="location.reload()">Làm lại từ đầu</button>
+                <button class="nav-btn" onclick="restart()">Làm bài mới</button>
             </div>
         </div>
     </div>
