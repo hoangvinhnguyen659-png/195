@@ -1,80 +1,100 @@
-// --- 1. CONFIG & STATE ---
+// CONFIG & STATE
 const CONFIG = {
-    mcq: { url: 'questions.json', label: 'Trắc nghiệm' },
-    tf:  { url: 'dungsai.json', label: 'Đúng Sai' }
+    mcq: { url: 'questions.json' },
+    tf:  { url: 'dungsai.json' }
 };
 
 let state = {
     quizData: [],
-    currentMode: 'mcq', // 'mcq' hoặc 'tf'
+    currentMode: 'mcq',
     currentIndex: 0,
     score: 0,
-    wrongAnswers: [],
-    isAnswered: false
+    isSolved: false,      // Đã tìm ra đáp án đúng chưa?
+    hasClickedWrong: false // Đã từng bấm sai ở câu này chưa? (để tính điểm)
 };
 
-// --- 2. DOM ELEMENTS ---
-const elements = {
+// DOM ELEMENTS
+const els = {
     loadingScreen: document.getElementById('loading-screen'),
     quizScreen: document.getElementById('quiz-screen'),
     resultScreen: document.getElementById('result-screen'),
-    setupOptions: document.getElementById('setup-options'),
-    statusText: document.getElementById('status-text'),
-    modeCards: document.querySelectorAll('.mode-card'),
-    modeInputs: document.querySelectorAll('input[name="quizMode"]'),
-    shuffleCheck: document.getElementById('shuffle-checkbox'),
     startBtn: document.getElementById('start-btn'),
+    modeCards: document.querySelectorAll('.mode-card'),
+    shuffleCheck: document.getElementById('shuffle-checkbox'),
+    statusText: document.getElementById('status-text'),
     
-    // Quiz View
+    questionText: document.getElementById('question-text'),
+    optionsContainer: document.getElementById('options-container'),
+    submitBtn: document.getElementById('submit-btn'),
     progressBar: document.getElementById('progress-bar'),
     currentCount: document.getElementById('current-count'),
     totalCount: document.getElementById('total-count'),
     liveScore: document.getElementById('live-score'),
-    questionText: document.getElementById('question-text'),
-    optionsContainer: document.getElementById('options-container'),
-    submitBtn: document.getElementById('submit-btn'),
-
-    // Result View
+    feedbackMsg: document.getElementById('feedback-msg'),
+    
+    homeBtnIngame: document.getElementById('home-btn-ingame'),
+    homeBtnResult: document.getElementById('home-btn-result'),
     finalScore: document.getElementById('final-score'),
-    reviewContainer: document.getElementById('review-container')
+    resultMsg: document.getElementById('result-message')
 };
 
-// --- 3. EVENT LISTENERS ---
+// --- EVENT LISTENERS ---
 
-// Chuyển đổi UI khi chọn Mode
-elements.modeCards.forEach(card => {
+// 1. Chọn chế độ (Trắc nghiệm / Đúng Sai)
+els.modeCards.forEach(card => {
     card.addEventListener('click', () => {
-        elements.modeCards.forEach(c => c.classList.remove('active'));
+        els.modeCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
-        const input = card.querySelector('input');
-        input.checked = true;
-        state.currentMode = input.value;
+        card.querySelector('input').checked = true;
+        state.currentMode = card.dataset.mode;
     });
 });
 
-// Nút Bắt đầu
-elements.startBtn.addEventListener('click', async () => {
-    elements.startBtn.disabled = true;
-    elements.statusText.innerText = "Đang tải dữ liệu...";
+// 2. Nút Bắt đầu
+els.startBtn.addEventListener('click', async () => {
+    els.startBtn.disabled = true;
+    els.statusText.innerText = "Đang tải dữ liệu...";
     
-    const success = await loadData(state.currentMode);
-    
-    if (success) {
-        // Trộn câu hỏi nếu cần
-        if (elements.shuffleCheck.checked) {
+    try {
+        const res = await fetch(CONFIG[state.currentMode].url);
+        if (!res.ok) throw new Error("File not found");
+        state.quizData = await res.json();
+        
+        // Trộn câu hỏi (Áp dụng cho cả 2 chế độ)
+        if (els.shuffleCheck.checked) {
             state.quizData.sort(() => Math.random() - 0.5);
         }
-        
-        elements.loadingScreen.classList.add('hidden');
-        elements.quizScreen.classList.remove('hidden');
+
+        // Reset trạng thái
+        state.currentIndex = 0;
+        state.score = 0;
+        els.loadingScreen.classList.add('hidden');
+        els.quizScreen.classList.remove('hidden');
         renderQuiz();
-    } else {
-        elements.startBtn.disabled = false;
+        
+    } catch (err) {
+        console.error(err);
+        els.statusText.innerText = "Lỗi: Không tìm thấy file dữ liệu!";
+        els.statusText.style.color = "red";
+    } finally {
+        els.startBtn.disabled = false;
     }
 });
 
-// Nút Tiếp tục
-elements.submitBtn.addEventListener('click', () => {
+// 3. Logic Nút Home
+const returnToHome = () => {
+    if(confirm("Về menu chính? Tiến trình hiện tại sẽ mất.")){
+        els.quizScreen.classList.add('hidden');
+        els.resultScreen.classList.add('hidden');
+        els.loadingScreen.classList.remove('hidden');
+        els.statusText.innerText = "";
+    }
+};
+els.homeBtnIngame.addEventListener('click', returnToHome);
+els.homeBtnResult.addEventListener('click', () => location.reload()); // Về menu sạch sẽ bằng reload
+
+// 4. Nút Tiếp tục
+els.submitBtn.addEventListener('click', () => {
     state.currentIndex++;
     if (state.currentIndex < state.quizData.length) {
         renderQuiz();
@@ -83,181 +103,124 @@ elements.submitBtn.addEventListener('click', () => {
     }
 });
 
-// --- 4. CORE FUNCTIONS ---
+// --- CORE FUNCTIONS ---
 
-// Tải dữ liệu từ JSON
-async function loadData(mode) {
-    try {
-        const url = CONFIG[mode].url;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
-        state.quizData = await res.json();
-        return true;
-    } catch (err) {
-        console.error(err);
-        elements.statusText.innerText = `Lỗi: Không thể tải file ${CONFIG[mode].url}. Hãy kiểm tra lại!`;
-        elements.statusText.style.color = "var(--error)";
-        return false;
-    }
-}
-
-// Render câu hỏi (Controller chính)
 function renderQuiz() {
-    resetStateForNewQuestion();
+    // Reset state cho câu mới
+    state.isSolved = false;
+    state.hasClickedWrong = false;
+    els.submitBtn.disabled = true;
+    els.feedbackMsg.innerText = "";
+    els.feedbackMsg.classList.add('hidden');
+
     const currentQ = state.quizData[state.currentIndex];
     
-    // Cập nhật thông tin header
-    elements.currentCount.innerText = state.currentIndex + 1;
-    elements.totalCount.innerText = state.quizData.length;
-    elements.liveScore.innerText = state.score;
-    const progress = ((state.currentIndex) / state.quizData.length) * 100;
-    elements.progressBar.style.width = `${progress}%`;
-
-    // Hiển thị câu hỏi
-    elements.questionText.innerText = `Câu ${state.currentIndex + 1}: ${currentQ.question}`;
-
-    // Xóa đáp án cũ
-    elements.optionsContainer.innerHTML = '';
-    elements.optionsContainer.className = 'options-grid'; // Reset class
-
-    // Render theo mode
-    if (state.currentMode === 'mcq') {
-        renderMCQOptions(currentQ);
-    } else if (state.currentMode === 'tf') {
-        renderTFOptions(currentQ);
-    }
-}
-
-// 4.1 Render Trắc nghiệm (4 đáp án)
-function renderMCQOptions(data) {
-    const keys = ['a', 'b', 'c', 'd'];
-    keys.forEach(key => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = `<span style="font-weight:800; margin-right:10px; color:var(--primary)">${key.toUpperCase()}.</span> ${data.options[key]}`;
-        btn.dataset.key = key;
-        btn.onclick = () => checkAnswer(key, data.answer, btn);
-        elements.optionsContainer.appendChild(btn);
-    });
-}
-
-// 4.2 Render Đúng/Sai (2 nút to)
-function renderTFOptions(data) {
-    elements.optionsContainer.classList.add('tf-mode'); // Thêm class để CSS chia 2 cột
+    // Update Stats
+    els.currentCount.innerText = state.currentIndex + 1;
+    els.totalCount.innerText = state.quizData.length;
+    els.liveScore.innerText = state.score;
+    els.progressBar.style.width = `${(state.currentIndex / state.quizData.length) * 100}%`;
     
-    const options = [
-        { label: "ĐÚNG", value: true, emoji: "✅" },
-        { label: "SAI", value: false, emoji: "❌" }
-    ];
+    // Render Question
+    els.questionText.innerText = `Câu ${state.currentIndex + 1}: ${currentQ.question}`;
+    els.optionsContainer.innerHTML = '';
+    
+    // Setup Grid CSS Class
+    els.optionsContainer.className = state.currentMode === 'tf' ? 'options-grid tf-mode' : 'options-grid';
 
-    options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn tf-btn';
-        btn.dataset.value = opt.value; // Lưu giá trị true/false vào data attribute
-        btn.innerHTML = `<div style="font-size:1.5rem; margin-bottom:5px;">${opt.emoji}</div>${opt.label}`;
-        
-        btn.onclick = () => checkAnswer(opt.value, data.answer, btn);
-        elements.optionsContainer.appendChild(btn);
+    if (state.currentMode === 'mcq') renderMCQ(currentQ);
+    else renderTF(currentQ);
+}
+
+// Render 4 đáp án
+function renderMCQ(data) {
+    const labels = ['A', 'B', 'C', 'D'];
+    ['a', 'b', 'c', 'd'].forEach((key, index) => {
+        createOptionBtn(
+            `<span style="color:var(--primary); font-weight:800; margin-right:8px">${labels[index]}.</span> ${data.options[key]}`, 
+            key, 
+            data.answer,
+            'mcq-btn'
+        );
     });
 }
 
-// 5. XỬ LÝ CHECK ĐÁP ÁN (Dùng chung cho cả 2 mode)
-function checkAnswer(userChoice, correctChoice, btnElement) {
-    if (state.isAnswered) return; // Chặn click nhiều lần
-    state.isAnswered = true;
+// Render Đúng / Sai (Chữ to, không icon)
+function renderTF(data) {
+    createOptionBtn("ĐÚNG", true, data.answer, 'tf-btn');
+    createOptionBtn("SAI", false, data.answer, 'tf-btn');
+}
 
-    // Logic so sánh: 
-    // Với MCQ: userChoice là 'a', correctChoice là 'a'
-    // Với TF: userChoice là true (boolean), correctChoice là true (boolean)
-    const isCorrect = userChoice === correctChoice;
-    const allButtons = elements.optionsContainer.querySelectorAll('.option-btn');
+function createOptionBtn(htmlContent, value, correctVal, extraClass = '') {
+    const btn = document.createElement('button');
+    btn.className = `option-btn ${extraClass}`;
+    btn.innerHTML = htmlContent;
+    
+    // Lưu giá trị vào element để check sau này
+    btn.dataset.value = value;
+    
+    btn.onclick = () => checkAnswer(value, correctVal, btn);
+    els.optionsContainer.appendChild(btn);
+}
 
+function checkAnswer(userVal, correctVal, btn) {
+    if (state.isSolved) return; // Nếu đã chọn đúng rồi thì không làm gì nữa (tránh spam)
+
+    const isCorrect = String(userVal) === String(correctVal); // So sánh string để an toàn cho cả boolean/text
+    
     if (isCorrect) {
-        state.score++;
-        btnElement.classList.add('correct');
-        elements.liveScore.innerText = state.score;
-    } else {
-        btnElement.classList.add('wrong');
+        // --- TRƯỜNG HỢP CHỌN ĐÚNG ---
+        btn.classList.add('correct');
+        state.isSolved = true;
         
-        // Tìm và highlight đáp án đúng
-        allButtons.forEach(btn => {
-            // Logic tìm đáp án đúng cho MCQ
-            if (state.currentMode === 'mcq' && btn.dataset.key === correctChoice) {
-                btn.classList.add('correct');
-            }
-            // Logic tìm đáp án đúng cho TF
-            if (state.currentMode === 'tf') {
-                // Chuyển đổi dataset.value từ string "true"/"false" sang boolean để so sánh
-                const btnValue = btn.dataset.value === 'true'; 
-                if (btnValue === correctChoice) btn.classList.add('correct');
-            }
-        });
+        // Chỉ cộng điểm nếu chưa từng chọn sai ở câu này
+        if (!state.hasClickedWrong) {
+            state.score++;
+            els.liveScore.innerText = state.score;
+            showFeedback("Chính xác! 🎉", "green");
+        } else {
+            showFeedback("Đúng rồi! (Nhưng không được cộng điểm do chọn lại)", "orange");
+        }
 
-        // Lưu câu sai để review
-        const currentQ = state.quizData[state.currentIndex];
-        saveWrongAnswer(currentQ, userChoice, correctChoice);
-    }
+        // Khóa tất cả các nút
+        Array.from(els.optionsContainer.children).forEach(b => b.disabled = true);
+        
+        // Mở khóa nút Tiếp tục và focus vào nó
+        els.submitBtn.disabled = false;
+        els.submitBtn.focus();
 
-    // Khóa tất cả các nút
-    allButtons.forEach(btn => btn.disabled = true);
-    elements.submitBtn.disabled = false;
-    elements.submitBtn.focus(); // Focus vào nút tiếp tục để user nhấn Space/Enter
-}
-
-function saveWrongAnswer(questionData, userVal, correctVal) {
-    let userText, correctText;
-
-    if (state.currentMode === 'mcq') {
-        userText = questionData.options[userVal];
-        correctText = questionData.options[correctVal];
     } else {
-        userText = userVal ? "Đúng" : "Sai";
-        correctText = correctVal ? "Đúng" : "Sai";
+        // --- TRƯỜNG HỢP CHỌN SAI ---
+        btn.classList.add('wrong');
+        btn.disabled = true; // Khóa nút sai này lại
+        state.hasClickedWrong = true; // Đánh dấu là đã sai (mất điểm câu này)
+        
+        showFeedback("Sai rồi! Hãy chọn lại.", "red");
+        // Không khóa các nút khác, cho phép người dùng chọn lại
     }
-
-    state.wrongAnswers.push({
-        q: questionData.question,
-        u: userText,
-        c: correctText,
-        explain: questionData.explain || "" // Hỗ trợ giải thích nếu JSON có
-    });
 }
 
-function resetStateForNewQuestion() {
-    state.isAnswered = false;
-    elements.submitBtn.disabled = true;
+function showFeedback(msg, color) {
+    els.feedbackMsg.innerText = msg;
+    els.feedbackMsg.style.color = color === 'green' ? 'var(--success)' : (color === 'red' ? 'var(--error)' : '#e67e22');
+    els.feedbackMsg.classList.remove('hidden');
 }
 
-// 6. KẾT THÚC
 function finishQuiz() {
-    elements.quizScreen.classList.add('hidden');
-    elements.resultScreen.classList.remove('hidden');
-    elements.progressBar.style.width = '100%';
+    els.quizScreen.classList.add('hidden');
+    els.resultScreen.classList.remove('hidden');
     
-    elements.finalScore.innerText = `${state.score}/${state.quizData.length}`;
+    els.finalScore.innerText = `${state.score}/${state.quizData.length}`;
+    els.progressBar.style.width = '100%';
 
-    // Hiệu ứng pháo hoa nếu điểm cao
-    if (state.score / state.quizData.length >= 0.7) {
-        confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
-    }
-
-    // Render danh sách câu sai
-    if (state.wrongAnswers.length > 0) {
-        elements.reviewContainer.innerHTML = state.wrongAnswers.map(item => `
-            <div class="review-item">
-                <p style="font-weight:700; margin-bottom:5px">${item.q}</p>
-                <div style="font-size:0.9rem">
-                    <p style="color:var(--error)">✖ Bạn chọn: ${item.u}</p>
-                    <p style="color:var(--success)">✔ Đáp án đúng: ${item.c}</p>
-                    ${item.explain ? `<p style="color:#64748b; font-style:italic; margin-top:5px">ℹ️ ${item.explain}</p>` : ''}
-                </div>
-            </div>
-        `).join('');
+    const percent = state.score / state.quizData.length;
+    if (percent === 1) {
+        els.resultMsg.innerText = "Tuyệt đối! Xuất sắc! 🏆";
+        confetti({ particleCount: 150, spread: 80 });
+    } else if (percent >= 0.7) {
+        els.resultMsg.innerText = "Làm tốt lắm! 🎉";
+        confetti();
     } else {
-        elements.reviewContainer.innerHTML = `
-            <div style="text-align:center; padding:20px; color:var(--success); font-weight:700;">
-                Xuất sắc! Bạn trả lời đúng tất cả các câu hỏi! 🎉
-            </div>
-        `;
+        els.resultMsg.innerText = "Hãy cố gắng hơn nhé! 💪";
     }
 }
