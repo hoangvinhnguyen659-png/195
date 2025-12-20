@@ -1,60 +1,66 @@
 :root {
     --primary: #3498db; --primary-dark: #2980b9; --secondary: #9b59b6;
     --secondary-dark: #8e44ad; --success: #2ecc71; --error: #e74c3c;
-    --bg: #f0f4f8; --text: #2d3436; --radius: 24px;
+    --bg: #f0f4f8; --text: #2d3436; --radius: 14px;
 }
 
-html, body { height: 100%; overflow: hidden; margin: 0; background: var(--bg); }
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; padding: 15px; }
+html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+    font-family: 'Inter', sans-serif; background-color: var(--bg);
+    display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px;
+}
+
+#btn-home {
+    position: fixed; top: 20px; right: 20px; width: 50px; height: 50px;
+    background-color: #ffffff; border: none; border-radius: 15px;
+    z-index: 9999; display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
 
 .container {
-    background: #fff; width: 100%; max-width: 500px; height: 90vh;
-    border-radius: var(--radius); box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    display: flex; flex-direction: column; overflow: hidden; position: relative;
+    background: #fff; width: 100%; max-width: 600px; height: 90vh; 
+    border-radius: var(--radius); box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    overflow: hidden; position: relative; display: flex; flex-direction: column;
 }
 
-/* KHỐI TITLE PHONG CÁCH CỦA BẠN */
-.title-block {
-    background: linear-gradient(135deg, #ffffff, #f1f2f6);
-    padding: 30px 20px; border-radius: 20px;
-    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05), 0 10px 20px rgba(52, 152, 219, 0.1);
-    margin-bottom: 25px;
+/* KHU VỰC CUỘN CÂU HỎI */
+.quiz-scroll-area {
+    flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding-bottom: 50px;
 }
-.app-title { 
-    color: var(--primary); font-weight: 800; font-size: 2.4rem; 
-    margin: 0; letter-spacing: -1px; text-shadow: 2px 2px 0px rgba(0,0,0,0.02);
-}
-.title-underline { width: 60px; height: 6px; background: var(--primary); margin: 10px auto; border-radius: 10px; }
 
-/* HIỆU ỨNG NÚT BẤM */
-.btn-start { 
-    border: none; border-radius: 18px; padding: 20px; 
-    font-weight: 800; cursor: pointer; font-size: 1.1rem;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 8px 0px rgba(0,0,0,0.1); margin-bottom: 10px;
+.question-block {
+    padding: 25px; border-bottom: 8px solid #f0f4f8;
 }
-.btn-start:active { transform: translateY(4px); box-shadow: 0 4px 0px rgba(0,0,0,0.1); }
-.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; }
-.btn-secondary { background: linear-gradient(135deg, var(--secondary), var(--secondary-dark)); color: white; }
 
-/* CARD CÂU HỎI TRONG FEED */
-.quiz-scroll-area { flex: 1; overflow-y: auto; background: #f7f9fc; padding-top: 15px; }
-.question-card {
-    background: #fff; margin: 0 15px 20px 15px; padding: 25px;
-    border-radius: var(--radius); box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
+.quiz-header { padding: 20px; background: white; border-bottom: 1px solid #f0f0f0; z-index: 10; }
+.progress-bg { background-color: #edf2f7; height: 10px; border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
+#progress-bar { background: linear-gradient(90deg, var(--primary), var(--success)); height: 100%; width: 0%; transition: width 0.4s ease; }
+.stats-bar { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 800; color: #7f8c8d; }
 
 .option-item {
-    border: 2px solid #e2e8f0; border-radius: 16px; padding: 18px;
-    margin-bottom: 12px; cursor: pointer; transition: all 0.2s ease;
-    background: #fff; display: flex; align-items: center; font-weight: 700;
+    border: 2px solid #e2e8f0; border-radius: var(--radius); padding: 16px; 
+    margin-bottom: 12px; cursor: pointer; display: flex; align-items: center; 
+    background-color: #fff; transition: 0.2s; position: relative;
 }
-.option-item.correct { background: #dff6dd !important; border-color: var(--success) !important; color: #2d5a27; }
-.option-item.wrong { background: #fde8e8 !important; border-color: var(--error) !important; color: #8b1e1e; }
-.option-item.dimmed { opacity: 0.3; }
 
-/* PROGRESS BAR */
-.progress-bg { background: #edf2f7; height: 12px; border-radius: 20px; margin-bottom: 15px; overflow: hidden; }
-#progress-bar { background: linear-gradient(90deg, var(--primary), var(--success)); height: 100%; transition: width 0.5s ease; }
+.option-item input { margin-right: 15px; pointer-events: none; }
+.option-item.correct { background-color: #defadb !important; border-color: var(--success) !important; color: #1e7e34; font-weight: 700; }
+.option-item.wrong { background-color: #fff5f5 !important; border-color: var(--error) !important; color: #c82333; }
+.option-item.dimmed { opacity: 0.35; filter: grayscale(0.7); }
+.option-item.locked { pointer-events: none; }
+
+.app-title { color: var(--primary); font-weight: 800; font-size: 2rem; text-align: center; }
+.btn-start { border: none; border-radius: 10px; padding: 15px; font-weight: 800; cursor: pointer; transition: 0.2s; width: 100%; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { background: var(--secondary); color: white; }
 .hidden { display: none !important; }
+
+/* Toggle Switch */
+.toggle-switch { display: inline-flex; align-items: center; cursor: pointer; margin-bottom: 20px; }
+.slider { position: relative; width: 40px; height: 20px; background-color: #ccc; border-radius: 20px; transition: .4s; margin-right: 10px; }
+.slider:before { content: ""; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: .4s; }
+input:checked + .slider { background-color: var(--primary); }
+input:checked + .slider:before { transform: translateX(20px); }
