@@ -185,3 +185,21 @@ input:checked + .slider:before { transform: translateX(20px); }
     border-radius: 8px;
     display: block;
     }
+/* Áp dụng làm mờ cho cả Trắc nghiệm (.completed) và Đúng/Sai (.sub-completed) */
+.completed .option-item:not(.correct),
+.sub-completed .option-item:not(.correct) {
+    opacity: 0.15 !important;
+    filter: grayscale(1) blur(0.5px);
+    transform: scale(0.92);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+/* Làm nổi bật nút đúng */
+.completed .option-item.correct,
+.sub-completed .option-item.correct {
+    opacity: 1 !important;
+    transform: scale(1.05);
+    border-color: var(--success) !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+}
