@@ -185,3 +185,41 @@ input:checked + .slider:before { transform: translateX(20px); }
     border-radius: 8px;
     display: block;
     }
+/* Trắc nghiệm A B C D */
+.option-item-new {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.label-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.correct-choice { background-color: #d4edda; border-color: #28a745; }
+.wrong-choice { background-color: #f8d7da; border-color: #dc3545; }
+
+/* Đúng Sai rows */
+.sub-q-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.tf-group { display: flex; gap: 5px; }
+.btn-tf { padding: 5px 15px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; }
+.tf-correct { background-color: #28a745; color: white; border-color: #28a745; }
+.tf-wrong { background-color: #dc3545; color: white; border-color: #dc3545; }
