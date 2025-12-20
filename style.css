@@ -37,64 +37,56 @@ body {
     padding: 15px;
 }
 
-/* NÚT HOME VẼ NGÔI NHÀ CHUẨN */
+/* NÚT HOME THIẾT KẾ MỚI SVG */
 #btn-home {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 50%;
+    border: none;
+    border-radius: 15px;
     cursor: pointer;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    color: #333;
+    transition: all 0.2s ease;
 }
 
-.house-shape {
-    width: 18px;
-    height: 14px;
-    background-color: #333;
-    position: relative;
-    margin-top: 8px;
-}
-
-.house-shape::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -2px;
-    width: 0;
-    height: 0;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-bottom: 10px solid #333;
-}
+#btn-home:active { transform: scale(0.9); }
 
 /* BẢNG CÂU HỎI (CONTAINER) */
 .container {
     background: #fff; 
     width: 100%; 
     max-width: 600px;
-    max-height: 85vh;
+    height: 85vh; /* Cố định chiều cao để tạo vùng cuộn */
     border-radius: var(--radius);
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     overflow: hidden;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Chia Header - Body - Footer */
     animation: fadeIn 0.5s ease-out;
 }
 
+/* VÙNG CUỘN CÂU HỎI KHI DÀI */
 .quiz-scroll-area {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
+}
+
+/* FOOTER CỐ ĐỊNH CHỨA NÚT TIẾP TỤC */
+.quiz-footer {
+    padding: 15px 20px 25px;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
 }
 
 .option-item.dimmed { opacity: 0.35; filter: grayscale(0.7); }
@@ -108,7 +100,7 @@ body {
 .hidden { display: none !important; }
 
 #loading-screen { padding: 40px; text-align: center; }
-.app-title { color: var(--primary); font-weight: 800; margin-bottom: 10px; }
+.app-title { color: var(--primary); font-weight: 800; margin-bottom: 10px; font-size: 2rem; }
 #status-text { margin-bottom: 20px; color: #636e72; }
 .setup-group { margin: 20px 0; padding: 15px; background-color: #f8fafc; border-radius: 10px; display: flex; justify-content: center; }
 .mode-buttons { display: flex; flex-direction: column; gap: 15px; }
@@ -140,7 +132,7 @@ body {
 .stats-bar { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 800; color: #7f8c8d; }
 
 .quiz-body { padding: 20px; }
-#question { font-size: 1.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.5; }
+#question { font-size: 1.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.5; color: #2d3436; }
 
 .option-item {
     border: 2px solid #e2e8f0; 
@@ -156,7 +148,6 @@ body {
 
 .option-item:hover:not(.locked) { border-color: var(--primary); background-color: #f0f7ff; }
 
-/* HIỆU ỨNG KHI ĐANG CHỌN ĐÁP ÁN */
 .option-item:has(input:checked) {
     border-color: var(--primary);
     background-color: #f0f7ff;
@@ -165,8 +156,6 @@ body {
 
 .option-item.correct { background-color: #defadb !important; border-color: var(--success) !important; font-weight: 700; color: #1e7e34; }
 .option-item.wrong { background-color: #fff5f5 !important; border-color: var(--error) !important; color: #c82333; }
-
-.quiz-footer { padding: 15px 20px; background-color: #f8fafc; border-top: 1px solid #eee; }
 
 #submit {
     border: none; color: white; padding: 14px; border-radius: 10px; cursor: pointer;
@@ -183,7 +172,7 @@ body {
 #final-score { font-size: 4rem; color: var(--primary); font-weight: 800; }
 
 .toggle-switch { position: relative; display: inline-flex; align-items: center; cursor: pointer; }
-.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-switch input { display: none; }
 .slider { position: relative; width: 40px; height: 20px; background-color: #ccc; border-radius: 20px; transition: .4s; margin-right: 10px; }
 .slider:before { content: ""; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: .4s; }
 input:checked + .slider { background-color: var(--primary); }
