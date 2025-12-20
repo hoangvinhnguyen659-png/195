@@ -30,7 +30,7 @@ async function init() {
             throw new Error("File missing");
         }
     } catch (e) {
-        statusText.innerText = "Kiểm tra file questions.json!";
+        statusText.innerText = "Vui lòng kiểm tra file JSON!";
         setupOptions.classList.remove('hidden');
     }
 }
@@ -50,7 +50,7 @@ async function startGame(fileName) {
             
             resetAndRender();
         } catch (err) {
-            alert("Không tìm thấy file câu hỏi!");
+            alert("Không tìm thấy file câu hỏi: " + fileName);
             location.reload();
         }
     }, 200);
@@ -62,6 +62,7 @@ function resetAndRender() {
     loadingScreen.classList.add('hidden');
     resultScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
+    
     renderAllQuestions();
     document.querySelector('.quiz-scroll-area').scrollTop = 0;
 }
@@ -79,41 +80,37 @@ function renderAllQuestions() {
         qBlock.id = `q-block-${index}`;
 
         const questionTitle = escapeHtml(data.question);
-        
-        // KIỂM TRA NẾU LÀ CÂU HỎI ĐÚNG SAI (Có subQuestions)
-        if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            let subHtml = data.subQuestions.map((sub, sIdx) => `
-                <div class="sub-item" id="sub-${index}-${sIdx}">
-                    <p><strong>${sub.label}.</strong> ${escapeHtml(sub.content)}</p>
-                    <div class="sub-buttons">
-                        <button class="btn-ds" onclick="handleDungSaiSelect(this, ${index}, ${sIdx}, 'Đúng')">Đúng</button>
-                        <button class="btn-ds" onclick="handleDungSaiSelect(this, ${index}, ${sIdx}, 'Sai')">Sai</button>
-                    </div>
-                </div>
-            `).join('');
+        let optionsHtml = "";
 
-            qBlock.innerHTML = `
-                <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
-                <div class="sub-list">${subHtml}</div>`;
+        // KIỂM TRA ĐỊNH DẠNG: Nếu có subQuestions thì render kiểu Đúng/Sai
+        if (data.subQuestions) {
+            optionsHtml = `<div class="ds-container">` + 
+                data.subQuestions.map((sub, subIdx) => `
+                <div class="sub-q-row" id="q-${index}-sub-${subIdx}">
+                    <div class="sub-q-text">${sub.label}. ${escapeHtml(sub.content)}</div>
+                    <div class="sub-q-btns">
+                        <button class="btn-ds" onclick="handleDSClick(${index}, ${subIdx}, 'Đúng')">Đúng</button>
+                        <button class="btn-ds" onclick="handleDSClick(${index}, ${subIdx}, 'Sai')">Sai</button>
+                    </div>
+                </div>`).join('') + `</div>`;
         } 
-        // NGƯỢC LẠI LÀ TRẮC NGHIỆM THƯỜNG
+        // Ngược lại render kiểu Trắc nghiệm cũ
         else {
-            let optionsHtml = "";
-            if (Array.isArray(data.options)) {
-                optionsHtml = data.options.map((opt, i) => `
-                    <div class="option-item" onclick="handleSelect(this, ${index}, '${String.fromCharCode(97 + i)}')">
-                        <input type="radio" name="q${index}"><span>${escapeHtml(opt)}</span>
-                    </div>`).join('');
-            } else {
-                optionsHtml = Object.entries(data.options).map(([key, val]) => `
-                    <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
-                        <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
-                    </div>`).join('');
-            }
-            qBlock.innerHTML = `
-                <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
-                <div class="option-list">${optionsHtml}</div>`;
+            const opts = data.options;
+            const entries = Array.isArray(opts) 
+                ? opts.map((v, i) => [String.fromCharCode(97 + i), v]) 
+                : Object.entries(opts);
+
+            optionsHtml = `<div class="option-list">` + 
+                entries.map(([key, val]) => `
+                <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                    <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
+                </div>`).join('') + `</div>`;
         }
+
+        qBlock.innerHTML = `
+            <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
+            ${optionsHtml}`;
         feed.appendChild(qBlock);
     });
 
@@ -121,43 +118,17 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-// Xử lý chọn cho câu hỏi Đúng/Sai (Ý nhỏ)
-function handleDungSaiSelect(button, qIndex, subIndex, selectedVal) {
-    const subItem = document.getElementById(`sub-${qIndex}-${subIndex}`);
-    if (subItem.classList.contains('answered')) return;
-
-    const data = userQuestions[qIndex].subQuestions[subIndex];
-    const correctVal = data.answer;
-
-    if (selectedVal === correctVal) {
-        button.classList.add('ds-correct');
-    } else {
-        button.classList.add('ds-wrong');
-    }
-
-    subItem.classList.add('answered');
-    
-    // Kiểm tra nếu cả 4 ý của câu này đã xong thì đánh dấu câu đó hoàn thành
-    const block = document.getElementById(`q-block-${qIndex}`);
-    const totalSubs = userQuestions[qIndex].subQuestions.length;
-    const answeredSubs = block.querySelectorAll('.sub-item.answered').length;
-
-    if (answeredSubs === totalSubs) {
-        block.classList.add('completed');
-        correctCount++; // Chỉ tăng tiến độ khi xong cả 1 câu lớn
-        updateProgress();
-    }
-}
-
-// Giữ nguyên handleSelect cho trắc nghiệm
+// XỬ LÝ CHẾ ĐỘ TRẮC NGHIỆM (Dạng cũ)
 function handleSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
     const data = userQuestions[qIndex];
     let correctKey = "";
+    
     if (Array.isArray(data.options)) {
-        correctKey = (data.answer === data.options[0]) ? "a" : (data.answer === data.options[1] ? "b" : (data.answer === data.options[2] ? "c" : "d"));
+        correctKey = (data.answer === data.options[0]) ? "a" : (data.answer === data.options[1] ? "b" : "c"); 
+        // Logic tìm key cho mảng
     } else {
         const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
         correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
@@ -170,14 +141,59 @@ function handleSelect(element, qIndex, selectedKey) {
         correctCount++;
     } else {
         element.classList.add('wrong');
+        // Hiện đáp án đúng sau khi chọn sai
+        const allOpts = block.querySelectorAll('.option-item');
+        allOpts.forEach((opt, idx) => {
+             // Tạm thời chỉ đánh dấu completed để khóa câu hỏi
+        });
+        block.classList.add('completed');
+        correctCount++; // Vẫn tăng count để tính tiến độ hoàn thành bài
     }
+
     updateProgress();
+    checkEndGame();
+}
+
+// XỬ LÝ CHẾ ĐỘ ĐÚNG/SAI (Dạng mới)
+function handleDSClick(qIndex, subIdx, userChoice) {
+    const row = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
+    if (row.classList.contains('answered')) return;
+
+    const data = userQuestions[qIndex].subQuestions[subIdx];
+    const btns = row.querySelectorAll('.btn-ds');
+
+    row.classList.add('answered');
+    btns.forEach(btn => {
+        if (btn.innerText === userChoice) {
+            if (userChoice === data.answer) {
+                btn.classList.add('ds-correct');
+                score += 0.25; // Mỗi ý 0.25đ
+            } else {
+                btn.classList.add('ds-wrong');
+            }
+        }
+        if (btn.innerText === data.answer) btn.classList.add('ds-correct');
+    });
+
+    // Kiểm tra hoàn thành 4 ý của 1 câu lớn
+    const block = document.getElementById(`q-block-${qIndex}`);
+    const answeredRows = block.querySelectorAll('.sub-q-row.answered').length;
+    if (answeredRows === 4) {
+        block.classList.add('completed');
+        correctCount++;
+        updateProgress();
+    }
+    checkEndGame();
 }
 
 function updateProgress() {
     const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
+    document.getElementById('live-score').innerText = Math.round(score * 100) / 100;
+}
+
+function checkEndGame() {
     if (correctCount === userQuestions.length && userQuestions.length > 0) {
         setTimeout(showFinalResults, 800);
     }
@@ -186,5 +202,9 @@ function updateProgress() {
 function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
-    document.getElementById('final-score').innerText = correctCount + "/" + userQuestions.length;
+    document.getElementById('final-score').innerText = (Math.round(score * 100) / 100) + "/" + userQuestions.length;
+}
+
+function restartQuiz() {
+    location.reload();
 }
