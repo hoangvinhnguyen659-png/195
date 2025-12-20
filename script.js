@@ -1,113 +1,163 @@
-let quizData = [], userQuestions = [], score = 0, correctCount = 0;
+let quizData = [];
+let userQuestions = [];
+let score = 0;
+let correctCount = 0;
 
-const $ = id => document.getElementById(id); // Helper rút gọn lấy Element
+const statusText = document.getElementById('status-text');
+const setupOptions = document.getElementById('setup-options');
+const loadingScreen = document.getElementById('loading-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultScreen = document.getElementById('result-screen');
+const progressBar = document.getElementById('progress-bar');
 
-// Khởi tạo
-(async function init() {
-    try {
-        const res = await fetch('questions.json');
-        if (res.ok) { 
-            $('status-text').innerText = "Sẵn sàng!"; 
-            $('setup-options').classList.remove('hidden'); 
-        }
-    } catch (e) { $('status-text').innerText = "Lỗi dữ liệu!"; }
-})();
-
-async function startGame(fileName) {
-    $('status-text').innerText = "Đang tải...";
-    try {
-        const res = await fetch(fileName);
-        quizData = await res.json();
-        const isShuffle = $('shuffle-checkbox').checked;
-        userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
-        
-        score = 0; correctCount = 0;
-        $('loading-screen').classList.add('hidden');
-        $('result-screen').classList.add('hidden');
-        $('quiz-screen').classList.remove('hidden');
-        
-        renderAllQuestions();
-        document.querySelector('.quiz-scroll-area').scrollTop = 0;
-    } catch (err) { alert("Lỗi tải file!"); }
+function escapeHtml(text) {
+    if (!text) return "";
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
-$('btn-tracnghiem').onclick = () => startGame('questions.json');
-$('btn-dungsai').onclick = () => startGame('dungsai.json');
+async function init() {
+    try {
+        const response = await fetch('questions.json');
+        if (response.ok) {
+            statusText.innerText = "Sẵn sàng!";
+            setupOptions.classList.remove('hidden');
+        } else {
+            throw new Error("File missing");
+        }
+    } catch (e) {
+        statusText.innerText = "Kiểm tra file questions.json!";
+        setupOptions.classList.remove('hidden');
+    }
+}
+init();
+
+async function startGame(fileName) {
+    statusText.innerText = "Đang tải dữ liệu...";
+    setupOptions.classList.add('hidden');
+
+    setTimeout(async () => {
+        try {
+            const res = await fetch(fileName);
+            quizData = await res.json();
+            
+            const isShuffle = document.getElementById('shuffle-checkbox').checked;
+            userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+            
+            resetAndRender();
+        } catch (err) {
+            alert("Không tìm thấy file câu hỏi!");
+            location.reload();
+        }
+    }, 200);
+}
+
+function resetAndRender() {
+    score = 0;
+    correctCount = 0;
+    
+    loadingScreen.classList.add('hidden');
+    resultScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    
+    renderAllQuestions();
+    
+    // Reset thanh cuộn về đầu
+    document.querySelector('.quiz-scroll-area').scrollTop = 0;
+}
+
+function restartQuiz() {
+    resetAndRender();
+}
+
+document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
+document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
 
 function renderAllQuestions() {
-    const feed = $('quiz-feed');
-    feed.innerHTML = userQuestions.map((data, idx) => {
-        let content = "";
-        if (data.subQuestions) {
-            content = data.subQuestions.map((sub, sIdx) => `
-                <div class="sub-q-group" id="q-${idx}-sub-${sIdx}">
-                    <div class="sub-q-text">${sub.label}. ${sub.content}</div>
-                    <div class="ds-row">
-                        <div class="option-item" onclick="handleCheck(this, ${idx}, 'Đúng', ${sIdx})">Đúng</div>
-                        <div class="option-item" onclick="handleCheck(this, ${idx}, 'Sai', ${sIdx})">Sai</div>
-                    </div>
-                </div>`).join('');
-        } else {
-            const entries = Array.isArray(data.options) ? data.options.map((v, i) => [String.fromCharCode(97 + i), v]) : Object.entries(data.options);
-            content = `<div class="option-list">${entries.map(([k, v]) => `
-                <div class="option-item" onclick="handleCheck(this, ${idx}, '${k}')">
-                    <span class="opt-label">${k.toUpperCase()}.</span> ${v}
-                </div>`).join('')}</div>`;
-        }
-        return `<div class="question-block" id="q-block-${idx}">
-                    <div class="question-text">Câu ${idx + 1}: ${data.question}</div>${content}
-                </div>`;
-    }).join('');
+    const feed = document.getElementById('quiz-feed');
+    feed.innerHTML = "";
     
-    $('total-count').innerText = userQuestions.length;
+    userQuestions.forEach((data, index) => {
+        const qBlock = document.createElement('div');
+        qBlock.className = 'question-block';
+        qBlock.id = `q-block-${index}`;
+
+        const questionTitle = escapeHtml(data.question);
+        let optionsHtml = "";
+        const opts = data.options;
+
+        if (Array.isArray(opts)) {
+            optionsHtml = `
+                <div class="option-item" onclick="handleSelect(this, ${index}, 'a')">
+                    <input type="radio" name="q${index}"><span>${escapeHtml(opts[0])}</span>
+                </div>
+                <div class="option-item" onclick="handleSelect(this, ${index}, 'b')">
+                    <input type="radio" name="q${index}"><span>${escapeHtml(opts[1])}</span>
+                </div>`;
+        } else {
+            optionsHtml = Object.entries(opts).map(([key, val]) => `
+                <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                    <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
+                </div>`).join('');
+        }
+
+        qBlock.innerHTML = `
+            <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
+            <div class="option-list">${optionsHtml}</div>`;
+        feed.appendChild(qBlock);
+    });
+
+    document.getElementById('total-count').innerText = userQuestions.length;
     updateProgress();
 }
 
-// Hàm xử lý chung cho cả 2 chế độ
-function handleCheck(el, qIdx, userChoice, sIdx = null) {
-    const isDS = sIdx !== null;
-    const parent = isDS ? $(`q-${qIdx}-sub-${sIdx}`) : $(`q-block-${qIdx}`);
-    if (parent.classList.contains(isDS ? 'sub-completed' : 'completed')) return;
+function handleSelect(element, qIndex, selectedKey) {
+    const block = document.getElementById(`q-block-${qIndex}`);
+    if (block.classList.contains('completed')) return;
 
-    const data = userQuestions[qIdx];
-    let isCorrect = false;
+    const allOptions = block.querySelectorAll('.option-item');
+    allOptions.forEach(opt => opt.classList.remove('wrong'));
 
-    if (isDS) {
-        isCorrect = userChoice === data.subQuestions[sIdx].answer;
+    element.querySelector('input').checked = true;
+    const data = userQuestions[qIndex];
+
+    let correctKey = "";
+    if (Array.isArray(data.options)) {
+        correctKey = (data.answer === data.options[0]) ? "a" : "b";
     } else {
-        const correctKey = Array.isArray(data.options) 
-            ? String.fromCharCode(97 + data.options.indexOf(data.answer)) 
-            : Object.keys(data.options).find(k => data.options[k] === data.answer);
-        isCorrect = userChoice === correctKey;
+        const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
+        correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
     }
 
-    parent.querySelectorAll('.option-item').forEach(i => i.classList.remove('wrong', 'correct'));
-
-    if (isCorrect) {
-        el.classList.add('correct');
-        parent.classList.add(isDS ? 'sub-completed' : 'completed');
-        score += isDS ? 0.25 : 1;
-        
-        if (!isDS || $(`q-block-${qIdx}`).querySelectorAll('.sub-completed').length === 4) {
-            if (isDS) $(`q-block-${qIdx}`).classList.add('completed');
-            correctCount++;
-            updateProgress();
-            if (correctCount === userQuestions.length) setTimeout(showResults, 800);
-        }
+    if (selectedKey === correctKey) {
+        element.classList.add('correct');
+        block.classList.add('completed'); 
+        score++;
+        correctCount++;
     } else {
-        el.classList.add('wrong');
+        element.classList.add('wrong');
+    }
+
+    updateProgress();
+
+    if (correctCount === userQuestions.length) {
+        setTimeout(showFinalResults, 500);
     }
 }
 
 function updateProgress() {
-    const percent = (correctCount / userQuestions.length) * 100 || 0;
-    $('progress-bar').style.width = percent + "%";
-    $('current-count').innerText = correctCount;
-    $('live-score').innerText = Math.round(score * 100) / 100;
+    const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
+    progressBar.style.width = percent + "%";
+    document.getElementById('current-count').innerText = correctCount;
+    document.getElementById('live-score').innerText = score;
 }
 
-function showResults() {
-    $('quiz-screen').classList.add('hidden');
-    $('result-screen').classList.remove('hidden');
-    $('final-score').innerText = (Math.round(score * 100) / 100) + "/" + userQuestions.length;
+function showFinalResults() {
+    quizScreen.classList.add('hidden');
+    resultScreen.classList.remove('hidden');
+    document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
