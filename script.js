@@ -59,23 +59,12 @@ async function startGame(fileName) {
 function resetAndRender() {
     score = 0;
     correctCount = 0;
-    
     loadingScreen.classList.add('hidden');
     resultScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
-    
     renderAllQuestions();
-    
-    // Reset thanh cuộn về đầu
     document.querySelector('.quiz-scroll-area').scrollTop = 0;
 }
-
-function restartQuiz() {
-    resetAndRender();
-}
-
-document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
-document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
 
 function renderAllQuestions() {
     const feed = document.getElementById('quiz-feed');
@@ -86,27 +75,36 @@ function renderAllQuestions() {
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
 
-        const questionTitle = escapeHtml(data.question);
         let optionsHtml = "";
-        const opts = data.options;
-
-        if (Array.isArray(opts)) {
-            optionsHtml = `
-                <div class="option-item" onclick="handleSelect(this, ${index}, 'a')">
-                    <input type="radio" name="q${index}"><span>${escapeHtml(opts[0])}</span>
+        
+        // KIỂM TRA LOẠI CÂU HỎI: ĐÚNG SAI (Có mảng subQuestions)
+        if (data.subQuestions && Array.isArray(data.subQuestions)) {
+            optionsHtml = data.subQuestions.map((sub, subIdx) => `
+                <div class="sub-q-row" id="q-${index}-sub-${subIdx}">
+                    <div class="sub-q-text"><b>${String.fromCharCode(97 + subIdx)}.</b> ${escapeHtml(sub.text)}</div>
+                    <div class="tf-group">
+                        <button class="btn-tf" onclick="handleTF(this, ${index}, ${subIdx}, true)">Đúng</button>
+                        <button class="btn-tf" onclick="handleTF(this, ${index}, ${subIdx}, false)">Sai</button>
+                    </div>
                 </div>
-                <div class="option-item" onclick="handleSelect(this, ${index}, 'b')">
-                    <input type="radio" name="q${index}"><span>${escapeHtml(opts[1])}</span>
-                </div>`;
-        } else {
-            optionsHtml = Object.entries(opts).map(([key, val]) => `
-                <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
-                    <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
-                </div>`).join('');
+            `).join('');
+        } 
+        // LOẠI CÂU HỎI: TRẮC NGHIỆM (A, B, C, D)
+        else {
+            const labels = ['A', 'B', 'C', 'D'];
+            const opts = Array.isArray(data.options) ? data.options : Object.values(data.options);
+            const keys = Array.isArray(data.options) ? data.options : Object.keys(data.options);
+
+            optionsHtml = opts.map((opt, idx) => `
+                <div class="option-item-new" onclick="handleSelectNew(this, ${index}, '${keys[idx]}')">
+                    <span class="label-circle">${labels[idx]}</span>
+                    <span class="opt-content">${escapeHtml(opt)}</span>
+                </div>
+            `).join('');
         }
 
         qBlock.innerHTML = `
-            <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
+            <div class="question-text">Câu ${index + 1}: ${escapeHtml(data.question)}</div>
             <div class="option-list">${optionsHtml}</div>`;
         feed.appendChild(qBlock);
     });
@@ -115,37 +113,64 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-function handleSelect(element, qIndex, selectedKey) {
+// Xử lý Trắc nghiệm A B C D
+function handleSelectNew(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
-    const allOptions = block.querySelectorAll('.option-item');
-    allOptions.forEach(opt => opt.classList.remove('wrong'));
-
-    element.querySelector('input').checked = true;
     const data = userQuestions[qIndex];
-
     let correctKey = "";
+    
     if (Array.isArray(data.options)) {
-        correctKey = (data.answer === data.options[0]) ? "a" : "b";
+        correctKey = data.answer; 
     } else {
         const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
-        correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
+        correctKey = entry ? entry[0] : data.answer;
     }
 
     if (selectedKey === correctKey) {
-        element.classList.add('correct');
-        block.classList.add('completed'); 
+        element.classList.add('correct-choice');
+        block.classList.add('completed');
         score++;
         correctCount++;
+        updateProgress();
     } else {
-        element.classList.add('wrong');
+        element.classList.add('wrong-choice');
+        // Cho phép chọn lại cho đến khi đúng (tùy nhu cầu của bạn)
     }
-
-    updateProgress();
 
     if (correctCount === userQuestions.length) {
         setTimeout(showFinalResults, 500);
+    }
+}
+
+// Xử lý Đúng/Sai (Từng ý a, b, c, d)
+function handleTF(btn, qIndex, subIdx, userChoice) {
+    const row = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
+    if (row.classList.contains('answered')) return;
+
+    const correctAnswer = userQuestions[qIndex].subQuestions[subIdx].answer; // true hoặc false
+
+    const buttons = row.querySelectorAll('.btn-tf');
+    buttons.forEach(b => b.disabled = true);
+
+    if (userChoice === correctAnswer) {
+        btn.classList.add('tf-correct');
+        row.classList.add('answered');
+        // Cách tính điểm Đúng/Sai có thể tùy chỉnh, ở đây mỗi ý đúng là một phần điểm nhỏ
+        // Hoặc bạn có thể chỉ tính correctCount khi đúng hết cả 4 ý.
+    } else {
+        btn.classList.add('tf-wrong');
+    }
+    
+    // Logic kiểm tra hoàn thành câu hỏi lớn (ví dụ: xong cả 4 ý)
+    const block = document.getElementById(`q-block-${qIndex}`);
+    const answeredSubs = block.querySelectorAll('.sub-q-row.answered').length;
+    if (answeredSubs === userQuestions[qIndex].subQuestions.length && !block.classList.contains('completed')) {
+        block.classList.add('completed');
+        score++;
+        correctCount++;
+        updateProgress();
     }
 }
 
@@ -161,3 +186,10 @@ function showFinalResults() {
     resultScreen.classList.remove('hidden');
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
+
+function restartQuiz() {
+    location.reload();
+}
+
+document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
+document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
