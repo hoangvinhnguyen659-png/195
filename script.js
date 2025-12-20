@@ -15,7 +15,7 @@ const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
 const shuffleCheckbox = document.getElementById('shuffle-checkbox');
 
-// Nút chọn chế độ mới
+// Nút chọn chế độ mới (Trắc nghiệm / Đúng Sai)
 const btnTracNghiem = document.getElementById('btn-tracnghiem');
 const btnDungSai = document.getElementById('btn-dungsai');
 
@@ -27,7 +27,7 @@ const currentCountEl = document.getElementById('current-count');
 const totalCountEl = document.getElementById('total-count');
 const liveScoreEl = document.getElementById('live-score');
 
-// 3. TẢI DATA BAN ĐẦU (Mặc định tải questions.json để check file tồn tại)
+// 3. TẢI DATA BAN ĐẦU
 async function init() {
     try {
         await fetch('questions.json'); // Test kết nối
@@ -39,7 +39,7 @@ async function init() {
 }
 init();
 
-// 4. HÀM BẮT ĐẦU GAME (Nhận tên file làm tham số)
+// 4. HÀM BẮT ĐẦU GAME
 async function startGame(fileName) {
     try {
         statusText.innerText = "Đang tải câu hỏi...";
@@ -64,7 +64,7 @@ async function startGame(fileName) {
     }
 }
 
-// Gán sự kiện cho 2 nút
+// Gán sự kiện cho 2 nút chế độ
 btnTracNghiem.addEventListener('click', () => startGame('questions.json'));
 btnDungSai.addEventListener('click', () => startGame('dungsai.json'));
 
@@ -74,10 +74,27 @@ function loadQuiz() {
     const currentQuizData = userQuestions[currentQuiz];
 
     questionEl.innerText = `Câu ${currentQuiz + 1}: ${currentQuizData.question}`;
-    document.getElementById('a_text').innerText = currentQuizData.options.a;
-    document.getElementById('b_text').innerText = currentQuizData.options.b;
-    document.getElementById('c_text').innerText = currentQuizData.options.c;
-    document.getElementById('d_text').innerText = currentQuizData.options.d;
+
+    // --- LOGIC SỬA LỖI UNDEFINED CHO ĐÚNG/SAI ---
+    if (Array.isArray(currentQuizData.options)) {
+        // Nếu file dungsai.json có dạng ["Đúng", "Sai"]
+        document.getElementById('a_text').innerText = currentQuizData.options[0];
+        document.getElementById('b_text').innerText = currentQuizData.options[1];
+        
+        // Ẩn 2 câu trả lời C và D đi
+        document.getElementById('label-c').style.display = 'none';
+        document.getElementById('label-d').style.display = 'none';
+    } else {
+        // Nếu file questions.json có dạng {a: "...", b: "...", ...}
+        document.getElementById('a_text').innerText = currentQuizData.options.a;
+        document.getElementById('b_text').innerText = currentQuizData.options.b;
+        document.getElementById('c_text').innerText = currentQuizData.options.c;
+        document.getElementById('d_text').innerText = currentQuizData.options.d;
+        
+        // Hiện lại 2 câu trả lời C và D
+        document.getElementById('label-c').style.display = 'flex';
+        document.getElementById('label-d').style.display = 'flex';
+    }
 
     // Cập nhật thanh tiến trình
     const progressPercent = (currentQuiz / userQuestions.length) * 100;
@@ -87,14 +104,15 @@ function loadQuiz() {
     liveScoreEl.innerText = score;
 }
 
-// 6. XỬ LÝ KHI CHỌN ĐÁP ÁN (LOGIC MỚI: CHO PHÉP CHỌN LẠI)
+// 6. XỬ LÝ KHI CHỌN ĐÁP ÁN (GIỮ NGUYÊN LOGIC CỦA BẠN)
 answerEls.forEach(el => {
-    el.addEventListener('click', () => { // Dùng click thay vì change để mượt hơn
+    el.addEventListener('click', () => {
         const selectedId = el.id;
         const currentQuizData = userQuestions[currentQuiz];
-        const correctId = currentQuizData.answer;
+        // Đồng bộ hóa key đáp án (chuyển về chữ thường để so khớp chính xác)
+        const correctId = String(currentQuizData.answer).toLowerCase();
 
-        // 6.1. Xóa sạch màu cũ (Reset style)
+        // 6.1. Xóa sạch màu cũ
         document.querySelectorAll('.option-item').forEach(opt => {
             opt.classList.remove('correct', 'wrong', 'dimmed');
         });
@@ -104,26 +122,34 @@ answerEls.forEach(el => {
         // 6.2. Kiểm tra Đúng / Sai và Tô màu
         if (selectedId === correctId) {
             // -- ĐÚNG --
-            selectedLabel.classList.add('correct'); // Nổi bật lên
-            
-            // Làm mờ các câu còn lại
+            selectedLabel.classList.add('correct');
             document.querySelectorAll('.option-item').forEach(opt => {
                 if(opt.id !== `label-${selectedId}`) {
                     opt.classList.add('dimmed');
                 }
             });
-
-            // Lưu trạng thái là ĐÚNG
             currentSelection = { isCorrect: true };
         } else {
             // -- SAI --
-            selectedLabel.classList.add('wrong'); // Chỉ đỏ lên
-            // Lưu trạng thái là SAI + lưu nội dung sai để review
+            selectedLabel.classList.add('wrong');
+            
+            // Lấy text của câu trả lời đã chọn để hiển thị trong phần Review
+            let userAnsText = "";
+            let correctAnsText = "";
+
+            if (Array.isArray(currentQuizData.options)) {
+                userAnsText = (selectedId === 'a') ? currentQuizData.options[0] : currentQuizData.options[1];
+                correctAnsText = (correctId === 'a') ? currentQuizData.options[0] : currentQuizData.options[1];
+            } else {
+                userAnsText = currentQuizData.options[selectedId];
+                correctAnsText = currentQuizData.options[correctId];
+            }
+
             currentSelection = { 
                 isCorrect: false,
                 q: currentQuizData.question,
-                userAns: currentQuizData.options[selectedId],
-                correctAns: currentQuizData.options[correctId]
+                userAns: userAnsText,
+                correctAns: correctAnsText
             };
         }
 
@@ -131,14 +157,12 @@ answerEls.forEach(el => {
     });
 });
 
-// 7. NHẤN NÚT TIẾP TỤC (MỚI TÍNH ĐIỂM Ở ĐÂY)
+// 7. NHẤN NÚT TIẾP TỤC
 submitBtn.addEventListener('click', () => {
-    // Chỉ cộng điểm hoặc ghi nhận sai khi nhấn nút Tiếp Tục
     if (currentSelection) {
         if (currentSelection.isCorrect) {
             score++;
         } else {
-            // Nếu chọn sai thì đẩy vào mảng câu sai
             wrongAnswers.push({
                 q: currentSelection.q,
                 userAns: currentSelection.userAns,
@@ -161,12 +185,11 @@ function resetUIState() {
     submitBtn.disabled = true;
     answerEls.forEach(el => {
         el.checked = false;
-        // Xóa hết class màu mè cũ
         el.parentElement.classList.remove('correct', 'wrong', 'dimmed');
     });
 }
 
-// 9. HIỂN THỊ KẾT QUẢ (Giữ nguyên logic cũ)
+// 9. HIỂN THỊ KẾT QUẢ
 function showResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
