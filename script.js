@@ -27,7 +27,7 @@ async function init() {
             statusText.innerText = "Sẵn sàng!";
             setupOptions.classList.remove('hidden');
         } else {
-            throw new Error("File missing");
+            throw new Error();
         }
     } catch (e) {
         statusText.innerText = "Kiểm tra file questions.json!";
@@ -40,20 +40,18 @@ async function startGame(fileName) {
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
 
-    setTimeout(async () => {
-        try {
-            const res = await fetch(fileName);
-            quizData = await res.json();
-            
-            const isShuffle = document.getElementById('shuffle-checkbox').checked;
-            userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
-            
-            resetAndRender();
-        } catch (err) {
-            alert("Không tìm thấy file câu hỏi!");
-            location.reload();
-        }
-    }, 200);
+    try {
+        const res = await fetch(fileName);
+        quizData = await res.json();
+        
+        const isShuffle = document.getElementById('shuffle-checkbox').checked;
+        userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+        
+        resetAndRender();
+    } catch (err) {
+        alert("Không tìm thấy file câu hỏi!");
+        location.reload();
+    }
 }
 
 function resetAndRender() {
@@ -77,26 +75,26 @@ function renderAllQuestions() {
 
         let optionsHtml = "";
         
-        // KIỂM TRA LOẠI CÂU HỎI: ĐÚNG SAI (Có mảng subQuestions)
+        // TRƯỜNG HỢP 1: CÂU HỎI ĐÚNG SAI (Có subQuestions)
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
             optionsHtml = data.subQuestions.map((sub, subIdx) => `
                 <div class="sub-q-row" id="q-${index}-sub-${subIdx}">
-                    <div class="sub-q-text"><b>${String.fromCharCode(97 + subIdx)}.</b> ${escapeHtml(sub.text)}</div>
+                    <div class="sub-q-text"><b>${sub.label}.</b> ${escapeHtml(sub.content)}</div>
                     <div class="tf-group">
-                        <button class="btn-tf" onclick="handleTF(this, ${index}, ${subIdx}, true)">Đúng</button>
-                        <button class="btn-tf" onclick="handleTF(this, ${index}, ${subIdx}, false)">Sai</button>
+                        <button class="btn-tf" onclick="handleTFSelect(this, ${index}, ${subIdx}, 'Đúng')">Đúng</button>
+                        <button class="btn-tf" onclick="handleTFSelect(this, ${index}, ${subIdx}, 'Sai')">Sai</button>
                     </div>
                 </div>
             `).join('');
         } 
-        // LOẠI CÂU HỎI: TRẮC NGHIỆM (A, B, C, D)
+        // TRƯỜNG HỢP 2: TRẮC NGHIỆM A B C D
         else {
             const labels = ['A', 'B', 'C', 'D'];
             const opts = Array.isArray(data.options) ? data.options : Object.values(data.options);
             const keys = Array.isArray(data.options) ? data.options : Object.keys(data.options);
 
             optionsHtml = opts.map((opt, idx) => `
-                <div class="option-item-new" onclick="handleSelectNew(this, ${index}, '${keys[idx]}')">
+                <div class="option-item-new" onclick="handleMCQSelect(this, ${index}, '${keys[idx]}')">
                     <span class="label-circle">${labels[idx]}</span>
                     <span class="opt-content">${escapeHtml(opt)}</span>
                 </div>
@@ -113,14 +111,15 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-// Xử lý Trắc nghiệm A B C D
-function handleSelectNew(element, qIndex, selectedKey) {
+// Xử lý chọn Trắc nghiệm A B C D
+function handleMCQSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
     const data = userQuestions[qIndex];
     let correctKey = "";
     
+    // Tìm key đúng
     if (Array.isArray(data.options)) {
         correctKey = data.answer; 
     } else {
@@ -129,48 +128,49 @@ function handleSelectNew(element, qIndex, selectedKey) {
     }
 
     if (selectedKey === correctKey) {
-        element.classList.add('correct-choice');
+        element.classList.add('correct');
         block.classList.add('completed');
         score++;
         correctCount++;
         updateProgress();
+        checkFinish();
     } else {
-        element.classList.add('wrong-choice');
-        // Cho phép chọn lại cho đến khi đúng (tùy nhu cầu của bạn)
-    }
-
-    if (correctCount === userQuestions.length) {
-        setTimeout(showFinalResults, 500);
+        // Cho phép chọn lại cho đến khi đúng, chỉ đánh dấu đỏ lựa chọn sai
+        element.classList.add('wrong');
+        setTimeout(() => element.classList.remove('wrong'), 1000);
     }
 }
 
-// Xử lý Đúng/Sai (Từng ý a, b, c, d)
-function handleTF(btn, qIndex, subIdx, userChoice) {
+// Xử lý chọn Đúng / Sai cho từng ý nhỏ
+function handleTFSelect(btn, qIndex, subIdx, userChoice) {
     const row = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
     if (row.classList.contains('answered')) return;
 
-    const correctAnswer = userQuestions[qIndex].subQuestions[subIdx].answer; // true hoặc false
-
-    const buttons = row.querySelectorAll('.btn-tf');
-    buttons.forEach(b => b.disabled = true);
+    const correctAnswer = userQuestions[qIndex].subQuestions[subIdx].answer;
 
     if (userChoice === correctAnswer) {
         btn.classList.add('tf-correct');
         row.classList.add('answered');
-        // Cách tính điểm Đúng/Sai có thể tùy chỉnh, ở đây mỗi ý đúng là một phần điểm nhỏ
-        // Hoặc bạn có thể chỉ tính correctCount khi đúng hết cả 4 ý.
+        
+        // Khóa các nút của hàng này
+        const buttons = row.querySelectorAll('.btn-tf');
+        buttons.forEach(b => b.disabled = true);
+
+        // Kiểm tra xem đã hoàn thành toàn bộ các ý của câu hỏi lớn chưa
+        const block = document.getElementById(`q-block-${qIndex}`);
+        const totalSubs = userQuestions[qIndex].subQuestions.length;
+        const answeredSubs = block.querySelectorAll('.sub-q-row.answered').length;
+
+        if (answeredSubs === totalSubs) {
+            block.classList.add('completed');
+            score++;
+            correctCount++;
+            updateProgress();
+            checkFinish();
+        }
     } else {
         btn.classList.add('tf-wrong');
-    }
-    
-    // Logic kiểm tra hoàn thành câu hỏi lớn (ví dụ: xong cả 4 ý)
-    const block = document.getElementById(`q-block-${qIndex}`);
-    const answeredSubs = block.querySelectorAll('.sub-q-row.answered').length;
-    if (answeredSubs === userQuestions[qIndex].subQuestions.length && !block.classList.contains('completed')) {
-        block.classList.add('completed');
-        score++;
-        correctCount++;
-        updateProgress();
+        setTimeout(() => btn.classList.remove('tf-wrong'), 1000);
     }
 }
 
@@ -179,6 +179,12 @@ function updateProgress() {
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
+}
+
+function checkFinish() {
+    if (correctCount === userQuestions.length) {
+        setTimeout(showFinalResults, 600);
+    }
 }
 
 function showFinalResults() {
@@ -191,5 +197,8 @@ function restartQuiz() {
     location.reload();
 }
 
+// Gán sự kiện cho các nút chọn chế độ ở màn hình chờ
 document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
 document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
+// Gán sự kiện cho nút Home/Quay lại
+document.getElementById('btn-home-nav').onclick = () => location.reload();
