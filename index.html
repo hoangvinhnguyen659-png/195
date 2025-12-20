@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Trắc Nghiệm Pro</title>
+    <meta property="og:title" content="Trắc Nghiệm Tin"> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,10 +18,9 @@
     </button>
 
     <div class="container">
-
         <div id="loading-screen">
             <h1 class="app-title">Trắc Nghiệm Pro</h1>
-            <p id="status-text">Đang kết nối dữ liệu...</p>
+            <p id="status-text">Đang tải dữ liệu từ questions.json...</p>
             <div id="setup-options" class="hidden">
                 <div class="setup-group">
                     <label class="toggle-switch">
@@ -29,25 +29,22 @@
                         <span class="label-text">Trộn câu hỏi</span>
                     </label>
                 </div>
-                <div class="mode-buttons">
-                    <button class="btn-start btn-primary" id="btn-tracnghiem">Chơi Trắc Nghiệm</button>
-                    <button class="btn-start btn-secondary" id="btn-dungsai">Chơi Đúng / Sai</button>
-                </div>
+                <button class="btn-start" id="start-btn">Trắc Nghiệm</button>
             </div>
         </div>
 
         <div id="quiz-screen" class="hidden">
             <div class="quiz-header">
-                <div class="progress-bg"><div id="progress-bar"></div></div>
+                <div class="progress-container"><div id="progress-bar"></div></div>
                 <div class="stats-bar">
                     <span>CÂU: <span id="current-count">0</span> / <span id="total-count">0</span></span>
-                    <span>ĐIỂM: <span id="live-score">0</span></span>
+                    <span>ĐÚNG: <span id="live-score">0</span></span>
                 </div>
             </div>
             
             <div class="quiz-scroll-area">
                 <div class="quiz-body">
-                    <h2 id="question">Đang tải câu hỏi...</h2>
+                    <h2 id="question">Vui lòng đợi...</h2>
                     <div class="option-list">
                         <label class="option-item" id="label-a">
                             <input type="radio" name="answer" id="a" class="answer">
@@ -77,11 +74,10 @@
         <div id="result-screen" class="hidden">
             <h2 class="result-title">KẾT QUẢ</h2>
             <div id="final-score">0/0</div>
-            <p class="review-title">Các câu cần xem lại:</p>
+            <p class="review-title">Câu trả lời sai:</p>
             <div id="review-container"></div>
-            <button class="btn-start btn-primary" onclick="location.reload()" style="margin-top: 25px; width: 100%;">Chơi Lại</button>
+            <button class="btn-start" onclick="location.reload()" style="margin-top: 25px;">Vô Lại</button>
         </div>
-        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
