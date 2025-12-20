@@ -24,20 +24,20 @@ async function init() {
     try {
         const response = await fetch('questions.json');
         if (response.ok) {
-            statusText.innerText = "Sẵn sàng học tập!";
+            statusText.innerText = "Sẵn sàng!";
             setupOptions.classList.remove('hidden');
         } else {
             throw new Error("File missing");
         }
     } catch (e) {
-        statusText.innerText = "Vui lòng kiểm tra file dữ liệu!";
-        setupOptions.classList.remove('hidden'); // Vẫn hiện để test UI
+        statusText.innerText = "Kiểm tra file questions.json!";
+        setupOptions.classList.remove('hidden');
     }
 }
 init();
 
 async function startGame(fileName) {
-    statusText.innerText = "Đang tải câu hỏi...";
+    statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
 
     setTimeout(async () => {
@@ -50,13 +50,12 @@ async function startGame(fileName) {
             
             resetAndRender();
         } catch (err) {
-            alert("Lỗi tải file dữ liệu!");
+            alert("Không tìm thấy file câu hỏi!");
             location.reload();
         }
-    }, 300);
+    }, 200);
 }
 
-// Hàm khởi tạo lại game (dùng cho cả lúc bắt đầu và lúc chơi lại)
 function resetAndRender() {
     score = 0;
     correctCount = 0;
@@ -67,14 +66,11 @@ function resetAndRender() {
     
     renderAllQuestions();
     
-    // Cuộn lên đầu trang
+    // Reset thanh cuộn về đầu
     document.querySelector('.quiz-scroll-area').scrollTop = 0;
 }
 
-// Hàm này được gọi khi bấm nút "Làm Lại Đề Này"
 function restartQuiz() {
-    // Giữ nguyên danh sách câu hỏi (userQuestions) hiện tại để user làm lại đề vừa xong
-    // Reset lại điểm và render lại
     resetAndRender();
 }
 
@@ -95,7 +91,6 @@ function renderAllQuestions() {
         const opts = data.options;
 
         if (Array.isArray(opts)) {
-            // Đúng/Sai
             optionsHtml = `
                 <div class="option-item" onclick="handleSelect(this, ${index}, 'a')">
                     <input type="radio" name="q${index}"><span>${escapeHtml(opts[0])}</span>
@@ -104,7 +99,6 @@ function renderAllQuestions() {
                     <input type="radio" name="q${index}"><span>${escapeHtml(opts[1])}</span>
                 </div>`;
         } else {
-            // Trắc nghiệm
             optionsHtml = Object.entries(opts).map(([key, val]) => `
                 <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
                     <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
@@ -151,7 +145,7 @@ function handleSelect(element, qIndex, selectedKey) {
     updateProgress();
 
     if (correctCount === userQuestions.length) {
-        setTimeout(showFinalResults, 800);
+        setTimeout(showFinalResults, 500);
     }
 }
 
