@@ -153,35 +153,35 @@ input:checked + .slider:before { transform: translateX(20px); }
 .result-actions { display: flex; flex-direction: column; gap: 12px; }
 /* Khung tổng ngoài cùng */
 .qr-container {
-    margin-top: 40px;
+    margin-top: 25px;
     text-align: center;
     border-top: 1px solid #eee;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 /* Chữ tiêu đề */
-.qr-title {
-    font-size: 15px;
+.qr-container p {
+    font-size: 14px;
     color: #666;
+    margin-bottom: 15px;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 
 /* Khung card trắng bao quanh QR */
-.qr-card {
+.qr-card-wrapper {
+    display: inline-block; /* QUAN TRỌNG: Giúp khung không bị rộng sang 2 bên */
     background: #fff;
-    padding: 15px; /* Khoảng cách trắng đều 4 cạnh */
-    border-radius: 20px; /* Bo góc khung ngoài */
-    display: inline-block; /* Giúp khung ôm khít ảnh */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Đổ bóng sâu nhìn rất sang */
+    padding: 12px;         /* Khoảng cách lề trắng đều 4 cạnh */
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border: 1px solid #f0f0f0;
-    line-height: 0; /* Quan trọng: Xóa khoảng hở li ti dưới chân ảnh */
+    line-height: 0;        /* Xóa khoảng hở dưới chân ảnh */
 }
 
 /* Ảnh QR bên trong */
-.qr-card img {
-    width: 230px; /* Giữ nguyên độ to bạn muốn */
-    height: auto; /* Tự động theo tỉ lệ ảnh gốc */
-    border-radius: 10px; /* Bo góc nhẹ cho ảnh */
+.qr-card-wrapper img {
+    width: 230px;          /* Độ to bạn muốn */
+    height: auto;
+    border-radius: 10px;
+    display: block;        /* Loại bỏ khoảng trống inline */
 }
