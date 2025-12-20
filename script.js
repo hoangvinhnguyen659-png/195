@@ -61,6 +61,7 @@ function resetAndRender() {
     resultScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     renderAllQuestions();
+    document.querySelector('.quiz-scroll-area').scrollTop = 0;
 }
 
 document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
@@ -79,22 +80,22 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions) {
-            // Giao diện Đúng/Sai
+            // Chế độ Đúng/Sai
             contentHtml = `<div class="ds-container">` + 
                 data.subQuestions.map((sub, subIdx) => `
-                <div class="option-list" id="q-${index}-sub-${subIdx}" style="margin-bottom:15px; border-bottom:1px dashed #eee; padding-bottom:10px;">
-                    <div style="margin-bottom:8px; font-size:0.95rem;">${sub.label}. ${escapeHtml(sub.content)}</div>
-                    <div style="display:flex; gap:10px;">
-                        <div class="option-item" style="flex:1; margin-bottom:0;" onclick="handleDSSelect(this, ${index}, ${subIdx}, 'Đúng')">
+                <div class="sub-q-group" id="q-${index}-sub-${subIdx}">
+                    <div class="sub-q-text">${sub.label}. ${escapeHtml(sub.content)}</div>
+                    <div class="option-list ds-row">
+                        <div class="option-item" onclick="handleDSSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <input type="radio" name="sub-${index}-${subIdx}"><span>Đúng</span>
                         </div>
-                        <div class="option-item" style="flex:1; margin-bottom:0;" onclick="handleDSSelect(this, ${index}, ${subIdx}, 'Sai')">
+                        <div class="option-item" onclick="handleDSSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <input type="radio" name="sub-${index}-${subIdx}"><span>Sai</span>
                         </div>
                     </div>
                 </div>`).join('') + `</div>`;
         } else {
-            // Giao diện Trắc nghiệm cũ
+            // Chế độ Trắc nghiệm
             const opts = data.options;
             const entries = Array.isArray(opts) ? opts.map((v, i) => [String.fromCharCode(97 + i), v]) : Object.entries(opts);
             contentHtml = `<div class="option-list">` + 
@@ -112,66 +113,53 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-// XỬ LÝ TRẮC NGHIỆM: Cho phép chọn lại nếu sai
+// TRẮC NGHIỆM: Làm mờ nếu chọn đúng
 function handleSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
-    // Reset các lựa chọn cũ trong cùng một câu nếu người dùng chọn lại
-    const allOptions = block.querySelectorAll('.option-item');
-    allOptions.forEach(opt => {
-        opt.classList.remove('wrong');
-        opt.classList.remove('correct');
-    });
-
-    element.querySelector('input').checked = true;
     const data = userQuestions[qIndex];
     let correctKey = "";
-    
     if (Array.isArray(data.options)) {
-        correctKey = (data.answer === data.options[0]) ? "a" : (data.answer === data.options[1] ? "b" : "c");
+        correctKey = (data.answer === data.options[0]) ? "a" : (data.answer === data.options[1] ? "b" : (data.answer === data.options[2] ? "c" : "d"));
     } else {
         const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
         correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
     }
 
+    // Reset màu để người dùng chọn lại nếu sai
+    block.querySelectorAll('.option-item').forEach(item => item.classList.remove('wrong', 'correct'));
+    element.querySelector('input').checked = true;
+
     if (selectedKey === correctKey) {
         element.classList.add('correct');
-        block.classList.add('completed'); 
+        block.classList.add('completed'); // Hiệu ứng làm mờ CSS sẽ tự kích hoạt ở đây
         score++;
         correctCount++;
         updateProgress();
         checkEndGame();
     } else {
         element.classList.add('wrong');
-        // Không khóa câu hỏi, cho phép người dùng nhấn lại đáp án khác
     }
 }
 
-// XỬ LÝ ĐÚNG/SAI: Cho phép chọn lại từng ý nhỏ
+// ĐÚNG/SAI: Làm mờ từng hàng nếu chọn đúng
 function handleDSSelect(element, qIndex, subIdx, userChoice) {
-    const subContainer = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
-    if (subContainer.classList.contains('sub-completed')) return;
+    const group = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
+    if (group.classList.contains('sub-completed')) return;
 
-    // Reset màu của 2 nút Đúng/Sai trong hàng đó để chọn lại
-    const siblings = subContainer.querySelectorAll('.option-item');
-    siblings.forEach(s => {
-        s.classList.remove('wrong');
-        s.classList.remove('correct');
-    });
-
-    element.querySelector('input').checked = true;
     const subData = userQuestions[qIndex].subQuestions[subIdx];
+    
+    group.querySelectorAll('.option-item').forEach(item => item.classList.remove('wrong', 'correct'));
+    element.querySelector('input').checked = true;
 
     if (userChoice === subData.answer) {
         element.classList.add('correct');
-        subContainer.classList.add('sub-completed'); // Khóa ý nhỏ này lại
+        group.classList.add('sub-completed'); // Hiệu ứng làm mờ CSS kích hoạt cho hàng này
         score += 0.25;
         
-        // Kiểm tra xem đã xong cả 4 ý chưa
         const parentBlock = document.getElementById(`q-block-${qIndex}`);
-        const finishedSubs = parentBlock.querySelectorAll('.sub-completed').length;
-        if (finishedSubs === 4) {
+        if (parentBlock.querySelectorAll('.sub-completed').length === 4) {
             parentBlock.classList.add('completed');
             correctCount++;
             updateProgress();
@@ -179,7 +167,6 @@ function handleDSSelect(element, qIndex, subIdx, userChoice) {
         }
     } else {
         element.classList.add('wrong');
-        // Không khóa, cho phép chọn lại Đúng thành Sai hoặc ngược lại
     }
 }
 
@@ -187,7 +174,7 @@ function updateProgress() {
     const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
-    document.getElementById('live-score').innerText = Math.round(score * 100) / 100;
+    document.getElementById('live-score').innerText = (Math.round(score * 100) / 100);
 }
 
 function checkEndGame() {
