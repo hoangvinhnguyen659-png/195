@@ -46,7 +46,6 @@ async function startGame(fileName) {
         const res = await fetch(fileName);
         quizData = await res.json();
         
-        // Logic trộn câu hỏi
         userQuestions = shuffleCheckbox.checked ? 
             [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
         
@@ -107,9 +106,14 @@ function deselectAnswers() {
     currentSelection = null;
 }
 
-// 6. XỬ LÝ CHỌN ĐÁP ÁN (BỔ SUNG LOGIC MỚI)
+// 6. XỬ LÝ CHỌN ĐÁP ÁN (BỔ SUNG LOGIC XÓA MÀU CŨ)
 answerEls.forEach(function(el) {
     el.onclick = function() {
+        // BỔ SUNG: Xóa sạch màu sắc cũ mỗi khi đổi đáp án
+        document.querySelectorAll('.option-item').forEach(function(item) {
+            item.classList.remove('correct', 'wrong', 'dimmed');
+        });
+
         const selectedId = el.id; 
         const data = userQuestions[currentQuiz];
         const label = el.parentElement;
@@ -122,22 +126,18 @@ answerEls.forEach(function(el) {
         }
 
         if (selectedId === correctKey) {
-            // NẾU CHỌN ĐÚNG
             label.classList.add('correct');
-            label.classList.remove('wrong');
-            
-            // BỔ SUNG: Khóa và làm mờ các câu khác
+            // Khóa toàn bộ để tập trung vào câu đúng
             document.querySelectorAll('.option-item').forEach(function(item) {
-                item.classList.add('locked'); // Khóa toàn bộ để không bấm lại được
+                item.classList.add('locked'); 
                 if(item !== label) item.classList.add('dimmed');
             });
 
             currentSelection = { isCorrect: true };
-            submitBtn.disabled = false; // CHỈ ĐÚNG MỚI MỞ NÚT
+            submitBtn.disabled = false; 
         } else {
-            // NẾU CHỌN SAI
             label.classList.add('wrong');
-            submitBtn.disabled = true; // VẪN KHÓA NÚT
+            submitBtn.disabled = true; 
 
             let uAns = Array.isArray(data.options) ? (selectedId === 'a' ? data.options[0] : data.options[1]) : data.options[selectedId];
             let cAns = Array.isArray(data.options) ? data.answer : data.options[correctKey];
@@ -183,7 +183,7 @@ function showResults() {
     if (wrongAnswers.length > 0) {
         let html = "";
         wrongAnswers.forEach(function(item) {
-            html += `<div style="margin-bottom:15px; padding:10px; border-left:4px solid #e74c3c; background:#fff5f5; border-radius:8px; text-align:left;">
+            html += `<div style="margin-bottom:15px; padding:15px; border-left:5px solid #e74c3c; background:#fff5f5; border-radius:12px; text-align:left;">
                 <p><strong>${item.q}</strong></p>
                 <p style="color:#e74c3c">✘ Sai: ${item.userAns}</p>
                 <p style="color:#2ecc71">✔ Đúng: ${item.correctAns}</p>
@@ -195,7 +195,6 @@ function showResults() {
     }
 }
 
-// 9. NÚT HOME
 if (btnHome) {
     btnHome.onclick = () => location.reload();
 }
