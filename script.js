@@ -1,239 +1,181 @@
-// GIỮ NGUYÊN CÁC BIẾN CŨ CỦA BẠN
-let quizData = []; 
-let currentQuiz = 0;
-let score = 0;
-let userQuestions = []; 
-let wrongAnswers = [];
-
-// BỔ SUNG: Biến để quản lý nút Home và lựa chọn
-const btnHome = document.getElementById('btn-home'); 
-let currentSelection = null; 
-
-const loadingScreen = document.getElementById('loading-screen');
-const quizScreen = document.getElementById('quiz-screen');
-const resultScreen = document.getElementById('result-screen');
-const statusText = document.getElementById('status-text');
-const setupOptions = document.getElementById('setup-options');
-const shuffleCheckbox = document.getElementById('shuffle-checkbox');
-const questionEl = document.getElementById('question');
-const answerEls = document.querySelectorAll('.answer');
-const submitBtn = document.getElementById('submit');
-const progressBar = document.getElementById('progress-bar');
-const currentCountEl = document.getElementById('current-count');
-const totalCountEl = document.getElementById('total-count');
-const liveScoreEl = document.getElementById('live-score');
-
-// HÀM INIT CŨ CỦA BẠN
-async function init() {
-    try {
-        const response = await fetch('questions.json');
-        if (response.ok) {
-            statusText.innerText = "Sẵn sàng!";
-            setupOptions.classList.remove('hidden');
-        }
-    } catch (error) {
-        statusText.innerText = "Lỗi kết nối!";
-    }
-}
-init();
-
-// HÀM START GAME CŨ - BỔ SUNG NÚT HOME
-async function startGame(fileName) {
-    try {
-        const res = await fetch(fileName);
-        quizData = await res.json();
-        
-        if (shuffleCheckbox.checked) {
-            userQuestions = [...quizData].sort(() => Math.random() - 0.5);
-        } else {
-            userQuestions = [...quizData];
-        }
-        
-        currentQuiz = 0;
-        score = 0;
-        wrongAnswers = [];
-        
-        loadingScreen.classList.add('hidden');
-        quizScreen.classList.remove('hidden');
-        
-        // BỔ SUNG: Hiện nút Home khi vào màn hình chơi
-        if (btnHome) {
-            btnHome.classList.remove('hidden');
-        }
-        
-        loadQuiz();
-    } catch (err) {
-        alert("Lỗi tải dữ liệu!");
-    }
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #9b59b6;
+    --secondary-dark: #8e44ad;
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --bg: #f0f4f8;
+    --text: #2d3436;
+    --radius: 14px;
 }
 
-// GIỮ NGUYÊN CÁC NÚT CHỌN CHẾ ĐỘ
-document.getElementById('btn-tracnghiem').onclick = function() {
-    startGame('questions.json');
-};
-document.getElementById('btn-dungsai').onclick = function() {
-    startGame('dungsai.json');
-};
-
-// HÀM LOAD QUIZ - BỔ SUNG LOGIC HIỆN/ẨN NHÃN C,D
-function loadQuiz() {
-    deselectAnswers();
-    const currentQuizData = userQuestions[currentQuiz];
-    questionEl.innerText = "Câu " + (currentQuiz + 1) + ": " + currentQuizData.question;
-
-    // GIỮ CẤU TRÚC GÁN TEXT CŨ NHƯNG THÊM KIỂM TRA ĐÚNG/SAI
-    if (Array.isArray(currentQuizData.options)) {
-        // Nếu là Đúng/Sai
-        document.getElementById('a_text').innerText = currentQuizData.options[0];
-        document.getElementById('b_text').innerText = currentQuizData.options[1];
-        
-        // BỔ SUNG: Ẩn C và D để không bị trống
-        document.getElementById('label-c').style.display = 'none';
-        document.getElementById('label-d').style.display = 'none';
-    } else {
-        // Nếu là Trắc nghiệm
-        document.getElementById('a_text').innerText = currentQuizData.options.a;
-        document.getElementById('b_text').innerText = currentQuizData.options.b;
-        document.getElementById('c_text').innerText = currentQuizData.options.c;
-        document.getElementById('d_text').innerText = currentQuizData.options.d;
-        
-        // BỔ SUNG: Hiện lại C và D
-        document.getElementById('label-c').style.display = 'flex';
-        document.getElementById('label-d').style.display = 'flex';
-    }
-
-    progressBar.style.width = (currentQuiz / userQuestions.length) * 100 + "%";
-    currentCountEl.innerText = currentQuiz + 1;
-    totalCountEl.innerText = userQuestions.length;
-    liveScoreEl.innerText = score;
+/* CHÈN THÊM: CSS CHO NÚT HOME */
+#btn-home {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 999;
+    padding: 8px 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+#btn-home:hover {
+    background: #f1f1f1;
 }
 
-// HÀM BỎ CHỌN CŨ
-function deselectAnswers() {
-    answerEls.forEach(answerEl => {
-        answerEl.checked = false;
-        answerEl.parentElement.classList.remove('correct');
-        answerEl.parentElement.classList.remove('wrong');
-        answerEl.parentElement.classList.remove('dimmed');
-    });
-    submitBtn.disabled = true;
-    currentSelection = null;
+/* GIỮ NGUYÊN TOÀN BỘ CSS CŨ CỦA BẠN */
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
 }
 
-// SỰ KIỆN CLICK ĐÁP ÁN - BỔ SUNG SỬA LỖI HIỆN ĐỎ
-answerEls.forEach(answerEl => {
-    answerEl.onclick = function() {
-        const selected = answerEl.id;
-        const data = userQuestions[currentQuiz];
-        
-        // BỔ SUNG: Logic tìm đáp án đúng thông minh (Sửa lỗi hiện đỏ)
-        let correct = "";
-        if (Array.isArray(data.options)) {
-            // Nếu JSON ghi "Đúng" hoặc "Sai" thay vì "a", "b"
-            if (data.answer === data.options[0]) correct = "a";
-            else if (data.answer === data.options[1]) correct = "b";
-            else correct = String(data.answer).toLowerCase();
-        } else {
-            correct = String(data.answer).toLowerCase();
-        }
+.container {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--radius);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+}
 
-        // Xóa màu cũ của các label
-        document.querySelectorAll('.option-item').forEach(item => {
-            item.classList.remove('correct', 'wrong', 'dimmed');
-        });
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        const parentLabel = answerEl.parentElement;
+.hidden { display: none !important; }
 
-        if (selected === correct) {
-            // CHỌN ĐÚNG
-            parentLabel.classList.add('correct');
-            document.querySelectorAll('.option-item').forEach(item => {
-                if(item !== parentLabel) item.classList.add('dimmed');
-            });
-            currentSelection = { isCorrect: true };
-        } else {
-            // CHỌN SAI
-            parentLabel.classList.add('wrong');
-            
-            // Lấy text để hiện trong phần kết quả
-            let uText = "";
-            let cText = "";
-            if (Array.isArray(data.options)) {
-                uText = (selected === 'a') ? data.options[0] : data.options[1];
-                cText = data.answer;
-            } else {
-                uText = data.options[selected];
-                cText = data.options[correct];
-            }
+#loading-screen { padding: 40px; text-align: center; }
+.app-title { color: var(--primary); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+#status-text { margin-bottom: 20px; color: #636e72; font-weight: 500;}
 
-            currentSelection = { 
-                isCorrect: false, 
-                q: data.question, 
-                userAns: uText, 
-                correctAns: cText 
-            };
-        }
-        submitBtn.disabled = false;
-    };
-});
+.setup-group { margin: 20px 0; padding: 15px; background: #f8fafc; border-radius: 10px; display: flex; justify-content: center; }
+.mode-buttons { display: flex; flex-direction: column; gap: 15px; }
 
-// NÚT TIẾP TỤC CŨ CỦA BẠN
-submitBtn.onclick = function() {
-    if (currentSelection) {
-        if (currentSelection.isCorrect) {
-            score++;
-        } else {
-            wrongAnswers.push(currentSelection);
-        }
-    }
+.toggle-switch { display: flex; align-items: center; cursor: pointer; font-weight: 600; }
+.toggle-switch input { width: 20px; height: 20px; margin-right: 10px; accent-color: var(--primary); }
 
-    currentQuiz++;
+.quiz-header { padding: 20px 20px 10px; border-bottom: 1px solid #f0f0f0; }
+.progress-bg { background: #edf2f7; height: 10px; border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
+#progress-bar { 
+    background: linear-gradient(90deg, var(--primary), #a29bfe, var(--success)); 
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+}
 
-    if (currentQuiz < userQuestions.length) {
-        loadQuiz();
-    } else {
-        showResults();
-    }
-};
+.stats-bar { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 800; color: #7f8c8d; }
+#live-score { color: var(--success); font-size: 1rem; }
 
-// HÀM HIỂN THỊ KẾT QUẢ CŨ
-function showResults() {
-    quizScreen.classList.add('hidden');
-    resultScreen.classList.remove('hidden');
-    
-    // Ẩn nút Home khi đã xem xong kết quả
-    if (btnHome) btnHome.classList.add('hidden');
+.quiz-body { padding: 20px; }
+#question { font-size: 1.25rem; font-weight: 700; margin-bottom: 25px; color: #1a202c; line-height: 1.5; }
 
-    document.getElementById('final-score').innerText = score + " / " + userQuestions.length;
+.option-item {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius); 
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer; 
+    display: flex;
+    align-items: center; 
+    font-weight: 500;
+    background: #fff;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-    if (score / userQuestions.length >= 0.8) {
-        confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
-    }
-
-    // HIỂN THỊ CÁC CÂU SAI
-    const reviewContainer = document.getElementById('review-container');
-    if (wrongAnswers.length > 0) {
-        let reviewHTML = "";
-        wrongAnswers.forEach(item => {
-            reviewHTML += '<div style="margin-bottom:15px; padding:10px; border-left:4px solid #e74c3c; background:#fff5f5; border-radius:8px;">';
-            reviewHTML += '<p><strong>' + item.q + '</strong></p>';
-            reviewHTML += '<p style="color:#e74c3c">✘ Sai: ' + item.userAns + '</p>';
-            reviewHTML += '<p style="color:#2ecc71">✔ Đúng: ' + item.correctAns + '</p>';
-            reviewHTML += '</div>';
-        });
-        reviewContainer.innerHTML = reviewHTML;
-    } else {
-        reviewContainer.innerHTML = "<p style='text-align:center'>Bạn không làm sai câu nào!</p>";
+@media (hover: hover) {
+    .option-item:hover {
+        border-color: var(--primary);
+        background-color: #f0f7ff;
+        transform: translateX(5px);
     }
 }
 
-// BỔ SUNG: Nút Home quay lại từ màn hình kết quả hoặc khi đang chơi
-if (btnHome) {
-    btnHome.onclick = function() {
-        location.reload();
-    };
+.option-item input { margin-right: 15px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--primary); }
+
+.option-item.correct { 
+    background-color: #defadb !important; 
+    border-color: var(--success) !important; 
+    color: #1c451d;
+    transform: scale(1.05) !important;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+    font-weight: 700;
+}
+
+.option-item.wrong { 
+    background-color: #fff5f5 !important; 
+    border-color: var(--error) !important; 
+    color: #611b1b;
+}
+
+.option-item.dimmed {
+    opacity: 0.3;
+    filter: grayscale(100%);
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.quiz-footer { padding: 15px 20px; background: #f8fafc; text-align: right; }
+
+.btn-start, #submit {
+    border: none;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    transition: transform 0.1s;
+    position: relative;
+}
+
+.btn-primary, #submit { background: var(--primary); box-shadow: 0 5px 0 var(--primary-dark); }
+.btn-primary:active, #submit:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--primary-dark); }
+
+.btn-secondary { background: var(--secondary); box-shadow: 0 5px 0 var(--secondary-dark); }
+.btn-secondary:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--secondary-dark); }
+
+#submit:disabled { background: #cbd5e0; box-shadow: 0 5px 0 #a0aec0; cursor: not-allowed; transform: none; }
+
+#result-screen { padding: 30px; text-align: center; }
+.result-title { color: #2d3436; font-weight: 800; margin-bottom: 5px; }
+#final-score { font-size: 4rem; color: var(--primary); font-weight: 800; margin: 10px 0; }
+.review-title { color: #636e72; font-weight: 600; margin-bottom: 15px; }
+
+#review-container { 
+    max-height: 350px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+#review-container::-webkit-scrollbar { width: 6px; }
+#review-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+#review-container::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+
+@media (max-width: 480px) {
+    .quiz-body { padding: 15px; }
+    #question { font-size: 1.1rem; }
+    .btn-start, #submit { width: 100%; }
 }
