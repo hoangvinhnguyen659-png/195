@@ -1,34 +1,77 @@
 :root {
-    --primary: #3498db;       /* Màu xanh dương (Trắc nghiệm) */
+    --primary: #3498db;
     --primary-dark: #2980b9;
-    --secondary: #9b59b6;     /* Màu tím (Đúng/Sai) */
+    --secondary: #9b59b6;
     --secondary-dark: #8e44ad;
-    --success: #2ecc71;       /* Màu đúng */
-    --error: #e74c3c;         /* Màu sai */
-    --bg: #f0f4f8;            /* Màu nền web */
-    --text: #2d3436;          /* Màu chữ */
-    --radius: 14px;           /* Bo góc */
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --bg: #f0f4f8;
+    --text: #2d3436;
+    --radius: 14px;
 }
 
 /* 1. CẤU TRÚC CƠ BẢN */
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    -webkit-tap-highlight-color: transparent; 
+}
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    display: flex; justify-content: center; align-items: center;
-    min-height: 100vh; padding: 15px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; 
+    padding: 15px;
 }
 
 .container {
-    background: #fff; width: 100%; max-width: 600px;
+    background: #fff; 
+    width: 100%; 
+    max-width: 600px;
     border-radius: var(--radius);
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     overflow: hidden;
+    position: relative; /* Thêm để nút Home bám theo container */
     animation: fadeIn 0.5s ease-out;
 }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* TỐI ƯU NÚT HOME */
+#btn-home {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    padding: 8px 15px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+#btn-home:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(15px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
 
 .hidden { display: none !important; }
 
@@ -37,15 +80,24 @@ body {
 .app-title { color: var(--primary); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
 #status-text { margin-bottom: 20px; color: #636e72; font-weight: 500;}
 
-.setup-group { margin: 20px 0; padding: 15px; background: #f8fafc; border-radius: 10px; display: flex; justify-content: center; }
+.setup-group { 
+    margin: 20px 0; 
+    padding: 15px; 
+    background: #f8fafc; 
+    border-radius: 10px; 
+    display: flex; 
+    justify-content: center; 
+}
 .mode-buttons { display: flex; flex-direction: column; gap: 15px; }
 
-/* Checkbox Trộn câu hỏi */
 .toggle-switch { display: flex; align-items: center; cursor: pointer; font-weight: 600; }
 .toggle-switch input { width: 20px; height: 20px; margin-right: 10px; accent-color: var(--primary); }
 
 /* 3. THANH TIẾN TRÌNH & HEADER */
-.quiz-header { padding: 20px 20px 10px; border-bottom: 1px solid #f0f0f0; }
+.quiz-header { 
+    padding: 45px 20px 10px; /* Tăng padding trên để né nút Home */
+    border-bottom: 1px solid #f0f0f0; 
+}
 .progress-bg { background: #edf2f7; height: 10px; border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
 #progress-bar { 
     background: linear-gradient(90deg, var(--primary), #a29bfe, var(--success)); 
@@ -64,45 +116,41 @@ body {
     display: flex; align-items: center; 
     font-weight: 500; background: #fff;
     position: relative;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Hiệu ứng mượt mà */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Hover effect (trên máy tính) */
-@media (hover: hover) {
-    .option-item:hover { border-color: var(--primary); background-color: #f0f7ff; transform: translateX(5px); }
+.option-item:hover { 
+    border-color: var(--primary); 
+    background-color: #f0f7ff; 
+    transform: translateX(5px); 
 }
 
 .option-item input { margin-right: 15px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--primary); }
 
-/* --- TRẠNG THÁI ĐẶC BIỆT (Logic Đúng/Sai) --- */
-
-/* A. KHI CHỌN ĐÚNG: Nổi bật, Phóng to, Phát sáng */
 .option-item.correct { 
     background-color: #defadb !important; 
     border-color: var(--success) !important; 
     color: #1c451d;
-    transform: scale(1.05) !important; /* Phóng to 5% */
-    z-index: 10; /* Nằm đè lên các phần tử khác */
-    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4); /* Đổ bóng xanh */
+    transform: scale(1.03) !important;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.2);
     font-weight: 700;
 }
 
-/* B. KHI CHỌN SAI: Chỉ đổi màu đỏ */
 .option-item.wrong { 
     background-color: #fff5f5 !important; 
     border-color: var(--error) !important; 
     color: #611b1b;
 }
 
-/* C. HIỆU ỨNG LÀM MỜ (Cho các câu không chọn khi đã có câu đúng) */
 .option-item.dimmed {
-    opacity: 0.3;          /* Mờ đi */
-    filter: grayscale(100%); /* Chuyển sang trắng đen */
-    transform: scale(0.95);  /* Nhỏ lại chút xíu */
-    pointer-events: none;    /* Không cho click nữa */
+    opacity: 0.3;
+    filter: grayscale(100%);
+    transform: scale(0.98);
+    pointer-events: none;
 }
 
-/* 5. BUTTONS (Nút bấm) */
+/* 5. BUTTONS */
 .quiz-footer { padding: 15px 20px; background: #f8fafc; text-align: right; }
 
 .btn-start, #submit {
@@ -110,54 +158,37 @@ body {
     padding: 14px 30px; border-radius: 10px; cursor: pointer;
     font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
     width: 100%; transition: transform 0.1s;
-    position: relative;
 }
 
-/* Nút Trắc Nghiệm (Xanh) */
 .btn-primary, #submit {
     background: var(--primary);
     box-shadow: 0 5px 0 var(--primary-dark);
 }
-.btn-primary:active, #submit:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0 var(--primary-dark);
-}
 
-/* Nút Đúng/Sai (Tím) */
 .btn-secondary {
     background: var(--secondary);
     box-shadow: 0 5px 0 var(--secondary-dark);
-}
-.btn-secondary:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0 var(--secondary-dark);
 }
 
 #submit:disabled {
     background: #cbd5e0;
     box-shadow: 0 5px 0 #a0aec0;
     cursor: not-allowed;
-    transform: none;
 }
 
-/* 6. MÀN HÌNH KẾT QUẢ */
+/* 6. KẾT QUẢ */
 #result-screen { padding: 30px; text-align: center; }
-.result-title { color: #2d3436; font-weight: 800; margin-bottom: 5px; }
 #final-score { font-size: 4rem; color: var(--primary); font-weight: 800; margin: 10px 0; }
-.review-title { color: #636e72; font-weight: 600; margin-bottom: 15px; }
-
 #review-container { 
-    max-height: 350px; overflow-y: auto; text-align: left;
-    padding-right: 10px; margin-top: 10px;
+    max-height: 350px; 
+    overflow-y: auto; 
+    text-align: left;
+    padding-right: 10px; 
+    margin-top: 10px;
 }
-/* Scrollbar đẹp cho vùng xem lại */
-#review-container::-webkit-scrollbar { width: 6px; }
-#review-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-#review-container::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
 
-/* 7. MOBILE RESPONSIVE */
 @media (max-width: 480px) {
     .quiz-body { padding: 15px; }
     #question { font-size: 1.1rem; }
-    .btn-start, #submit { width: 100%; }
+    .quiz-header { padding-top: 50px; }
 }
