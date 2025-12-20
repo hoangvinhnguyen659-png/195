@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Trắc Nghiệm Pro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="app-background"></div>
 
     <div class="app-container">
         
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.4392 9.24649 5 7.5 5C5.75351 5 4.16789 5.4392 3 6.25278V19.2528C4.16789 18.4392 5.75351 18 7.5 18C9.24649 18 10.8321 18.4392 12 19.2528M12 6.25278C13.1679 5.4392 14.7535 5 16.5 5C18.2465 5 19.8321 5.4392 21 6.25278V19.2528C19.8321 18.4392 18.2465 18 16.5 18C14.7535 18 13.1679 18.4392 12 19.2528" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
                 <h1 class="app-title">Trắc Nghiệm Pro</h1>
                 <p id="status-text">Đang kết nối dữ liệu...</p>
                 
@@ -26,8 +34,12 @@
                     </div>
 
                     <div class="mode-buttons">
-                        <button class="btn-start btn-primary" id="btn-tracnghiem">Làm Trắc Nghiệm</button>
-                        <button class="btn-start btn-secondary" id="btn-dungsai">Làm Đúng / Sai</button>
+                        <button class="btn-start btn-primary" id="btn-tracnghiem">
+                            <span class="btn-icon">📝</span> Làm Trắc Nghiệm
+                        </button>
+                        <button class="btn-start btn-secondary" id="btn-dungsai">
+                            <span class="btn-icon">✅</span> Làm Đúng / Sai
+                        </button>
                     </div>
                 </div>
             </div>
@@ -39,7 +51,7 @@
                     <div class="info-item left">Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
                     <div class="info-item center">Điểm: <span id="live-score">0</span></div>
                     <div class="info-item right">
-                        <button id="btn-home-nav" onclick="location.reload()">Trang chủ</button>
+                        <button id="btn-home-nav" onclick="location.reload()">Thoát</button>
                     </div>
                 </div>
                 <div class="progress-bg"><div id="progress-bar"></div></div>
@@ -48,17 +60,27 @@
             <div class="quiz-scroll-area">
                 <div id="quiz-feed" class="quiz-body">
                     </div>
-                <div style="height: 50px;"></div> 
+                <div style="height: 80px;"></div> 
             </div>
         </div>
 
         <div id="result-screen" class="screen hidden">
             <div class="result-card">
-                <h2 class="result-title">KẾT QUẢ</h2>
+                <div class="result-icon">🏆</div>
+                <h2 class="result-title">Hoàn Thành!</h2>
+                <div class="score-label">Điểm số của bạn</div>
                 <div class="score-box">
                     <span id="final-score">0/0</span>
                 </div>
-                <button class="btn-start btn-primary" onclick="location.reload()" style="margin-top: 30px;">Chơi Lại</button>
+                
+                <div class="result-actions">
+                    <button class="btn-start btn-primary" onclick="restartQuiz()">
+                        <span class="icon">↺</span> Làm Lại Đề Này
+                    </button>
+                    <button class="btn-start btn-outline" onclick="location.reload()">
+                        <span class="icon">🏠</span> Về Trang Chủ
+                    </button>
+                </div>
             </div>
         </div>
 
