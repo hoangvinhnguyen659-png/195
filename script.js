@@ -17,7 +17,7 @@ const btnHome = document.getElementById('btn-home');
 
 const questionEl = document.getElementById('question');
 const answerEls = document.querySelectorAll('.answer');
-const submitBtn = document.getElementById('submit');
+const submitBtn = document.getElementById('submit'); // Nút mũi tên
 const progressBar = document.getElementById('progress-bar');
 const currentCountEl = document.getElementById('current-count');
 const totalCountEl = document.getElementById('total-count');
@@ -70,7 +70,6 @@ document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json')
 function loadQuiz() {
     deselectAnswers();
     
-    // Đảm bảo mỗi khi qua câu mới vùng nội dung cuộn lên đầu
     const scrollArea = document.querySelector('.quiz-scroll-area');
     if (scrollArea) scrollArea.scrollTop = 0;
 
@@ -106,14 +105,13 @@ function deselectAnswers() {
         const parent = el.parentElement;
         parent.classList.remove('correct', 'wrong', 'dimmed', 'locked');
     });
-    submitBtn.disabled = true;
+    submitBtn.disabled = true; // Khóa mũi tên
     currentSelection = null;
 }
 
-// 6. XỬ LÝ CHỌN ĐÁP ÁN (GIỮ NGUYÊN LOGIC VÀ SỬA LỖI ĐỔI ĐÁP ÁN)
+// 6. XỬ LÝ CHỌN ĐÁP ÁN
 answerEls.forEach(function(el) {
     el.onclick = function() {
-        // Xóa sạch trạng thái cũ của tất cả đáp án khi người dùng click cái mới
         document.querySelectorAll('.option-item').forEach(function(item) {
             item.classList.remove('correct', 'wrong', 'dimmed');
         });
@@ -135,12 +133,15 @@ answerEls.forEach(function(el) {
                 item.classList.add('locked'); 
                 if(item !== label) item.classList.add('dimmed');
             });
-
             currentSelection = { isCorrect: true };
-            submitBtn.disabled = false; 
+            submitBtn.disabled = false; // Mở mũi tên
         } else {
             label.classList.add('wrong');
-            submitBtn.disabled = true; 
+            // Gợi ý: Hiện cả đáp án đúng
+            const correctLabel = document.getElementById(`label-${correctKey}`);
+            if(correctLabel) correctLabel.classList.add('correct');
+            
+            submitBtn.disabled = false; // Vẫn mở mũi tên để qua câu sau khi đã xem đáp án đúng
 
             let uAns = Array.isArray(data.options) ? (selectedId === 'a' ? data.options[0] : data.options[1]) : data.options[selectedId];
             let cAns = Array.isArray(data.options) ? data.answer : data.options[correctKey];
@@ -155,7 +156,7 @@ answerEls.forEach(function(el) {
     };
 });
 
-// 7. NÚT TIẾP TỤC
+// 7. NÚT MŨI TÊN (SỬA LẠI SỰ KIỆN CLICK)
 submitBtn.onclick = function() {
     if (currentSelection.isCorrect) {
         score++;
