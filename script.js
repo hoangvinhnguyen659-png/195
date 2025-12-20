@@ -25,7 +25,6 @@ const liveScoreEl = document.getElementById('live-score');
 
 // 2. HÀM KHỞI TẠO
 async function init() {
-    console.log("Đang kiểm tra kết nối dữ liệu...");
     try {
         const response = await fetch('questions.json');
         if (response.ok) {
@@ -35,7 +34,6 @@ async function init() {
             statusText.innerText = "Không tìm thấy dữ liệu!";
         }
     } catch (error) {
-        console.error(error);
         statusText.innerText = "Lỗi kết nối server!";
     }
 }
@@ -49,13 +47,8 @@ async function startGame(fileName) {
         quizData = await res.json();
         
         // Logic trộn câu hỏi
-        if (shuffleCheckbox.checked) {
-            userQuestions = [...quizData].sort(function() {
-                return Math.random() - 0.5;
-            });
-        } else {
-            userQuestions = [...quizData];
-        }
+        userQuestions = shuffleCheckbox.checked ? 
+            [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
         
         currentQuiz = 0;
         score = 0;
@@ -63,26 +56,16 @@ async function startGame(fileName) {
         
         loadingScreen.classList.add('hidden');
         quizScreen.classList.remove('hidden');
-        
-        if (btnHome) {
-            btnHome.classList.remove('hidden');
-        }
+        if (btnHome) btnHome.classList.remove('hidden');
         
         loadQuiz();
     } catch (err) {
-        alert("Lỗi: Không thể đọc file " + fileName);
-        statusText.innerText = "Lỗi tải file!";
+        alert("Lỗi tải dữ liệu!");
     }
 }
 
-// GÁN SỰ KIỆN CHO 2 NÚT CHẾ ĐỘ
-document.getElementById('btn-tracnghiem').onclick = function() {
-    startGame('questions.json');
-};
-
-document.getElementById('btn-dungsai').onclick = function() {
-    startGame('dungsai.json');
-};
+document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
+document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
 
 // 4. HÀM HIỂN THỊ CÂU HỎI
 function loadQuiz() {
@@ -96,7 +79,6 @@ function loadQuiz() {
     if (Array.isArray(options)) {
         document.getElementById('a_text').innerText = options[0]; 
         document.getElementById('b_text').innerText = options[1]; 
-        
         document.getElementById('label-c').style.display = 'none';
         document.getElementById('label-d').style.display = 'none';
     } else {
@@ -104,13 +86,11 @@ function loadQuiz() {
         document.getElementById('b_text').innerText = options.b;
         document.getElementById('c_text').innerText = options.c;
         document.getElementById('d_text').innerText = options.d;
-        
         document.getElementById('label-c').style.display = 'flex';
         document.getElementById('label-d').style.display = 'flex';
     }
 
-    const progressVal = (currentQuiz / userQuestions.length) * 100;
-    progressBar.style.width = progressVal + "%";
+    progressBar.style.width = (currentQuiz / userQuestions.length) * 100 + "%";
     currentCountEl.innerText = currentQuiz + 1;
     totalCountEl.innerText = userQuestions.length;
     liveScoreEl.innerText = score;
@@ -121,62 +101,46 @@ function deselectAnswers() {
     answerEls.forEach(function(el) {
         el.checked = false;
         const parent = el.parentElement;
-        parent.classList.remove('correct');
-        parent.classList.remove('wrong');
-        parent.classList.remove('dimmed');
+        parent.classList.remove('correct', 'wrong', 'dimmed', 'locked');
     });
     submitBtn.disabled = true;
     currentSelection = null;
 }
 
-// 6. XỬ LÝ CHỌN ĐÁP ÁN (BỔ SUNG HIỆU ỨNG MỜ)
+// 6. XỬ LÝ CHỌN ĐÁP ÁN (BỔ SUNG LOGIC MỚI)
 answerEls.forEach(function(el) {
     el.onclick = function() {
         const selectedId = el.id; 
         const data = userQuestions[currentQuiz];
+        const label = el.parentElement;
         
         let correctKey = "";
         if (Array.isArray(data.options)) {
-            if (data.answer === data.options[0]) {
-                correctKey = "a";
-            } else if (data.answer === data.options[1]) {
-                correctKey = "b";
-            } else {
-                correctKey = String(data.answer).toLowerCase();
-            }
+            correctKey = (data.answer === data.options[0]) ? "a" : "b";
         } else {
             correctKey = String(data.answer).toLowerCase();
         }
 
-        // Reset màu ô
-        document.querySelectorAll('.option-item').forEach(function(item) {
-            item.classList.remove('correct', 'wrong', 'dimmed');
-        });
-
-        const label = el.parentElement;
-
-        // BỔ SUNG: Hiệu ứng làm mờ các câu không được chọn
-        document.querySelectorAll('.option-item').forEach(function(item) {
-            if(item !== label) {
-                item.classList.add('dimmed');
-            }
-        });
-
         if (selectedId === correctKey) {
+            // NẾU CHỌN ĐÚNG
             label.classList.add('correct');
-            currentSelection = { isCorrect: true };
-        } else {
-            label.classList.add('wrong');
+            label.classList.remove('wrong');
             
-            let uAns = "";
-            let cAns = "";
-            if (Array.isArray(data.options)) {
-                uAns = (selectedId === 'a') ? data.options[0] : data.options[1];
-                cAns = data.answer;
-            } else {
-                uAns = data.options[selectedId];
-                cAns = data.options[correctKey];
-            }
+            // BỔ SUNG: Khóa và làm mờ các câu khác
+            document.querySelectorAll('.option-item').forEach(function(item) {
+                item.classList.add('locked'); // Khóa toàn bộ để không bấm lại được
+                if(item !== label) item.classList.add('dimmed');
+            });
+
+            currentSelection = { isCorrect: true };
+            submitBtn.disabled = false; // CHỈ ĐÚNG MỚI MỞ NÚT
+        } else {
+            // NẾU CHỌN SAI
+            label.classList.add('wrong');
+            submitBtn.disabled = true; // VẪN KHÓA NÚT
+
+            let uAns = Array.isArray(data.options) ? (selectedId === 'a' ? data.options[0] : data.options[1]) : data.options[selectedId];
+            let cAns = Array.isArray(data.options) ? data.answer : data.options[correctKey];
 
             currentSelection = { 
                 isCorrect: false, 
@@ -185,7 +149,6 @@ answerEls.forEach(function(el) {
                 correctAns: cAns 
             };
         }
-        submitBtn.disabled = false;
     };
 });
 
@@ -212,7 +175,6 @@ function showResults() {
     if (btnHome) btnHome.classList.add('hidden');
 
     document.getElementById('final-score').innerText = score + " / " + userQuestions.length;
-
     if (score / userQuestions.length >= 0.8) {
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     }
@@ -221,11 +183,11 @@ function showResults() {
     if (wrongAnswers.length > 0) {
         let html = "";
         wrongAnswers.forEach(function(item) {
-            html += '<div style="margin-bottom:15px; padding:10px; border-left:4px solid #e74c3c; background:#fff5f5; border-radius:8px; text-align:left;">';
-            html += '<p><strong>' + item.q + '</strong></p>';
-            html += '<p style="color:#e74c3c">✘ Sai: ' + item.userAns + '</p>';
-            html += '<p style="color:#2ecc71">✔ Đúng: ' + item.correctAns + '</p>';
-            html += '</div>';
+            html += `<div style="margin-bottom:15px; padding:10px; border-left:4px solid #e74c3c; background:#fff5f5; border-radius:8px; text-align:left;">
+                <p><strong>${item.q}</strong></p>
+                <p style="color:#e74c3c">✘ Sai: ${item.userAns}</p>
+                <p style="color:#2ecc71">✔ Đúng: ${item.correctAns}</p>
+            </div>`;
         });
         review.innerHTML = html;
     } else {
@@ -235,7 +197,5 @@ function showResults() {
 
 // 9. NÚT HOME
 if (btnHome) {
-    btnHome.onclick = function() {
-        location.reload();
-    };
+    btnHome.onclick = () => location.reload();
 }
