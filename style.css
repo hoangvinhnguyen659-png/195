@@ -211,3 +211,29 @@ input:checked + .slider:before { transform: translateX(20px); }
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(16, 185, 129, 0.1);
 }
+/* Tùy chỉnh nhãn A, B, C, D */
+.opt-label {
+    font-weight: 800;
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+/* Nút Đúng/Sai nằm ngang */
+.ds-row { display: flex; gap: 10px; margin-top: 8px; }
+.ds-row .option-item { flex: 1; margin: 0; justify-content: center; }
+
+/* Trắc nghiệm căn trái cho dễ đọc */
+.option-list .option-item { justify-content: flex-start; padding-left: 20px; }
+
+/* Hiệu ứng mờ nhẹ (0.6) khi đã xong */
+.completed .option-item:not(.correct),
+.sub-completed .option-item:not(.correct) {
+    opacity: 0.6 !important;
+    pointer-events: none;
+}
+
+.completed .option-item.correct,
+.sub-completed .option-item.correct {
+    pointer-events: none;
+    transform: scale(1.02);
+}
