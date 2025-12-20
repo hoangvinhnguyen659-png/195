@@ -1,6 +1,6 @@
 [
   {
-    "question": "Về lịch sử hình thành và định nghĩa Trí tuệ nhân tạo (AI):",
+    "question": "Chủ đề 1 - Bài 1: Lịch sử phát triển của AI",
     "subQuestions": [
       { "label": "a", "content": "Phép thử Turing (1950) nhằm kiểm tra khả năng biểu lộ cảm xúc của máy tính.", "answer": "Sai" },
       { "label": "b", "content": "Thuật ngữ \"Trí tuệ nhân tạo\" (AI) chính thức ra đời tại hội thảo Dartmouth năm 1956.", "answer": "Đúng" },
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "question": "Đặc trưng và phân loại các hệ thống AI:",
+    "question": "Chủ đề 1 - Bài 1: Định nghĩa và đặc trưng của AI",
     "subQuestions": [
       { "label": "a", "content": "AI là khả năng của máy tính thực hiện các công việc mang tính trí tuệ của con người như đọc chữ, lái xe.", "answer": "Đúng" },
       { "label": "b", "content": "Khả năng \"học\" của AI nghĩa là máy tính tự biết sửa chữa phần cứng khi bị hỏng.", "answer": "Sai" },
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "question": "Về AI hẹp và AI tổng quát:",
+    "question": "Chủ đề 1 - Bài 1: Phân loại AI hẹp và AI mạnh",
     "subQuestions": [
       { "label": "a", "content": "AI hẹp (AI yếu) chỉ thực hiện một hoặc một số lượng giới hạn các nhiệm vụ.", "answer": "Đúng" },
       { "label": "b", "content": "AI tổng quát (AI mạnh) hoạt động hoàn toàn dựa trên những gì đã được lập trình sẵn và không thể tự học từ dữ liệu mới.", "answer": "Sai" },
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "question": "Các ứng dụng phổ biến của AI trong đời sống:",
+    "question": "Chủ đề 1 - Bài 2: Ứng dụng phổ biến của AI",
     "subQuestions": [
       { "label": "a", "content": "Google Dịch sử dụng mô hình học máy nhưng chỉ dịch được văn bản nhập từ bàn phím.", "answer": "Sai" },
       { "label": "b", "content": "Công nghệ nhận dạng khuôn mặt hoạt động bằng cách so sánh các điểm lồi, lõm và chi tiết riêng biệt trên gương mặt.", "answer": "Đúng" },
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "question": "Khả năng nhận thức và giải quyết vấn đề của AI:",
+    "question": "Chủ đề 1 - Bài 2: Khả năng nhận thức của AI",
     "subQuestions": [
       { "label": "a", "content": "Dịch máy không được coi là ứng dụng AI vì nó chỉ tra từ điển.", "answer": "Sai" },
       { "label": "b", "content": "Phần mềm kiểm tra lỗi chính tả thể hiện khả năng \"nhận thức\" về quy tắc ngữ pháp của ngôn ngữ.", "answer": "Đúng" },
@@ -45,196 +45,196 @@
     ]
   },
   {
-    "question": "AI trong các lĩnh vực Y tế, Giao thông, Sản xuất, Tài chính:",
+    "question": "Chủ đề 1 - Bài 2: AI trong Y tế, Giao thông, Sản xuất, Tài chính",
     "subQuestions": [
       { "label": "a", "content": "Trong y học, AI giúp hỗ trợ chẩn đoán và đưa ra hướng điều trị chính xác.", "answer": "Đúng" },
       { "label": "b", "content": "Trong giao thông, AI giúp tự động hóa hoàn toàn việc bảo dưỡng xe mà không cần thợ máy.", "answer": "Sai" },
       { "label": "c", "content": "Trong sản xuất, AI drone có thể giám sát cây trồng và phun thuốc diệt sâu bệnh.", "answer": "Đúng" },
-      { "label": "d", "content": "Trong tài chính, Chatbot AI thay thế giao dịch viên để thực hiện các giao dịch đơn giản như chuyển tiền, mở tài khoản.", "answer": "Đúng" }
+      { "label": "d", "content": "Trong tài chính, Chatbot AI thay thế giao dịch viên để thực hiện các giao dịch đơn giản.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Về AI tạo sinh và tương lai của AI:",
+    "question": "Chủ đề 1 - Bài 2: AI tạo sinh (Generative AI)",
     "subQuestions": [
       { "label": "a", "content": "AI tạo sinh chỉ có khả năng phân tích dữ liệu cũ, không thể tạo ra nội dung mới.", "answer": "Sai" },
       { "label": "b", "content": "ChatGPT là một ví dụ về AI tạo sinh.", "answer": "Đúng" },
       { "label": "c", "content": "AI tạo sinh có thể hỗ trợ viết bài luận, làm thơ, soạn nhạc và viết mã lập trình.", "answer": "Đúng" },
-      { "label": "d", "content": "Sự phát triển của AI tạo sinh không liên quan gì đến kỳ vọng phát triển AI mạnh trong tương lai.", "answer": "Sai" }
+      { "label": "d", "content": "Sự phát triển của AI tạo sinh không liên quan gì đến kỳ vọng phát triển AI mạnh.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Cảnh báo rủi ro và mặt trái của AI:",
+    "question": "Chủ đề 1 - Bài 3: Cảnh báo rủi ro từ AI",
     "subQuestions": [
-      { "label": "a", "content": "AI sẽ tạo ra nhiều việc làm mới nên không gây ra áp lực thất nghiệp cho bất kỳ ngành nghề nào.", "answer": "Sai" },
-      { "label": "b", "content": "Deepfake là công nghệ sử dụng AI để giả mạo khuôn mặt hoặc giọng nói, tiềm ẩn rủi ro lừa đảo.", "answer": "Đúng" },
-      { "label": "c", "content": "AI luôn minh bạch vì mã nguồn của chúng luôn được công khai cho mọi người kiểm tra.", "answer": "Sai" },
-      { "label": "d", "content": "AI có thể bị lạm dụng để thu thập dữ liệu cá nhân trái phép, ảnh hưởng đến quyền riêng tư.", "answer": "Đúng" }
+      { "label": "a", "content": "AI sẽ tạo ra nhiều việc làm mới nên không gây ra áp lực thất nghiệp.", "answer": "Sai" },
+      { "label": "b", "content": "Deepfake là công nghệ sử dụng AI để giả mạo khuôn mặt hoặc giọng nói.", "answer": "Đúng" },
+      { "label": "c", "content": "AI luôn minh bạch vì mã nguồn của chúng luôn được công khai.", "answer": "Sai" },
+      { "label": "d", "content": "AI có thể bị lạm dụng để thu thập dữ liệu cá nhân trái phép.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Vấn đề đạo đức và sử dụng vũ khí AI:",
+    "question": "Chủ đề 1 - Bài 3: Vũ khí tự động và pháp lý",
     "subQuestions": [
-      { "label": "a", "content": "Cần ngăn cấm giao toàn quyền cho AI điều khiển vũ khí sát thương vì AI thiếu lòng trắc ẩn và đạo đức.", "answer": "Đúng" },
+      { "label": "a", "content": "Cần ngăn cấm giao toàn quyền cho AI điều khiển vũ khí sát thương.", "answer": "Đúng" },
       { "label": "b", "content": "AI đảm bảo không bao giờ xảy ra sự cố kỹ thuật khi điều khiển vũ khí.", "answer": "Sai" },
-      { "label": "c", "content": "Việc AI điều khiển vũ khí có thể dẫn đến chiến tranh tự động mà không có sự kiểm soát của con người.", "answer": "Đúng" },
-      { "label": "d", "content": "AI có khả năng chịu trách nhiệm pháp lý trước tòa án giống như con người khi gây ra hậu quả.", "answer": "Sai" }
+      { "label": "c", "content": "Việc AI điều khiển vũ khí có thể dẫn đến chiến tranh tự động.", "answer": "Đúng" },
+      { "label": "d", "content": "AI có khả năng chịu trách nhiệm pháp lý giống con người khi gây ra hậu quả.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Trách nhiệm của con người trong kỷ nguyên AI:",
+    "question": "Chủ đề 1 - Bài 3: Đạo đức người phát triển và sử dụng AI",
     "subQuestions": [
       { "label": "a", "content": "Bản thân công nghệ AI là xấu xa và cần bị loại bỏ.", "answer": "Sai" },
-      { "label": "b", "content": "Người dùng cần được giáo dục đạo đức và pháp luật để tránh lạm dụng AI vào mục đích xấu.", "answer": "Đúng" },
+      { "label": "b", "content": "Người dùng cần được giáo dục đạo đức và pháp luật để tránh lạm dụng AI.", "answer": "Đúng" },
       { "label": "c", "content": "Deepfake chỉ được dùng cho mục đích giải trí và vô hại.", "answer": "Sai" },
-      { "label": "d", "content": "Người phát triển AI cần có ràng buộc pháp lý, đặc biệt trong các lĩnh vực ảnh hưởng đến sinh mạng con người.", "answer": "Đúng" }
+      { "label": "d", "content": "Người phát triển AI cần có ràng buộc pháp lý trong các lĩnh vực ảnh hưởng sinh mạng.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Khái niệm và các loại mạng máy tính:",
+    "question": "Chủ đề 2 - Bài 4: Khái niệm mạng máy tính",
     "subQuestions": [
       { "label": "a", "content": "Mạng máy tính là hệ thống các thiết bị số kết nối với nhau để truyền dữ liệu.", "answer": "Đúng" },
-      { "label": "b", "content": "Mạng LAN có phạm vi địa lý rộng lớn (quốc gia, toàn cầu), còn mạng WAN có phạm vi hẹp.", "answer": "Sai" },
-      { "label": "c", "content": "Ba kiểu kết nối mạng cơ bản (hình học) là hình sao, hình trục và hình vòng.", "answer": "Đúng" },
-      { "label": "d", "content": "Trong mạng không dây, các thiết bị kết nối với nhau hoàn toàn bằng cáp quang.", "answer": "Sai" }
+      { "label": "b", "content": "Mạng LAN có phạm vi địa lý toàn cầu, còn mạng WAN có phạm vi hẹp.", "answer": "Sai" },
+      { "label": "c", "content": "Ba kiểu kết nối mạng cơ bản là hình sao, hình trục và hình vòng.", "answer": "Đúng" },
+      { "label": "d", "content": "Trong mạng không dây, các thiết bị kết nối hoàn toàn bằng cáp quang.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Thiết bị kết nối Hub và Switch:",
+    "question": "Chủ đề 2 - Bài 4: Thiết bị Hub và Switch",
     "subQuestions": [
-      { "label": "a", "content": "Hub gửi dữ liệu từ thiết bị nguồn đến tất cả các thiết bị khác trong mạng.", "answer": "Đúng" },
-      { "label": "b", "content": "Switch thông minh hơn Hub vì nó gửi dữ liệu đến đúng thiết bị đích nhờ địa chỉ MAC.", "answer": "Đúng" },
+      { "label": "a", "content": "Hub gửi dữ liệu từ thiết bị nguồn đến tất cả thiết bị khác trong mạng.", "answer": "Đúng" },
+      { "label": "b", "content": "Switch gửi dữ liệu đến đúng thiết bị đích nhờ địa chỉ MAC.", "answer": "Đúng" },
       { "label": "c", "content": "Sử dụng Hub ít xảy ra xung đột tín hiệu hơn so với Switch.", "answer": "Sai" },
-      { "label": "d", "content": "Cả Hub và Switch đều dùng để kết nối các thiết bị trong cùng một mạng LAN.", "answer": "Đúng" }
+      { "label": "d", "content": "Cả Hub và Switch đều dùng để kết nối các thiết bị trong mạng LAN.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Thiết bị Router và định tuyến mạng:",
+    "question": "Chủ đề 2 - Bài 4: Router và định tuyến",
     "subQuestions": [
-      { "label": "a", "content": "Chức năng chính của Router là kết nối các mạng LAN với nhau hoặc kết nối với Internet.", "answer": "Đúng" },
+      { "label": "a", "content": "Chức năng chính của Router là kết nối các mạng LAN với nhau.", "answer": "Đúng" },
       { "label": "b", "content": "Router chuyển dữ liệu dựa trên địa chỉ MAC của thiết bị.", "answer": "Sai" },
       { "label": "c", "content": "Router chọn đường đi cho gói tin dựa vào bảng định tuyến.", "answer": "Đúng" },
-      { "label": "d", "content": "Router Wifi chỉ có chức năng phát sóng wifi, không có chức năng của Switch.", "answer": "Sai" }
+      { "label": "d", "content": "Router Wifi chỉ có chức năng phát sóng wifi, không có chức năng Switch.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Các thiết bị Modem và Access Point:",
+    "question": "Chủ đề 2 - Bài 4: Modem và Access Point",
     "subQuestions": [
       { "label": "a", "content": "Modem chuyển đổi tín hiệu số thành tín hiệu tương tự và ngược lại.", "answer": "Đúng" },
-      { "label": "b", "content": "Wireless Access Point (WAP) dùng để kết nối các thiết bị không dây vào mạng LAN.", "answer": "Đúng" },
+      { "label": "b", "content": "WAP dùng để kết nối các thiết bị không dây vào mạng LAN.", "answer": "Đúng" },
       { "label": "c", "content": "Modem quang sử dụng đường truyền là cáp điện thoại thông thường.", "answer": "Sai" },
       { "label": "d", "content": "WAP truyền dữ liệu bằng tia hồng ngoại.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Địa chỉ IP và địa chỉ MAC:",
+    "question": "Chủ đề 2 - Bài 4: Địa chỉ IP và MAC",
     "subQuestions": [
       { "label": "a", "content": "Địa chỉ MAC gắn với phần cứng (card mạng) và không thay đổi được.", "answer": "Đúng" },
       { "label": "b", "content": "Địa chỉ IPv4 có độ dài 128 bit.", "answer": "Sai" },
-      { "label": "c", "content": "Địa chỉ IP của một thiết bị trong mạng LAN có thể thay đổi (được gán lại).", "answer": "Đúng" },
-      { "label": "d", "content": "IPv6 ra đời để thay thế IPv4 do IPv4 đã cạn kiệt địa chỉ.", "answer": "Đúng" }
+      { "label": "c", "content": "Địa chỉ IP trong mạng LAN có thể thay đổi (được gán lại).", "answer": "Đúng" },
+      { "label": "d", "content": "IPv6 ra đời do IPv4 đã cạn kiệt địa chỉ.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Giao thức mạng và bộ giao thức TCP/IP:",
+    "question": "Chủ đề 2 - Bài 5: Giao thức mạng và TCP/IP",
     "subQuestions": [
-      { "label": "a", "content": "Giao thức mạng là tập hợp các quy định về cách thức giao tiếp để truyền dữ liệu.", "answer": "Đúng" },
-      { "label": "b", "content": "Các quy định của giao thức chỉ liên quan đến tốc độ truyền, không liên quan đến định dạng dữ liệu.", "answer": "Sai" },
-      { "label": "c", "content": "Giao thức mạng đảm bảo việc truyền nhận dữ liệu chính xác và tin cậy.", "answer": "Đúng" },
-      { "label": "d", "content": "Chỉ cần một giao thức duy nhất là đủ cho mọi hoạt động trên Internet.", "answer": "Sai" }
+      { "label": "a", "content": "Giao thức mạng là tập hợp quy định cách thức giao tiếp truyền dữ liệu.", "answer": "Đúng" },
+      { "label": "b", "content": "Quy định giao thức chỉ liên quan tốc độ, không liên quan định dạng dữ liệu.", "answer": "Sai" },
+      { "label": "c", "content": "Giao thức đảm bảo truyền nhận dữ liệu chính xác và tin cậy.", "answer": "Đúng" },
+      { "label": "d", "content": "Chỉ cần một giao thức duy nhất là đủ cho mọi hoạt động Internet.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Chức năng của TCP và IP:",
+    "question": "Chủ đề 2 - Bài 5: Chức năng TCP và IP",
     "subQuestions": [
-      { "label": "a", "content": "TCP là giao thức định tuyến, chịu trách nhiệm tìm đường đi cho gói tin.", "answer": "Sai" },
-      { "label": "b", "content": "IP là giao thức chịu trách nhiệm đóng gói và định địa chỉ các gói tin.", "answer": "Đúng" },
-      { "label": "c", "content": "Bộ giao thức TCP/IP là nền tảng hoạt động của mạng Internet hiện nay.", "answer": "Đúng" },
-      { "label": "d", "content": "TCP đảm bảo truyền dữ liệu tin cậy, nếu có lỗi sẽ yêu cầu gửi lại.", "answer": "Đúng" }
+      { "label": "a", "content": "TCP là giao thức định tuyến, chịu trách nhiệm tìm đường đi.", "answer": "Sai" },
+      { "label": "b", "content": "IP chịu trách nhiệm đóng gói và định địa chỉ các gói tin.", "answer": "Đúng" },
+      { "label": "c", "content": "Bộ giao thức TCP/IP là nền tảng hoạt động của Internet hiện nay.", "answer": "Đúng" },
+      { "label": "d", "content": "TCP đảm bảo truyền dữ liệu tin cậy, nếu lỗi sẽ yêu cầu gửi lại.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Các giao thức ứng dụng (HTTP, FTP, SMTP, SSH):",
+    "question": "Chủ đề 2 - Bài 5: Các giao thức ứng dụng phổ biến",
     "subQuestions": [
-      { "label": "a", "content": "HTTP là giao thức dùng để truyền tải trang web (siêu văn bản).", "answer": "Đúng" },
+      { "label": "a", "content": "HTTP là giao thức dùng để truyền tải trang web.", "answer": "Đúng" },
       { "label": "b", "content": "FTP là giao thức dùng để gửi thư điện tử (email).", "answer": "Sai" },
-      { "label": "c", "content": "SMTP là giao thức dùng để nhận email từ máy chủ về máy cá nhân.", "answer": "Sai" },
-      { "label": "d", "content": "SSH là giao thức hỗ trợ truy cập và điều khiển máy tính từ xa an toàn.", "answer": "Đúng" }
+      { "label": "c", "content": "SMTP dùng để nhận email từ máy chủ về máy cá nhân.", "answer": "Sai" },
+      { "label": "d", "content": "SSH hỗ trợ truy cập và điều khiển máy tính từ xa an toàn.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Giao thức Ethernet và truyền dữ liệu trong LAN:",
+    "question": "Chủ đề 2 - Bài 5: Giao thức Ethernet",
     "subQuestions": [
-      { "label": "a", "content": "Trong giao thức Ethernet, dữ liệu được truyền dựa vào địa chỉ IP.", "answer": "Sai" },
+      { "label": "a", "content": "Trong Ethernet, dữ liệu được truyền dựa vào địa chỉ IP.", "answer": "Sai" },
       { "label": "b", "content": "Dữ liệu truyền đi có kèm mã kiểm tra lỗi.", "answer": "Đúng" },
-      { "label": "c", "content": "Ethernet có cơ chế kiểm tra đường truyền để xử lý xung đột tín hiệu.", "answer": "Đúng" },
-      { "label": "d", "content": "Dữ liệu được truyền theo từng gói có độ dài xác định gọi là Frame.", "answer": "Đúng" }
+      { "label": "c", "content": "Ethernet có cơ chế xử lý xung đột tín hiệu trên đường truyền.", "answer": "Đúng" },
+      { "label": "d", "content": "Dữ liệu được truyền theo từng gói gọi là Frame.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Thông số kỹ thuật của mạng LAN:",
+    "question": "Chủ đề 2 - Bài 5: Thông số cấu hình mạng LAN",
     "subQuestions": [
-      { "label": "a", "content": "Hai thiết bị trong cùng mạng LAN bắt buộc phải có địa chỉ IP khác nhau.", "answer": "Đúng" },
-      { "label": "b", "content": "Subnet Mask dùng để xác định phần địa chỉ mạng và phần địa chỉ máy (host).", "answer": "Đúng" },
+      { "label": "a", "content": "Hai thiết bị trong cùng mạng LAN bắt buộc phải có IP khác nhau.", "answer": "Đúng" },
+      { "label": "b", "content": "Subnet Mask xác định phần địa chỉ mạng và phần địa chỉ máy.", "answer": "Đúng" },
       { "label": "c", "content": "Địa chỉ 192.168.1.1 là ví dụ về địa chỉ IPv6.", "answer": "Sai" },
       { "label": "d", "content": "Địa chỉ MAC gồm 6 byte (48 bit).", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Giao tiếp mạng và ưu nhược điểm:",
+    "question": "Chủ đề 2 - Bài 6: Văn hóa giao tiếp qua mạng",
     "subQuestions": [
-      { "label": "a", "content": "Giao tiếp trên mạng giúp mở rộng kết nối xã hội và tiết kiệm chi phí.", "answer": "Đúng" },
-      { "label": "b", "content": "Trong không gian mạng, các tín hiệu phi ngôn ngữ (cử chỉ, nét mặt) luôn được thể hiện rõ ràng như giao tiếp trực tiếp.", "answer": "Sai" },
-      { "label": "c", "content": "Một nhược điểm của giao tiếp mạng là nguy cơ về bảo mật và quyền riêng tư.", "answer": "Đúng" },
-      { "label": "d", "content": "Giao tiếp qua mạng không bao giờ bị ảnh hưởng bởi các sự cố kỹ thuật.", "answer": "Sai" }
+      { "label": "a", "content": "Giao tiếp mạng giúp mở rộng kết nối xã hội và tiết kiệm chi phí.", "answer": "Đúng" },
+      { "label": "b", "content": "Các tín hiệu phi ngôn ngữ luôn rõ ràng như giao tiếp trực tiếp.", "answer": "Sai" },
+      { "label": "c", "content": "Một nhược điểm là nguy cơ về bảo mật và quyền riêng tư.", "answer": "Đúng" },
+      { "label": "d", "content": "Giao tiếp mạng không bao giờ bị ảnh hưởng bởi sự cố kỹ thuật.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Đạo đức và ứng xử trên không gian mạng:",
+    "question": "Chủ đề 2 - Bài 6: Nguyên tắc ứng xử thấu hiểu",
     "subQuestions": [
-      { "label": "a", "content": "\"Thấu hiểu\" nghĩa là biết cảm thông và đặt mình vào vị trí của người khác.", "answer": "Đúng" },
-      { "label": "b", "content": "Khi gặp người khác bị bắt nạt trên mạng, ta nên im lặng để tránh rắc rối.", "answer": "Sai" },
-      { "label": "c", "content": "Sử dụng ngôn từ châm biếm, mỉa mai là cách thể hiện cá tính được khuyến khích.", "answer": "Sai" },
-      { "label": "d", "content": "Tôn trọng quyền riêng tư là không chia sẻ thông tin cá nhân của người khác khi chưa được phép.", "answer": "Đúng" }
+      { "label": "a", "content": "\"Thấu hiểu\" là cảm thông và đặt mình vào vị trí người khác.", "answer": "Đúng" },
+      { "label": "b", "content": "Khi thấy người khác bị bắt nạt, nên im lặng để tránh rắc rối.", "answer": "Sai" },
+      { "label": "c", "content": "Sử dụng ngôn từ mỉa mai là cách thể hiện cá tính tốt.", "answer": "Sai" },
+      { "label": "d", "content": "Tôn trọng quyền riêng tư là không chia sẻ thông tin người khác.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Hành vi văn minh trực tuyến:",
+    "question": "Chủ đề 2 - Bài 6: Hành vi văn minh trên mạng",
     "subQuestions": [
-      { "label": "a", "content": "Kiểm tra tính chính xác của tin bài trước khi chia sẻ là hành vi cần thiết.", "answer": "Đúng" },
-      { "label": "b", "content": "Đăng tải hình ảnh của bạn bè lên mạng để trêu đùa mà không cần hỏi ý kiến.", "answer": "Sai" },
+      { "label": "a", "content": "Kiểm tra tính chính xác của tin bài trước khi chia sẻ.", "answer": "Đúng" },
+      { "label": "b", "content": "Đăng ảnh bạn bè trêu đùa không cần hỏi ý kiến.", "answer": "Sai" },
       { "label": "c", "content": "Lan tỏa các giá trị nhân văn, ca ngợi người tốt việc tốt.", "answer": "Đúng" },
-      { "label": "d", "content": "Bình tĩnh lắng nghe và tôn trọng ý kiến khác biệt khi thảo luận.", "answer": "Đúng" }
+      { "label": "d", "content": "Lắng nghe và tôn trọng ý kiến khác biệt khi thảo luận.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "An toàn thông tin và trách nhiệm người dùng:",
+    "question": "Chủ đề 2 - Bài 6: An toàn thông tin trực tuyến",
     "subQuestions": [
-      { "label": "a", "content": "Khi đọc tin tức, cần chọn lọc thông tin lành mạnh, bổ ích.", "answer": "Đúng" },
-      { "label": "b", "content": "Nếu nhận được tin nhắn lừa đảo, nên chuyển tiếp cho nhiều người cùng biết ngay lập tức.", "answer": "Sai" },
-      { "label": "c", "content": "Tự kiểm tra và cải thiện hành vi trực tuyến của mình là một nguyên tắc ứng xử.", "answer": "Đúng" },
-      { "label": "d", "content": "Chỉ cần lịch sự với người quen, người lạ trên mạng thì không cần thiết.", "answer": "Sai" }
+      { "label": "a", "content": "Cần chọn lọc thông tin lành mạnh, bổ ích khi đọc tin tức.", "answer": "Đúng" },
+      { "label": "b", "content": "Nhận được tin nhắn lừa đảo nên chuyển tiếp cho nhiều người biết ngay.", "answer": "Sai" },
+      { "label": "c", "content": "Tự kiểm tra và cải thiện hành vi trực tuyến là một nguyên tắc.", "answer": "Đúng" },
+      { "label": "d", "content": "Chỉ cần lịch sự với người quen, người lạ thì không cần.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Khái niệm Không gian mạng:",
+    "question": "Chủ đề 2 - Bài 6: Đặc trưng không gian mạng",
     "subQuestions": [
-      { "label": "a", "content": "Không gian mạng là nơi con người giao tiếp bằng các phương tiện truyền thông dựa trên công nghệ số.", "answer": "Đúng" },
-      { "label": "b", "content": "Không gian mạng tách biệt hoàn toàn và không ảnh hưởng đến đời sống thực.", "answer": "Sai" },
+      { "label": "a", "content": "Không gian mạng là nơi giao tiếp dựa trên công nghệ số.", "answer": "Đúng" },
+      { "label": "b", "content": "Không gian mạng tách biệt hoàn toàn đời sống thực.", "answer": "Sai" },
       { "label": "c", "content": "Các nền tảng trực tuyến là một phần của không gian mạng.", "answer": "Đúng" },
-      { "label": "d", "content": "Giao tiếp trong không gian mạng chỉ bao gồm gửi email.", "answer": "Sai" }
+      { "label": "d", "content": "Giao tiếp không gian mạng chỉ bao gồm gửi email.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Ngôn ngữ HTML và trình duyệt:",
+    "question": "Chủ đề 5 - Bài 7: Khái niệm HTML",
     "subQuestions": [
       { "label": "a", "content": "HTML là ngôn ngữ lập trình dùng để tính toán dữ liệu.", "answer": "Sai" },
-      { "label": "b", "content": "Các tệp HTML thường có phần mở rộng là .html hoặc .htm.", "answer": "Đúng" },
+      { "label": "b", "content": "Tệp HTML thường có phần mở rộng là .html hoặc .htm.", "answer": "Đúng" },
       { "label": "c", "content": "Trình duyệt web dùng để hiển thị nội dung trang HTML.", "answer": "Đúng" },
-      { "label": "d", "content": "Văn bản trong tệp HTML được hiển thị y hệt như trong tệp Word.", "answer": "Sai" }
+      { "label": "d", "content": "Văn bản trong HTML hiển thị y hệt như trong tệp Word.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Cấu trúc thẻ HTML và phân cấp:",
+    "question": "Chủ đề 5 - Bài 7: Thẻ và cấu trúc HTML",
     "subQuestions": [
       { "label": "a", "content": "Thẻ HTML luôn đi theo cặp, có thẻ mở và thẻ đóng.", "answer": "Sai" },
       { "label": "b", "content": "Thẻ <p> dùng để định dạng đoạn văn bản.", "answer": "Đúng" },
@@ -243,57 +243,255 @@
     ]
   },
   {
-    "question": "Soạn thảo mã nguồn HTML:",
+    "question": "Chủ đề 5 - Bài 7: Soạn thảo mã HTML",
     "subQuestions": [
       { "label": "a", "content": "Chỉ có thể soạn thảo HTML bằng phần mềm chuyên dụng đắt tiền.", "answer": "Sai" },
       { "label": "b", "content": "Notepad++ và Sublime Text là các phần mềm soạn thảo mã nguồn.", "answer": "Đúng" },
-      { "label": "c", "content": "Có thể soạn thảo và xem trước kết quả HTML trên các trang web trực tuyến.", "answer": "Đúng" },
-      { "label": "d", "content": "Soạn thảo bằng Notepad mặc định của Windows không thể lưu được đuôi .html.", "answer": "Sai" }
+      { "label": "c", "content": "Có thể soạn thảo và xem trước HTML trên các trang trực tuyến.", "answer": "Đúng" },
+      { "label": "d", "content": "Soạn thảo bằng Notepad không thể lưu được đuôi .html.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Phần tử và cấu trúc trang HTML:",
+    "question": "Chủ đề 5 - Bài 7: Phần tử và thuộc tính",
     "subQuestions": [
-      { "label": "a", "content": "Phần tử HTML bao gồm thẻ mở, nội dung và thẻ đóng (nếu có).", "answer": "Đúng" },
+      { "label": "a", "content": "Phần tử HTML bao gồm thẻ mở, nội dung và thẻ đóng.", "answer": "Đúng" },
       { "label": "b", "content": "Thẻ <div> dùng để tạo một đường kẻ ngang.", "answer": "Sai" },
       { "label": "c", "content": "Các thẻ HTML có thể lồng nhau.", "answer": "Đúng" },
-      { "label": "d", "content": "Thuộc tính của thẻ (như style) được viết trong thẻ đóng.", "answer": "Sai" }
+      { "label": "d", "content": "Thuộc tính của thẻ được viết trong thẻ đóng.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Các thành phần Head và Body:",
+    "question": "Chủ đề 5 - Bài 7: Cấu trúc tệp HTML",
     "subQuestions": [
       { "label": "a", "content": "Phần <head> chứa nội dung hiển thị chính trên trang web.", "answer": "Sai" },
-      { "label": "b", "content": "Thẻ <title> nằm trong phần <head> dùng để đặt tên cho trang web.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <title> nằm trong <head> dùng đặt tên trên thanh tiêu đề.", "answer": "Đúng" },
       { "label": "c", "content": "Bắt buộc phải có dòng <!DOCTYPE html> ở đầu tệp.", "answer": "Đúng" },
-      { "label": "d", "content": "Mọi nội dung muốn người dùng nhìn thấy phải đặt trong cặp thẻ <body>.", "answer": "Đúng" }
+      { "label": "d", "content": "Nội dung người dùng thấy phải đặt trong cặp thẻ <body>.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Định dạng văn bản (Tiêu đề, đoạn văn, chữ đậm):",
+    "question": "Chủ đề 5 - Bài 8: Định dạng văn bản",
     "subQuestions": [
-      { "label": "a", "content": "Thẻ <h1> đến <h6> dùng để định dạng tiêu đề, với <h1> là nhỏ nhất.", "answer": "Sai" },
+      { "label": "a", "content": "Thẻ <h1> đến <h6> dùng định dạng tiêu đề, <h1> nhỏ nhất.", "answer": "Sai" },
       { "label": "b", "content": "Thẻ <br> dùng để xuống dòng và không cần thẻ đóng.", "answer": "Đúng" },
       { "label": "c", "content": "Thẻ <strong> và <b> đều làm chữ in đậm.", "answer": "Đúng" },
       { "label": "d", "content": "Thẻ <em> dùng để gạch chân văn bản.", "answer": "Sai" }
     ]
   },
   {
-    "question": "Thuộc tính Style và màu sắc:",
+    "question": "Chủ đề 5 - Bài 8: Màu sắc và căn lề",
     "subQuestions": [
       { "label": "a", "content": "Để đổi màu chữ, ta dùng thuộc tính style=\"font-color: red\".", "answer": "Sai" },
       { "label": "b", "content": "Thuộc tính text-align: center dùng để căn giữa văn bản.", "answer": "Đúng" },
-      { "label": "c", "content": "Có thể gộp nhiều định dạng trong một thuộc tính style ngăn cách bởi dấu chấm phẩy.", "answer": "Đúng" },
+      { "label": "c", "content": "Có thể gộp nhiều định dạng trong style bằng dấu chấm phẩy.", "answer": "Đúng" },
       { "label": "d", "content": "Mã màu #FF0000 tương ứng với màu đỏ.", "answer": "Đúng" }
     ]
   },
   {
-    "question": "Phông chữ và định dạng đặc biệt:",
+    "question": "Chủ đề 5 - Bài 8: Font và kích thước",
     "subQuestions": [
       { "label": "a", "content": "font-family dùng để thay đổi phông chữ.", "answer": "Đúng" },
       { "label": "b", "content": "font-size chỉ nhận giá trị theo đơn vị px.", "answer": "Sai" },
-      { "label": "c", "content": "Thẻ <small> dùng để giảm cỡ chữ so với xung quanh.", "answer": "Đúng" },
-      { "label": "d", "content": "Để tạo chỉ số trên (x²), ta dùng thẻ <sub>.", "answer": "Sai" }
+      { "label": "c", "content": "Thẻ <small> dùng giảm cỡ chữ so với xung quanh.", "answer": "Đúng" },
+      { "label": "d", "content": "Để tạo chỉ số trên (như x²), ta dùng thẻ <sub>.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 8: Các thẻ định dạng khác",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <mark> dùng để đánh dấu (tô nền) văn bản.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <del> dùng tạo đường gạch ngang giữa chữ.", "answer": "Đúng" },
+      { "label": "c", "content": "text-decoration: underline dùng tạo chữ in nghiêng.", "answer": "Sai" },
+      { "label": "d", "content": "Thẻ <span> là phần tử dạng khối (block) như <div>.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 8: Phân khối và thuộc tính lồng",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <p> tự động tạo khoảng trắng trước và sau đoạn văn.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <div> dùng nhóm các phần tử để định dạng chung.", "answer": "Đúng" },
+      { "label": "c", "content": "Thuộc tính align=\"center\" có thể dùng trực tiếp trong thẻ <h2>.", "answer": "Đúng" },
+      { "label": "d", "content": "Không thể lồng thẻ <b> bên trong thẻ <p>.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 9: Danh sách (List)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <ol> dùng để tạo danh sách không có thứ tự.", "answer": "Sai" },
+      { "label": "b", "content": "Thẻ <li> dùng xác định từng mục trong danh sách.", "answer": "Đúng" },
+      { "label": "c", "content": "Thuộc tính type=\"I\" trong <ol> đánh số bằng La Mã hoa.", "answer": "Đúng" },
+      { "label": "d", "content": "Không thể lồng danh sách này vào danh sách khác.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 9: Cấu trúc bảng (Table)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <table> dùng để bao quanh toàn bộ bảng.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <tr> dùng để tạo một cột mới.", "answer": "Sai" },
+      { "label": "c", "content": "Thẻ <th> dùng cho ô tiêu đề, chữ đậm và căn giữa.", "answer": "Đúng" },
+      { "label": "d", "content": "Thẻ <td> chứa dữ liệu của một ô bình thường.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 9: Thuộc tính của bảng",
+    "subQuestions": [
+      { "label": "a", "content": "border=\"1\" dùng để hiển thị đường viền bảng.", "answer": "Đúng" },
+      { "label": "b", "content": "colspan=\"2\" dùng để gộp 2 hàng lại với nhau.", "answer": "Sai" },
+      { "label": "c", "content": "cellspacing là khoảng cách giữa nội dung và viền ô.", "answer": "Sai" },
+      { "label": "d", "content": "Có thể dùng width theo tỷ lệ phần trăm (%) cho bảng.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 9: Danh sách mô tả và định dạng bảng",
+    "subQuestions": [
+      { "label": "a", "content": "Dùng thẻ <dl> để bắt đầu danh sách mô tả.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <dt> dùng định nghĩa thuật ngữ.", "answer": "Đúng" },
+      { "label": "c", "content": "Thẻ <dd> dùng giải thích hoặc mô tả cho thuật ngữ.", "answer": "Đúng" },
+      { "label": "d", "content": "Danh sách mô tả tự động đánh số thứ tự 1, 2, 3.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 9: Tiêu đề và ô trong bảng",
+    "subQuestions": [
+      { "label": "a", "content": "Có thể tô màu nền cho hàng bằng thuộc tính bgcolor.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <caption> dùng để đặt tên (tiêu đề) cho bảng.", "answer": "Đúng" },
+      { "label": "c", "content": "Thuộc tính align trong thẻ <td> căn lề nội dung trong ô.", "answer": "Đúng" },
+      { "label": "d", "content": "Bảng bắt buộc phải có thẻ <thead> và <tbody>.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 10: Liên kết (Link)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <a> được dùng để tạo liên kết.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính href chứa địa chỉ đích liên kết trỏ tới.", "answer": "Đúng" },
+      { "label": "c", "content": "Nội dung hiển thị liên kết chỉ có thể là văn bản.", "answer": "Sai" },
+      { "label": "d", "content": "Siêu văn bản là văn bản chỉ chứa chữ viết.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 10: Đường dẫn tuyệt đối và tương đối",
+    "subQuestions": [
+      { "label": "a", "content": "Đường dẫn tuyệt đối bao gồm đầy đủ giao thức và tên miền.", "answer": "Đúng" },
+      { "label": "b", "content": "Đường dẫn ../index.html trỏ tới tệp ở thư mục con.", "answer": "Sai" },
+      { "label": "c", "content": "Liên kết trong (Internal link) trỏ tới trang web khác.", "answer": "Sai" },
+      { "label": "d", "content": "Có thể dùng # và id để liên kết tới vị trí trong trang.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 10: Thuộc tính và giao thức liên kết",
+    "subQuestions": [
+      { "label": "a", "content": "target=\"_blank\" thường dùng mở liên kết trong tab mới.", "answer": "Đúng" },
+      { "label": "b", "content": "URL là địa chỉ tham chiếu tới tài liệu được liên kết.", "answer": "Đúng" },
+      { "label": "c", "content": "Nếu không có href, thẻ <a> vẫn hoạt động bình thường.", "answer": "Sai" },
+      { "label": "d", "content": "Có thể tạo liên kết từ ảnh bằng cách lồng <img> vào <a>.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 10: Các loại đường dẫn và id",
+    "subQuestions": [
+      { "label": "a", "content": "Liên kết ngoài trỏ sang trang của hệ thống khác.", "answer": "Đúng" },
+      { "label": "b", "content": "Đường dẫn http://google.com là đường dẫn tương đối.", "answer": "Sai" },
+      { "label": "c", "content": "Liên kết đến email thường dùng giao thức mailto:.", "answer": "Đúng" },
+      { "label": "d", "content": "Đường dẫn bai_tap/1.html là đường dẫn tương đối.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 10: Liên kết nội bộ trang",
+    "subQuestions": [
+      { "label": "a", "content": "Cần đặt thuộc tính id cho phần tử đích muốn nhảy tới.", "answer": "Đúng" },
+      { "label": "b", "content": "Trong href của liên kết nội bộ, tên id phải có dấu #.", "answer": "Đúng" },
+      { "label": "c", "content": "Liên kết nội bộ giúp di chuyển nhanh trong trang dài.", "answer": "Đúng" },
+      { "label": "d", "content": "Liên kết nội bộ bắt buộc phải tải lại trang web.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 11: Hình ảnh (Image)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <img> là thẻ đơn, không có thẻ đóng.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính src là bắt buộc để xác định đường dẫn ảnh.", "answer": "Đúng" },
+      { "label": "c", "content": "Thuộc tính alt hiển thị văn bản khi ảnh không tải được.", "answer": "Đúng" },
+      { "label": "d", "content": "Nếu chỉ thiết lập width, chiều cao sẽ bị méo hình.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 11: Âm thanh (Audio)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <audio> dùng để chèn âm thanh.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính controls hiển thị thanh phát, dừng, âm lượng.", "answer": "Đúng" },
+      { "label": "c", "content": "autoplay cho phép âm thanh tự động phát mặc định.", "answer": "Đúng" },
+      { "label": "d", "content": "Thẻ <audio> chỉ hỗ trợ duy nhất định dạng .mp3.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 11: Nhúng Iframe",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <iframe> dùng nhúng trang web khác vào trang hiện tại.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính src trong iframe xác định nội dung hiển thị.", "answer": "Đúng" },
+      { "label": "c", "content": "Không thể điều chỉnh chiều rộng và chiều cao của iframe.", "answer": "Sai" },
+      { "label": "d", "content": "Iframe có thể dùng đường dẫn tuyệt đối hoặc tương đối.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 11: Định dạng đa phương tiện",
+    "subQuestions": [
+      { "label": "a", "content": "Định dạng ảnh phổ biến cho web là jpg, png, gif, svg.", "answer": "Đúng" },
+      { "label": "b", "content": "Tệp video không thể chèn trực tiếp, chỉ chèn được link.", "answer": "Sai" },
+      { "label": "c", "content": "muted dùng để tắt tiếng mặc định cho audio/video.", "answer": "Đúng" },
+      { "label": "d", "content": "Đường dẫn images/sun.png nghĩa là ảnh cùng thư mục HTML.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 11: Kích thước và tỷ lệ",
+    "subQuestions": [
+      { "label": "a", "content": "Đơn vị mặc định của width và height là pixel (px).", "answer": "Đúng" },
+      { "label": "b", "content": "Có thể dùng đơn vị % cho kích thước iframe.", "answer": "Đúng" },
+      { "label": "c", "content": "Thay đổi kích thước bằng HTML làm giảm dung lượng ảnh.", "answer": "Sai" },
+      { "label": "d", "content": "Tỷ lệ khung hình luôn được giữ nguyên bất kể width/height.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 12: Biểu mẫu (Form)",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <form> dùng để chứa các phần tử của biểu mẫu.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính action xác định phương thức gửi dữ liệu.", "answer": "Sai" },
+      { "label": "c", "content": "Thuộc tính method thường có giá trị là GET hoặc POST.", "answer": "Đúng" },
+      { "label": "d", "content": "Biểu mẫu dùng để người dùng gửi dữ liệu lên máy chủ.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 12: Nhập liệu văn bản",
+    "subQuestions": [
+      { "label": "a", "content": "type=\"text\" dùng để nhập một dòng văn bản ngắn.", "answer": "Đúng" },
+      { "label": "b", "content": "type=\"password\" hiển thị ký tự dưới dạng dấu chấm/sao.", "answer": "Đúng" },
+      { "label": "c", "content": "type=\"date\" hiển thị lịch để người dùng chọn ngày.", "answer": "Đúng" },
+      { "label": "d", "content": "type=\"submit\" dùng để tạo nút xóa dữ liệu.", "answer": "Sai" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 12: Radio và Checkbox",
+    "subQuestions": [
+      { "label": "a", "content": "type=\"radio\" cho phép chọn nhiều phương án cùng lúc.", "answer": "Sai" },
+      { "label": "b", "content": "Để các nút radio cùng nhóm, chúng phải cùng thuộc tính name.", "answer": "Đúng" },
+      { "label": "c", "content": "type=\"checkbox\" dùng cho câu hỏi nhiều lựa chọn đúng.", "answer": "Đúng" },
+      { "label": "d", "content": "Thuộc tính value là giá trị gửi đi khi chọn ô đó.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 12: Các phần tử khác trong Form",
+    "subQuestions": [
+      { "label": "a", "content": "Thẻ <textarea> dùng để nhập văn bản nhiều dòng.", "answer": "Đúng" },
+      { "label": "b", "content": "Thẻ <select> và <option> dùng tạo danh sách thả xuống.", "answer": "Đúng" },
+      { "label": "c", "content": "Thẻ <label> tạo nhãn, giúp biết ô nhập liệu làm gì.", "answer": "Đúng" },
+      { "label": "d", "content": "type=\"file\" dùng tải tệp tin từ máy người dùng lên.", "answer": "Đúng" }
+    ]
+  },
+  {
+    "question": "Chủ đề 5 - Bài 12: Định danh và nhóm",
+    "subQuestions": [
+      { "label": "a", "content": "Thuộc tính id phải là duy nhất trong một trang web.", "answer": "Đúng" },
+      { "label": "b", "content": "Thuộc tính for trong <label> liên kết với name của input.", "answer": "Sai" },
+      { "label": "c", "content": "Thẻ <fieldset> dùng để nhóm các phần tử liên quan.", "answer": "Đúng" },
+      { "label": "d", "content": "Nút type=\"button\" mặc định sẽ gửi form đi khi nhấn.", "answer": "Sai" }
     ]
   }
 ]
