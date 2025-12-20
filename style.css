@@ -193,7 +193,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 /* Ảnh QR */
 .qr-card img {
-    width: 240px; /* Kích thước vừa vặn */
+    width: 220px; /* Kích thước vừa vặn */
     height: auto;
     display: block;
     border-radius: 12px; /* Bo góc nhẹ cho ảnh để hài hòa với khung */
