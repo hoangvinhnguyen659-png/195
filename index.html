@@ -10,83 +10,139 @@
 <body>
 
     <div class="container">
-        <button id="btn-home" class="hidden" onclick="location.reload()">🏠 Home</button>
+        
+        <button id="btn-home" class="hidden" onclick="location.reload()">
+            🏠 HOME
+        </button>
 
         <div id="loading-screen">
+            
             <h1 class="app-title">Trắc Nghiệm Pro</h1>
+            
             <p id="status-text">Đang kết nối dữ liệu...</p>
             
             <div id="setup-options" class="hidden">
+                
                 <div class="setup-group">
+                    
                     <label class="toggle-switch">
+                        
                         <input type="checkbox" id="shuffle-checkbox">
+                        
                         <span class="slider"></span>
+                        
                         <span class="label-text">Trộn câu hỏi</span>
+                        
                     </label>
+                    
                 </div>
                 
                 <div class="mode-buttons">
+                    
                     <button class="btn-start btn-primary" id="btn-tracnghiem">
                         Chơi Trắc Nghiệm
                     </button>
+                    
                     <button class="btn-start btn-secondary" id="btn-dungsai">
                         Chơi Đúng / Sai
                     </button>
+                    
                 </div>
+                
             </div>
+            
         </div>
 
         <div id="quiz-screen" class="hidden">
+            
             <div class="quiz-header">
+                
                 <div class="progress-bg">
+                    
                     <div id="progress-bar"></div>
+                    
                 </div>
+                
                 <div class="stats-bar">
+                    
                     <span>CÂU: <span id="current-count">0</span> / <span id="total-count">0</span></span>
+                    
                     <span>ĐIỂM: <span id="live-score">0</span></span>
+                    
                 </div>
+                
             </div>
             
             <div class="quiz-body">
+                
                 <h2 id="question">Đang tải câu hỏi...</h2>
+                
                 <div class="option-list">
+                    
                     <label class="option-item" id="label-a">
+                        
                         <input type="radio" name="answer" id="a" class="answer">
+                        
                         <span id="a_text"></span>
+                        
                     </label>
+                    
                     <label class="option-item" id="label-b">
+                        
                         <input type="radio" name="answer" id="b" class="answer">
+                        
                         <span id="b_text"></span>
+                        
                     </label>
+                    
                     <label class="option-item" id="label-c">
+                        
                         <input type="radio" name="answer" id="c" class="answer">
+                        
                         <span id="c_text"></span>
+                        
                     </label>
+                    
                     <label class="option-item" id="label-d">
+                        
                         <input type="radio" name="answer" id="d" class="answer">
+                        
                         <span id="d_text"></span>
+                        
                     </label>
+                    
                 </div>
+                
             </div>
 
             <div class="quiz-footer">
+                
                 <button id="submit" disabled>Tiếp tục &raquo;</button>
+                
             </div>
+            
         </div>
 
         <div id="result-screen" class="hidden">
+            
             <h2 class="result-title">KẾT QUẢ</h2>
+            
             <div id="final-score">0/0</div>
+            
             <p class="review-title">Các câu cần xem lại:</p>
-            <div id="review-container">
-                </div>
+            
+            <div id="review-container"></div>
+            
             <button class="btn-start btn-primary" onclick="location.reload()" style="margin-top: 25px;">
                 Chơi Lại
             </button>
+            
         </div>
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
+    
 </body>
 </html>
