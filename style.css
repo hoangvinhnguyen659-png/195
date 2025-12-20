@@ -151,3 +151,26 @@ input:checked + .slider:before { transform: translateX(20px); }
 .score-label { color: var(--text-light); font-weight: 500; font-size: 1rem; }
 .score-box { font-size: 4rem; font-weight: 800; color: var(--primary); margin: 20px 0 40px; }
 .result-actions { display: flex; flex-direction: column; gap: 12px; }
+/* Định dạng cho mã QR */
+.qr-container {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.qr-container p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.qr-image {
+    width: 120px; /* Độ rộng của mã QR */
+    height: 120px;
+    border-radius: 8px;
+    padding: 5px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
