@@ -185,3 +185,34 @@ input:checked + .slider:before { transform: translateX(20px); }
     border-radius: 8px;
     display: block;
 }
+/* --- CSS CHO CÂU HỎI ĐÚNG SAI --- */
+.sub-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+.sub-item p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #334155;
+}
+.sub-buttons {
+    display: flex;
+    gap: 8px;
+}
+.btn-ds {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.ds-correct { background-color: var(--success) !important; color: white; border-color: var(--success); }
+.ds-wrong { background-color: var(--error) !important; color: white; border-color: var(--error); }
+.sub-item.answered button { pointer-events: none; opacity: 0.5; }
+.sub-item.answered .ds-correct, .sub-item.answered .ds-wrong { opacity: 1; }
