@@ -10,7 +10,6 @@ const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
 const progressBar = document.getElementById('progress-bar');
 
-// HÀM QUAN TRỌNG: Giúp hiển thị các thẻ HTML như <h1>, <br> dưới dạng văn bản
 function escapeHtml(text) {
     if (!text) return "";
     return String(text)
@@ -25,20 +24,20 @@ async function init() {
     try {
         const response = await fetch('questions.json');
         if (response.ok) {
-            statusText.innerText = "Sẵn sàng!";
+            statusText.innerText = "Sẵn sàng học tập!";
             setupOptions.classList.remove('hidden');
         } else {
             throw new Error("File missing");
         }
     } catch (e) {
-        statusText.innerText = "Vui lòng tải file JSON!";
-        setupOptions.classList.remove('hidden');
+        statusText.innerText = "Vui lòng kiểm tra file dữ liệu!";
+        setupOptions.classList.remove('hidden'); // Vẫn hiện để test UI
     }
 }
 init();
 
 async function startGame(fileName) {
-    statusText.innerText = "Đang tải...";
+    statusText.innerText = "Đang tải câu hỏi...";
     setupOptions.classList.add('hidden');
 
     setTimeout(async () => {
@@ -49,18 +48,34 @@ async function startGame(fileName) {
             const isShuffle = document.getElementById('shuffle-checkbox').checked;
             userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
             
-            score = 0;
-            correctCount = 0;
-            
-            loadingScreen.classList.add('hidden');
-            quizScreen.classList.remove('hidden');
-            
-            renderAllQuestions();
+            resetAndRender();
         } catch (err) {
             alert("Lỗi tải file dữ liệu!");
             location.reload();
         }
-    }, 200);
+    }, 300);
+}
+
+// Hàm khởi tạo lại game (dùng cho cả lúc bắt đầu và lúc chơi lại)
+function resetAndRender() {
+    score = 0;
+    correctCount = 0;
+    
+    loadingScreen.classList.add('hidden');
+    resultScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    
+    renderAllQuestions();
+    
+    // Cuộn lên đầu trang
+    document.querySelector('.quiz-scroll-area').scrollTop = 0;
+}
+
+// Hàm này được gọi khi bấm nút "Làm Lại Đề Này"
+function restartQuiz() {
+    // Giữ nguyên danh sách câu hỏi (userQuestions) hiện tại để user làm lại đề vừa xong
+    // Reset lại điểm và render lại
+    resetAndRender();
 }
 
 document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
@@ -75,9 +90,7 @@ function renderAllQuestions() {
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
 
-        // Dùng escapeHtml để sửa lỗi hiển thị nội dung
         const questionTitle = escapeHtml(data.question);
-
         let optionsHtml = "";
         const opts = data.options;
 
@@ -110,18 +123,14 @@ function renderAllQuestions() {
 
 function handleSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
-    
-    // Nếu câu này đã ĐÚNG (hoàn thành) thì không cho bấm nữa
     if (block.classList.contains('completed')) return;
 
-    // Reset màu của các lựa chọn cũ (để khi chọn lại không bị dính đỏ nhiều cái)
     const allOptions = block.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
     element.querySelector('input').checked = true;
     const data = userQuestions[qIndex];
 
-    // Tìm đáp án đúng
     let correctKey = "";
     if (Array.isArray(data.options)) {
         correctKey = (data.answer === data.options[0]) ? "a" : "b";
@@ -131,27 +140,23 @@ function handleSelect(element, qIndex, selectedKey) {
     }
 
     if (selectedKey === correctKey) {
-        // --- CHỌN ĐÚNG ---
         element.classList.add('correct');
-        block.classList.add('completed'); // Khóa câu hỏi
+        block.classList.add('completed'); 
         score++;
         correctCount++;
     } else {
-        // --- CHỌN SAI ---
-        // Chỉ hiện màu đỏ, KHÔNG khóa, cho phép chọn lại
         element.classList.add('wrong');
     }
 
     updateProgress();
 
-    // Nếu làm xong hết
     if (correctCount === userQuestions.length) {
-        setTimeout(showFinalResults, 1000);
+        setTimeout(showFinalResults, 800);
     }
 }
 
 function updateProgress() {
-    const percent = (correctCount / userQuestions.length) * 100;
+    const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
@@ -160,5 +165,5 @@ function updateProgress() {
 function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
-    document.getElementById('final-score').innerText = score + " / " + userQuestions.length;
+    document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
