@@ -185,3 +185,144 @@ input:checked + .slider:before { transform: translateX(20px); }
     border-radius: 8px;
     display: block;
     }
+/* --- TRẮC NGHIỆM A B C D (MỚI - THAY THẾ OPTION-ITEM CŨ) --- */
+.option-item-new {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 2px solid #f3f4f6;
+    border-radius: 12px;
+    cursor: pointer;
+    background: var(--white);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-item-new:hover {
+    border-color: var(--primary);
+    background-color: #f8fafc;
+}
+
+/* Vòng tròn chứa chữ A, B, C, D */
+.label-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    margin-right: 12px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.opt-content {
+    line-height: 1.5;
+    font-size: 1rem;
+    color: var(--text);
+    word-break: break-word;
+}
+
+/* Trạng thái đúng/sai cho trắc nghiệm */
+.option-item-new.correct {
+    background-color: #ECFDF5;
+    border-color: var(--success);
+}
+.option-item-new.correct .label-circle {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+.option-item-new.wrong {
+    background-color: #FEF2F2;
+    border-color: var(--error);
+}
+.option-item-new.wrong .label-circle {
+    background-color: var(--error);
+    color: var(--white);
+}
+
+/* --- ĐÚNG / SAI 4 Ý NHỎ (MỚI) --- */
+.sub-q-row {
+    padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Label a, b, c, d */
+.sub-q-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+    word-wrap: break-word;
+}
+.sub-q-text b {
+    color: var(--primary);
+    margin-right: 4px;
+    text-transform: lowercase;
+}
+
+/* Nhóm nút bấm Đúng/Sai */
+.tf-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.btn-tf {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+/* Trạng thái khi click Đúng/Sai */
+.tf-correct {
+    background-color: var(--success) !important;
+    color: var(--white) !important;
+    border-color: var(--success) !important;
+}
+
+.tf-wrong {
+    background-color: var(--error) !important;
+    color: var(--white) !important;
+    border-color: var(--error) !important;
+}
+
+/* Responsive cho điện thoại nằm ngang hoặc màn hình rộng hơn một chút */
+@media (min-width: 450px) {
+    .sub-q-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tf-group {
+        width: 160px; /* Cố định độ rộng nhóm nút khi nằm ngang */
+        flex-shrink: 0;
+    }
+}
+
+/* Khóa tương tác khi đã hoàn thành câu hỏi */
+.question-block.completed {
+    border-left: 4px solid var(--success);
+}
+.question-block.completed .option-item-new,
+.question-block.completed .btn-tf {
+    pointer-events: none;
+}
+.question-block.completed .option-item-new:not(.correct) {
+    opacity: 0.6;
+}
+
