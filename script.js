@@ -1,5 +1,5 @@
-let quizData = []; 
-let userQuestions = []; 
+let quizData = [];
+let userQuestions = [];
 let score = 0;
 let wrongAnswers = [];
 
@@ -9,40 +9,56 @@ const loadingScreen = document.getElementById('loading-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
 const progressBar = document.getElementById('progress-bar');
+const btnHome = document.getElementById('btn-home');
 
+// Khởi tạo
 async function init() {
     try {
+        // Kiểm tra file tồn tại (giả lập)
         const response = await fetch('questions.json');
         if (response.ok) {
             statusText.innerText = "Dữ liệu đã sẵn sàng!";
             setupOptions.classList.remove('hidden');
+        } else {
+            throw new Error("File not found");
         }
-    } catch (e) { statusText.innerText = "Lỗi dữ liệu!"; }
+    } catch (e) {
+        statusText.innerText = "Vui lòng tải file questions.json và dungsai.json lên!";
+        // Vẫn hiện nút để test nếu file có sẵn
+        setupOptions.classList.remove('hidden');
+    }
 }
 init();
 
+// Bắt đầu game
 async function startGame(fileName) {
-    // THÔNG BÁO ĐỂ NGƯỜI DÙNG BIẾT ĐANG TẢI 110 CÂU
-    statusText.innerText = "Đang nạp 110 câu hỏi, vui lòng đợi...";
+    statusText.innerText = "Đang tải câu hỏi...";
     setupOptions.classList.add('hidden');
 
     setTimeout(async () => {
         try {
             const res = await fetch(fileName);
             quizData = await res.json();
-            userQuestions = document.getElementById('shuffle-checkbox').checked ? 
-                [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
             
+            // Xử lý trộn câu hỏi
+            const isShuffle = document.getElementById('shuffle-checkbox').checked;
+            userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+            
+            // Reset trạng thái
             score = 0;
             wrongAnswers = [];
             
+            // Chuyển màn hình
             loadingScreen.classList.add('hidden');
             quizScreen.classList.remove('hidden');
-            document.getElementById('btn-home').classList.remove('hidden');
+            btnHome.classList.remove('hidden');
             
             renderAllQuestions();
-        } catch (err) { alert("Lỗi tải!"); }
-    }, 200);
+        } catch (err) {
+            alert("Không tải được file dữ liệu! Hãy chắc chắn file json cùng thư mục.");
+            location.reload();
+        }
+    }, 400); // Thêm delay nhỏ tạo cảm giác loading
 }
 
 document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
@@ -60,19 +76,26 @@ function renderAllQuestions() {
         let optionsHtml = "";
         const opts = data.options;
 
+        // Xử lý hiển thị Options (Mảng cho Đúng/Sai, Object cho Trắc nghiệm)
         if (Array.isArray(opts)) {
+            // Trường hợp Đúng / Sai (Mảng)
             optionsHtml = `
-                <label class="option-item" onclick="handleSelect(this, ${index}, 'a')"><input type="radio"><span>${opts[0]}</span></label>
-                <label class="option-item" onclick="handleSelect(this, ${index}, 'b')"><input type="radio"><span>${opts[1]}</span></label>`;
+                <div class="option-item" onclick="handleSelect(this, ${index}, 'a')">
+                    <input type="radio" name="q${index}"><span>${opts[0]}</span>
+                </div>
+                <div class="option-item" onclick="handleSelect(this, ${index}, 'b')">
+                    <input type="radio" name="q${index}"><span>${opts[1]}</span>
+                </div>`;
         } else {
+            // Trường hợp Trắc Nghiệm (Object a,b,c,d)
             optionsHtml = Object.entries(opts).map(([key, val]) => `
-                <label class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
-                    <input type="radio"><span>${val}</span>
-                </label>`).join('');
+                <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                    <input type="radio" name="q${index}"><span>${val}</span>
+                </div>`).join('');
         }
 
         qBlock.innerHTML = `
-            <div style="font-weight:700; margin-bottom:15px; line-height:1.5;">Câu ${index + 1}: ${data.question}</div>
+            <div class="question-text">Câu ${index + 1}: ${data.question}</div>
             <div class="option-list">${optionsHtml}</div>`;
         feed.appendChild(qBlock);
     });
@@ -81,46 +104,80 @@ function renderAllQuestions() {
     updateProgress();
 }
 
+// Xử lý khi chọn đáp án (Logic quan trọng)
 function handleSelect(element, qIndex, selectedKey) {
-    const block = document.getElementById(`q-block-${index = qIndex}`);
+    const block = document.getElementById(`q-block-${qIndex}`);
+    
+    // Nếu đã trả lời thì không cho chọn lại (áp dụng cho cả 2 chế độ)
     if (block.classList.contains('answered')) return;
-    block.classList.add('answered');
+    
+    block.classList.add('answered'); // Đánh dấu đã trả lời
+    element.querySelector('input').checked = true; // Check radio button
 
     const data = userQuestions[qIndex];
     const options = block.querySelectorAll('.option-item');
-    options.forEach(opt => opt.classList.add('locked', 'dimmed'));
-    element.querySelector('input').checked = true;
+    
+    // Xác định key đúng
+    let correctKey = "";
+    if (Array.isArray(data.options)) {
+        // Đúng sai: so sánh string
+        correctKey = (data.answer === data.options[0]) ? "a" : "b";
+    } else {
+        // Trắc nghiệm: so sánh key (a,b,c,d) hoặc text
+        // Giả sử data.answer trong JSON là text đáp án, ta cần tìm key của nó
+        const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
+        // Nếu data.answer lưu "A", "B" thì dùng toLowerCase, nếu lưu text thì dùng entry
+        correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
+    }
 
-    let correctKey = Array.isArray(data.options) ? 
-        ((data.answer === data.options[0]) ? "a" : "b") : String(data.answer).toLowerCase();
-
+    // Kiểm tra đúng sai
     if (selectedKey === correctKey) {
-        element.classList.remove('dimmed');
+        // ĐÚNG
         element.classList.add('correct');
         score++;
+        
+        // Hiệu ứng confetti nhỏ khi đúng (tùy chọn)
+        // confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 }, disableForReducedMotion: true });
     } else {
-        element.classList.remove('dimmed');
+        // SAI
         element.classList.add('wrong');
+        
+        // Tìm và highlight đáp án đúng để người dùng biết
         options.forEach(opt => {
-            const spanText = opt.querySelector('span').innerText;
-            if (spanText === data.answer || opt.innerHTML.includes(`'${correctKey}'`)) {
-                opt.classList.remove('dimmed');
+            // Logic tìm option đúng để highlight
+            const textSpan = opt.querySelector('span').innerText;
+            // Cách 1: So sánh text
+            if (textSpan === data.answer) {
                 opt.classList.add('correct');
             }
+            // Cách 2: So sánh qua key (nếu data.answer là 'A', 'B'...)
+            if(opt.getAttribute('onclick').includes(`'${correctKey}'`)) {
+                 opt.classList.add('correct');
+            }
         });
-        wrongAnswers.push({ q: data.question, userAns: selectedKey, correctAns: data.answer });
+
+        // Lưu lại câu sai để review
+        wrongAnswers.push({ 
+            q: data.question, 
+            userAns: selectedKey, 
+            correctAns: data.answer 
+        });
     }
+
     updateProgress();
 
-    // Tự động hiện kết quả khi làm hết
-    if (document.querySelectorAll('.answered').length === userQuestions.length) {
-        setTimeout(showFinalResults, 1000);
+    // Tự động chuyển màn hình kết quả khi làm hết
+    const answeredCount = document.querySelectorAll('.question-block.answered').length;
+    if (answeredCount === userQuestions.length) {
+        setTimeout(showFinalResults, 1200);
     }
 }
 
 function updateProgress() {
-    const answeredCount = document.querySelectorAll('.answered').length;
-    progressBar.style.width = (answeredCount / userQuestions.length) * 100 + "%";
+    const answeredCount = document.querySelectorAll('.question-block.answered').length;
+    const percent = (answeredCount / userQuestions.length) * 100;
+    
+    progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = answeredCount;
     document.getElementById('live-score').innerText = score;
 }
@@ -128,13 +185,23 @@ function updateProgress() {
 function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
-    document.getElementById('final-score').innerText = score + " / " + userQuestions.length;
-    if (score / userQuestions.length >= 0.8) confetti({ particleCount: 150 });
+    btnHome.classList.add('hidden'); // Ẩn nút home khi hiện kết quả
+
+    document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
+    
+    // Hiệu ứng pháo hoa nếu điểm cao (>70%)
+    if (score / userQuestions.length >= 0.7) {
+        confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
+    }
 
     const review = document.getElementById('review-container');
-    review.innerHTML = wrongAnswers.map(item => `
-        <div style="margin-bottom:15px; padding:15px; border-left:5px solid #e74c3c; background:#fff5f5; border-radius:12px; text-align:left;">
-            <p><strong>${item.q}</strong></p>
-            <p style="color:#e74c3c">✘ Đáp án đúng: ${item.correctAns}</p>
-        </div>`).join('');
+    if (wrongAnswers.length === 0) {
+        review.innerHTML = `<p style="text-align:center; color:var(--success); font-weight:bold;">Xuất sắc! Bạn làm đúng hết!</p>`;
+    } else {
+        review.innerHTML = wrongAnswers.map(item => `
+            <div class="review-item">
+                <p style="font-weight:600; margin-bottom:5px">${item.q}</p>
+                <p style="color:var(--text-light); font-size:0.9rem">Đáp án đúng: <span style="color:var(--success); font-weight:700">${item.correctAns}</span></p>
+            </div>`).join('');
+    }
 }
