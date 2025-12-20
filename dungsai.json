@@ -1,12 +1,1102 @@
 [
   {
-    "question": "Mặt trăng tự phát ra ánh sáng.",
+    "question": "Phép thử Turing (1950) nhằm kiểm tra khả năng biểu lộ cảm xúc của máy tính.",
     "options": ["Đúng", "Sai"],
     "answer": "Sai"
   },
   {
-    "question": "Số 2 là số nguyên tố chẵn duy nhất.",
+    "question": "Thuật ngữ \"Trí tuệ nhân tạo\" (AI) chính thức ra đời tại hội thảo Dartmouth năm 1956.",
     "options": ["Đúng", "Sai"],
     "answer": "Đúng"
+  },
+  {
+    "question": "Hệ chuyên gia MYCIN (1970) là một ví dụ điển hình của AI mạnh (AI tổng quát).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Robot Sophia (2016) có khả năng nhận dạng khuôn mặt và giao tiếp bằng lời nói.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI là khả năng của máy tính thực hiện các công việc mang tính trí tuệ của con người như đọc chữ, lái xe.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Khả năng \"học\" của AI nghĩa là máy tính tự biết sửa chữa phần cứng khi bị hỏng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Xe tự lái sử dụng cảm biến để nhận biết chướng ngại vật thể hiện khả năng nhận thức của AI.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Các hệ thống AI hiện nay chưa có khả năng hiểu và xử lý ngôn ngữ tự nhiên.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "AI hẹp (AI yếu) chỉ thực hiện một hoặc một số lượng giới hạn các nhiệm vụ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI tổng quát (AI mạnh) hoạt động hoàn toàn dựa trên những gì đã được lập trình sẵn và không thể tự học từ dữ liệu mới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Hệ chuyên gia y tế MYCIN là một đại diện của AI hẹp.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI mạnh có khả năng giải quyết các vấn đề phức tạp và có năng lực trí tuệ như con người.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Google Dịch sử dụng mô hình học máy nhưng chỉ dịch được văn bản nhập từ bàn phím.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Công nghệ nhận dạng khuôn mặt hoạt động bằng cách so sánh các điểm lồi, lõm và chi tiết riêng biệt trên gương mặt.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trợ lý ảo (như Siri, Google Assistant) sử dụng thuật toán xử lý ngôn ngữ tự nhiên (NLP) để tương tác.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nhận dạng chữ viết tay chủ yếu dùng để vẽ tranh nghệ thuật chứ không có ứng dụng trong thương mại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Dịch máy không được coi là ứng dụng AI vì nó chỉ tra từ điển.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Phần mềm kiểm tra lỗi chính tả thể hiện khả năng \"nhận thức\" về quy tắc ngữ pháp của ngôn ngữ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Khả năng giải quyết vấn đề giúp phần mềm kiểm tra chính tả đưa ra gợi ý sửa lỗi.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Dịch máy là ví dụ về khả năng nhận thức môi trường vật lý của AI.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Trong y học, AI giúp hỗ trợ chẩn đoán và đưa ra hướng điều trị chính xác.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong giao thông, AI giúp tự động hóa hoàn toàn việc bảo dưỡng xe mà không cần thợ máy.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Trong sản xuất, AI drone có thể giám sát cây trồng và phun thuốc diệt sâu bệnh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong tài chính, Chatbot AI thay thế giao dịch viên để thực hiện các giao dịch đơn giản như chuyển tiền, mở tài khoản.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI tạo sinh chỉ có khả năng phân tích dữ liệu cũ, không thể tạo ra nội dung mới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "ChatGPT là một ví dụ về AI tạo sinh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI tạo sinh có thể hỗ trợ viết bài luận, làm thơ, soạn nhạc và viết mã lập trình.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Sự phát triển của AI tạo sinh không liên quan gì đến kỳ vọng phát triển AI mạnh trong tương lai.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "AI sẽ tạo ra nhiều việc làm mới nên không gây ra áp lực thất nghiệp cho bất kỳ ngành nghề nào.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Deepfake là công nghệ sử dụng AI để giả mạo khuôn mặt hoặc giọng nói, tiềm ẩn rủi ro lừa đảo.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI luôn minh bạch vì mã nguồn của chúng luôn được công khai cho mọi người kiểm tra.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "AI có thể bị lạm dụng để thu thập dữ liệu cá nhân trái phép, ảnh hưởng đến quyền riêng tư.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Cần ngăn cấm giao toàn quyền cho AI điều khiển vũ khí sát thương vì AI thiếu lòng trắc ẩn và đạo đức.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI đảm bảo không bao giờ xảy ra sự cố kỹ thuật khi điều khiển vũ khí.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Việc AI điều khiển vũ khí có thể dẫn đến chiến tranh tự động mà không có sự kiểm soát của con người.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "AI có khả năng chịu trách nhiệm pháp lý trước tòa án giống như con người khi gây ra hậu quả.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Bản thân công nghệ AI là xấu xa và cần bị loại bỏ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Người dùng cần được giáo dục đạo đức và pháp luật để tránh lạm dụng AI vào mục đích xấu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Deepfake chỉ được dùng cho mục đích giải trí và vô hại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Người phát triển AI cần có ràng buộc pháp lý, đặc biệt trong các lĩnh vực ảnh hưởng đến sinh mạng con người.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Mạng máy tính là hệ thống các thiết bị số kết nối với nhau để truyền dữ liệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Mạng LAN có phạm vi địa lý rộng lớn (quốc gia, toàn cầu), còn mạng WAN có phạm vi hẹp.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Ba kiểu kết nối mạng cơ bản (hình học) là hình sao, hình trục và hình vòng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong mạng không dây, các thiết bị kết nối với nhau hoàn toàn bằng cáp quang.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Hub gửi dữ liệu từ thiết bị nguồn đến tất cả các thiết bị khác trong mạng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Switch thông minh hơn Hub vì nó gửi dữ liệu đến đúng thiết bị đích nhờ địa chỉ MAC.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Sử dụng Hub ít xảy ra xung đột tín hiệu hơn so với Switch.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Cả Hub và Switch đều dùng để kết nối các thiết bị trong cùng một mạng LAN.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Chức năng chính của Router là kết nối các mạng LAN với nhau hoặc kết nối với Internet.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Router chuyển dữ liệu dựa trên địa chỉ MAC của thiết bị.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Router chọn đường đi cho gói tin dựa vào bảng định tuyến.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Router Wifi chỉ có chức năng phát sóng wifi, không có chức năng của Switch.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Modem chuyển đổi tín hiệu số thành tín hiệu tương tự và ngược lại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Wireless Access Point (WAP) dùng để kết nối các thiết bị không dây vào mạng LAN.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Modem quang sử dụng đường truyền là cáp điện thoại thông thường.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "WAP truyền dữ liệu bằng tia hồng ngoại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Địa chỉ MAC gắn với phần cứng (card mạng) và không thay đổi được.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Địa chỉ IPv4 có độ dài 128 bit.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Địa chỉ IP của một thiết bị trong mạng LAN có thể thay đổi (được gán lại).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "IPv6 ra đời để thay thế IPv4 do IPv4 đã cạn kiệt địa chỉ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Giao thức mạng là tập hợp các quy định về cách thức giao tiếp để truyền dữ liệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Các quy định của giao thức chỉ liên quan đến tốc độ truyền, không liên quan đến định dạng dữ liệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Giao thức mạng đảm bảo việc truyền nhận dữ liệu chính xác và tin cậy.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Chỉ cần một giao thức duy nhất là đủ cho mọi hoạt động trên Internet.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "TCP là giao thức định tuyến, chịu trách nhiệm tìm đường đi cho gói tin.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "IP là giao thức chịu trách nhiệm đóng gói và định địa chỉ các gói tin.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Bộ giao thức TCP/IP là nền tảng hoạt động của mạng Internet hiện nay.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "TCP đảm bảo truyền dữ liệu tin cậy, nếu có lỗi sẽ yêu cầu gửi lại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "HTTP là giao thức dùng để truyền tải trang web (siêu văn bản).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "FTP là giao thức dùng để gửi thư điện tử (email).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "SMTP là giao thức dùng để nhận email từ máy chủ về máy cá nhân.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "SSH là giao thức hỗ trợ truy cập và điều khiển máy tính từ xa an toàn.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong giao thức Ethernet, dữ liệu được truyền dựa vào địa chỉ IP.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Dữ liệu truyền đi có kèm mã kiểm tra lỗi.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Ethernet có cơ chế kiểm tra đường truyền để xử lý xung đột tín hiệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Dữ liệu được truyền theo từng gói có độ dài xác định gọi là Frame.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Hai thiết bị trong cùng mạng LAN bắt buộc phải có địa chỉ IP khác nhau.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Subnet Mask dùng để xác định phần địa chỉ mạng và phần địa chỉ máy (host).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Địa chỉ 192.168.1.1 là ví dụ về địa chỉ IPv6.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Địa chỉ MAC gồm 6 byte (48 bit).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Giao tiếp trên mạng giúp mở rộng kết nối xã hội và tiết kiệm chi phí.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong không gian mạng, các tín hiệu phi ngôn ngữ (cử chỉ, nét mặt) luôn được thể hiện rõ ràng như giao tiếp trực tiếp.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Một nhược điểm của giao tiếp mạng là nguy cơ về bảo mật và quyền riêng tư.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Giao tiếp qua mạng không bao giờ bị ảnh hưởng bởi các sự cố kỹ thuật.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "\"Thấu hiểu\" nghĩa là biết cảm thông và đặt mình vào vị trí của người khác.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Khi gặp người khác bị bắt nạt trên mạng, ta nên im lặng để tránh rắc rối.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Sử dụng ngôn từ châm biếm, mỉa mai là cách thể hiện cá tính được khuyến khích.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Tôn trọng quyền riêng tư là không chia sẻ thông tin cá nhân của người khác khi chưa được phép.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Kiểm tra tính chính xác của tin bài trước khi chia sẻ là hành vi cần thiết.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Đăng tải hình ảnh của bạn bè lên mạng để trêu đùa mà không cần hỏi ý kiến.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Lan tỏa các giá trị nhân văn, ca ngợi người tốt việc tốt.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Bình tĩnh lắng nghe và tôn trọng ý kiến khác biệt khi thảo luận.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Khi đọc tin tức, cần chọn lọc thông tin lành mạnh, bổ ích.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nếu nhận được tin nhắn lừa đảo, nên chuyển tiếp cho nhiều người cùng biết ngay lập tức.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Tự kiểm tra và cải thiện hành vi trực tuyến của mình là một nguyên tắc ứng xử.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Chỉ cần lịch sự với người quen, người lạ trên mạng thì không cần thiết.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Không gian mạng là nơi con người giao tiếp bằng các phương tiện truyền thông dựa trên công nghệ số.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Không gian mạng tách biệt hoàn toàn và không ảnh hưởng đến đời sống thực.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Các nền tảng trực tuyến là một phần của không gian mạng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Giao tiếp trong không gian mạng chỉ bao gồm gửi email.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "HTML là ngôn ngữ lập trình dùng để tính toán dữ liệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Các tệp HTML thường có phần mở rộng là .html hoặc .htm.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trình duyệt web dùng để hiển thị nội dung trang HTML.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Văn bản trong tệp HTML được hiển thị y hệt như trong tệp Word.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ HTML luôn đi theo cặp, có thẻ mở và thẻ đóng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <p> dùng để định dạng đoạn văn bản.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "HTML phân biệt chữ hoa và chữ thường trong tên thẻ (ví dụ <P> khác <p>).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Cấu trúc cây của HTML có gốc là phần tử <html>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Chỉ có thể soạn thảo HTML bằng phần mềm chuyên dụng đắt tiền.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Notepad++ và Sublime Text là các phần mềm soạn thảo mã nguồn.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Có thể soạn thảo và xem trước kết quả HTML trên các trang web trực tuyến như w3schools.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Soạn thảo bằng Notepad mặc định của Windows không thể lưu được đuôi .html.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Phần tử HTML bao gồm thẻ mở, nội dung và thẻ đóng (nếu có).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <div> dùng để tạo một đường kẻ ngang.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Các thẻ HTML có thể lồng nhau.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính của thẻ (như style) được viết trong thẻ đóng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Phần <head> chứa nội dung hiển thị chính trên trang web.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <title> nằm trong phần <head> dùng để đặt tên cho trang web trên thanh tiêu đề.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Bắt buộc phải có dòng <!DOCTYPE html> ở đầu tệp.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Mọi nội dung muốn người dùng nhìn thấy phải đặt trong cặp thẻ <body>...</body>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <h1> đến <h6> dùng để định dạng tiêu đề, với <h1> là nhỏ nhất.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <br> dùng để xuống dòng và không cần thẻ đóng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <strong> và <b> đều làm chữ in đậm.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <em> dùng để gạch chân văn bản.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Để đổi màu chữ, ta dùng thuộc tính style=\"font-color: red\".",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thuộc tính text-align: center dùng để căn giữa văn bản.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Có thể gộp nhiều định dạng trong một thuộc tính style ngăn cách bởi dấu chấm phẩy.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Mã màu #FF0000 tương ứng với màu đỏ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "font-family dùng để thay đổi phông chữ (ví dụ: Arial, Times New Roman).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "font-size chỉ nhận giá trị theo đơn vị px.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <small> dùng để giảm cỡ chữ so với văn bản xung quanh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Để tạo chỉ số trên (như x²), ta dùng thẻ <sub>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <mark> dùng để đánh dấu (tô nền) văn bản.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <del> dùng để tạo đường gạch ngang giữa chữ (đánh dấu xóa).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "text-decoration: underline dùng để tạo chữ in nghiêng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <span> là phần tử dạng khối (block) giống như <div>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <p> tự động tạo khoảng trắng trước và sau đoạn văn.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <div> thường dùng để nhóm các phần tử lại để định dạng chung.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính align=\"center\" có thể dùng trực tiếp trong thẻ <h2>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Không thể lồng thẻ <b> bên trong thẻ <p>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <ol> dùng để tạo danh sách không có thứ tự.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <li> dùng để xác định từng mục trong danh sách.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính type=\"I\" trong thẻ <ol> sẽ đánh số thứ tự bằng số La Mã hoa.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Không thể lồng một danh sách này vào trong một danh sách khác.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <table> dùng để bao quanh toàn bộ bảng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <tr> dùng để tạo một cột mới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <th> dùng cho ô tiêu đề, chữ thường in đậm và căn giữa.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <td> chứa dữ liệu của một ô bình thường.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "border=\"1\" dùng để hiển thị đường viền bảng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "colspan=\"2\" dùng để gộp 2 hàng lại với nhau.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "cellspacing là khoảng cách giữa nội dung ô và đường viền ô.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Có thể dùng width theo tỷ lệ phần trăm (%) cho bảng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Dùng thẻ <dl> để bắt đầu danh sách mô tả.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <dt> dùng để định nghĩa thuật ngữ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <dd> dùng để giải thích hoặc mô tả cho thuật ngữ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Danh sách mô tả tự động đánh số thứ tự 1, 2, 3.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Có thể tô màu nền cho hàng bằng thuộc tính bgcolor.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <caption> dùng để đặt tên (tiêu đề) cho bảng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính align trong thẻ <td> dùng để căn lề nội dung trong ô đó.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Bảng bắt buộc phải có thẻ <thead> và <tbody>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <a> được dùng để tạo liên kết.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính href chứa địa chỉ đích mà liên kết trỏ tới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nội dung hiển thị của liên kết chỉ có thể là văn bản, không thể là hình ảnh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Siêu văn bản là văn bản chỉ chứa chữ viết.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Đường dẫn tuyệt đối bao gồm đầy đủ giao thức (http/https) và tên miền.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Đường dẫn tương đối ../index.html nghĩa là liên kết tới tệp ở thư mục con.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Liên kết trong (Internal link) là liên kết trỏ tới trang web khác website.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Có thể liên kết tới một vị trí cụ thể trong cùng một trang bằng cách dùng dấu # và id.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính target=\"_blank\" (nếu có) thường dùng để mở liên kết trong tab mới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "URL là địa chỉ tham chiếu tới tài liệu được liên kết.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nếu không có thuộc tính href, thẻ <a> vẫn hoạt động như một liên kết bình thường.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Có thể tạo liên kết từ một hình ảnh bằng cách lồng thẻ <img> vào trong thẻ <a>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Liên kết ngoài là liên kết từ trang web này sang trang web của hệ thống khác trên Internet.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Đường dẫn http://google.com là đường dẫn tương đối.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Liên kết đến địa chỉ email thường dùng giao thức mailto:.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Đường dẫn bai_tap/bai_tap_1.html là đường dẫn tương đối.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Để tạo liên kết nội bộ trang, cần đặt thuộc tính id cho phần tử đích muốn nhảy tới.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Trong href của liên kết nội bộ trang, tên id phải có dấu # phía trước (ví dụ #Top).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Liên kết nội bộ trang giúp người dùng di chuyển nhanh đến các mục trong trang dài.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Liên kết nội bộ trang bắt buộc phải tải lại trang web (reload).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <img> là thẻ đơn, không có thẻ đóng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính src là bắt buộc để xác định đường dẫn ảnh trong thẻ <img>.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính alt dùng để hiển thị văn bản thay thế khi ảnh không tải được.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nếu chỉ thiết lập width cho thẻ <img>, chiều cao height sẽ bị méo hình.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <audio> dùng để chèn âm thanh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính controls giúp hiển thị thanh điều khiển (phát, dừng, âm lượng) cho âm thanh.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính autoplay làm cho âm thanh tự động phát nhưng không được hỗ trợ trên một số trình duyệt nếu không tắt tiếng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <audio> chỉ hỗ trợ duy nhất định dạng .mp3.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <iframe> dùng để nhúng một trang web hoặc tài nguyên khác vào trang hiện tại.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính src trong iframe xác định nội dung sẽ hiển thị trong khung.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Không thể điều chỉnh chiều rộng và chiều cao của iframe.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Iframe có thể dùng đường dẫn tuyệt đối hoặc tương đối.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Các định dạng ảnh phổ biến cho web là jpg, png, gif, svg.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Tệp video không thể chèn vào trang web, chỉ chèn được link youtube.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "muted là thuộc tính dùng để tắt tiếng mặc định cho audio/video.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Đường dẫn ảnh images/sun.png nghĩa là tệp ảnh nằm cùng thư mục với tệp HTML.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Đơn vị mặc định của width và height trong thẻ <img> thường là pixel (px).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Có thể dùng đơn vị % cho kích thước iframe.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Việc thay đổi kích thước ảnh bằng thẻ HTML sẽ làm giảm dung lượng tệp ảnh gốc.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Tỷ lệ khung hình của ảnh luôn được giữ nguyên bất kể giá trị width/height.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <form> dùng để chứa các phần tử của biểu mẫu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính action xác định phương thức gửi dữ liệu (GET/POST).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thuộc tính method thường có giá trị là GET hoặc POST.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Biểu mẫu dùng để người dùng nhập và gửi dữ liệu lên máy chủ.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"text\" dùng để nhập một dòng văn bản ngắn.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"password\" hiển thị các ký tự nhập vào dưới dạng dấu chấm hoặc sao để bảo mật.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"date\" hiển thị lịch để người dùng chọn ngày tháng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"submit\" dùng để tạo nút xóa dữ liệu.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "input type=\"radio\" cho phép người dùng chọn nhiều phương án cùng lúc.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Để các nút radio thuộc cùng một nhóm (chỉ chọn 1), chúng phải có cùng thuộc tính name.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"checkbox\" dùng cho các câu hỏi trắc nghiệm nhiều lựa chọn đúng.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính value là giá trị sẽ được gửi đi khi người dùng chọn ô đó.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <textarea> dùng để nhập văn bản nhiều dòng (như địa chỉ, ghi chú).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <select> và <option> dùng để tạo danh sách thả xuống (Dropdown list).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thẻ <label> dùng để tạo nhãn, giúp người dùng biết ô nhập liệu dùng để làm gì.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "input type=\"file\" dùng để tải tệp tin từ máy người dùng lên.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính id phải là duy nhất trong một trang web.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Thuộc tính for trong thẻ <label> liên kết với thuộc tính name của thẻ input.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
+  },
+  {
+    "question": "Thẻ <fieldset> dùng để nhóm các phần tử liên quan lại với nhau (tạo khung bao quanh).",
+    "options": ["Đúng", "Sai"],
+    "answer": "Đúng"
+  },
+  {
+    "question": "Nút type=\"button\" mặc định sẽ gửi form đi khi nhấn.",
+    "options": ["Đúng", "Sai"],
+    "answer": "Sai"
   }
 ]
