@@ -70,6 +70,10 @@ document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json')
 function loadQuiz() {
     deselectAnswers();
     
+    // Đảm bảo mỗi khi qua câu mới vùng nội dung cuộn lên đầu
+    const scrollArea = document.querySelector('.quiz-scroll-area');
+    if (scrollArea) scrollArea.scrollTop = 0;
+
     const currentData = userQuestions[currentQuiz];
     questionEl.innerText = "Câu " + (currentQuiz + 1) + ": " + currentData.question;
 
@@ -106,10 +110,10 @@ function deselectAnswers() {
     currentSelection = null;
 }
 
-// 6. XỬ LÝ CHỌN ĐÁP ÁN (BỔ SUNG LOGIC XÓA MÀU CŨ)
+// 6. XỬ LÝ CHỌN ĐÁP ÁN (GIỮ NGUYÊN LOGIC VÀ SỬA LỖI ĐỔI ĐÁP ÁN)
 answerEls.forEach(function(el) {
     el.onclick = function() {
-        // BỔ SUNG: Xóa sạch màu sắc cũ mỗi khi đổi đáp án
+        // Xóa sạch trạng thái cũ của tất cả đáp án khi người dùng click cái mới
         document.querySelectorAll('.option-item').forEach(function(item) {
             item.classList.remove('correct', 'wrong', 'dimmed');
         });
@@ -127,7 +131,6 @@ answerEls.forEach(function(el) {
 
         if (selectedId === correctKey) {
             label.classList.add('correct');
-            // Khóa toàn bộ để tập trung vào câu đúng
             document.querySelectorAll('.option-item').forEach(function(item) {
                 item.classList.add('locked'); 
                 if(item !== label) item.classList.add('dimmed');
