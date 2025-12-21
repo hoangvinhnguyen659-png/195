@@ -1,7 +1,7 @@
 let quizData = [];
 let userQuestions = [];
 let score = 0;
-let completedQuestionsCount = 0; 
+let correctCount = 0;
 
 const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
@@ -36,9 +36,6 @@ async function init() {
 }
 init();
 
-document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
-document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
-
 async function startGame(fileName) {
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
@@ -61,7 +58,7 @@ async function startGame(fileName) {
 
 function resetAndRender() {
     score = 0;
-    completedQuestionsCount = 0;
+    correctCount = 0;
     
     loadingScreen.classList.add('hidden');
     resultScreen.classList.add('hidden');
@@ -71,6 +68,13 @@ function resetAndRender() {
     document.querySelector('.quiz-scroll-area').scrollTop = 0;
 }
 
+function restartQuiz() {
+    resetAndRender();
+}
+
+document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
+document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
+
 function renderAllQuestions() {
     const feed = document.getElementById('quiz-feed');
     feed.innerHTML = "";
@@ -79,42 +83,42 @@ function renderAllQuestions() {
         const qBlock = document.createElement('div');
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
-        qBlock.dataset.subCorrect = 0; 
+        qBlock.dataset.subFinished = 0; 
 
         const questionTitle = escapeHtml(data.question);
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // Hiển thị câu hỏi Đúng/Sai với 4 ý phụ
+            // GIAO DIỆN ĐÚNG SAI: Nút trải đều, đánh số 1.2.3.4
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-item" style="margin-bottom: 25px;" id="q-${index}-sub-${subIdx}">
-                    <div style="margin-bottom: 10px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 10px;">
-                        <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 25px; padding: 10px; border-bottom: 1px dashed #eee;">
+                    <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div class="option-list" style="display: flex; justify-content: space-between; gap: 15px;">
+                        <div class="option-item" style="flex: 1; text-align: center; border: 1px solid #ccc; padding: 10px; border-radius: 5px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
-                        <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
+                        <div class="option-item" style="flex: 1; text-align: center; border: 1px solid #ccc; padding: 10px; border-radius: 5px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <span>Sai</span>
                         </div>
                     </div>
                 </div>
             `).join('');
         } else {
-            // Hiển thị trắc nghiệm bình thường
+            // GIAO DIỆN TRẮC NGHIỆM: Có nút tròn radio
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
                 optionsHtml = `
-                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, 'a')">
-                        <span>${escapeHtml(opts[0])}</span>
+                    <div class="option-item" onclick="handleSelect(this, ${index}, 'a')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(opts[0])}</span>
                     </div>
-                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, 'b')">
-                        <span>${escapeHtml(opts[1])}</span>
+                    <div class="option-item" onclick="handleSelect(this, ${index}, 'b')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(opts[1])}</span>
                     </div>`;
             } else {
                 optionsHtml = Object.entries(opts).map(([key, val]) => `
-                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, '${key}')">
-                        <span>${escapeHtml(val)}</span>
+                    <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
+                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(val)}</span>
                     </div>`).join('');
             }
             contentHtml = `<div class="option-list">${optionsHtml}</div>`;
@@ -122,7 +126,7 @@ function renderAllQuestions() {
 
         qBlock.innerHTML = `
             <div class="question-text" style="font-weight: bold; margin-bottom: 15px;">Câu ${index + 1}: ${questionTitle}</div>
-            ${contentHtml}`;
+            <div class="content-area">${contentHtml}</div>`;
         feed.appendChild(qBlock);
     });
 
@@ -130,42 +134,17 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-function handleSubSelect(element, qIndex, subIdx, selectedValue) {
-    const currentSubContainer = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
-    if (currentSubContainer.classList.contains('sub-completed')) return;
-
-    // Khi chọn lại, xóa màu đỏ cũ
-    const siblingOptions = currentSubContainer.querySelectorAll('.option-item');
-    siblingOptions.forEach(opt => opt.classList.remove('wrong'));
-
-    const correctValue = userQuestions[qIndex].subQuestions[subIdx].answer;
-
-    if (selectedValue === correctValue) {
-        element.classList.add('correct');
-        currentSubContainer.classList.add('sub-completed');
-        
-        const mainBlock = document.getElementById(`q-block-${qIndex}`);
-        let currentSubCorrect = parseInt(mainBlock.dataset.subCorrect) + 1;
-        mainBlock.dataset.subCorrect = currentSubCorrect;
-
-        // Chỉ khi đúng hết các ý phụ (thường là 4) thì mới tính là xong 1 câu lớn
-        if (currentSubCorrect === userQuestions[qIndex].subQuestions.length) {
-            mainBlock.classList.add('completed');
-            score++;
-            completedQuestionsCount++;
-            updateProgress();
-        }
-    } else {
-        element.classList.add('wrong');
-    }
-}
-
-function handleNormalSelect(element, qIndex, selectedKey) {
+function handleSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
+    // Xóa màu đỏ cũ nếu có
     const allOptions = block.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
+
+    // Tích vào nút tròn
+    const radio = element.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
 
     const data = userQuestions[qIndex];
     let correctKey = "";
@@ -180,31 +159,61 @@ function handleNormalSelect(element, qIndex, selectedKey) {
         element.classList.add('correct');
         block.classList.add('completed'); 
         score++;
-        completedQuestionsCount++;
+        correctCount++;
         updateProgress();
     } else {
         element.classList.add('wrong');
     }
+
+    if (correctCount === userQuestions.length) {
+        setTimeout(showFinalResults, 500);
+    }
+}
+
+function handleSubSelect(element, qIndex, subIdx, selectedValue) {
+    const subContainer = document.getElementById(`sub-container-${qIndex}-${subIdx}`);
+    if (subContainer.classList.contains('sub-completed')) return;
+
+    // Xóa màu đỏ khi chọn lại
+    const options = subContainer.querySelectorAll('.option-item');
+    options.forEach(opt => opt.classList.remove('wrong'));
+
+    const data = userQuestions[qIndex];
+    const correctAnswer = data.subQuestions[subIdx].answer;
+
+    if (selectedValue === correctAnswer) {
+        element.classList.add('correct');
+        subContainer.classList.add('sub-completed');
+        
+        const block = document.getElementById(`q-block-${qIndex}`);
+        let finished = parseInt(block.dataset.subFinished) + 1;
+        block.dataset.subFinished = finished;
+
+        // Hoàn thành toàn bộ ý phụ mới tăng thanh tiến trình
+        if (finished === data.subQuestions.length) {
+            block.classList.add('completed');
+            score++;
+            correctCount++;
+            updateProgress();
+        }
+    } else {
+        element.classList.add('wrong');
+    }
+
+    if (correctCount === userQuestions.length) {
+        setTimeout(showFinalResults, 500);
+    }
 }
 
 function updateProgress() {
-    const total = userQuestions.length;
-    const percent = total > 0 ? (completedQuestionsCount / total) * 100 : 0;
+    const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     progressBar.style.width = percent + "%";
-    document.getElementById('current-count').innerText = completedQuestionsCount;
+    document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
-
-    if (completedQuestionsCount === total && total > 0) {
-        setTimeout(showFinalResults, 500);
-    }
 }
 
 function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
-}
-
-function restartQuiz() {
-    resetAndRender();
 }
