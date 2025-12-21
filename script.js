@@ -87,18 +87,18 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // PHẦN ĐÚNG SAI: KHÔNG CÓ NÚT TRÒN, Nút bo tròn trải đều
+            // PHẦN ĐÚNG SAI: Không có nút tròn, cấu trúc dùng chung class CSS bạn gửi
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
-                    <div style="margin-bottom: 10px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 15px;">
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 25px;">
+                    <div style="margin-bottom: 12px; font-weight: 600;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div class="option-list" style="display: flex; gap: 12px;">
                         <div class="option-item" 
-                             style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; min-height: 45px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
                         <div class="option-item" 
-                             style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; min-height: 45px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <span>Sai</span>
                         </div>
@@ -106,7 +106,7 @@ function renderAllQuestions() {
                 </div>
             `).join('');
         } else {
-            // PHẦN TRẮC NGHIỆM: CÓ NÚT TRÒN (Giữ nguyên cấu trúc của bạn)
+            // PHẦN TRẮC NGHIỆM: Có nút tròn radio như yêu cầu
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
@@ -137,13 +137,16 @@ function renderAllQuestions() {
 }
 
 function handleSelect(element, qIndex, selectedKey) {
-    const block = document.getElementById(`q-block-${qIndex}`);
-    if (block.classList.contains('completed')) return;
+    const block = document.getElementById(`q-block-${index}`); // Đoạn này dùng index cũ, sửa lại qIndex để chạy đúng
+    const targetBlock = document.getElementById(`q-block-${qIndex}`);
+    if (targetBlock.classList.contains('completed')) return;
 
-    const allOptions = block.querySelectorAll('.option-item');
+    const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
-    element.querySelector('input').checked = true;
+    const radio = element.querySelector('input');
+    if(radio) radio.checked = true;
+
     const data = userQuestions[qIndex];
     let correctKey = "";
     if (Array.isArray(data.options)) {
@@ -155,7 +158,7 @@ function handleSelect(element, qIndex, selectedKey) {
 
     if (selectedKey === correctKey) {
         element.classList.add('correct');
-        block.classList.add('completed'); 
+        targetBlock.classList.add('completed'); 
         score++;
         correctCount++;
         updateProgress();
@@ -168,6 +171,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const subContainer = document.getElementById(`sub-container-${qIndex}-${subIdx}`);
     if (subContainer.classList.contains('sub-completed')) return;
 
+    // Xóa class wrong để cho phép chọn lại theo CSS của bạn
     const options = subContainer.querySelectorAll('.option-item');
     options.forEach(opt => opt.classList.remove('wrong'));
 
@@ -175,7 +179,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const correctAnswer = data.subQuestions[subIdx].answer;
 
     if (selectedValue === correctAnswer) {
-        element.classList.add('correct');
+        element.classList.add('correct'); // Tự động nhận border success và bg xanh từ CSS
         subContainer.classList.add('sub-completed');
         
         const block = document.getElementById(`q-block-${qIndex}`);
@@ -189,7 +193,11 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
             updateProgress();
         }
     } else {
-        element.classList.add('wrong');
+        element.classList.add('wrong'); // Tự động nhận border error và bg đỏ từ CSS
+    }
+    
+    if (correctCount === userQuestions.length && userQuestions.length > 0) {
+        setTimeout(showFinalResults, 500);
     }
 }
 
@@ -198,9 +206,6 @@ function updateProgress() {
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
-    if (correctCount === userQuestions.length && userQuestions.length > 0) {
-        setTimeout(showFinalResults, 500);
-    }
 }
 
 function showFinalResults() {
