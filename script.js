@@ -87,18 +87,18 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // PHẦN ĐÚNG SAI: Không có nút tròn, cấu trúc dùng chung class CSS bạn gửi
+            // ĐÚNG SAI: Trải đều, bo tròn 12px, không nút tròn
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 25px;">
-                    <div style="margin-bottom: 12px; font-weight: 600;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 12px;">
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
+                    <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div class="option-list" style="display: flex; gap: 15px;">
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <span>Sai</span>
                         </div>
@@ -106,7 +106,7 @@ function renderAllQuestions() {
                 </div>
             `).join('');
         } else {
-            // PHẦN TRẮC NGHIỆM: Có nút tròn radio như yêu cầu
+            // TRẮC NGHIỆM: Có nút tròn radio như cũ
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
@@ -137,10 +137,10 @@ function renderAllQuestions() {
 }
 
 function handleSelect(element, qIndex, selectedKey) {
-    const block = document.getElementById(`q-block-${index}`); // Đoạn này dùng index cũ, sửa lại qIndex để chạy đúng
     const targetBlock = document.getElementById(`q-block-${qIndex}`);
     if (targetBlock.classList.contains('completed')) return;
 
+    // Xóa màu đỏ cũ để chọn lại
     const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -171,7 +171,6 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const subContainer = document.getElementById(`sub-container-${qIndex}-${subIdx}`);
     if (subContainer.classList.contains('sub-completed')) return;
 
-    // Xóa class wrong để cho phép chọn lại theo CSS của bạn
     const options = subContainer.querySelectorAll('.option-item');
     options.forEach(opt => opt.classList.remove('wrong'));
 
@@ -179,7 +178,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const correctAnswer = data.subQuestions[subIdx].answer;
 
     if (selectedValue === correctAnswer) {
-        element.classList.add('correct'); // Tự động nhận border success và bg xanh từ CSS
+        element.classList.add('correct');
         subContainer.classList.add('sub-completed');
         
         const block = document.getElementById(`q-block-${qIndex}`);
@@ -193,11 +192,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
             updateProgress();
         }
     } else {
-        element.classList.add('wrong'); // Tự động nhận border error và bg đỏ từ CSS
-    }
-    
-    if (correctCount === userQuestions.length && userQuestions.length > 0) {
-        setTimeout(showFinalResults, 500);
+        element.classList.add('wrong');
     }
 }
 
@@ -206,6 +201,10 @@ function updateProgress() {
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
+    
+    if (correctCount === userQuestions.length && userQuestions.length > 0) {
+        setTimeout(showFinalResults, 500);
+    }
 }
 
 function showFinalResults() {
