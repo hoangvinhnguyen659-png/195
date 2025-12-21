@@ -1,7 +1,7 @@
 let quizData = [];
 let userQuestions = [];
 let score = 0;
-let completedQuestionsCount = 0; // Số câu hỏi lớn đã hoàn thành xong các ý phụ
+let completedQuestionsCount = 0; 
 
 const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
@@ -36,25 +36,28 @@ async function init() {
 }
 init();
 
+// Gán sự kiện cho các nút chọn chế độ
+document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
+document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
+
 async function startGame(fileName) {
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
 
-    setTimeout(async () => {
-        try {
-            const res = await fetch(fileName);
-            quizData = await res.json();
-            
-            const isShuffle = document.getElementById('shuffle-checkbox').checked;
-            userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
-            
-            resetAndRender();
-        } catch (err) {
-            console.error(err);
-            alert("Không tìm thấy file câu hỏi hoặc file sai cấu trúc!");
-            location.reload();
-        }
-    }, 200);
+    try {
+        const res = await fetch(fileName);
+        if (!res.ok) throw new Error("Fetch failed");
+        quizData = await res.json();
+        
+        const isShuffle = document.getElementById('shuffle-checkbox').checked;
+        userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+        
+        resetAndRender();
+    } catch (err) {
+        console.error(err);
+        alert("Lỗi: Không tìm thấy hoặc file JSON sai định dạng!");
+        location.reload();
+    }
 }
 
 function resetAndRender() {
@@ -77,17 +80,17 @@ function renderAllQuestions() {
         const qBlock = document.createElement('div');
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
-        qBlock.dataset.subCorrect = 0; // Theo dõi số ý phụ đã đúng
+        qBlock.dataset.subCorrect = 0; 
 
         const questionTitle = escapeHtml(data.question);
         let contentHtml = "";
 
-        // TRƯỜNG HỢP: CÂU HỎI ĐÚNG SAI (Có subQuestions)
+        // TRƯỜNG HỢP 1: CÂU HỎI ĐÚNG SAI (Có subQuestions)
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-item" style="margin-bottom: 20px;" id="q-${index}-sub-${subIdx}">
-                    <div style="margin-bottom: 8px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 10px;">
+                <div class="sub-question-item" style="margin-bottom: 25px; padding-left: 10px; border-left: 3px solid #eee;" id="q-${index}-sub-${subIdx}">
+                    <div style="margin-bottom: 10px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div class="option-list" style="display: flex; gap: 15px;">
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
@@ -98,7 +101,7 @@ function renderAllQuestions() {
                 </div>
             `).join('');
         } 
-        // TRƯỜNG HỢP: TRẮC NGHIỆM THƯỜNG
+        // TRƯỜNG HỢP 2: TRẮC NGHIỆM THƯỜNG
         else {
             const opts = data.options;
             let optionsHtml = "";
@@ -117,7 +120,7 @@ function renderAllQuestions() {
         }
 
         qBlock.innerHTML = `
-            <div class="question-text" style="font-weight: bold; font-size: 1.1em; color: #2c3e50; margin-bottom: 15px;">
+            <div class="question-text" style="font-weight: bold; font-size: 1.1em; color: #2c3e50; margin-bottom: 20px;">
                 Câu ${index + 1}: ${questionTitle}
             </div>
             ${contentHtml}`;
@@ -128,14 +131,14 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-// Xử lý chọn cho câu hỏi Đúng/Sai
+// Hàm xử lý cho Đúng/Sai
 function handleSubSelect(element, qIndex, subIdx, selectedValue) {
-    const subBlock = document.getElementById(`q-${index}-sub-${subIdx}`); // Fix reference: qIndex
     const currentSubContainer = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
     
+    // Nếu ý này đã trả lời đúng rồi thì không cho bấm lại
     if (currentSubContainer.classList.contains('sub-completed')) return;
 
-    // Reset màu sai của các option trong cùng một ý phụ
+    // Reset màu 'wrong' khi chọn lại
     const siblingOptions = currentSubContainer.querySelectorAll('.option-item');
     siblingOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -145,11 +148,11 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         element.classList.add('correct');
         currentSubContainer.classList.add('sub-completed');
         
-        // Kiểm tra xem đã hoàn thành hết 4 ý phụ của câu lớn chưa
         const mainBlock = document.getElementById(`q-block-${qIndex}`);
         let currentSubCorrect = parseInt(mainBlock.dataset.subCorrect) + 1;
         mainBlock.dataset.subCorrect = currentSubCorrect;
 
+        // Nếu đúng đủ cả 4 ý phụ của câu hỏi lớn
         if (currentSubCorrect === userQuestions[qIndex].subQuestions.length) {
             mainBlock.classList.add('completed');
             score++;
@@ -161,7 +164,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     }
 }
 
-// Xử lý chọn cho trắc nghiệm thường (Giữ logic cũ nhưng cho phép chọn lại)
+// Hàm xử lý cho Trắc nghiệm thường
 function handleNormalSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
