@@ -89,43 +89,50 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // GIAO DIỆN ĐÚNG SAI: Nút trải đều, đánh số 1.2.3.4
+            // Giao diện Đúng/Sai: Bo tròn, chữ ở giữa, trải đều
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 25px; padding: 10px; border-bottom: 1px dashed #eee;">
-                    <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; justify-content: space-between; gap: 15px;">
-                        <div class="option-item" style="flex: 1; text-align: center; border: 1px solid #ccc; padding: 10px; border-radius: 5px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
-                            <span>Đúng</span>
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 25px; padding: 15px; border-bottom: 1px solid #f0f0f0;">
+                    <div style="margin-bottom: 15px; font-size: 16px; line-height: 1.5;">
+                        <strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}
+                    </div>
+                    <div class="option-list" style="display: flex; justify-content: space-between; gap: 20px;">
+                        <div class="option-item" 
+                             style="flex: 1; display: flex; align-items: center; justify-content: center; height: 45px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; transition: all 0.2s;" 
+                             onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
+                            <span style="font-weight: 500;">Đúng</span>
                         </div>
-                        <div class="option-item" style="flex: 1; text-align: center; border: 1px solid #ccc; padding: 10px; border-radius: 5px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
-                            <span>Sai</span>
+                        <div class="option-item" 
+                             style="flex: 1; display: flex; align-items: center; justify-content: center; height: 45px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; transition: all 0.2s;" 
+                             onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
+                            <span style="font-weight: 500;">Sai</span>
                         </div>
                     </div>
                 </div>
             `).join('');
         } else {
-            // GIAO DIỆN TRẮC NGHIỆM: Có nút tròn radio
+            // Giao diện Trắc nghiệm: Có nút tròn radio, bo tròn khung
             const opts = data.options;
             let optionsHtml = "";
+            
+            const renderOption = (key, text) => `
+                <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')" 
+                     style="display: flex; align-items: center; gap: 12px; padding: 12px 15px; margin-bottom: 10px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer;">
+                    <input type="radio" name="q${index}" style="width: 18px; height: 18px; cursor: pointer;">
+                    <span style="font-size: 15px;">${escapeHtml(text)}</span>
+                </div>`;
+
             if (Array.isArray(opts)) {
-                optionsHtml = `
-                    <div class="option-item" onclick="handleSelect(this, ${index}, 'a')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
-                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(opts[0])}</span>
-                    </div>
-                    <div class="option-item" onclick="handleSelect(this, ${index}, 'b')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
-                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(opts[1])}</span>
-                    </div>`;
+                optionsHtml = renderOption('a', opts[0]) + renderOption('b', opts[1]);
             } else {
-                optionsHtml = Object.entries(opts).map(([key, val]) => `
-                    <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')" style="display: flex; align-items: center; gap: 10px; padding: 10px; cursor: pointer;">
-                        <input type="radio" name="q${index}" style="width: 20px; height: 20px;"> <span>${escapeHtml(val)}</span>
-                    </div>`).join('');
+                optionsHtml = Object.entries(opts).map(([key, val]) => renderOption(key, val)).join('');
             }
             contentHtml = `<div class="option-list">${optionsHtml}</div>`;
         }
 
         qBlock.innerHTML = `
-            <div class="question-text" style="font-weight: bold; margin-bottom: 15px;">Câu ${index + 1}: ${questionTitle}</div>
+            <div class="question-text" style="font-weight: 600; font-size: 18px; margin-bottom: 20px; color: #333;">
+                Câu ${index + 1}: ${questionTitle}
+            </div>
             <div class="content-area">${contentHtml}</div>`;
         feed.appendChild(qBlock);
     });
@@ -134,15 +141,14 @@ function renderAllQuestions() {
     updateProgress();
 }
 
+// Xử lý Trắc nghiệm
 function handleSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
 
-    // Xóa màu đỏ cũ nếu có
     const allOptions = block.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
-    // Tích vào nút tròn
     const radio = element.querySelector('input[type="radio"]');
     if (radio) radio.checked = true;
 
@@ -156,13 +162,13 @@ function handleSelect(element, qIndex, selectedKey) {
     }
 
     if (selectedKey === correctKey) {
-        element.classList.add('correct');
+        element.classList.add('correct'); // Màu xanh giống ảnh trắc nghiệm
         block.classList.add('completed'); 
         score++;
         correctCount++;
         updateProgress();
     } else {
-        element.classList.add('wrong');
+        element.classList.add('wrong'); // Màu đỏ giống ảnh trắc nghiệm
     }
 
     if (correctCount === userQuestions.length) {
@@ -170,11 +176,11 @@ function handleSelect(element, qIndex, selectedKey) {
     }
 }
 
+// Xử lý Đúng/Sai
 function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const subContainer = document.getElementById(`sub-container-${qIndex}-${subIdx}`);
     if (subContainer.classList.contains('sub-completed')) return;
 
-    // Xóa màu đỏ khi chọn lại
     const options = subContainer.querySelectorAll('.option-item');
     options.forEach(opt => opt.classList.remove('wrong'));
 
@@ -182,14 +188,13 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const correctAnswer = data.subQuestions[subIdx].answer;
 
     if (selectedValue === correctAnswer) {
-        element.classList.add('correct');
+        element.classList.add('correct'); // Màu xanh đồng nhất
         subContainer.classList.add('sub-completed');
         
         const block = document.getElementById(`q-block-${qIndex}`);
         let finished = parseInt(block.dataset.subFinished) + 1;
         block.dataset.subFinished = finished;
 
-        // Hoàn thành toàn bộ ý phụ mới tăng thanh tiến trình
         if (finished === data.subQuestions.length) {
             block.classList.add('completed');
             score++;
@@ -197,7 +202,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
             updateProgress();
         }
     } else {
-        element.classList.add('wrong');
+        element.classList.add('wrong'); // Màu đỏ đồng nhất
     }
 
     if (correctCount === userQuestions.length) {
