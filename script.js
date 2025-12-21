@@ -36,7 +36,6 @@ async function init() {
 }
 init();
 
-// Gán sự kiện cho các nút chọn chế độ
 document.getElementById('btn-tracnghiem').onclick = () => startGame('questions.json');
 document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json');
 
@@ -44,20 +43,20 @@ async function startGame(fileName) {
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
 
-    try {
-        const res = await fetch(fileName);
-        if (!res.ok) throw new Error("Fetch failed");
-        quizData = await res.json();
-        
-        const isShuffle = document.getElementById('shuffle-checkbox').checked;
-        userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
-        
-        resetAndRender();
-    } catch (err) {
-        console.error(err);
-        alert("Lỗi: Không tìm thấy hoặc file JSON sai định dạng!");
-        location.reload();
-    }
+    setTimeout(async () => {
+        try {
+            const res = await fetch(fileName);
+            quizData = await res.json();
+            
+            const isShuffle = document.getElementById('shuffle-checkbox').checked;
+            userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+            
+            resetAndRender();
+        } catch (err) {
+            alert("Không tìm thấy file câu hỏi!");
+            location.reload();
+        }
+    }, 200);
 }
 
 function resetAndRender() {
@@ -85,12 +84,12 @@ function renderAllQuestions() {
         const questionTitle = escapeHtml(data.question);
         let contentHtml = "";
 
-        // TRƯỜNG HỢP 1: CÂU HỎI ĐÚNG SAI (Có subQuestions)
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
+            // Hiển thị câu hỏi Đúng/Sai với 4 ý phụ
             contentHtml = data.subQuestions.map((sub, subIdx) => `
-                <div class="sub-question-item" style="margin-bottom: 25px; padding-left: 10px; border-left: 3px solid #eee;" id="q-${index}-sub-${subIdx}">
+                <div class="sub-question-item" style="margin-bottom: 25px;" id="q-${index}-sub-${subIdx}">
                     <div style="margin-bottom: 10px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 15px;">
+                    <div class="option-list" style="display: flex; gap: 10px;">
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
@@ -100,16 +99,18 @@ function renderAllQuestions() {
                     </div>
                 </div>
             `).join('');
-        } 
-        // TRƯỜNG HỢP 2: TRẮC NGHIỆM THƯỜNG
-        else {
+        } else {
+            // Hiển thị trắc nghiệm bình thường
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
-                optionsHtml = opts.map((opt, i) => `
-                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, '${i === 0 ? 'a' : 'b'}')">
-                        <span>${escapeHtml(opt)}</span>
-                    </div>`).join('');
+                optionsHtml = `
+                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, 'a')">
+                        <span>${escapeHtml(opts[0])}</span>
+                    </div>
+                    <div class="option-item" onclick="handleNormalSelect(this, ${index}, 'b')">
+                        <span>${escapeHtml(opts[1])}</span>
+                    </div>`;
             } else {
                 optionsHtml = Object.entries(opts).map(([key, val]) => `
                     <div class="option-item" onclick="handleNormalSelect(this, ${index}, '${key}')">
@@ -120,9 +121,7 @@ function renderAllQuestions() {
         }
 
         qBlock.innerHTML = `
-            <div class="question-text" style="font-weight: bold; font-size: 1.1em; color: #2c3e50; margin-bottom: 20px;">
-                Câu ${index + 1}: ${questionTitle}
-            </div>
+            <div class="question-text" style="font-weight: bold; margin-bottom: 15px;">Câu ${index + 1}: ${questionTitle}</div>
             ${contentHtml}`;
         feed.appendChild(qBlock);
     });
@@ -131,14 +130,11 @@ function renderAllQuestions() {
     updateProgress();
 }
 
-// Hàm xử lý cho Đúng/Sai
 function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const currentSubContainer = document.getElementById(`q-${qIndex}-sub-${subIdx}`);
-    
-    // Nếu ý này đã trả lời đúng rồi thì không cho bấm lại
     if (currentSubContainer.classList.contains('sub-completed')) return;
 
-    // Reset màu 'wrong' khi chọn lại
+    // Khi chọn lại, xóa màu đỏ cũ
     const siblingOptions = currentSubContainer.querySelectorAll('.option-item');
     siblingOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -152,7 +148,7 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         let currentSubCorrect = parseInt(mainBlock.dataset.subCorrect) + 1;
         mainBlock.dataset.subCorrect = currentSubCorrect;
 
-        // Nếu đúng đủ cả 4 ý phụ của câu hỏi lớn
+        // Chỉ khi đúng hết các ý phụ (thường là 4) thì mới tính là xong 1 câu lớn
         if (currentSubCorrect === userQuestions[qIndex].subQuestions.length) {
             mainBlock.classList.add('completed');
             score++;
@@ -164,7 +160,6 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     }
 }
 
-// Hàm xử lý cho Trắc nghiệm thường
 function handleNormalSelect(element, qIndex, selectedKey) {
     const block = document.getElementById(`q-block-${qIndex}`);
     if (block.classList.contains('completed')) return;
@@ -174,7 +169,6 @@ function handleNormalSelect(element, qIndex, selectedKey) {
 
     const data = userQuestions[qIndex];
     let correctKey = "";
-    
     if (Array.isArray(data.options)) {
         correctKey = (data.answer === data.options[0]) ? "a" : "b";
     } else {
@@ -196,13 +190,12 @@ function handleNormalSelect(element, qIndex, selectedKey) {
 function updateProgress() {
     const total = userQuestions.length;
     const percent = total > 0 ? (completedQuestionsCount / total) * 100 : 0;
-    
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = completedQuestionsCount;
     document.getElementById('live-score').innerText = score;
 
     if (completedQuestionsCount === total && total > 0) {
-        setTimeout(showFinalResults, 800);
+        setTimeout(showFinalResults, 500);
     }
 }
 
