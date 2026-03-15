@@ -87,8 +87,17 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // ĐÚNG SAI: Trải đều, bo tròn 12px, không nút tròn
-            contentHtml = data.subQuestions.map((sub, subIdx) => `
+            // ĐÚNG SAI: Trải đều, bo tròn 12px, không nút tròn, kèm giải thích
+            contentHtml = data.subQuestions.map((sub, subIdx) => {
+                
+                // Tạo khối HTML chứa lời giải thích (mặc định ẩn)
+                const explainHtml = sub.explanation 
+                    ? `<div id="explain-${index}-${subIdx}" style="display: none; margin-top: 12px; padding: 12px; background-color: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 8px; font-size: 14px; color: #333;">
+                        <strong>💡 Giải thích:</strong> ${escapeHtml(sub.explanation)}
+                       </div>` 
+                    : '';
+
+                return `
                 <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
                     <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
                     <div class="option-list" style="display: flex; gap: 15px;">
@@ -103,8 +112,10 @@ function renderAllQuestions() {
                             <span>Sai</span>
                         </div>
                     </div>
+                    ${explainHtml}
                 </div>
-            `).join('');
+                `;
+            }).join('');
         } else {
             // TRẮC NGHIỆM: Có nút tròn radio như cũ
             const opts = data.options;
@@ -181,6 +192,12 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         element.classList.add('correct');
         subContainer.classList.add('sub-completed');
         
+        // Hiển thị phần giải thích
+        const explainBox = document.getElementById(`explain-${qIndex}-${subIdx}`);
+        if (explainBox) {
+            explainBox.style.display = 'block';
+        }
+        
         const block = document.getElementById(`q-block-${qIndex}`);
         let finished = parseInt(block.dataset.subFinished) + 1;
         block.dataset.subFinished = finished;
@@ -211,4 +228,4 @@ function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
-                          }
+}
