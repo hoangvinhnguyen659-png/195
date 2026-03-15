@@ -10,7 +10,6 @@
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     
-    /* Theme dynamic variables */
     --card-bg: #FFFFFF;
     --header-bg: rgba(255, 255, 255, 0.98);
     --border-color: #f3f4f6;
@@ -20,7 +19,6 @@
     --explain-text: #166534;
 }
 
-/* Dark Mode class */
 body.dark-mode {
     --bg-gradient: linear-gradient(135deg, #111827 0%, #1f2937 100%);
     --white: #1f2937;
@@ -56,13 +54,46 @@ body {
     overflow-x: hidden;
 }
 
+/* DI CHUYỂN NÚT XUỐNG GÓC PHẢI */
 #theme-toggle {
-    position: absolute; top: 16px; right: 16px;
-    width: 40px; height: 40px; border-radius: 50%;
-    border: none; background: var(--border-color);
-    color: var(--text); cursor: pointer; z-index: 100;
-    display: flex; align-items: center; justify-content: center;
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px;
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%;
+    border: none; 
+    background: var(--primary);
+    color: white; 
+    cursor: pointer; 
+    z-index: 1000;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
+/* CSS CHO THÔNG BÁO UPDATE */
+#update-toast {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 13px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+    pointer-events: none;
+}
+#update-toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#close-toast { background: rgba(255,255,255,0.2); border: none; color: white; padding: 3px 7px; border-radius: 5px; cursor: pointer; font-size: 11px; }
 
 @media (min-width: 600px) {
     .app-container { height: 95vh; margin-top: 2.5vh; border-radius: 24px; }
@@ -114,7 +145,6 @@ input:checked + .slider:before { transform: translateX(20px); }
 .question-block.completed .option-item.correct { opacity: 1; border-color: var(--success); }
 .question-block.completed .option-item.wrong { opacity: 1; }
 
-/* Thêm class giải thích để thay thế inline style */
 .explanation-box {
     margin-top: 12px; padding: 10px 15px; 
     background-color: var(--explain-bg); 
@@ -131,3 +161,5 @@ input:checked + .slider:before { transform: translateX(20px); }
 .qr-container p { font-size: 14px; color: var(--text-light); margin-bottom: 15px; font-weight: bold; }
 .qr-card-wrapper { display: inline-block; background: #fff; padding: 10px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); line-height: 0; }
 .qr-card-wrapper img { width: 190px; height: auto; border-radius: 8px; display: block; }
+
+.toast-hidden { display: flex; }
