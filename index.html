@@ -10,10 +10,10 @@
 <body>
 
     <div class="app-container">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode"></button>
         
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
-                
                 <h1 class="app-title">Trắc Nghiệm Pro</h1>
                 <p id="status-text">Đang kết nối dữ liệu...</p>
                 
@@ -27,18 +27,15 @@
                     </div>
 
                     <div class="mode-buttons">
-                        <button class="btn-start btn-primary" id="btn-tracnghiem">
-                            Trắc nghiệm
-                        </button>
-                        <button class="btn-start btn-secondary" id="btn-dungsai">
-                            Đúng / Sai
-                        </button>
+                        <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
+                        <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
+                        
                         <div class="qr-container">
-    <p>Ủng hộ tác giả ❤️</p>
-    <div class="qr-card-wrapper">
-        <img src="snapedit_1766298911519.jpeg" alt="QR Code">
-    </div>
-</div>
+                            <p>Ủng hộ tác giả ❤️</p>
+                            <div class="qr-card-wrapper">
+                                <img src="snapedit_1766298911519.jpeg" alt="QR Code">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,8 +54,7 @@
             </div>
             
             <div class="quiz-scroll-area">
-                <div id="quiz-feed" class="quiz-body">
-                    </div>
+                <div id="quiz-feed" class="quiz-body"></div>
                 <div style="height: 60px;"></div> 
             </div>
         </div>
@@ -67,21 +63,14 @@
             <div class="result-card">
                 <h2 class="result-title">Xong rồi!</h2>
                 <div class="score-label">Số câu đúng</div>
-                <div class="score-box">
-                    <span id="final-score">0/0</span>
-                </div>
+                <div class="score-box"><span id="final-score">0/0</span></div>
                 
                 <div class="result-actions">
-                    <button class="btn-start btn-primary" onclick="restartQuiz()">
-                        Làm Lại 
-                    </button>
-                    <button class="btn-start btn-outline" onclick="location.reload()">
-                        Về Trang Chủ
-                    </button>
+                    <button class="btn-start btn-primary" onclick="restartQuiz()">Làm Lại</button>
+                    <button class="btn-start btn-outline" onclick="location.reload()">Về Trang Chủ</button>
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="script.js"></script>
