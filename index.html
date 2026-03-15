@@ -10,11 +10,15 @@
 <body>
 
     <div class="app-container">
-        <button id="theme-toggle"></button>
-        
         <div id="update-toast" class="toast-hidden">
-            <span>✨ Đã có Dark Mode ở đây!</span>
-            <button id="close-toast" onclick="closeToast()">Đã hiểu</button>
+            <div class="toast-content">
+                <span class="toast-icon">🚀</span>
+                <div class="toast-text">
+                    <strong>Cập nhật mới!</strong>
+                    <p>Đã có chế độ Dark Mode.<br>Đã có đúng/sai.<br>Giải thích cho đúng/sai.</p>
+                </div>
+                <button id="close-toast" onclick="closeToast()">×</button>
+            </div>
         </div>
         
         <div id="loading-screen" class="screen active">
@@ -34,10 +38,14 @@
                     <div class="mode-buttons">
                         <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
                         <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
+                        
                         <div class="qr-container">
                             <p>Ủng hộ tác giả ❤️</p>
-                            <div class="qr-card-wrapper">
-                                <img src="snapedit_1766298911519.jpeg" alt="QR Code">
+                            <div class="footer-row" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 10px;">
+                                <div class="qr-card-wrapper">
+                                    <img src="snapedit_1766298911519.jpeg" alt="QR Code">
+                                </div>
+                                <button id="theme-toggle"></button>
                             </div>
                         </div>
                     </div>
