@@ -9,18 +9,20 @@
 </head>
 <body>
 
-    <div class="app-container">
-        <div id="update-toast" class="toast-hidden">
-            <div class="toast-content">
-                <span class="toast-icon">🚀</span>
-                <div class="toast-text">
-                    <strong>Cập nhật mới!</strong>
-                    <p>Đã có chế độ Dark Mode. Thử ngay bên dưới nhé!</p>
-                </div>
-                <button id="close-toast" onclick="closeToast()">×</button>
+    <div id="update-toast" class="toast-hidden">
+        <div class="toast-content">
+            <span class="toast-icon">🚀</span>
+            <div class="toast-text">
+                <strong>Cập nhật mới!</strong>
+                <p>Đã có chế độ Dark Mode. Nhấn nút mặt trăng ở góc phải nhé!</p>
             </div>
+            <button id="close-toast" onclick="closeToast()">×</button>
         </div>
-        
+    </div>
+
+    <button id="theme-toggle" title="Đổi giao diện"></button>
+
+    <div class="app-container">
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
                 <h1 class="app-title">Trắc Nghiệm Pro</h1>
@@ -41,11 +43,8 @@
                         
                         <div class="qr-container">
                             <p>Ủng hộ tác giả ❤️</p>
-                            <div class="footer-row" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 10px;">
-                                <div class="qr-card-wrapper">
-                                    <img src="snapedit_1766298911519.jpeg" alt="QR Code">
-                                </div>
-                                <button id="theme-toggle"></button>
+                            <div class="qr-card-wrapper">
+                                <img src="snapedit_1766298911519.jpeg" alt="QR Code">
                             </div>
                         </div>
                     </div>
@@ -67,7 +66,7 @@
             
             <div class="quiz-scroll-area">
                 <div id="quiz-feed" class="quiz-body"></div>
-                <div style="height: 60px;"></div> 
+                <div style="height: 80px;"></div> 
             </div>
         </div>
 
