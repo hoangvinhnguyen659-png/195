@@ -1,14 +1,15 @@
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --bg-gradient: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
-    --white: #FFFFFF;
-    --text: #1F2937;
-    --text-light: #6B7280;
-    --success: #10B981;
-    --error: #EF4444;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* Hệ màu mới dịu mắt hơn */
+    --primary: #6b72a1;
+    --primary-dark: #535982;
+    --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e6e8ed 100%);
+    --white: #FAFAFA;
+    --text: #334155;
+    --text-light: #64748B;
+    --success: #2ea079;
+    --error: #d95d5d;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 8px 15px -3px rgba(0, 0, 0, 0.08);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -70,7 +71,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .btn-primary { 
     background: var(--primary); color: white; 
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4); 
+    box-shadow: 0 4px 6px -1px rgba(107, 114, 161, 0.4); 
 }
 .btn-primary:hover { background: var(--primary-dark); }
 .btn-secondary { background: white; color: var(--text); border: 2px solid #e5e7eb; }
@@ -78,8 +79,8 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 /* --- HEADER --- */
 .sticky-header {
-    background: rgba(255, 255, 255, 0.98);
-    border-bottom: 1px solid #f3f4f6;
+    background: rgba(250, 250, 250, 0.98); /* Chỉnh theo màu --white mới */
+    border-bottom: 1px solid #e2e8f0;
     padding: 12px 16px;
     z-index: 50;
 }
@@ -92,25 +93,27 @@ input:checked + .slider:before { transform: translateX(20px); }
 .info-item.right { text-align: right; }
 
 #btn-home-nav {
-    background: #f3f4f6; border: none; padding: 8px 16px;
+    background: #e2e8f0; border: none; padding: 8px 16px;
     border-radius: 8px; font-weight: 600; font-size: 0.85rem;
-    color: #4b5563; cursor: pointer;
+    color: #475569; cursor: pointer;
 }
 
-.progress-bg { height: 6px; background: #f3f4f6; border-radius: 10px; overflow: hidden; }
+.progress-bg { height: 6px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
 #progress-bar { height: 100%; background: var(--success); width: 0%; transition: width 0.3s ease; }
 
-/* --- CÂU HỎI (QUAN TRỌNG: FIX LỖI KÉO NGANG) --- */
+/* --- CÂU HỎI --- */
 .quiz-scroll-area { 
     flex: 1; 
     overflow-y: auto; 
     overflow-x: hidden; /* Chặn kéo ngang */
     padding: 16px; 
-    background: #f9fafb; 
+    background: #F1F3F6; /* Đổi màu nền dịu hơn */
 }
 
 .question-block {
-    background: white; border-radius: 16px; padding: 20px;
+    background: #FFFFFF; /* Giữ khung trắng để rõ chữ */
+    border: 1px solid #E2E8F0; /* Thêm viền mỏng */
+    border-radius: 16px; padding: 20px;
     margin-bottom: 20px; box-shadow: var(--shadow-sm);
     width: 100%; /* Đảm bảo không vượt quá khung */
 }
@@ -118,7 +121,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 /* Xử lý xuống dòng cho text dài */
 .question-text { 
     font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; 
-    line-height: 1.5; color: #111827; 
+    line-height: 1.5; color: #1e293b; 
     word-wrap: break-word; 
     overflow-wrap: break-word; /* Bắt buộc xuống dòng nếu từ quá dài */
 }
@@ -126,62 +129,60 @@ input:checked + .slider:before { transform: translateX(20px); }
 .option-item {
     display: flex; align-items: flex-start;
     padding: 14px; margin-bottom: 12px;
-    border: 2px solid #f3f4f6; border-radius: 12px;
+    border: 2px solid #e2e8f0; border-radius: 12px;
     cursor: pointer; background: white;
 }
 .option-item input { margin-right: 12px; margin-top: 4px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--primary); }
 
 .option-item span { 
-    line-height: 1.5; font-size: 1rem; color: #374151; 
+    line-height: 1.5; font-size: 1rem; color: #334155; 
     word-break: break-word; /* Đảm bảo đáp án dài tự xuống dòng */
 }
 
-/* Màu sắc trạng thái */
-.option-item.wrong { background-color: #FEF2F2; border-color: var(--error); color: #991B1B; }
-.option-item.correct { background-color: #ECFDF5; border-color: var(--success); color: #065F46; font-weight: 600; }
+/* Màu sắc trạng thái dịu mắt hơn */
+.option-item.wrong { background-color: #fcf0f0; border-color: #f1a9a9; color: #b03a3a; }
+.option-item.correct { background-color: #f0fdf7; border-color: #88ceb2; color: #1e7052; font-weight: 600; }
 
 .question-block.completed .option-item { pointer-events: none; opacity: 0.6; }
 .question-block.completed .option-item.correct { opacity: 1; border-color: var(--success); }
 .question-block.completed .option-item.wrong { opacity: 1; }
 
 /* --- KẾT QUẢ --- */
-#result-screen { justify-content: center; align-items: center; background: white; padding: 20px; }
+#result-screen { justify-content: center; align-items: center; background: var(--white); padding: 20px; }
 .result-card { text-align: center; width: 100%; }
 .result-title { font-size: 2rem; font-weight: 800; color: #111; margin-bottom: 10px; }
 .score-label { color: var(--text-light); font-weight: 500; font-size: 1rem; }
 .score-box { font-size: 4rem; font-weight: 800; color: var(--primary); margin: 20px 0 40px; }
 .result-actions { display: flex; flex-direction: column; gap: 12px; }
-/* Khung tổng thể: Giới hạn độ rộng để không bị quá bự */
+
+/* --- ẢNH QR --- */
 .qr-container {
-    margin: 25px auto; /* auto giúp căn giữa toàn bộ khối */
+    margin: 25px auto; 
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e2e8f0;
     padding-top: 20px;
-    max-width: 280px;  /* Đặt giới hạn bự nhất của khung là 280px */
+    max-width: 280px;  
 }
 
-/* Chữ tiêu đề */
 .qr-container p {
     font-size: 14px;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Khung card trắng: Ôm khít ảnh */
 .qr-card-wrapper {
     display: inline-block;
     background: #fff;
-    padding: 10px;        /* Giảm padding một chút cho đỡ bự */
+    padding: 10px;        
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     line-height: 0;
 }
 
-/* Ảnh QR: Chỉnh lại kích thước vừa phải */
 .qr-card-wrapper img {
-    width: 190px;         /* GIẢM TỪ 230px XUỐNG 180px cho nhỏ gọn */
+    width: 190px;         
     height: auto;
     border-radius: 8px;
     display: block;
-               }
+}
