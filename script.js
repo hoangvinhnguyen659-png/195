@@ -87,37 +87,26 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            contentHtml = data.subQuestions.map((sub, subIdx) => {
-                const explainHtml = sub.explanation 
-                    ? `<div id="explain-${index}-${subIdx}" 
-                            style="display: none; margin-top: 12px; padding: 12px 16px; 
-                            background-color: rgba(0,0,0,0.03); border-left: 4px solid var(--primary); 
-                            border-radius: 8px; font-size: 0.9rem; line-height: 1.5; color: var(--text);">
-                            <span style="font-weight: 700; color: var(--primary); display: block; margin-bottom: 4px;">Giải thích:</span>
-                            ${escapeHtml(sub.explanation)}
-                       </div>` 
-                    : '';
-
-                return `
-                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 24px;">
+            // ĐÚNG SAI: Trải đều, bo tròn 12px, không nút tròn
+            contentHtml = data.subQuestions.map((sub, subIdx) => `
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
                     <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 12px;">
+                    <div class="option-list" style="display: flex; gap: 15px;">
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <span>Sai</span>
                         </div>
                     </div>
-                    ${explainHtml}
                 </div>
-                `;
-            }).join('');
+            `).join('');
         } else {
+            // TRẮC NGHIỆM: Có nút tròn radio như cũ
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
@@ -151,6 +140,7 @@ function handleSelect(element, qIndex, selectedKey) {
     const targetBlock = document.getElementById(`q-block-${qIndex}`);
     if (targetBlock.classList.contains('completed')) return;
 
+    // Xóa màu đỏ cũ để chọn lại
     const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -191,11 +181,6 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         element.classList.add('correct');
         subContainer.classList.add('sub-completed');
         
-        const explainBox = document.getElementById(`explain-${qIndex}-${subIdx}`);
-        if (explainBox) {
-            explainBox.style.display = 'block';
-        }
-        
         const block = document.getElementById(`q-block-${qIndex}`);
         let finished = parseInt(block.dataset.subFinished) + 1;
         block.dataset.subFinished = finished;
@@ -226,26 +211,4 @@ function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
-}
-
-// DARK MODE LOGIC
-function toggleDarkMode() {
-    const body = document.body;
-    const iconPath = document.getElementById('icon-path');
-    body.classList.toggle('dark-mode');
-    if (body.classList.contains('dark-mode')) {
-        iconPath.setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        iconPath.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        const iconPath = document.getElementById('icon-path');
-        if(iconPath) iconPath.setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
-    }
-});
+                        }
