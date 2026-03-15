@@ -10,7 +10,7 @@
 <body>
 
     <div class="app-container">
-        <button id="theme-toggle" aria-label="Toggle Dark Mode"></button>
+        <button id="theme-toggle"></button>
         
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
@@ -29,7 +29,6 @@
                     <div class="mode-buttons">
                         <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
                         <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
-                        
                         <div class="qr-container">
                             <p>Ủng hộ tác giả ❤️</p>
                             <div class="qr-card-wrapper">
@@ -63,7 +62,9 @@
             <div class="result-card">
                 <h2 class="result-title">Xong rồi!</h2>
                 <div class="score-label">Số câu đúng</div>
-                <div class="score-box"><span id="final-score">0/0</span></div>
+                <div class="score-box">
+                    <span id="final-score">0/0</span>
+                </div>
                 
                 <div class="result-actions">
                     <button class="btn-start btn-primary" onclick="restartQuiz()">Làm Lại</button>
@@ -72,7 +73,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
