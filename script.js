@@ -100,7 +100,7 @@ function renderAllQuestions() {
 
                 return `
                 <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 24px;">
-                    <div style="margin-bottom: 12px; color: var(--text);"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
                     <div class="option-list" style="display: flex; gap: 12px;">
                         <div class="option-item" 
                              style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
@@ -194,7 +194,6 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         const explainBox = document.getElementById(`explain-${qIndex}-${subIdx}`);
         if (explainBox) {
             explainBox.style.display = 'block';
-            explainBox.style.animation = "fadeIn 0.4s ease-out";
         }
         
         const block = document.getElementById(`q-block-${qIndex}`);
@@ -229,12 +228,11 @@ function showFinalResults() {
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
 
-// LOGIC DARK MODE + SVG ICON
+// DARK MODE LOGIC
 function toggleDarkMode() {
     const body = document.body;
     const iconPath = document.getElementById('icon-path');
     body.classList.toggle('dark-mode');
-    
     if (body.classList.contains('dark-mode')) {
         iconPath.setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
         localStorage.setItem('theme', 'dark');
@@ -247,6 +245,7 @@ function toggleDarkMode() {
 window.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
-        document.getElementById('icon-path').setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
+        const iconPath = document.getElementById('icon-path');
+        if(iconPath) iconPath.setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
     }
 });
