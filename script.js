@@ -11,11 +11,14 @@ const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 // 1. KHỞI TẠO GIAO DIỆN (DARK/LIGHT)
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    if(themeToggle) themeToggle.innerHTML = sunIcon;
-} else {
-    if(themeToggle) themeToggle.innerHTML = moonIcon;
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        if(themeToggle) themeToggle.innerHTML = sunIcon;
+    } else {
+        if(themeToggle) themeToggle.innerHTML = moonIcon;
+    }
 }
 
 if(themeToggle) {
@@ -28,26 +31,27 @@ if(themeToggle) {
 }
 
 // 2. LOGIC THÔNG BÁO CẬP NHẬT (Chỉ tắt khi nhấn X)
-const UPDATE_VERSION = "v2_dark_mode"; // Đổi ID này nếu bạn muốn hiện thông báo mới trong tương lai
+const UPDATE_VERSION = "v2_fixed_mode"; 
 
 function showUpdateNotification() {
     const toast = document.getElementById('update-toast');
-    // Chỉ hiện nếu người dùng chưa nhấn "X" cho phiên bản này
-    if (localStorage.getItem('update_toast_seen') !== UPDATE_VERSION) {
+    if (toast && localStorage.getItem('update_seen') !== UPDATE_VERSION) {
         setTimeout(() => {
-            if(toast) toast.classList.add('show');
+            toast.classList.remove('toast-hidden'); // Hiện diện trong DOM
+            toast.classList.add('show');            // Chạy hiệu ứng CSS
         }, 1000);
     }
 }
 
 function closeToast() {
     const toast = document.getElementById('update-toast');
-    if(toast) toast.classList.remove('show');
-    // Lưu vào máy: "Đã xem rồi, đừng hiện nữa"
-    localStorage.setItem('update_toast_seen', UPDATE_VERSION);
+    if(toast) {
+        toast.classList.remove('show');
+        localStorage.setItem('update_seen', UPDATE_VERSION);
+    }
 }
 
-// 3. KHỞI TẠO DỮ LIỆU
+// 3. KHỞI TẠO DỮ LIỆU & TRÒ CHƠI
 const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
 const loadingScreen = document.getElementById('loading-screen');
@@ -61,12 +65,13 @@ function escapeHtml(text) {
 }
 
 async function init() {
+    initTheme();
     try {
         const response = await fetch('questions.json');
         if (response.ok) {
             statusText.innerText = "Sẵn sàng!";
             setupOptions.classList.remove('hidden');
-            showUpdateNotification(); // Gọi thông báo khi trang đã sẵn sàng
+            showUpdateNotification();
         } else {
             throw new Error("File missing");
         }
@@ -75,6 +80,8 @@ async function init() {
         setupOptions.classList.remove('hidden');
     }
 }
+
+// Khởi chạy ngay khi trang load
 init();
 
 // 4. LOGIC TRÒ CHƠI
@@ -107,10 +114,9 @@ function resetAndRender() {
 
 function restartQuiz() { resetAndRender(); }
 
-const btnTracNghiem = document.getElementById('btn-tracnghiem');
-if (btnTracNghiem) btnTracNghiem.onclick = () => startGame('questions.json');
-const btnDungSai = document.getElementById('btn-dungsai');
-if (btnDungSai) btnDungSai.onclick = () => startGame('dungsai.json');
+// Gán sự kiện cho các nút chọn chế độ
+document.getElementById('btn-tracnghiem')?.addEventListener('click', () => startGame('questions.json'));
+document.getElementById('btn-dungsai')?.addEventListener('click', () => startGame('dungsai.json'));
 
 function renderAllQuestions() {
     const feed = document.getElementById('quiz-feed');
@@ -129,8 +135,8 @@ function renderAllQuestions() {
                 return `<div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
                     <div style="margin-bottom: 12px; font-weight: 500;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
                     <div class="option-list" style="display: flex; gap: 15px;">
-                        <div class="option-item" style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')"><span>Đúng</span></div>
-                        <div class="option-item" style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; cursor: pointer;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')"><span>Sai</span></div>
+                        <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')"><span>Đúng</span></div>
+                        <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')"><span>Sai</span></div>
                     </div>
                     ${explainHtml}
                 </div>`;
@@ -150,8 +156,8 @@ function renderAllQuestions() {
         qBlock.innerHTML = `<div class="question-text">Câu ${index + 1}: ${questionTitle}</div><div class="content-area">${contentHtml}</div>`;
         feed.appendChild(qBlock);
     });
-    const totalCountEl = document.getElementById('total-count');
-    if (totalCountEl) totalCountEl.innerText = userQuestions.length;
+    
+    document.getElementById('total-count').innerText = userQuestions.length;
     updateProgress();
 }
 
@@ -220,11 +226,8 @@ function updateProgress() {
     const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     if(progressBar) progressBar.style.width = percent + "%";
     
-    const currentCountEl = document.getElementById('current-count');
-    if(currentCountEl) currentCountEl.innerText = correctCount;
-    
-    const liveScoreEl = document.getElementById('live-score');
-    if(liveScoreEl) liveScoreEl.innerText = score;
+    document.getElementById('current-count').innerText = correctCount;
+    document.getElementById('live-score').innerText = score;
     
     if (correctCount === userQuestions.length && userQuestions.length > 0) {
         setTimeout(showFinalResults, 600);
@@ -232,8 +235,7 @@ function updateProgress() {
 }
 
 function showFinalResults() {
-    if(quizScreen) quizScreen.classList.add('hidden');
-    if(resultScreen) resultScreen.classList.remove('hidden');
-    const finalScoreEl = document.getElementById('final-score');
-    if(finalScoreEl) finalScoreEl.innerText = score + "/" + userQuestions.length;
+    quizScreen.classList.add('hidden');
+    resultScreen.classList.remove('hidden');
+    document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
