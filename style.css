@@ -9,6 +9,30 @@
     --error: #EF4444;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Theme dynamic variables */
+    --card-bg: #FFFFFF;
+    --header-bg: rgba(255, 255, 255, 0.98);
+    --border-color: #f3f4f6;
+    --app-bg: #f9fafb;
+    --explain-bg: #f0fdf4;
+    --explain-border: #22c55e;
+    --explain-text: #166534;
+}
+
+/* Dark Mode class */
+body.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    --white: #1f2937;
+    --text: #f3f4f6;
+    --text-light: #9ca3af;
+    --card-bg: #1f2937;
+    --header-bg: rgba(31, 41, 55, 0.98);
+    --border-color: #374151;
+    --app-bg: #111827;
+    --explain-bg: #064e3b;
+    --explain-border: #10b981;
+    --explain-text: #a7f3d0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -18,18 +42,26 @@ body {
     background: var(--bg-gradient);
     color: var(--text);
     height: 100vh;
-    overflow: hidden; /* Ngăn cuộn trang chính */
+    overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
 .app-container {
     width: 100%; max-width: 600px; height: 100%;
-    background: var(--white); 
+    background: var(--card-bg); 
     display: flex; flex-direction: column;
     position: relative;
     box-shadow: var(--shadow-lg);
-    overflow-x: hidden; /* Ngăn kéo ngang */
+    overflow-x: hidden;
+}
+
+#theme-toggle {
+    position: absolute; top: 16px; right: 16px;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: none; background: var(--border-color);
+    color: var(--text); cursor: pointer; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
 }
 
 @media (min-width: 600px) {
@@ -39,104 +71,42 @@ body {
 .screen { flex: 1; display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 .hidden { display: none !important; }
 
-/* --- MÀN HÌNH CHỜ --- */
-#loading-screen { 
-    justify-content: center; align-items: center; padding: 30px; 
-}
+#loading-screen { justify-content: center; align-items: center; padding: 30px; }
 .welcome-card { width: 100%; text-align: center; }
-
-.app-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: #111827; }
+.app-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
 #status-text { margin-bottom: 40px; color: var(--text-light); }
 
-.toggle-wrapper { 
-    display: inline-flex; align-items: center; justify-content: center; 
-    margin-bottom: 40px;
-}
+.toggle-wrapper { display: inline-flex; align-items: center; justify-content: center; margin-bottom: 40px; }
 .toggle-switch { position: relative; width: 44px; height: 24px; margin-right: 12px; }
 .toggle-switch input { opacity: 0; width: 0; height: 0; }
 .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; border-radius: 34px; transition: .3s; }
 .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: .3s; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
 input:checked + .slider { background-color: var(--primary); }
 input:checked + .slider:before { transform: translateX(20px); }
-.label-text { font-weight: 600; font-size: 1rem; color: #4b5563; }
+.label-text { font-weight: 600; font-size: 1rem; color: var(--text); }
 
 .mode-buttons { display: flex; flex-direction: column; gap: 16px; }
-.btn-start { 
-    border: none; padding: 18px; border-radius: 12px; 
-    font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; 
-    transition: 0.2s;
-}
-.btn-start:active { transform: scale(0.98); }
+.btn-start { border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; }
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4); }
+.btn-secondary { background: var(--card-bg); color: var(--text); border: 2px solid var(--border-color); }
+.btn-outline { background: transparent; color: var(--text-light); border: 2px solid var(--border-color); }
 
-.btn-primary { 
-    background: var(--primary); color: white; 
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4); 
-}
-.btn-primary:hover { background: var(--primary-dark); }
-.btn-secondary { background: white; color: var(--text); border: 2px solid #e5e7eb; }
-.btn-outline { background: transparent; color: var(--text-light); border: 2px solid #e5e7eb; }
-
-/* --- HEADER --- */
-.sticky-header {
-    background: rgba(255, 255, 255, 0.98);
-    border-bottom: 1px solid #f3f4f6;
-    padding: 12px 16px;
-    z-index: 50;
-}
-
-.header-info {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 10px; font-weight: 700; font-size: 0.95rem; color: #374151;
-}
+.sticky-header { background: var(--header-bg); border-bottom: 1px solid var(--border-color); padding: 12px 16px; z-index: 50; }
+.header-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 700; font-size: 0.95rem; color: var(--text); }
 .info-item.center { color: var(--primary); font-size: 1.1rem; }
-.info-item.right { text-align: right; }
+#btn-home-nav { background: var(--border-color); border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; color: var(--text); cursor: pointer; }
 
-#btn-home-nav {
-    background: #f3f4f6; border: none; padding: 8px 16px;
-    border-radius: 8px; font-weight: 600; font-size: 0.85rem;
-    color: #4b5563; cursor: pointer;
-}
-
-.progress-bg { height: 6px; background: #f3f4f6; border-radius: 10px; overflow: hidden; }
+.progress-bg { height: 6px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
 #progress-bar { height: 100%; background: var(--success); width: 0%; transition: width 0.3s ease; }
 
-/* --- CÂU HỎI (QUAN TRỌNG: FIX LỖI KÉO NGANG) --- */
-.quiz-scroll-area { 
-    flex: 1; 
-    overflow-y: auto; 
-    overflow-x: hidden; /* Chặn kéo ngang */
-    padding: 16px; 
-    background: #f9fafb; 
-}
+.quiz-scroll-area { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 16px; background: var(--app-bg); }
+.question-block { background: var(--white); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: var(--shadow-sm); width: 100%; }
+.question-text { font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; line-height: 1.5; color: var(--text); word-wrap: break-word; }
 
-.question-block {
-    background: white; border-radius: 16px; padding: 20px;
-    margin-bottom: 20px; box-shadow: var(--shadow-sm);
-    width: 100%; /* Đảm bảo không vượt quá khung */
-}
-
-/* Xử lý xuống dòng cho text dài */
-.question-text { 
-    font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; 
-    line-height: 1.5; color: #111827; 
-    word-wrap: break-word; 
-    overflow-wrap: break-word; /* Bắt buộc xuống dòng nếu từ quá dài */
-}
-
-.option-item {
-    display: flex; align-items: flex-start;
-    padding: 14px; margin-bottom: 12px;
-    border: 2px solid #f3f4f6; border-radius: 12px;
-    cursor: pointer; background: white;
-}
+.option-item { display: flex; align-items: flex-start; padding: 14px; margin-bottom: 12px; border: 2px solid var(--border-color); border-radius: 12px; cursor: pointer; background: var(--white); }
 .option-item input { margin-right: 12px; margin-top: 4px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--primary); }
+.option-item span { line-height: 1.5; font-size: 1rem; color: var(--text); word-break: break-word; }
 
-.option-item span { 
-    line-height: 1.5; font-size: 1rem; color: #374151; 
-    word-break: break-word; /* Đảm bảo đáp án dài tự xuống dòng */
-}
-
-/* Màu sắc trạng thái */
 .option-item.wrong { background-color: #FEF2F2; border-color: var(--error); color: #991B1B; }
 .option-item.correct { background-color: #ECFDF5; border-color: var(--success); color: #065F46; font-weight: 600; }
 
@@ -144,44 +114,20 @@ input:checked + .slider:before { transform: translateX(20px); }
 .question-block.completed .option-item.correct { opacity: 1; border-color: var(--success); }
 .question-block.completed .option-item.wrong { opacity: 1; }
 
-/* --- KẾT QUẢ --- */
-#result-screen { justify-content: center; align-items: center; background: white; padding: 20px; }
+/* Thêm class giải thích để thay thế inline style */
+.explanation-box {
+    margin-top: 12px; padding: 10px 15px; 
+    background-color: var(--explain-bg); 
+    border-left: 4px solid var(--explain-border); 
+    border-radius: 8px; font-size: 14px; color: var(--explain-text);
+}
+
+#result-screen { justify-content: center; align-items: center; background: var(--card-bg); padding: 20px; }
 .result-card { text-align: center; width: 100%; }
-.result-title { font-size: 2rem; font-weight: 800; color: #111; margin-bottom: 10px; }
-.score-label { color: var(--text-light); font-weight: 500; font-size: 1rem; }
+.result-title { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
 .score-box { font-size: 4rem; font-weight: 800; color: var(--primary); margin: 20px 0 40px; }
-.result-actions { display: flex; flex-direction: column; gap: 12px; }
-/* Khung tổng thể: Giới hạn độ rộng để không bị quá bự */
-.qr-container {
-    margin: 25px auto; /* auto giúp căn giữa toàn bộ khối */
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-    max-width: 280px;  /* Đặt giới hạn bự nhất của khung là 280px */
-}
 
-/* Chữ tiêu đề */
-.qr-container p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Khung card trắng: Ôm khít ảnh */
-.qr-card-wrapper {
-    display: inline-block;
-    background: #fff;
-    padding: 10px;        /* Giảm padding một chút cho đỡ bự */
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    line-height: 0;
-}
-
-/* Ảnh QR: Chỉnh lại kích thước vừa phải */
-.qr-card-wrapper img {
-    width: 190px;         /* GIẢM TỪ 230px XUỐNG 180px cho nhỏ gọn */
-    height: auto;
-    border-radius: 8px;
-    display: block;
-             }
+.qr-container { margin: 25px auto; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px; max-width: 280px; }
+.qr-container p { font-size: 14px; color: var(--text-light); margin-bottom: 15px; font-weight: bold; }
+.qr-card-wrapper { display: inline-block; background: #fff; padding: 10px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); line-height: 0; }
+.qr-card-wrapper img { width: 190px; height: auto; border-radius: 8px; display: block; }
