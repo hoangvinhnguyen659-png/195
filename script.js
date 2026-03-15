@@ -39,12 +39,15 @@ init();
 async function startGame(fileName) {
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
+
     setTimeout(async () => {
         try {
             const res = await fetch(fileName);
             quizData = await res.json();
+            
             const isShuffle = document.getElementById('shuffle-checkbox').checked;
             userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
+            
             resetAndRender();
         } catch (err) {
             alert("Không tìm thấy file câu hỏi!");
@@ -73,39 +76,73 @@ document.getElementById('btn-dungsai').onclick = () => startGame('dungsai.json')
 function renderAllQuestions() {
     const feed = document.getElementById('quiz-feed');
     feed.innerHTML = "";
+    
     userQuestions.forEach((data, index) => {
         const qBlock = document.createElement('div');
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
-        qBlock.dataset.subFinished = 0;
+        qBlock.dataset.subFinished = 0; 
+
         const questionTitle = escapeHtml(data.question);
         let contentHtml = "";
+
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
             contentHtml = data.subQuestions.map((sub, subIdx) => {
                 const explainHtml = sub.explanation 
-                    ? `<div id="explain-${index}-${subIdx}" style="display: none; margin-top: 12px; padding: 12px 16px; background: rgba(0,0,0,0.03); border-left: 4px solid var(--primary); border-radius: 8px; font-size: 0.9rem; color: var(--text);">
+                    ? `<div id="explain-${index}-${subIdx}" 
+                            style="display: none; margin-top: 12px; padding: 12px 16px; 
+                            background-color: rgba(0,0,0,0.03); border-left: 4px solid var(--primary); 
+                            border-radius: 8px; font-size: 0.9rem; line-height: 1.5; color: var(--text);">
                             <span style="font-weight: 700; color: var(--primary); display: block; margin-bottom: 4px;">Giải thích:</span>
                             ${escapeHtml(sub.explanation)}
-                       </div>` : '';
+                       </div>` 
+                    : '';
+
                 return `
                 <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 24px;">
-                    <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    <div style="margin-bottom: 12px; color: var(--text);"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
                     <div class="option-list" style="display: flex; gap: 12px;">
-                        <div class="option-item" style="flex: 1; justify-content: center; font-weight: 600;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')"><span>Đúng</span></div>
-                        <div class="option-item" style="flex: 1; justify-content: center; font-weight: 600;" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')"><span>Sai</span></div>
+                        <div class="option-item" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
+                             onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
+                            <span>Đúng</span>
+                        </div>
+                        <div class="option-item" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
+                             onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
+                            <span>Sai</span>
+                        </div>
                     </div>
                     ${explainHtml}
-                </div>`;
+                </div>
+                `;
             }).join('');
         } else {
             const opts = data.options;
-            let optionsHtml = Array.isArray(opts) ? opts.map((opt, i) => `<div class="option-item" onclick="handleSelect(this, ${index}, '${i==0?'a':'b'}')"><input type="radio" name="q${index}"><span>${escapeHtml(opt)}</span></div>`).join('')
-                : Object.entries(opts).map(([key, val]) => `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')"><input type="radio" name="q${index}"><span>${escapeHtml(val)}</span></div>`).join('');
+            let optionsHtml = "";
+            if (Array.isArray(opts)) {
+                optionsHtml = `
+                    <div class="option-item" onclick="handleSelect(this, ${index}, 'a')">
+                        <input type="radio" name="q${index}"><span>${escapeHtml(opts[0])}</span>
+                    </div>
+                    <div class="option-item" onclick="handleSelect(this, ${index}, 'b')">
+                        <input type="radio" name="q${index}"><span>${escapeHtml(opts[1])}</span>
+                    </div>`;
+            } else {
+                optionsHtml = Object.entries(opts).map(([key, val]) => `
+                    <div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                        <input type="radio" name="q${index}"><span>${escapeHtml(val)}</span>
+                    </div>`).join('');
+            }
             contentHtml = `<div class="option-list">${optionsHtml}</div>`;
         }
-        qBlock.innerHTML = `<div class="question-text">Câu ${index + 1}: ${questionTitle}</div><div class="content-area">${contentHtml}</div>`;
+
+        qBlock.innerHTML = `
+            <div class="question-text">Câu ${index + 1}: ${questionTitle}</div>
+            <div class="content-area">${contentHtml}</div>`;
         feed.appendChild(qBlock);
     });
+
     document.getElementById('total-count').innerText = userQuestions.length;
     updateProgress();
 }
@@ -113,33 +150,66 @@ function renderAllQuestions() {
 function handleSelect(element, qIndex, selectedKey) {
     const targetBlock = document.getElementById(`q-block-${qIndex}`);
     if (targetBlock.classList.contains('completed')) return;
+
     const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
+
     const radio = element.querySelector('input');
     if(radio) radio.checked = true;
+
     const data = userQuestions[qIndex];
-    let correctKey = Array.isArray(data.options) ? (data.answer === data.options[0] ? "a" : "b") : (Object.entries(data.options).find(([k, v]) => v === data.answer)?.[0] || String(data.answer).toLowerCase());
+    let correctKey = "";
+    if (Array.isArray(data.options)) {
+        correctKey = (data.answer === data.options[0]) ? "a" : "b";
+    } else {
+        const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
+        correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
+    }
+
     if (selectedKey === correctKey) {
         element.classList.add('correct');
-        targetBlock.classList.add('completed');
-        score++; correctCount++; updateProgress();
-    } else { element.classList.add('wrong'); }
+        targetBlock.classList.add('completed'); 
+        score++;
+        correctCount++;
+        updateProgress();
+    } else {
+        element.classList.add('wrong');
+    }
 }
 
 function handleSubSelect(element, qIndex, subIdx, selectedValue) {
     const subContainer = document.getElementById(`sub-container-${qIndex}-${subIdx}`);
     if (subContainer.classList.contains('sub-completed')) return;
+
+    const options = subContainer.querySelectorAll('.option-item');
+    options.forEach(opt => opt.classList.remove('wrong'));
+
     const data = userQuestions[qIndex];
-    if (selectedValue === data.subQuestions[subIdx].answer) {
+    const correctAnswer = data.subQuestions[subIdx].answer;
+
+    if (selectedValue === correctAnswer) {
         element.classList.add('correct');
         subContainer.classList.add('sub-completed');
+        
         const explainBox = document.getElementById(`explain-${qIndex}-${subIdx}`);
-        if (explainBox) explainBox.style.display = 'block';
+        if (explainBox) {
+            explainBox.style.display = 'block';
+            explainBox.style.animation = "fadeIn 0.4s ease-out";
+        }
+        
         const block = document.getElementById(`q-block-${qIndex}`);
         let finished = parseInt(block.dataset.subFinished) + 1;
         block.dataset.subFinished = finished;
-        if (finished === data.subQuestions.length) { block.classList.add('completed'); score++; correctCount++; updateProgress(); }
-    } else { element.classList.add('wrong'); }
+
+        if (finished === data.subQuestions.length) {
+            block.classList.add('completed');
+            score++;
+            correctCount++;
+            updateProgress();
+        }
+    } else {
+        element.classList.add('wrong');
+    }
 }
 
 function updateProgress() {
@@ -147,7 +217,10 @@ function updateProgress() {
     progressBar.style.width = percent + "%";
     document.getElementById('current-count').innerText = correctCount;
     document.getElementById('live-score').innerText = score;
-    if (correctCount === userQuestions.length && userQuestions.length > 0) setTimeout(showFinalResults, 500);
+    
+    if (correctCount === userQuestions.length && userQuestions.length > 0) {
+        setTimeout(showFinalResults, 500);
+    }
 }
 
 function showFinalResults() {
@@ -156,10 +229,12 @@ function showFinalResults() {
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
 }
 
+// LOGIC DARK MODE + SVG ICON
 function toggleDarkMode() {
     const body = document.body;
     const iconPath = document.getElementById('icon-path');
     body.classList.toggle('dark-mode');
+    
     if (body.classList.contains('dark-mode')) {
         iconPath.setAttribute('d', 'M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z');
         localStorage.setItem('theme', 'dark');
