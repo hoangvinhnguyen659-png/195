@@ -1,6 +1,6 @@
 [
   {
-    "question": "Câu 1: Xét về đặc điểm của phần tử khối (Block) và nội tuyến (Inline) trong HTML:",
+    "question": "Xét về đặc điểm của phần tử khối (Block) và nội tuyến (Inline) trong HTML:",
     "subQuestions": [
       {
         "content": "Các phần tử khối như <div>, <h1>, <p> luôn bắt đầu trên một dòng mới.",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "question": "Câu 2: Về thuộc tính display và cách tổ chức các thành phần:",
+    "question": "Về thuộc tính display và cách tổ chức các thành phần:",
     "subQuestions": [
       {
         "content": "Thuộc tính display: block; có thể biến một thẻ <span> từ nội tuyến thành phần tử khối.",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "question": "Câu 3: Về khả năng chứa nhau và các thuộc tính kích thước của phần tử:",
+    "question": "Về khả năng chứa nhau và các thuộc tính kích thước của phần tử:",
     "subQuestions": [
       {
         "content": "Các phần tử nội tuyến (Inline) như <a>, <span> không thể thiết lập trực tiếp thuộc tính width và height.",
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "question": "Câu 4: Khi nói về Lớp giả (Pseudo-class) và Phần tử giả (Pseudo-element):",
+    "question": "Khi nói về Lớp giả (Pseudo-class) và Phần tử giả (Pseudo-element):",
     "subQuestions": [
       {
         "content": "Lớp giả được sử dụng để định dạng phần tử dựa trên trạng thái (như di chuột qua, đã click).",
@@ -100,7 +100,7 @@
     ]
   },
   {
-    "question": "Câu 5: Xét về mức độ ưu tiên và trọng số của các bộ chọn CSS:",
+    "question": "Xét về mức độ ưu tiên và trọng số của các bộ chọn CSS:",
     "subQuestions": [
       {
         "content": "Nếu một phần tử có cả ID và Class, các quy tắc trong bộ chọn ID sẽ được ưu tiên áp dụng hơn.",
@@ -125,7 +125,7 @@
     ]
   },
   {
-    "question": "Câu 6: Về sự xung đột CSS và cách trình duyệt áp dụng quy tắc ưu tiên:",
+    "question": "Về sự xung đột CSS và cách trình duyệt áp dụng quy tắc ưu tiên:",
     "subQuestions": [
       {
         "content": "Thuộc tính CSS viết trực tiếp trong thẻ (Inline Style) có mức ưu tiên cao hơn mã định danh (ID).",
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "question": "Câu 7: Về các nhiệm vụ chuyên môn trong nghề dịch vụ máy tính:",
+    "question": "Về các nhiệm vụ chuyên môn trong nghề dịch vụ máy tính:",
     "subQuestions": [
       {
         "content": "Việc thay thế ổ cứng HDD bằng ổ cứng SSD được xếp vào nhóm nâng cấp thiết bị phần cứng.",
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "question": "Câu 8: Về kỹ năng, phẩm chất và đào tạo trong nghề:",
+    "question": "Về kỹ năng, phẩm chất và đào tạo trong nghề:",
     "subQuestions": [
       {
         "content": "Kỹ năng giải quyết vấn đề (Problem-solving) giúp thợ kỹ thuật tìm ra nguyên nhân sự cố một cách logic.",
@@ -200,7 +200,7 @@
     ]
   },
   {
-    "question": "Câu 9: Về quy trình và đạo đức nghề nghiệp trong dịch vụ máy tính:",
+    "question": "Về quy trình và đạo đức nghề nghiệp trong dịch vụ máy tính:",
     "subQuestions": [
       {
         "content": "Quy trình sửa chữa máy tính luôn bắt đầu bằng việc tháo rời tất cả linh kiện trước khi kiểm tra lỗi.",
@@ -225,7 +225,7 @@
     ]
   },
   {
-    "question": "Câu 10: Về các vị trí quản trị cụ thể trong doanh nghiệp:",
+    "question": "Về các vị trí quản trị cụ thể trong doanh nghiệp:",
     "subQuestions": [
       {
         "content": "Quản trị viên hệ thống (System Admin) tập trung vào việc quản lý máy chủ và hệ điều hành.",
@@ -250,7 +250,7 @@
     ]
   },
   {
-    "question": "Câu 11: Về đặc điểm công việc và xu hướng hiện nay:",
+    "question": "Về đặc điểm công việc và xu hướng hiện nay:",
     "subQuestions": [
       {
         "content": "Công việc quản trị CNTT thường đòi hỏi sự cẩn trọng và khả năng làm việc dưới áp lực cao khi có sự cố.",
@@ -275,7 +275,7 @@
     ]
   },
   {
-    "question": "Câu 12: Về quản trị dịch vụ và quyền hạn trong hệ thống:",
+    "question": "Về quản trị dịch vụ và quyền hạn trong hệ thống:",
     "subQuestions": [
       {
         "content": "Quản trị dịch vụ CNTT (ITSM) chỉ quan tâm đến việc máy tính chạy nhanh hay chậm, không cần quan tâm đến sự hài lòng của người dùng.",
