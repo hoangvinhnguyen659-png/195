@@ -3,6 +3,28 @@ let userQuestions = [];
 let score = 0;
 let correctCount = 0;
 
+// Dark Mode Custom Icons
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Khởi tạo Theme từ LocalStorage
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.innerHTML = sunIcon;
+} else {
+    themeToggle.innerHTML = moonIcon;
+}
+
+themeToggle.onclick = () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.innerHTML = isDark ? sunIcon : moonIcon;
+};
+
 const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
 const loadingScreen = document.getElementById('loading-screen');
@@ -72,7 +94,6 @@ function restartQuiz() {
     resetAndRender();
 }
 
-// Gắn sự kiện cho các nút chọn bộ câu hỏi (kiểm tra xem nút có tồn tại không trước khi gắn)
 const btnTracNghiem = document.getElementById('btn-tracnghiem');
 if (btnTracNghiem) btnTracNghiem.onclick = () => startGame('questions.json');
 
@@ -93,10 +114,10 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // ĐÚNG SAI: Có phần giải thích ẩn
             contentHtml = data.subQuestions.map((sub, subIdx) => {
+                // Sửa lại class để không bị lỗi màu Dark Mode
                 const explainHtml = sub.explanation 
-                    ? `<div class="explanation hidden" style="margin-top: 12px; padding: 10px 15px; background-color: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 8px; font-size: 14px; color: #166534;">
+                    ? `<div class="explanation explanation-box hidden">
                          <strong>Giải thích:</strong> ${escapeHtml(sub.explanation)}
                        </div>` 
                     : '';
@@ -121,7 +142,6 @@ function renderAllQuestions() {
                 `;
             }).join('');
         } else {
-            // TRẮC NGHIỆM: Có phần giải thích ẩn (nếu có trường explanation trong JSON)
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
@@ -139,8 +159,9 @@ function renderAllQuestions() {
                     </div>`).join('');
             }
 
+            // Sửa lại class để không bị lỗi màu Dark Mode
             const explainHtml = data.explanation 
-                ? `<div class="explanation hidden" style="margin-top: 15px; padding: 10px 15px; background-color: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 8px; font-size: 14px; color: #166534;">
+                ? `<div class="explanation explanation-box hidden">
                      <strong>Giải thích:</strong> ${escapeHtml(data.explanation)}
                    </div>` 
                 : '';
@@ -164,7 +185,6 @@ function handleSelect(element, qIndex, selectedKey) {
     const targetBlock = document.getElementById(`q-block-${qIndex}`);
     if (targetBlock.classList.contains('completed')) return;
 
-    // Xóa màu đỏ (class 'wrong') cũ để chọn lại
     const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -186,7 +206,6 @@ function handleSelect(element, qIndex, selectedKey) {
         score++;
         correctCount++;
         
-        // Hiện giải thích cho câu trắc nghiệm
         const explanationBox = targetBlock.querySelector('.explanation');
         if (explanationBox) {
             explanationBox.classList.remove('hidden');
@@ -212,7 +231,6 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         element.classList.add('correct');
         subContainer.classList.add('sub-completed');
         
-        // Hiện giải thích cho câu Đúng/Sai
         const explanationBox = subContainer.querySelector('.explanation');
         if (explanationBox) {
             explanationBox.classList.remove('hidden');
