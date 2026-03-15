@@ -26,8 +26,12 @@
                     </div>
 
                     <div class="mode-buttons">
-                        <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
-                        <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
+                        <button class="btn-start btn-primary" id="btn-tracnghiem">
+                            Trắc nghiệm
+                        </button>
+                        <button class="btn-start btn-secondary" id="btn-dungsai">
+                            Đúng / Sai
+                        </button>
                         <div class="qr-container">
                             <p>Ủng hộ tác giả ❤️</p>
                             <div class="qr-card-wrapper">
@@ -44,9 +48,10 @@
                 <div class="header-info">
                     <div class="info-item left">Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
                     
-                    <div class="info-item center">
-                        <button id="dark-mode-toggle" class="icon-btn" onclick="toggleDarkMode()">
-                            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px; height:24px;">
+                    <div class="info-item center" style="display: flex; align-items: center; gap: 10px;">
+                        <span id="live-score-label">Điểm: <span id="live-score">0</span></span>
+                        <button id="dark-mode-toggle" class="icon-btn" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer; color:inherit; display:flex;">
+                            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px; height:20px;">
                                 <path id="icon-path" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
                         </button>
@@ -74,8 +79,12 @@
                 </div>
                 
                 <div class="result-actions">
-                    <button class="btn-start btn-primary" onclick="restartQuiz()">Làm Lại</button>
-                    <button class="btn-start btn-outline" onclick="location.reload()">Về Trang Chủ</button>
+                    <button class="btn-start btn-primary" onclick="restartQuiz()">
+                        Làm Lại 
+                    </button>
+                    <button class="btn-start btn-outline" onclick="location.reload()">
+                        Về Trang Chủ
+                    </button>
                 </div>
             </div>
         </div>
