@@ -133,11 +133,13 @@ function renderAllQuestions() {
             contentHtml = data.subQuestions.map((sub, subIdx) => {
                 const explainHtml = sub.explanation ? `<div class="explanation explanation-box hidden"><strong>Giải thích:</strong> ${escapeHtml(sub.explanation)}</div>` : '';
                 return `<div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
-                    <div style="margin-bottom: 12px; font-weight: 500;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 15px;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: var(--text);"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
+                    
+                    <div class="sub-options-row">
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')"><span>Đúng</span></div>
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')"><span>Sai</span></div>
                     </div>
+                    
                     ${explainHtml}
                 </div>`;
             }).join('');
