@@ -87,27 +87,29 @@ function renderAllQuestions() {
         let contentHtml = "";
 
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
-            // ĐÚNG SAI: Trải đều, bo tròn 12px, không nút tròn, kèm giải thích
+            // ĐÚNG SAI: Tối ưu giao diện, sử dụng biến màu CSS và bỏ icon
             contentHtml = data.subQuestions.map((sub, subIdx) => {
-                
-                // Tạo khối HTML chứa lời giải thích (mặc định ẩn)
                 const explainHtml = sub.explanation 
-                    ? `<div id="explain-${index}-${subIdx}" style="display: none; margin-top: 12px; padding: 12px; background-color: #f0f9ff; border-left: 4px solid #0284c7; border-radius: 8px; font-size: 14px; color: #333;">
-                        <strong>💡 Giải thích:</strong> ${escapeHtml(sub.explanation)}
+                    ? `<div id="explain-${index}-${subIdx}" 
+                            style="display: none; margin-top: 12px; padding: 12px 16px; 
+                            background-color: #f8fafc; border-left: 4px solid var(--primary); 
+                            border-radius: 8px; font-size: 0.9rem; line-height: 1.5; color: var(--text);">
+                            <span style="font-weight: 700; color: var(--primary); display: block; margin-bottom: 4px;">Giải thích:</span>
+                            ${escapeHtml(sub.explanation)}
                        </div>` 
                     : '';
 
                 return `
-                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
+                <div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 24px;">
                     <div style="margin-bottom: 12px;"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    <div class="option-list" style="display: flex; gap: 15px;">
+                    <div class="option-list" style="display: flex; gap: 12px;">
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')">
                             <span>Đúng</span>
                         </div>
                         <div class="option-item" 
-                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px;" 
+                             style="flex: 1; justify-content: center; align-items: center; margin-bottom: 0; min-height: 48px; border-radius: 12px; font-weight: 600;" 
                              onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')">
                             <span>Sai</span>
                         </div>
@@ -117,7 +119,7 @@ function renderAllQuestions() {
                 `;
             }).join('');
         } else {
-            // TRẮC NGHIỆM: Có nút tròn radio như cũ
+            // TRẮC NGHIỆM
             const opts = data.options;
             let optionsHtml = "";
             if (Array.isArray(opts)) {
@@ -151,7 +153,6 @@ function handleSelect(element, qIndex, selectedKey) {
     const targetBlock = document.getElementById(`q-block-${qIndex}`);
     if (targetBlock.classList.contains('completed')) return;
 
-    // Xóa màu đỏ cũ để chọn lại
     const allOptions = targetBlock.querySelectorAll('.option-item');
     allOptions.forEach(opt => opt.classList.remove('wrong'));
 
@@ -192,10 +193,11 @@ function handleSubSelect(element, qIndex, subIdx, selectedValue) {
         element.classList.add('correct');
         subContainer.classList.add('sub-completed');
         
-        // Hiển thị phần giải thích
+        // Hiển thị giải thích mượt mà
         const explainBox = document.getElementById(`explain-${qIndex}-${subIdx}`);
         if (explainBox) {
             explainBox.style.display = 'block';
+            explainBox.style.animation = "fadeIn 0.4s ease-out";
         }
         
         const block = document.getElementById(`q-block-${qIndex}`);
