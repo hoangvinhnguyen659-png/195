@@ -8,26 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="update-toast" class="toast-hidden">
         <div class="toast-content">
             <span class="toast-icon">🚀</span>
             <div class="toast-text">
                 <strong>Cập nhật mới!</strong>
-                <p>Đã có chế độ Dark Mode.<br>Nhấn nút mặt trăng ở góc phải nhé!<br>Bổ sung Đúng/Sai.<br>Giải thích Đúng/Sai</p>
+                <p>Đã sửa lỗi hiển thị và tối ưu tốc độ tải.</p>
+                <div class="toast-options">
+                    <label>
+                        <input type="checkbox" id="hide-today-check"> 
+                        <span>Không hiện lại trong hôm nay</span>
+                    </label>
+                </div>
             </div>
             <button id="close-toast" onclick="closeToast()">×</button>
         </div>
     </div>
 
-    <button id="theme-toggle" title="Đổi giao diện"></button>
+    <button id="theme-toggle"></button>
 
     <div class="app-container">
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
                 <h1 class="app-title">Trắc Nghiệm Pro</h1>
-                <p id="status-text">Đang kết nối dữ liệu...</p>
-                
+                <p id="status-text">Đang kết nối...</p>
                 <div id="setup-options" class="hidden">
                     <div class="toggle-wrapper">
                         <label class="toggle-switch">
@@ -36,16 +40,12 @@
                         </label>
                         <span class="label-text">Trộn câu hỏi</span>
                     </div>
-
                     <div class="mode-buttons">
                         <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
                         <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
-                        
                         <div class="qr-container">
                             <p>Ủng hộ tác giả ❤️</p>
-                            <div class="qr-card-wrapper">
-                                <img src="snapedit_1766298911519.jpeg" alt="QR Code">
-                            </div>
+                            <div class="qr-card-wrapper"><img src="snapedit_1766298911519.jpeg"></div>
                         </div>
                     </div>
                 </div>
@@ -55,15 +55,12 @@
         <div id="quiz-screen" class="screen hidden">
             <div class="quiz-header sticky-header">
                 <div class="header-info">
-                    <div class="info-item left">Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
+                    <div>Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
                     <div class="info-item center">Điểm: <span id="live-score">0</span></div>
-                    <div class="info-item right">
-                        <button id="btn-home-nav" onclick="location.reload()">Trang chủ</button>
-                    </div>
+                    <button id="btn-home-nav" onclick="location.reload()">Trang chủ</button>
                 </div>
                 <div class="progress-bg"><div id="progress-bar"></div></div>
             </div>
-            
             <div class="quiz-scroll-area">
                 <div id="quiz-feed" class="quiz-body"></div>
                 <div style="height: 80px;"></div> 
@@ -72,12 +69,8 @@
 
         <div id="result-screen" class="screen hidden">
             <div class="result-card">
-                <h2 class="result-title">Xong rồi!</h2>
-                <div class="score-label">Số câu đúng</div>
-                <div class="score-box">
-                    <span id="final-score">0/0</span>
-                </div>
-                
+                <h2>Xong rồi!</h2>
+                <div class="score-box"><span id="final-score">0/0</span></div>
                 <div class="result-actions">
                     <button class="btn-start btn-primary" onclick="restartQuiz()">Làm Lại</button>
                     <button class="btn-start btn-outline" onclick="location.reload()">Về Trang Chủ</button>
