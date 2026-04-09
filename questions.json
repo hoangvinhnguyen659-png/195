@@ -1,1952 +1,1322 @@
 [
   {
-    "id": 1,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "AI là viết tắt của cụm từ nào?",
+    "topic": "Biết",
+    "question": "Hoạt động nào sau đây thuộc nhóm dịch vụ sửa chữa phần cứng?",
     "options": {
-      "a": "Artificial Intelligence",
-      "b": "Automated Information",
-      "c": "Advanced Interface",
-      "d": "Applied Integration"
+      "a": "Cài đặt Driver cho máy in.",
+      "b": "Thay thế ổ cứng SSD bị hỏng.",
+      "c": "Quét virus cho toàn bộ hệ thống.",
+      "d": "Hướng dẫn khách hàng sử dụng Office 365."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Ổ cứng SSD là một linh kiện vật lý (phần cứng)."
   },
   {
-    "id": 2,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Hệ thống AI có khả năng gì sau đây?",
+    "topic": "Biết",
+    "question": "Dịch vụ bảo trì máy tính thường bao gồm công việc nào dưới đây?",
     "options": {
-      "a": "Chỉ làm việc theo các câu lệnh cố định",
-      "b": "Tự học hỏi và cải thiện hiệu suất từ dữ liệu",
-      "c": "Không thể xử lý ngôn ngữ tự nhiên",
-      "d": "Hoạt động hoàn toàn độc lập không cần dữ liệu đầu vào"
+      "a": "Vệ sinh và tra keo tản nhiệt cho CPU.",
+      "b": "Viết một ứng dụng di động mới.",
+      "c": "Thiết kế lại giao diện website doanh nghiệp.",
+      "d": "Xây dựng cơ sở dữ liệu cho khách hàng."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Vệ sinh và tra keo là hoạt động chăm sóc thiết bị để ngăn ngừa quá nhiệt."
   },
   {
-    "id": 3,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Ứng dụng nào sau đây không phải là một ví dụ về AI?",
+    "topic": "Biết",
+    "question": "Việc hỗ trợ người dùng thiết lập mật khẩu và bảo mật Wi-Fi thuộc nhóm dịch vụ nào?",
     "options": {
-      "a": "ChatGPT",
-      "b": "Google Assistant",
-      "c": "Phần mềm Calculator đơn giản trên máy tính",
-      "d": "Hệ thống tự lái của xe Tesla"
+      "a": "Dịch vụ sửa chữa phần cứng.",
+      "b": "Dịch vụ sản xuất linh kiện.",
+      "c": "Dịch vụ hỗ trợ người dùng.",
+      "d": "Dịch vụ lập trình phần mềm."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Đây là việc tư vấn và hướng dẫn kỹ thuật cho người sử dụng."
   },
   {
-    "id": 4,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Đặc trưng 'Khả năng học' của AI có nghĩa là gì?",
+    "topic": "Biết",
+    "question": "Kỹ năng nào sau đây là cần thiết nhất đối với một kỹ thuật viên sửa chữa máy tính?",
     "options": {
-      "a": "Máy tính có thể đọc sách",
-      "b": "Máy tính có thể đi học tại trường",
-      "c": "Hệ thống điều chỉnh thuật toán dựa trên dữ liệu mới để đạt kết quả tốt hơn",
-      "d": "Máy tính có thể ghi nhớ mọi dữ liệu được nhập vào"
+      "a": "Kỹ năng vẽ sơ đồ tư duy.",
+      "b": "Kỹ năng tháo lắp và thay thế linh kiện thành thạo.",
+      "c": "Kỹ năng biên tập video clip.",
+      "d": "Kỹ năng thuyết trình trước đám đông."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Đây là kỹ năng thực hành cốt lõi để can thiệp vào máy tính."
   },
   {
-    "id": 5,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Lĩnh vực nào của AI tập trung vào việc giúp máy tính hiểu và giao tiếp bằng ngôn ngữ con người?",
+    "topic": "Biết",
+    "question": "Nhóm công việc \"Cài đặt lại hệ điều hành sau khi máy bị treo\" thuộc loại dịch vụ nào?",
     "options": {
-      "a": "Thị giác máy tính",
-      "b": "Xử lý ngôn ngữ tự nhiên (NLP)",
-      "c": "Robotics",
-      "d": "Hệ chuyên gia"
+      "a": "Dịch vụ liên quan tới phần mềm.",
+      "b": "Dịch vụ liên quan tới phần cứng.",
+      "c": "Dịch vụ thương mại điện tử.",
+      "d": "Dịch vụ sản xuất chip bán dẫn."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Hệ điều hành là phần mềm nền tảng của máy tính."
   },
   {
-    "id": 6,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Giao thức IP đóng vai trò gì trong mạng máy tính?",
+    "topic": "Biết",
+    "question": "Đâu là một ngành học liên quan trực tiếp đến nghề sửa chữa và bảo trì máy tính?",
     "options": {
-      "a": "Định tuyến và gửi các gói dữ liệu từ máy nguồn đến máy đích",
-      "b": "Đảm bảo dữ liệu không bị mất mát",
-      "c": "Hiển thị nội dung trang web",
-      "d": "Kết nối vật lý giữa các máy tính"
+      "a": "Quản trị kinh doanh.",
+      "b": "Kỹ thuật máy tính.",
+      "c": "Sư phạm mầm non.",
+      "d": "Kinh tế quốc tế."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Ngành này cung cấp kiến thức nền tảng về cấu tạo và kỹ thuật máy tính."
   },
   {
-    "id": 7,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Địa chỉ IPv4 có độ dài bao nhiêu bit?",
+    "topic": "Biết",
+    "question": "Mục đích quan trọng nhất của bảo trì máy tính định kỳ là gì?",
     "options": {
-      "a": "16 bit",
-      "b": "32 bit",
-      "c": "64 bit",
-      "d": "128 bit"
+      "a": "Để nâng giá trị khi bán máy cũ.",
+      "b": "Giúp máy hoạt động ổn định và hạn chế hỏng hóc đột xuất.",
+      "c": "Để xóa hết dữ liệu của người dùng cũ.",
+      "d": "Để cài đặt thêm các trò chơi mới."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Bảo trì mang tính chất phòng ngừa để duy trì hiệu suất lâu dài."
   },
   {
-    "id": 8,
-    "topic": "Mạng máy tính",
-    "level": "Hiểu",
-    "question": "Thiết bị nào sau đây dùng để kết nối nhiều mạng máy tính khác nhau và chọn đường đi cho dữ liệu?",
+    "topic": "Biết",
+    "question": "Khi một máy tính không lên nguồn do hỏng bộ nguồn (PSU), kỹ thuật viên đang thực hiện dịch vụ gì?",
     "options": {
-      "a": "Hub",
-      "b": "Switch",
-      "c": "Router",
-      "d": "Repeater"
+      "a": "Bảo trì phần mềm định kỳ.",
+      "b": "Tư vấn mua sắm thiết bị.",
+      "c": "Sửa chữa phần cứng.",
+      "d": "Hướng dẫn sử dụng thiết bị ngoại vi."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Bộ nguồn là thiết bị phần cứng, thay thế nó là dịch vụ sửa chữa phần cứng."
   },
   {
-    "id": 9,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Giao thức nào được sử dụng để truyền tải các trang web trên Internet?",
+    "topic": "Biết",
+    "question": "Kiến thức về \"Kiến trúc máy tính\" giúp ích gì cho người thợ sửa chữa?",
     "options": {
-      "a": "FTP",
-      "b": "SMTP",
-      "c": "HTTP/HTTPS",
-      "d": "TCP"
+      "a": "Để biết cách bán hàng hiệu quả hơn.",
+      "b": "Để hiểu sơ đồ kết nối và cách thức các linh kiện phối hợp hoạt động.",
+      "c": "Để thiết kế các mẫu máy tính đẹp mắt hơn.",
+      "d": "Để soạn thảo văn bản kỹ thuật nhanh hơn."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Kiến trúc máy tính giúp kỹ thuật viên biết vị trí và vai trò của từng bộ phận."
   },
   {
-    "id": 10,
-    "topic": "Mạng máy tính",
-    "level": "Hiểu",
-    "question": "Chức năng chính của DNS (Domain Name System) là gì?",
+    "topic": "Biết",
+    "question": "Trong tương lai, nhu cầu nhân lực ngành sửa chữa máy tính được dự báo như thế nào?",
     "options": {
-      "a": "Bảo mật mạng",
-      "b": "Chuyển đổi tên miền (ví dụ google.com) sang địa chỉ IP",
-      "c": "Tăng tốc độ truy cập Internet",
-      "d": "Lưu trữ nội dung trang web"
+      "a": "Sẽ giảm mạnh vì máy tính sẽ không bao giờ hỏng.",
+      "b": "Sẽ biến mất do AI tự sửa được phần cứng.",
+      "c": "Luôn duy trì ở mức cao do sự phổ biến của thiết bị số.",
+      "d": "Chỉ còn cần thiết ở những vùng chưa có internet."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Khi thiết bị số càng nhiều, nhu cầu bảo trì và sửa chữa càng tăng cao."
   },
   {
-    "id": 11,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "HTML là viết tắt của cụm từ nào?",
+    "topic": "Hiểu",
+    "question": "Tại sao người làm dịch vụ sửa chữa máy tính cần có kiến thức về mạng máy tính?",
     "options": {
-      "a": "HyperText Markup Language",
-      "b": "HighText Machine Language",
-      "c": "Hyperlink and Text Management",
-      "d": "Home Tool Markup Language"
+      "a": "Để có thể truy cập internet miễn phí ở khắp mọi nơi.",
+      "b": "Vì nhiều sự cố hiện nay liên quan đến kết nối và tài nguyên trực tuyến.",
+      "c": "Để thay thế hoàn toàn công việc của một lập trình viên.",
+      "d": "Vì mạng máy tính là thành phần duy nhất của phần cứng."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Máy tính ngày nay hầu hết hoạt động trong môi trường có kết nối mạng."
   },
   {
-    "id": 12,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Tệp tin HTML thường có phần mở rộng là gì?",
+    "topic": "Hiểu",
+    "question": "Sự khác biệt giữa dịch vụ sửa chữa và dịch vụ bảo trì là gì?",
     "options": {
-      "a": ".txt",
-      "b": ".doc",
-      "c": ".html hoặc .htm",
-      "d": ".exe"
+      "a": "Sửa chữa chỉ thực hiện khi máy hỏng; bảo trì thực hiện định kỳ để ngăn ngừa hỏng.",
+      "b": "Sửa chữa dành cho phần cứng; bảo trì dành cho phần mềm.",
+      "c": "Bảo trì tốn nhiều chi phí hơn sửa chữa.",
+      "d": "Hai dịch vụ này thực chất là một, không có sự khác biệt."
     },
-    "answer": "c"
+    "answer": "a",
+    "explanation": "Sửa chữa là khắc phục sự cố đã xảy ra; Bảo trì là ngăn ngừa sự cố sẽ xảy ra."
   },
   {
-    "id": 13,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Thẻ nào chứa toàn bộ nội dung hiển thị của một trang web?",
+    "topic": "Hiểu",
+    "question": "Tại sao \"Hỗ trợ người dùng\" lại được coi là một mảng quan trọng của dịch vụ máy tính?",
     "options": {
-      "a": "<head>",
-      "b": "<title>",
-      "c": "<body>",
-      "d": "<html>"
+      "a": "Vì giúp giảm bớt gánh nặng cho nhà sản xuất thiết bị.",
+      "b": "Vì giúp người dùng khắc phục các lỗi do thao tác sai và khai thác thiết bị hiệu quả hơn.",
+      "c": "Vì đây là cách duy nhất để kỹ thuật viên thu thêm phí dịch vụ.",
+      "d": "Vì người dùng không bao giờ tự mình bật được máy tính."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Người dùng thường gặp khó khăn trong việc cấu hình hoặc sử dụng đúng cách."
   },
   {
-    "id": 14,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Cặp thẻ nào dùng để khai báo tiêu đề của trang web (hiển thị trên thanh tiêu đề của trình duyệt)?",
+    "topic": "Hiểu",
+    "question": "Một nhân viên kỹ thuật cần có đạo đức nghề nghiệp chủ yếu để làm gì?",
     "options": {
-      "a": "<h1>...</h1>",
-      "b": "<title>...</title>",
-      "c": "<head>...</head>",
-      "d": "<body>...</body>"
+      "a": "Để máy tính chạy nhanh hơn sau khi sửa.",
+      "b": "Để bảo vệ dữ liệu và sự riêng tư của khách hàng trong quá trình tiếp cận máy.",
+      "c": "Để có thể cài đặt các phần mềm lậu cho khách hàng.",
+      "d": "Để biết cách tăng giá linh kiện thay thế."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Kỹ thuật viên thường tiếp cận dữ liệu nhạy cảm nên cần đạo đức để bảo mật thông tin."
   },
   {
-    "id": 15,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Thẻ <html> nằm ở vị trí nào trong tệp tin HTML?",
+    "topic": "Hiểu",
+    "question": "Khi tư vấn nâng cấp RAM cho một khách hàng có máy tính chạy chậm, kỹ thuật viên đang thực hiện loại dịch vụ nào?",
     "options": {
-      "a": "Ở cuối tệp",
-      "b": "Bao quanh toàn bộ nội dung tài liệu",
-      "c": "Nằm trong thẻ <body>",
-      "d": "Nằm trong thẻ <head>"
+      "a": "Chỉ thuần túy là sửa chữa phần cứng.",
+      "b": "Kết hợp giữa kiến thức phần cứng và dịch vụ hỗ trợ/tư vấn người dùng.",
+      "c": "Dịch vụ bảo trì phần mềm định kỳ.",
+      "d": "Dịch vụ sản xuất phần cứng chuyên sâu."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Việc xác định cần nâng cấp linh kiện gì (phần cứng) dựa trên nhu cầu khách (tư vấn)."
   },
   {
-    "id": 16,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Thẻ nào dùng để tạo một đoạn văn bản mới?",
+    "topic": "Vận dụng",
+    "question": "Khách hàng báo máy tính khởi động rất lâu và thường xuyên bị treo ứng dụng. Bước xử lý nào nên được thực hiện đầu tiên?",
     "options": {
-      "a": "<span>",
-      "b": "<div>",
-      "c": "<p>",
-      "d": "<br>"
+      "a": "Thay toàn bộ màn hình và bàn phím mới.",
+      "b": "Kiểm tra tình trạng sức khỏe ổ cứng và các tiến trình chạy ngầm trong phần mềm.",
+      "c": "Đem máy đi rửa bằng nước xà phòng để làm sạch.",
+      "d": "Khuyên khách hàng mua máy tính mới ngay lập tức."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Treo máy thường do lỗi ổ cứng hoặc xung đột phần mềm, cần kiểm tra logic trước."
   },
   {
-    "id": 17,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Để in đậm văn bản, ta sử dụng thẻ nào?",
+    "topic": "Vận dụng",
+    "question": "Nếu một doanh nghiệp muốn đảm bảo hệ thống máy tính luôn sẵn sàng cho công việc, họ nên chọn phương án nào?",
     "options": {
-      "a": "<i>",
-      "b": "<u>",
-      "c": "<b>",
-      "d": "<s>"
+      "a": "Chỉ sửa khi máy hỏng nặng không dùng được nữa.",
+      "b": "Tự nhân viên văn phòng tháo máy ra sửa khi có lỗi.",
+      "c": "Ký hợp đồng bảo trì định kỳ với các đơn vị dịch vụ chuyên nghiệp.",
+      "d": "Không cần quan tâm vì máy tính hiện đại không bao giờ lỗi."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Bảo trì chuyên nghiệp giúp giảm thiểu rủi ro gián đoạn công việc."
   },
   {
-    "id": 18,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Có bao nhiêu cấp độ thẻ tiêu đề (heading) từ lớn nhất đến nhỏ nhất?",
+    "topic": "Vận dụng",
+    "question": "Bạn được giao nhiệm vụ nâng cấp một máy tính để làm đồ họa. Bạn sẽ ưu tiên kiểm tra và đề xuất thay thế linh kiện nào?",
     "options": {
-      "a": "3 (h1 đến h3)",
-      "b": "6 (h1 đến h6)",
-      "c": "5 (h1 đến h5)",
-      "d": "10 (h1 đến h10)"
+      "a": "Vỏ máy (Case) có đèn LED nhiều màu.",
+      "b": "Chuột và lót chuột chuyên dụng.",
+      "c": "Card đồ họa (GPU) và dung lượng bộ nhớ RAM.",
+      "d": "Cáp nguồn của màn hình."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Làm đồ họa đòi hỏi khả năng xử lý hình ảnh (GPU) và bộ nhớ tạm (RAM) lớn."
   },
   {
-    "id": 19,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Thẻ nào được dùng để chèn một hình ảnh vào trang web?",
+    "topic": "Vận dụng",
+    "question": "Một chiếc laptop bị đổ nước vào bàn phím. Hành động nào sau đây của kỹ thuật viên là đúng quy trình nhất?",
     "options": {
-      "a": "<image>",
-      "b": "<img>",
-      "c": "<picture>",
-      "d": "<src>"
+      "a": "Cắm sạc để sấy khô bằng điện.",
+      "b": "Ngắt nguồn điện, tháo pin ngay lập tức và tiến hành vệ sinh, sấy khô linh kiện.",
+      "c": "Tiếp tục sử dụng xem máy có bị chập không.",
+      "d": "Đổ thêm nước sạch vào để rửa trôi nước bẩn."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Cần ngắt điện ngay để tránh chập mạch trước khi xử lý làm khô."
   },
   {
-    "id": 20,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thuộc tính 'src' trong thẻ <img> có ý nghĩa gì?",
+    "topic": "Vận dụng",
+    "question": "Khi khách hàng yêu cầu cài đặt một phần mềm không rõ nguồn gốc, kỹ thuật viên nên làm gì?",
     "options": {
-      "a": "Độ rộng của ảnh",
-      "b": "Đường dẫn (địa chỉ) của tệp tin ảnh",
-      "c": "Văn bản thay thế khi ảnh lỗi",
-      "d": "Chiều cao của ảnh"
+      "a": "Cài đặt ngay vì khách hàng trả tiền.",
+      "b": "Cảnh báo về nguy cơ mã độc và tư vấn sử dụng các phần mềm có bản quyền hoặc nguồn gốc an toàn.",
+      "c": "Tự ý cài thêm các phần mềm theo dõi vào máy khách.",
+      "d": "Từ chối sửa chữa và trả máy ngay lập tức."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Trách nhiệm của kỹ thuật viên là đảm bảo an toàn hệ thống cho khách hàng."
   },
   {
-    "id": 21,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Phát biểu nào sau đây là SAI về AI?",
+    "topic": "Biết",
+    "question": "Công việc nào sau đây là nhiệm vụ chính của người làm Quản trị mạng?",
     "options": {
-      "a": "AI có thể giúp chẩn đoán bệnh chính xác hơn",
-      "b": "AI có thể thay thế hoàn toàn cảm xúc của con người",
-      "c": "AI có thể hỗ trợ dịch thuật đa ngôn ngữ",
-      "d": "AI có thể được ứng dụng trong nông nghiệp thông minh"
+      "a": "Viết code cho các trò chơi di động.",
+      "b": "Thiết kế giao diện đồ họa cho website.",
+      "c": "Cấu hình và duy trì hoạt động của các thiết bị mạng.",
+      "d": "Biên tập nội dung cho mạng xã hội."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Đây là mô tả cốt lõi của nghề quản trị mạng: đảm bảo hạ tầng kết nối hoạt động thông suốt."
   },
   {
-    "id": 22,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Hệ chuyên gia (Expert System) là một ứng dụng của AI trong lĩnh vực nào?",
+    "topic": "Biết",
+    "question": "Hoạt động nào thuộc về bảo mật hệ thống thông tin?",
     "options": {
-      "a": "Giải quyết các vấn đề đòi hỏi kiến thức chuyên sâu như một chuyên gia",
-      "b": "Điều khiển cánh tay robot trong nhà máy",
-      "c": "Nhận diện khuôn mặt trên điện thoại",
-      "d": "Chơi trò chơi điện tử"
+      "a": "Thay màn hình mới cho máy tính bị vỡ.",
+      "b": "Cài đặt tường lửa để ngăn chặn truy cập trái phép.",
+      "c": "Hướng dẫn nhân viên cách soạn thảo văn bản.",
+      "d": "Lắp ráp vỏ máy tính cho khách hàng."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Tường lửa (Firewall) là công cụ ngăn chặn xâm nhập trái phép từ bên ngoài."
   },
   {
-    "id": 23,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Thị giác máy tính (Computer Vision) giúp máy tính có khả năng gì?",
+    "topic": "Biết",
+    "question": "Việc sao lưu (backup) dữ liệu định kỳ là nhiệm vụ của vị trí nào?",
     "options": {
-      "a": "Nghe hiểu âm thanh",
-      "b": "Nhận diện và hiểu được hình ảnh, video",
-      "c": "Di chuyển vượt chướng ngại vật",
-      "d": "Tự động viết mã chương trình"
+      "a": "Nhân viên bán hàng điện tử.",
+      "b": "Người quản trị hệ thống.",
+      "c": "Biên tập viên video.",
+      "d": "Nhân viên nhập liệu."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Quản trị hệ thống chịu trách nhiệm đảm bảo an toàn và tính toàn vẹn của dữ liệu thông qua việc backup."
   },
   {
-    "id": 24,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Giao thức TCP (Transmission Control Protocol) đảm bảo điều gì?",
+    "topic": "Biết",
+    "question": "Kỹ năng cấu hình Router và Switch là cần thiết nhất cho nghề nào?",
     "options": {
-      "a": "Dữ liệu được truyền đi nhanh nhất có thể mà không cần kiểm tra",
-      "b": "Dữ liệu được truyền đi một cách tin cậy, đúng thứ tự và không bị lỗi",
-      "c": "Dữ liệu được mã hóa để bảo mật",
-      "d": "Dữ liệu được lưu trữ vĩnh viễn trên mạng"
+      "a": "Quản trị mạng.",
+      "b": "Lập trình Web.",
+      "c": "Thiết kế 3D.",
+      "d": "Kiểm thử phần mềm."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Router và Switch là hai thiết bị trung tâm và quan trọng nhất của một mạng máy tính."
   },
   {
-    "id": 25,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Đâu là một ví dụ về địa chỉ IPv4 hợp lệ?",
+    "topic": "Biết",
+    "question": "Đâu là kiến thức quan trọng đối với chuyên gia bảo mật?",
     "options": {
-      "a": "192.168.1.1",
-      "b": "192,168,1,1",
-      "c": "256.0.0.1",
-      "d": "192.168.1"
+      "a": "Kiến thức về lịch sử mỹ thuật.",
+      "b": "Kiến thức về lỗ hổng bảo mật và mã độc.",
+      "c": "Kỹ năng tư vấn bảo hiểm.",
+      "d": "Kiến thức về nuôi trồng thủy sản."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Để phòng thủ hệ thống, chuyên gia bảo mật phải hiểu rõ về các mối đe dọa và cách mã độc tấn công."
   },
   {
-    "id": 26,
-    "topic": "Mạng máy tính",
-    "level": "Hiểu",
-    "question": "Mạng LAN là loại mạng có đặc điểm gì?",
+    "topic": "Biết",
+    "question": "Ngành học nào cung cấp kiến thức chuyên sâu về bảo vệ dữ liệu khỏi hacker?",
     "options": {
-      "a": "Kết nối các máy tính trên toàn cầu",
-      "b": "Kết nối các máy tính trong phạm vi hẹp như gia đình, trường học",
-      "c": "Chỉ sử dụng kết nối không dây",
-      "d": "Là mạng của riêng các cơ quan chính phủ"
+      "a": "Kế toán doanh nghiệp.",
+      "b": "An toàn thông tin.",
+      "c": "Marketing kỹ thuật số.",
+      "d": "Ngôn ngữ Anh."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "An toàn thông tin (Cybersecurity) là ngành đào tạo chuyên biệt về bảo mật dữ liệu."
   },
   {
-    "id": 27,
-    "topic": "HTML Cơ bản",
-    "level": "Vận dụng",
-    "question": "Để tạo một trang web có cấu trúc đúng chuẩn, thứ tự các thẻ chính phải là:",
+    "topic": "Biết",
+    "question": "Thiết bị mạng phổ biến mà người quản trị mạng thường xuyên làm việc là?",
     "options": {
-      "a": "<html> -> <body> -> <head>",
-      "b": "<html> -> <head> -> <body>",
-      "c": "<body> -> <head> -> <html>",
-      "d": "<head> -> <body> -> <html>"
+      "a": "Máy in 3D.",
+      "b": "Bộ định tuyến (Router).",
+      "c": "Loa Bluetooth.",
+      "d": "Kính thực tế ảo."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Router là thiết bị dùng để định tuyến và chuyển giao dữ liệu trên mạng."
   },
   {
-    "id": 28,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Nội dung nằm trong cặp thẻ <head> ... </head> thường dùng để làm gì?",
+    "topic": "Biết",
+    "question": "\"Phân quyền truy cập dữ liệu cho nhân viên\" thuộc nhóm công việc nào?",
     "options": {
-      "a": "Hiển thị văn bản trên trang web",
-      "b": "Khai báo thông tin cấu hình, tiêu đề, liên kết CSS",
-      "c": "Chèn hình ảnh và video",
-      "d": "Tạo các nút bấm và biểu mẫu"
+      "a": "Sửa chữa phần cứng máy tính.",
+      "b": "Quản trị hệ thống.",
+      "c": "Sản xuất linh kiện điện tử.",
+      "d": "Dạy tin học văn phòng."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Quản trị hệ thống bao gồm việc quản lý tài khoản người dùng và cấp quyền sử dụng tài nguyên."
   },
   {
-    "id": 29,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Đoạn mã nào sau đây tạo ra một dòng tiêu đề quan trọng nhất trên trang web?",
+    "topic": "Biết",
+    "question": "Chứng chỉ quốc tế nào sau đây thường dành cho người làm quản trị mạng?",
     "options": {
-      "a": "<h6>Chào mừng</h6>",
-      "b": "<p><b>Chào mừng</b></p>",
-      "c": "<h1>Chào mừng</h1>",
-      "d": "<title>Chào mừng</title>"
+      "a": "IELTS.",
+      "b": "CCNA.",
+      "c": "HSK.",
+      "d": "JLPT."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "CCNA (Cisco Certified Network Associate) là chứng chỉ uy tín toàn cầu về quản trị mạng."
   },
   {
-    "id": 30,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Thẻ <br> được dùng để làm gì?",
+    "topic": "Biết",
+    "question": "Tại sao nhu cầu nhân lực ngành An toàn thông tin lại tăng cao trong tương lai?",
     "options": {
-      "a": "Tạo một đường kẻ ngang",
-      "b": "Ngắt dòng (xuống dòng) mà không bắt đầu đoạn văn mới",
-      "c": "Làm chữ nhỏ đi",
-      "d": "Tạo khoảng cách lớn giữa hai đoạn văn"
+      "a": "Vì internet sẽ không còn được sử dụng.",
+      "b": "Vì các cuộc tấn công mạng ngày càng phức tạp và tinh vi.",
+      "c": "Vì máy tính sẽ tự bảo vệ mình mà không cần con người.",
+      "d": "Vì dữ liệu số sẽ mất đi giá trị."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Tấn công mạng gia tăng khiến các vị trí bảo mật trở thành nhu cầu thiết yếu của mọi tổ chức."
   },
   {
-    "id": 31,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Ai được coi là cha đẻ của ngành Trí tuệ nhân tạo?",
+    "topic": "Hiểu",
+    "question": "Tại sao người quản trị mạng cần hiểu về giao thức TCP/IP?",
     "options": {
-      "a": "Bill Gates",
-      "b": "John McCarthy",
-      "c": "Alan Turing",
-      "d": "Steve Jobs"
+      "a": "Để biết cách lắp ráp ổ cứng máy tính.",
+      "b": "Vì đây là ngôn ngữ chung để các thiết bị có thể liên lạc với nhau trên mạng.",
+      "c": "Để thiết kế các hình ảnh đồ họa đẹp hơn.",
+      "d": "Để tăng tốc độ đánh máy văn bản."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "TCP/IP là bộ giao thức nền tảng của internet và các mạng máy tính hiện đại."
   },
   {
-    "id": 32,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Máy Turing là một mô hình lý thuyết dùng để làm gì?",
+    "topic": "Hiểu",
+    "question": "Sự khác biệt giữa quản trị hệ thống và bảo mật hệ thống là gì?",
     "options": {
-      "a": "Để sản xuất máy tính đầu tiên",
-      "b": "Để xác định khả năng tính toán của một hệ thống máy móc",
-      "c": "Để kết nối mạng Internet",
-      "d": "Để hiển thị hình ảnh đồ họa"
+      "a": "Quản trị hệ thống tập trung vào vận hành ổn định; bảo mật tập trung vào chống lại các mối đe dọa.",
+      "b": "Quản trị hệ thống chỉ làm với phần cứng; bảo mật chỉ làm với phần mềm.",
+      "c": "Bảo mật hệ thống chỉ cần thiết cho ngân hàng, các tổ chức khác thì không.",
+      "d": "Quản trị hệ thống là công việc bán thời gian, bảo mật là công việc toàn thời gian."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Một bên thiên về duy trì hiệu suất hoạt động, một bên thiên về phòng thủ và bảo vệ."
   },
   {
-    "id": 33,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Đâu là rủi ro tiềm ẩn khi phát triển AI quá mức?",
+    "topic": "Hiểu",
+    "question": "Tại sao \"tư duy phân tích lỗi\" lại cực kỳ quan trọng trong quản trị hệ thống?",
     "options": {
-      "a": "Giúp con người nhàn hạ hơn",
-      "b": "Vấn đề về quyền riêng tư và an ninh mạng",
-      "c": "Tăng năng suất lao động",
-      "d": "Cải thiện chất lượng y tế"
+      "a": "Để đổ lỗi cho người sử dụng máy tính.",
+      "b": "Để nhanh chóng xác định nguyên nhân gốc rễ của sự cố và đưa ra giải pháp khắc phục.",
+      "c": "Để viết hướng dẫn sử dụng phần mềm dài hơn.",
+      "d": "Để có thể thay thế tất cả linh kiện dù không hỏng."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Tư duy tốt giúp rút ngắn thời gian hệ thống ngừng hoạt động (Downtime)."
   },
   {
-    "id": 34,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "IPv6 ra đời nhằm mục đích chính là gì?",
+    "topic": "Hiểu",
+    "question": "Vai trò của \"Mã hóa dữ liệu\" trong bảo mật thông tin là gì?",
     "options": {
-      "a": "Để mạng chạy nhanh hơn",
-      "b": "Để thay thế IPv4 đã cạn kiệt địa chỉ",
-      "c": "Để bảo mật tuyệt đối",
-      "d": "Để kết nối các vệ tinh"
+      "a": "Làm cho dung lượng dữ liệu lớn hơn để khó bị đánh cắp.",
+      "b": "Chuyển thông tin thành dạng không thể đọc được nếu không có khóa giải mã, tránh lộ bí mật.",
+      "c": "Để dữ liệu trông đẹp mắt hơn khi hiển thị.",
+      "d": "Để xóa dữ liệu của khách hàng nhanh hơn."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Mã hóa đảm bảo nếu dữ liệu bị đánh cắp, kẻ trộm cũng không thể xem được nội dung bên trong."
   },
   {
-    "id": 35,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Switch khác Hub ở điểm cơ bản nào?",
+    "topic": "Hiểu",
+    "question": "Tại sao quản trị mạng thường đi kèm với quản trị bảo trì hệ thống?",
     "options": {
-      "a": "Switch rẻ hơn Hub",
-      "b": "Switch thông minh hơn, chỉ gửi dữ liệu đến máy đích chính xác",
-      "c": "Hub kết nối được nhiều máy hơn Switch",
-      "d": "Switch chỉ dùng cho mạng không dây"
+      "a": "Vì hai nghề này đều sử dụng chung một loại tuốc nơ vít.",
+      "b": "Vì mạng và hệ thống (máy chủ, phần mềm) gắn kết chặt chẽ, hỗ trợ lẫn nhau để vận hành dịch vụ IT.",
+      "c": "Vì doanh nghiệp muốn tiết kiệm tiền thuê hai người khác nhau.",
+      "d": "Vì cả hai nghề này đều không cần học đại học."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Hạ tầng mạng và hệ thống phần mềm luôn tác động qua lại lẫn nhau trong thực tế."
   },
   {
-    "id": 36,
-    "topic": "HTML Cơ bản",
-    "level": "Vận dụng",
-    "question": "Nếu bạn muốn hiển thị ký tự '<' trên trang web mà không muốn trình duyệt hiểu lầm là thẻ, bạn dùng mã nào?",
+    "topic": "Vận dụng",
+    "question": "Công ty bạn bị hacker tấn công chiếm quyền điều khiển website. Chuyên gia bảo mật nên thực hiện hành động nào đầu tiên?",
     "options": {
-      "a": "&lt;",
-      "b": "&gt;",
-      "c": "&amp;",
-      "d": "&nbsp;"
+      "a": "Xóa bỏ hoàn toàn website đó.",
+      "b": "Cô lập hệ thống bị tấn công, kiểm tra lỗ hổng và khôi phục từ bản sao lưu an toàn.",
+      "c": "Gọi điện cho tất cả khách hàng để xin lỗi ngay lập tức.",
+      "d": "Mua một chiếc máy tính mới để thay cho máy chủ."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Cô lập sự cố là bước đầu tiên để ngăn chặn thiệt hại lan rộng sang các phần khác."
   },
   {
-    "id": 37,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thẻ <u> có tác dụng gì đối với văn bản?",
+    "topic": "Vận dụng",
+    "question": "Một văn phòng có 20 nhân viên nhưng Wi-Fi thường xuyên bị chậm và rớt mạng. Người quản trị mạng nên ưu tiên xử lý thế nào?",
     "options": {
-      "a": "In nghiêng",
-      "b": "Gạch chân",
-      "c": "Tô màu đỏ",
-      "d": "Căn lề giữa"
+      "a": "Yêu cầu nhân viên không được sử dụng internet nữa.",
+      "b": "Kiểm tra lưu lượng mạng, cấu hình lại các điểm truy cập (Access Point) và giới hạn băng thông không cần thiết.",
+      "c": "Thay toàn bộ dây điện trong văn phòng.",
+      "d": "Cài đặt lại bộ gõ tiếng Việt trên tất cả máy tính."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Tối ưu hóa cấu hình thiết bị và quản lý băng thông là giải pháp kỹ thuật đúng đắn."
   },
   {
-    "id": 38,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thẻ <i> có tác dụng gì đối với văn bản?",
+    "topic": "Vận dụng",
+    "question": "Nếu bạn muốn theo đuổi nghề bảo mật thông tin chuyên nghiệp, lộ trình nào sau đây là hợp lý nhất?",
     "options": {
-      "a": "In đậm",
-      "b": "In nghiêng",
-      "c": "Làm chữ lớn hơn",
-      "d": "Đổi font chữ"
+      "a": "Học toán cao cấp và lý thuyết kinh tế.",
+      "b": "Học về mạng căn bản, hệ điều hành Linux, các kỹ thuật tấn công/phòng thủ và thi lấy chứng chỉ CEH.",
+      "c": "Chỉ cần học cách sử dụng Photoshop và Illustrator.",
+      "d": "Học cách sửa chữa các loại điện thoại thông minh."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Đây là các nền tảng kỹ thuật và chứng chỉ thiết yếu của nghề Cybersecurity."
   },
   {
-    "id": 39,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Để chèn một ảnh có tên 'logo.png' và hiển thị dòng chữ 'Ảnh Logo' nếu ảnh bị lỗi, ta viết:",
+    "topic": "Vận dụng",
+    "question": "Trong trường hợp xảy ra sự cố cháy nổ tại phòng máy chủ, quy trình bảo mật dữ liệu nào là quan trọng nhất?",
     "options": {
-      "a": "<img src='logo.png' alt='Ảnh Logo'>",
-      "b": "<img link='logo.png' text='Ảnh Logo'>",
-      "c": "<img href='logo.png' title='Ảnh Logo'>",
-      "d": "<image src='logo.png' alt='Ảnh Logo'>"
+      "a": "Chụp ảnh hiện trường để báo cáo.",
+      "b": "Đảm bảo dữ liệu đã được sao lưu ở một vị trí khác (Offsite backup) và có kế hoạch phục hồi sau thảm họa.",
+      "c": "Cố gắng bê máy chủ ra ngoài dù đang có lửa.",
+      "d": "Ngắt kết nối internet toàn bộ khu vực xung quanh."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Backup từ xa (Offsite backup) là cách duy nhất để cứu vãn dữ liệu khi có thảm họa vật lý xảy ra."
   },
   {
-    "id": 40,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thẻ <hr> tạo ra cái gì trên trang web?",
+    "topic": "Vận dụng",
+    "question": "Một nhân viên mới vào làm việc cần truy cập vào thư mục kế toán. Người quản trị hệ thống nên cấp quyền như thế nào?",
     "options": {
-      "a": "Một liên kết",
-      "b": "Một đường kẻ ngang",
-      "c": "Một hình ảnh",
-      "d": "Một tiêu đề"
+      "a": "Cấp toàn quyền (Full control) để nhân viên làm việc thoải mái.",
+      "b": "Cấp quyền truy cập tối thiểu (Least Privilege) đủ để thực hiện nhiệm vụ được giao.",
+      "c": "Cho nhân viên dùng chung tài khoản của giám đốc.",
+      "d": "Yêu cầu nhân viên tự cài đặt phần mềm bẻ khóa để vào thư mục."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Nguyên tắc \"quyền tối thiểu\" là quy tắc vàng để đảm bảo an toàn thông tin."
   },
   {
-    "id": 41,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Vận dụng",
-    "question": "Hành động nào sau đây là ứng dụng của AI trong nhận diện khuôn mặt?",
+    "topic": "Biết",
+    "question": "Mục tiêu chính của một buổi hội thảo hướng nghiệp Tin học trong trường phổ thông là gì?",
     "options": {
-      "a": "Mở khóa điện thoại bằng Face ID",
-      "b": "Chụp ảnh phong cảnh bằng máy ảnh",
-      "c": "Gửi ảnh qua tin nhắn",
-      "d": "Chỉnh sửa độ sáng của ảnh"
+      "a": "Để bán các thiết bị máy tính mới nhất.",
+      "b": "Để học sinh giải trí sau những giờ học căng thẳng.",
+      "c": "Giúp học sinh tìm hiểu về đặc điểm các nhóm nghề và lựa chọn nghề phù hợp.",
+      "d": "Để dạy học sinh cách lập trình một trang web hoàn chỉnh."
     },
-    "answer": "a"
+    "answer": "c",
+    "explanation": "Đây là ý nghĩa cốt lõi của hội thảo hướng nghiệp."
   },
   {
-    "id": 42,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "AI yếu (Weak AI) là gì?",
+    "topic": "Biết",
+    "question": "Bước đầu tiên cần thực hiện khi tổ chức một buổi hội thảo hướng nghiệp là gì?",
     "options": {
-      "a": "AI có khả năng suy nghĩ như con người trong mọi lĩnh vực",
-      "b": "AI được thiết kế để thực hiện một nhiệm vụ cụ thể",
-      "c": "AI không có khả năng tính toán",
-      "d": "AI chỉ hoạt động được khi có mạng"
+      "a": "Viết báo cáo tổng kết.",
+      "b": "Xây dựng bài thuyết trình.",
+      "c": "Lập kế hoạch và xác định mục tiêu.",
+      "d": "Thu dọn hội trường."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Kế hoạch là nền tảng để triển khai mọi hoạt động sau đó."
   },
   {
-    "id": 43,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Lĩnh vực nào nghiên cứu cách tạo ra các robot có khả năng tự động thực hiện công việc?",
+    "topic": "Biết",
+    "question": "Trong nhiệm vụ chuẩn bị hội thảo, việc phân công nhân sự thường bao gồm những vị trí nào?",
     "options": {
-      "a": "NLP",
-      "b": "Robotics",
-      "c": "Data Mining",
-      "d": "Big Data"
+      "a": "Đội ngũ y tế và cứu hỏa.",
+      "b": "Người trình bày, thư ký, nhóm hậu cần/kỹ thuật.",
+      "c": "Các vận động viên thi đấu.",
+      "d": "Người sản xuất linh kiện máy tính."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Đây là bộ khung nhân sự cơ bản để vận hành một sự kiện nhóm."
   },
   {
-    "id": 44,
-    "topic": "Mạng máy tính",
-    "level": "Hiểu",
-    "question": "Lợi ích của việc sử dụng địa chỉ IP tĩnh là gì?",
+    "topic": "Biết",
+    "question": "Một bài trình bày hội thảo hướng nghiệp hiệu quả nên có yếu tố nào sau đây?",
     "options": {
-      "a": "Dễ nhớ hơn IP động",
-      "b": "Phù hợp cho các máy chủ cần địa chỉ cố định để truy cập từ xa",
-      "c": "Luôn luôn bảo mật hơn IP động",
-      "d": "Giúp máy tính chạy nhanh hơn"
+      "a": "Chỉ toàn chữ và số để trông chuyên nghiệp.",
+      "b": "Các thông tin về nhu cầu nhân lực, yêu cầu năng lực và hình ảnh minh họa.",
+      "c": "Các đoạn phim hoạt hình không liên quan đến nghề nghiệp.",
+      "d": "Chỉ nói về mức lương mà không nói về khó khăn của nghề."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Thông tin đa dạng giúp người nghe có cái nhìn toàn diện về nghề."
   },
   {
-    "id": 45,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Mô hình kết nối mạng phổ biến nhất hiện nay là gì?",
+    "topic": "Biết",
+    "question": "Hoạt động nào thường diễn ra cuối buổi hội thảo để thu thập ý kiến từ người tham gia?",
     "options": {
-      "a": "Mô hình Client-Server",
-      "b": "Mô hình Peer-to-Peer (ngang hàng)",
-      "c": "Mô hình hình tròn (Ring)",
-      "d": "Mô hình hình sao (Star)"
+      "a": "Khai mạc hội thảo.",
+      "b": "Đánh giá và lấy thông tin phản hồi (khảo sát).",
+      "c": "Phân công nhiệm vụ chuẩn bị.",
+      "d": "Cài đặt hệ điều hành cho máy tính."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Đánh giá giúp xác định mức độ đạt được của mục tiêu hội thảo."
   },
   {
-    "id": 46,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Thẻ nào dùng để tạo một danh sách có thứ tự (1, 2, 3...)?",
+    "topic": "Hiểu",
+    "question": "Tại sao cần phải lựa chọn nội dung hội thảo hướng nghiệp bám sát thực tế thị trường lao động?",
     "options": {
-      "a": "<ul>",
-      "b": "<ol>",
-      "c": "<li>",
-      "d": "<list>"
+      "a": "Để bài trình bày trông dài và đẹp mắt hơn.",
+      "b": "Để học sinh có cái nhìn chính xác về cơ hội và thách thức của nghề nghiệp trong tương lai.",
+      "c": "Vì giáo viên yêu cầu như vậy.",
+      "d": "Để thay thế hoàn toàn các chương trình hướng nghiệp trên tivi."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Thông tin thực tế giúp học sinh chọn nghề không bị mông lung hay ảo tưởng."
   },
   {
-    "id": 47,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Thẻ nào dùng để tạo một danh sách không có thứ tự (dấu chấm đầu dòng)?",
+    "topic": "Hiểu",
+    "question": "Việc đánh giá kết quả sau buổi hội thảo có ý nghĩa gì đối với ban tổ chức?",
     "options": {
-      "a": "<ul>",
-      "b": "<ol>",
-      "c": "<li>",
-      "d": "<dl>"
+      "a": "Để tìm ra người có lỗi trong buổi hội thảo.",
+      "b": "Để rút kinh nghiệm và nâng cao chất lượng cho các buổi sinh hoạt chuyên đề sau.",
+      "c": "Để tính toán số tiền đã chi tiêu cho hội thảo.",
+      "d": "Để yêu cầu học sinh làm lại bài tập trên lớp."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Phản hồi giúp cải thiện kỹ năng tổ chức và nội dung trong tương lai."
   },
   {
-    "id": 48,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thẻ <li> có ý nghĩa gì trong danh sách?",
+    "topic": "Hiểu",
+    "question": "Tại sao việc sử dụng các video minh họa trong bài trình bày hướng nghiệp lại được khuyến khích?",
     "options": {
-      "a": "Là thẻ bao ngoài của danh sách",
-      "b": "Dùng để định nghĩa một mục (item) trong danh sách",
-      "c": "Dùng để tạo liên kết",
-      "d": "Dùng để in đậm mục đó"
+      "a": "Vì video giúp kéo dài thời gian hội thảo.",
+      "b": "Vì video giúp học sinh hình dung sinh động về môi trường làm việc thực tế của ngành nghề đó.",
+      "c": "Vì ban tổ chức không muốn nói nhiều nên để video chạy thay.",
+      "d": "Vì máy tính của trường chỉ có tác dụng xem video."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Trực quan hóa giúp truyền tải thông điệp nhanh và hiệu quả hơn lời nói."
   },
   {
-    "id": 49,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Để thay đổi kích thước ảnh trực tiếp trong thẻ <img>, ta dùng thuộc tính nào?",
+    "topic": "Vận dụng",
+    "question": "Nếu được phân công xây dựng bài trình bày về nghề \"An toàn thông tin\", bạn nên bổ sung thông tin nào để thu hút các bạn học sinh giỏi Toán?",
     "options": {
-      "a": "size",
-      "b": "width và height",
-      "c": "scale",
-      "d": "length"
+      "a": "Các phần mềm chỉnh sửa ảnh nghệ thuật.",
+      "b": "Các thuật toán mã hóa dữ liệu và tư duy giải quyết sự cố bảo mật.",
+      "c": "Lịch sử của các loại máy in.",
+      "d": "Cách lắp đặt dây cáp mạng trong văn phòng."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "An toàn thông tin đòi hỏi tư duy logic và toán học rất cao cho việc mã hóa/giải mã."
   },
   {
-    "id": 50,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Trình duyệt web đóng vai trò gì khi mở tệp HTML?",
+    "topic": "Vận dụng",
+    "question": "Sau khi nghe hội thảo về nghề \"Phát triển phần mềm\", một bạn học sinh muốn biết mình có phù hợp không. Bạn ấy nên làm hành động nào là đúng đắn nhất?",
     "options": {
-      "a": "Chỉnh sửa mã nguồn HTML",
-      "b": "Thông dịch mã HTML và hiển thị thành giao diện trang web",
-      "c": "Lưu trữ tệp HTML vĩnh viễn",
-      "d": "Tạo ra các tệp HTML mới"
+      "a": "Đăng ký đi làm ngay mà không cần học đại học.",
+      "b": "Đối chiếu sở thích, năng lực cá nhân với các yêu cầu của nghề đã được nêu trong hội thảo.",
+      "c": "Bỏ học các môn khác để chỉ học lập trình.",
+      "d": "Đợi đến khi có người mời đi làm mới tìm hiểu tiếp."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Hội thảo cung cấp dữ liệu, việc còn lại là tự đánh giá (self-assessment)."
   },
   {
-    "id": 51,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Tại sao AI cần lượng dữ liệu lớn để phát triển?",
+    "topic": "Biết",
+    "question": "Thiết bị nào sau đây đóng vai trò là \"máy phục vụ\", chuyên cung cấp tài nguyên cho các máy khác?",
     "options": {
-      "a": "Để máy tính không bị hỏng",
-      "b": "Để các mô hình AI có thể học và tìm ra các quy luật chính xác",
-      "c": "Để tốn dung lượng ổ cứng",
-      "d": "Dữ liệu lớn giúp máy tính chạy nhanh hơn"
+      "a": "Router.",
+      "b": "Server.",
+      "c": "Switch.",
+      "d": "Hub."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Server cung cấp dịch vụ và tài nguyên cho các máy Client."
   },
   {
-    "id": 52,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Học máy (Machine Learning) là một tập con của lĩnh vực nào?",
+    "topic": "Biết",
+    "question": "Dịch vụ nào của Server giúp người dùng có thể truy cập vào các trang web qua trình duyệt?",
     "options": {
-      "a": "Toán học",
-      "b": "Trí tuệ nhân tạo",
-      "c": "Vật lý",
-      "d": "Sinh học"
+      "a": "Mail Server.",
+      "b": "File Server.",
+      "c": "Web Server.",
+      "d": "Print Server."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Web Server lưu trữ và chuyển tải nội dung web (HTTP/HTTPS)."
   },
   {
-    "id": 53,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "AI có thể tự đưa ra quyết định dựa trên điều gì?",
-    "options": {
-      "a": "Sự may rủi",
-      "b": "Các thuật toán và dữ liệu đã được học",
-      "c": "Cảm xúc cá nhân của máy",
-      "d": "Sự điều khiển trực tiếp từng giây của con người"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 54,
-    "topic": "Mạng máy tính",
-    "level": "Hiểu",
-    "question": "Địa chỉ IP động (Dynamic IP) là gì?",
-    "options": {
-      "a": "Là địa chỉ tự động thay đổi mỗi khi máy tính kết nối mạng",
-      "b": "Là địa chỉ do người dùng tự đặt thủ công",
-      "c": "Là địa chỉ của các trang web lớn",
-      "d": "Là địa chỉ không bao giờ thay đổi"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 55,
-    "topic": "Mạng máy tính",
-    "level": "Vận dụng",
-    "question": "Khi bạn gõ 'google.com' vào trình duyệt, hệ thống nào sẽ tìm địa chỉ IP tương ứng?",
-    "options": {
-      "a": "FTP",
-      "b": "DNS",
-      "c": "DHCP",
-      "d": "HTTP"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 56,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Thẻ <!DOCTYPE html> ở đầu tệp tin có tác dụng gì?",
-    "options": {
-      "a": "Là một thẻ HTML bình thường",
-      "b": "Khai báo với trình duyệt rằng đây là tài liệu HTML5",
-      "c": "Dùng để tạo tiêu đề trang",
-      "d": "Dùng để kết nối Internet"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 57,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Kết quả hiển thị của đoạn mã '<b><i>Tin học</i></b>' là gì?",
-    "options": {
-      "a": "Chữ Tin học in đậm",
-      "b": "Chữ Tin học in nghiêng",
-      "c": "Chữ Tin học vừa in đậm vừa in nghiêng",
-      "d": "Chữ Tin học gạch chân"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 58,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Để tạo danh sách: \n1. Toán\n2. Lý\nTa dùng mã:",
-    "options": {
-      "a": "<ul><li>Toán</li><li>Lý</li></ul>",
-      "b": "<ol><li>Toán</li><li>Lý</li></ol>",
-      "c": "<list><li>Toán</li><li>Lý</li></list>",
-      "d": "<ol>Toán, Lý</ol>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 59,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Trong HTML, các thẻ thường đi theo cặp gồm:",
-    "options": {
-      "a": "Thẻ mở và thẻ đóng",
-      "b": "Thẻ trái và thẻ phải",
-      "c": "Thẻ trên và thẻ dưới",
-      "d": "Thẻ nội dung và thẻ định dạng"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 60,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Thẻ đóng trong HTML được phân biệt với thẻ mở bằng ký tự nào?",
-    "options": {
-      "a": "\\",
-      "b": "/",
-      "c": "!",
-      "d": "?"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 61,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "AI có thể hỗ trợ con người trong việc gì?",
-    "options": {
-      "a": "Tự động hóa các công việc lặp đi lặp lại",
-      "b": "Phân tích dữ liệu lớn để đưa ra dự báo",
-      "c": "Hỗ trợ y tế và giáo dục",
-      "d": "Tất cả các đáp án trên"
-    },
-    "answer": "d"
-  },
-  {
-    "id": 62,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Deep Learning (Học sâu) dựa trên mô hình mô phỏng cái gì của con người?",
-    "options": {
-      "a": "Bàn tay",
-      "b": "Mạng lưới thần kinh trong não bộ",
-      "c": "Đôi mắt",
-      "d": "Hệ tiêu hóa"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 63,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Modem là thiết bị dùng để làm gì?",
-    "options": {
-      "a": "Chỉ dùng để phát wifi",
-      "b": "Chuyển đổi tín hiệu số sang tín hiệu tương tự và ngược lại để kết nối Internet",
-      "c": "Dùng để lưu trữ dữ liệu mạng",
-      "d": "Dùng để gõ văn bản"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 64,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Thuật ngữ 'Băng thông' (Bandwidth) chỉ điều gì?",
-    "options": {
-      "a": "Độ dài của dây cáp mạng",
-      "b": "Tốc độ truyền dữ liệu tối đa trong một giây",
-      "c": "Số lượng máy tính trong mạng",
-      "d": "Giá tiền cước Internet"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 65,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Khoảng trống giữa thẻ mở và thẻ đóng được gọi là gì?",
-    "options": {
-      "a": "Thuộc tính",
-      "b": "Nội dung của thẻ",
-      "c": "Giá trị",
-      "d": "Tham số"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 66,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Thẻ <s> có tác dụng gì?",
-    "options": {
-      "a": "Làm chữ nhỏ lại",
-      "b": "Gạch ngang giữa văn bản",
-      "c": "Làm chữ mờ đi",
-      "d": "Tạo văn bản lấp lánh"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 67,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Nếu muốn danh sách không thứ tự có hình vuông ở đầu mục, ta dùng CSS hoặc thuộc tính style như thế nào?",
-    "options": {
-      "a": "list-style-type: square",
-      "b": "list-style-type: circle",
-      "c": "list-style-type: disc",
-      "d": "list-style-type: none"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 68,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Bài kiểm tra Turing (Turing Test) dùng để làm gì?",
-    "options": {
-      "a": "Kiểm tra tốc độ của máy tính",
-      "b": "Kiểm tra xem máy tính có khả năng biểu hiện trí thông minh như con người hay không",
-      "c": "Kiểm tra dung lượng bộ nhớ",
-      "d": "Kiểm tra khả năng kết nối mạng"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 69,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Trong AI, 'Dữ liệu dán nhãn' thường được dùng trong phương pháp học nào?",
-    "options": {
-      "a": "Học có giám sát (Supervised Learning)",
-      "b": "Học không giám sát (Unsupervised Learning)",
-      "c": "Học củng cố (Reinforcement Learning)",
-      "d": "Không dùng trong phương pháp nào"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 70,
-    "topic": "Mạng máy tính",
-    "level": "Vận dụng",
-    "question": "Để kết nối mạng wifi ở nhà, thiết bị quan trọng nhất là:",
-    "options": {
-      "a": "Cáp quang",
-      "b": "Wireless Router (Bộ định tuyến không dây)",
-      "c": "Ổ cứng di động",
-      "d": "Loa máy tính"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 71,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Thuộc tính (Attribute) của thẻ HTML nằm ở đâu?",
-    "options": {
-      "a": "Nằm trong thẻ mở",
-      "b": "Nằm trong thẻ đóng",
-      "c": "Nằm giữa thẻ mở và thẻ đóng",
-      "d": "Nằm ngoài cả hai thẻ"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 72,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Để tạo chỉ số dưới (ví dụ số 2 trong H2O), ta dùng thẻ nào?",
-    "options": {
-      "a": "<sup>",
-      "b": "<sub>",
-      "c": "<small>",
-      "d": "<below>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 73,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Để tạo chỉ số trên (ví dụ số 2 trong X2), ta dùng thẻ nào?",
-    "options": {
-      "a": "<sup>",
-      "b": "<sub>",
-      "c": "<top>",
-      "d": "<up>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 74,
-    "topic": "HTML Cơ bản",
-    "level": "Vận dụng",
-    "question": "Đoạn mã đúng để tạo cấu trúc cơ bản của một trang web là:",
-    "options": {
-      "a": "<html><head><title>Trang web</title></head><body>Nội dung</body></html>",
-      "b": "<html><title>Trang web</title><body>Nội dung</body></html>",
-      "c": "<head><html><title>Trang web</title></html><body>Nội dung</body></head>",
-      "d": "<html><body><head><title>Trang web</title></head>Nội dung</body></html>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 75,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Biết",
-    "question": "Trợ lý ảo Siri của Apple sử dụng công nghệ AI nào là chính?",
-    "options": {
-      "a": "Nhận dạng giọng nói và NLP",
-      "b": "Điều khiển robot",
-      "c": "Phân tích chứng khoán",
-      "d": "Chỉnh sửa video"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 76,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Để tạo một danh sách không có thứ tự (hiển thị bằng các dấu chấm đầu dòng), bạn phải sử dụng cặp thẻ nào bao ngoài?",
-    "options": {
-      "a": "<ol> ... </ol>",
-      "b": "<ul> ... </ul>",
-      "c": "<li> ... </li>",
-      "d": "<dl> ... </dl>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 77,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Để thay đổi kiểu đánh số của danh sách có thứ tự (ví dụ chuyển từ 1, 2, 3 sang a, b, c), ta sử dụng thuộc tính nào trong thẻ <ol>?",
-    "options": {
-      "a": "style",
-      "b": "type",
-      "c": "start",
-      "d": "name"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 78,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Bạn muốn tạo một bảng gồm 3 hàng và 2 cột. Tổng cộng bạn cần sử dụng bao nhiêu thẻ <tr> và bao nhiêu thẻ <td>?",
-    "options": {
-      "a": "2 thẻ <tr> và 3 thẻ <td>.",
-      "b": "3 thẻ <tr> và 2 thẻ <td>.",
-      "c": "3 thẻ <tr> và 6 thẻ <td>.",
-      "d": "2 thẻ <tr> và 6 thẻ <td>."
-    },
-    "answer": "c"
-  },
-  {
-    "id": 79,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Đoạn mã nào sau đây tạo ra một danh sách đánh số bằng chữ cái in hoa (A, B, C...)?",
-    "options": {
-      "a": "<ul type=\"A\">",
-      "b": "<ol type=\"1\">",
-      "c": "<ol type=\"A\">",
-      "d": "<li type=\"A\">"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 80,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Quan sát đoạn mã sau: <tr> <td> Cam </td> <td> 20.000đ </td> </tr>. Đoạn mã này thực hiện công việc gì?",
-    "options": {
-      "a": "Tạo một cột gồm 2 dòng dữ liệu.",
-      "b": "Tạo một hàng trong bảng gồm 2 ô dữ liệu là \"Cam\" và \"20.000đ\".",
-      "c": "Tạo tiêu đề cho một bảng hoa quả.",
-      "d": "Tạo một danh sách liệt kê giá cả."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 81,
-    "topic": "HTML: Liên kết",
-    "level": "Biết",
-    "question": "Thẻ nào sau đây được sử dụng để tạo một liên kết (siêu liên kết) trong HTML?",
-    "options": {
-      "a": "<link>",
-      "b": "<a>",
-      "c": "<href>",
-      "d": "<url>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 82,
-    "topic": "HTML: Liên kết",
-    "level": "Biết",
-    "question": "Thuộc tính nào của thẻ <a> dùng để chỉ định địa chỉ (URL) của trang web mà liên kết trỏ tới?",
-    "options": {
-      "a": "src",
-      "b": "link",
-      "c": "href",
-      "d": "target"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 83,
-    "topic": "HTML: Liên kết",
-    "level": "Biết",
-    "question": "Văn bản nằm giữa cặp thẻ <a> ... </a> được gọi là gì?",
-    "options": {
-      "a": "Địa chỉ liên kết.",
-      "b": "Văn bản hiển thị của liên kết (Anchor text).",
-      "c": "Thuộc tính liên kết.",
-      "d": "Đường dẫn tuyệt đối."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 84,
-    "topic": "HTML: Liên kết",
-    "level": "Hiểu",
-    "question": "Để khi người dùng nhấp vào liên kết, trang web mới sẽ được mở trong một thẻ (tab) mới , ta cần sử dụng thuộc tính target với giá trị nào?",
-    "options": {
-      "a": "target=\"_self\"",
-      "b": "target=\"_parent\"",
-      "c": "target=\"_blank\"",
-      "d": "target=\"_top\""
-    },
-    "answer": "c"
-  },
-  {
-    "id": 85,
-    "topic": "HTML: Liên kết",
-    "level": "Hiểu",
-    "question": "Điểm khác biệt giữa đường dẫn tuyệt đối và đường dẫn tương đối là gì?",
-    "options": {
-      "a": "Đường dẫn tuyệt đối chỉ dùng cho hình ảnh, đường dẫn tương đối dùng cho văn bản.",
-      "b": "Đường dẫn tuyệt đối chứa địa chỉ đầy đủ (bao gồm http://...), đường dẫn tương đối chỉ ra vị trí tệp dựa trên thư mục hiện hành.",
-      "c": "Đường dẫn tuyệt đối ngắn hơn đường dẫn tương đối.",
-      "d": "Trình duyệt không thể đọc được đường dẫn tương đối."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 86,
-    "topic": "HTML: Liên kết",
-    "level": "Hiểu",
-    "question": "Khi bạn di chuyển con trỏ chuột vào một liên kết trên trang web, biểu tượng con trỏ thường chuyển thành hình gì?",
-    "options": {
-      "a": "Hình mũi tên.",
-      "b": "Hình dấu cộng.",
-      "c": "Hình bàn tay chỉ ngón trỏ.",
-      "d": "Hình vòng tròn xoay."
-    },
-    "answer": "c"
-  },
-  {
-    "id": 87,
-    "topic": "HTML: Liên kết",
-    "level": "Hiểu",
-    "question": "Thẻ liên kết <a> có thể bao quanh những phần tử nào sau đây?",
-    "options": {
-      "a": "Chỉ văn bản.",
-      "b": "Chỉ hình ảnh.",
-      "c": "Cả văn bản, hình ảnh hoặc các khối (div).",
-      "d": "Chỉ các thẻ tiêu đề <h1>."
-    },
-    "answer": "c"
-  },
-  {
-    "id": 88,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Mã HTML nào sau đây là đúng để tạo một liên kết đến trang Google?",
-    "options": {
-      "a": "<a url=\"https://google.com\"> Google </a>",
-      "b": "<a href=\"https://google.com\"> Google </a>",
-      "c": "<link href=\"https://google.com\"> Google </link>",
-      "d": "<a target=\"https://google.com\"> Google </a>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 89,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Bạn muốn tạo một liên kết trên trang web sao cho khi nhấn vào hình ảnh anh_dep.jpg, người dùng sẽ được dẫn đến trang album.html. Cấu trúc nào sau đây là đúng?",
-    "options": {
-      "a": "<a href=\"album.html\"> <img src=\"anh_dep.jpg\"> </a>",
-      "b": "<img src=\"anh_dep.jpg\"> <a href=\"album.html\"> </a>",
-      "c": "<a src=\"anh_dep.jpg\"> album.html </a>",
-      "d": "<a href=\"anh_dep.jpg\"> <img src=\"album.html\"> </a>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 90,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Giả sử bạn đang ở tệp index.html và muốn liên kết đến tệp gioithieu.html nằm cùng trong một thư mục. Cách viết nào sau đây là sử dụng đường dẫn tương đối đúng nhất?",
-    "options": {
-      "a": "<a href=\"C:/Users/Documents/gioithieu.html\"> Giới thiệu </a>",
-      "b": "<a href=\"gioithieu.html\"> Giới thiệu </a>",
-      "c": "<a href=\"http://localhost/gioithieu.html\"> Giới thiệu </a>",
-      "d": "<a link=\"gioithieu.html\"> Giới thiệu </a>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 91,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Biết",
-    "question": "Thẻ nào sau đây được sử dụng để chèn một tệp âm thanh vào trang web HTML?",
-    "options": {
-      "a": "<video>",
-      "b": "<audio>",
-      "c": "<sound>",
-      "d": "<music>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 92,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Biết",
-    "question": "Để nhúng một trang web khác hoặc một bản đồ Google Maps vào trong trang web của mình, ta sử dụng thẻ nào?",
-    "options": {
-      "a": "<frame>",
-      "b": "<embed>",
-      "c": "<iframe>",
-      "d": "<object>"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 93,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Biết",
-    "question": "Thuộc tính nào trong thẻ <video> và <audio> giúp trình duyệt hiển thị các nút chức năng như Play, Pause, Âm lượng?",
-    "options": {
-      "a": "play",
-      "b": "autoplay",
-      "c": "controls",
-      "d": "loop"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 94,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Hiểu",
-    "question": "Ý nghĩa của thẻ <source> đặt bên trong thẻ <video> là gì?",
-    "options": {
-      "a": "Dùng để ghi chú cho video.",
-      "b": "Dùng để cung cấp nhiều định dạng tệp khác nhau, giúp trình duyệt chọn loại tệp phù hợp nhất để phát.",
-      "c": "Dùng để quy định kích thước hiển thị của video.",
-      "d": "Dùng để chèn phụ đề cho video."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 95,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Hiểu",
-    "question": "Thuộc tính autoplay trong thẻ <video> có tác dụng gì?",
-    "options": {
-      "a": "Tự động lặp lại video khi kết thúc.",
-      "b": "Tự động phát video ngay khi trang web được tải xong.",
-      "c": "Tự động tắt tiếng khi video phát.",
-      "d": "Tự động thay đổi kích thước video cho vừa màn hình."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 96,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Hiểu",
-    "question": "Trong thẻ <iframe>, hai thuộc tính width và height được dùng để làm gì?",
-    "options": {
-      "a": "Xác định địa chỉ của trang web được nhúng.",
-      "b": "Xác định độ phân giải của trang web nguồn.",
-      "c": "Xác định chiều rộng và chiều cao của khung hiển thị nội tuyến.",
-      "d": "Xác định khoảng cách từ khung đến lề trang web."
-    },
-    "answer": "c"
-  },
-  {
-    "id": 97,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Hiểu",
-    "question": "Tại sao khi chèn video, chúng ta nên sử dụng thuộc tính loop?",
-    "options": {
-      "a": "Để video có chất lượng hình ảnh tốt hơn.",
-      "b": "Để video tự động phát lại từ đầu sau khi kết thúc.",
-      "c": "Để video hiển thị được trên điện thoại di động.",
-      "d": "Để người dùng không thể tua video."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 98,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Vận dụng",
-    "question": "Bạn muốn chèn một video có tên intro.mp4 vào trang web, video này phải có đầy đủ nút điều khiển và tự động lặp lại. Đoạn mã nào sau đây là đúng?",
-    "options": {
-      "a": "<video src=\"intro.mp4\" controls loop></video>",
-      "b": "<video src=\"intro.mp4\" play repeat></video>",
-      "c": "<video href=\"intro.mp4\" controls loop></video>",
-      "d": "<audio src=\"intro.mp4\" controls loop></audio>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 99,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Vận dụng",
-    "question": "Khi sử dụng thẻ <iframe>, nếu bạn muốn nhúng trang web của trường có địa chỉ thptcheghevara.edu.vn, bạn phải đặt địa chỉ này vào thuộc tính nào?",
-    "options": {
-      "a": "href",
-      "b": "link",
-      "c": "src",
-      "d": "data"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 100,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Vận dụng",
-    "question": "Quan sát đoạn mã sau: <audio controls> <source src=\"music.mp3\" type=\"audio/mpeg\"> Trình duyệt không hỗ trợ </audio>. Dòng chữ \"Trình duyệt không hỗ trợ\" sẽ hiển thị khi nào?",
-    "options": {
-      "a": "Luôn luôn hiển thị bên dưới trình phát nhạc.",
-      "b": "Chỉ hiển thị khi trình duyệt của người dùng quá cũ, không đọc được thẻ <audio>.",
-      "c": "Chỉ hiển thị khi tệp music.mp3 bị xóa.",
-      "d": "Hiển thị khi người dùng nhấn nút Pause."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 101,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Cặp thẻ nào sau đây được sử dụng để bắt đầu và kết thúc một biểu mẫu trong HTML?",
-    "options": {
-      "a": "<input> ... </input>",
-      "b": "<form> ... </form>",
-      "c": "<select> ... </select>",
-      "d": "<label> ... </label>"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 102,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Để tạo một ô nhập văn bản một dòng (như nhập Họ tên, Tài khoản), ta sử dụng thẻ input với giá trị thuộc tính type là gì?",
-    "options": {
-      "a": "type=\"password\"",
-      "b": "type=\"checkbox\"",
-      "c": "type=\"text\"",
-      "d": "type=\"button\""
-    },
-    "answer": "c"
-  },
-  {
-    "id": 103,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Phần tử nào sau đây dùng để tạo một danh sách thả xuống (drop-down list) cho phép người dùng chọn một trong các phương án có sẵn?",
-    "options": {
-      "a": "<textarea>",
-      "b": "<select> và <option>",
-      "c": "<input type=\"radio\">",
-      "d": "<input type=\"file\">"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 104,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Hiểu",
-    "question": "Sự khác biệt giữa type=\"radio\" và type=\"checkbox\" trong thẻ <input> là gì?",
-    "options": {
-      "a": "radio cho phép chọn nhiều giá trị, checkbox chỉ được chọn một.",
-      "b": "radio chỉ cho phép chọn một giá trị duy nhất trong nhóm, checkbox cho phép chọn một hoặc nhiều giá trị.",
-      "c": "radio dùng để nhập mật khẩu, checkbox dùng để nhập văn bản.",
-      "d": "radio tạo nút bấm, checkbox tạo danh sách thả xuống."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 105,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Hiểu",
-    "question": "Trong thẻ <input>, thuộc tính value có ý nghĩa gì đối với một nút bấm (type=\"submit\" hoặc type=\"button\")?",
-    "options": {
-      "a": "Là mã định danh của nút bấm.",
-      "b": "Là nội dung văn bản sẽ hiển thị trực tiếp trên nút bấm đó.",
-      "c": "Là địa chỉ trang web mà nút bấm trỏ tới.",
-      "d": "Là kích thước của nút bấm."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 106,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Hiểu",
-    "question": "Thẻ <textarea> khác với thẻ <input type=\"text\"> ở điểm nào?",
-    "options": {
-      "a": "<textarea> chỉ dùng để nhập số.",
-      "b": "<textarea> cho phép nhập văn bản nhiều dòng (như ghi chú, ý kiến), còn input type=\"text\" chỉ nhập được một dòng.",
-      "c": "<textarea> tự động mã hóa văn bản thành mật khẩu.",
-      "d": "<textarea> dùng để chèn hình ảnh vào biểu mẫu."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 107,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Hiểu",
-    "question": "Để tạo nút cho phép người dùng chọn tệp tin từ máy tính và tải lên máy chủ, ta sử dụng loại input nào?",
-    "options": {
-      "a": "type=\"submit\"",
-      "b": "type=\"button\"",
-      "c": "type=\"file\"",
-      "d": "type=\"hidden\""
-    },
-    "answer": "c"
-  },
-  {
-    "id": 108,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Bạn muốn tạo một ô nhập mật khẩu sao cho khi người dùng gõ, các ký tự sẽ hiển thị dưới dạng dấu chấm hoặc dấu sao. Bạn phải viết mã như thế nào?",
-    "options": {
-      "a": "<input type=\"text\">",
-      "b": "<input type=\"password\">",
-      "c": "<input type=\"hidden\">",
-      "d": "<input type=\"secret\">"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 109,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Để tạo một nút nhấn mà khi người dùng click vào, toàn bộ dữ liệu trong biểu mẫu sẽ được gửi đến máy chủ xử lý, ta sử dụng thẻ nào?",
-    "options": {
-      "a": "<input type=\"button\" value=\"Gửi\">",
-      "b": "<input type=\"submit\" value=\"Gửi\">",
-      "c": "<input type=\"reset\" value=\"Gửi\">",
-      "d": "<input type=\"file\" value=\"Gửi\">"
-    },
-    "answer": "b"
-  },
-  {
-    "id": 110,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Quan sát đoạn mã sau: <select name=\"tinh\"> <option value=\"bt\">Bến Tre</option> <option value=\"tg\">Tiền Giang</option> </select>. Nếu người dùng chọn \"Bến Tre\", giá trị nào sẽ được gửi về máy chủ?",
-    "options": {
-      "a": "Bến Tre",
-      "b": "tinh",
-      "c": "bt",
-      "d": "option"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 111,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Đoạn mã nào sau đây dùng để hiển thị dòng chữ \"Xin chào\" với kích thước tiêu đề lớn nhất?",
-    "options": {
-      "a": "<h6 style=\"font-size: big;\"> Xin chào </h6>",
-      "b": "<p> Xin chào </p>",
-      "c": "<h1> Xin chào </h1>",
-      "d": "<title> Xin chào </title>"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 112,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Kết quả hiển thị của đoạn mã <p> <b> Tin học </b> 12 </p> là gì?",
-    "options": {
-      "a": "Tin học 12 (tất cả in đậm).",
-      "b": "Tin học 12 (chữ Tin học in nghiêng).",
-      "c": "Tin học 12 (chỉ chữ Tin học in đậm).",
-      "d": "Tin học 12 (gạch chân chữ Tin học)."
-    },
-    "answer": "c"
-  },
-  {
-    "id": 113,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Để xuống dòng giữa hai câu văn trong cùng một đoạn, ta dùng thẻ nào?",
-    "options": {
-      "a": "<br>",
-      "b": "<hr>",
-      "c": "<p>",
-      "d": "<down>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 114,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Đoạn mã nào sau đây là cách viết đúng để tạo một ô nhập văn bản trong biểu mẫu?",
-    "options": {
-      "a": "<input type=\"text\">",
-      "b": "<input type=\"box\">",
-      "c": "<form type=\"text\">",
-      "d": "<text> Nhập liệu </text>"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 115,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Quan sát đoạn mã: <table border=\"1\"> <tr> <td> 1 </td> </tr> </table>. Thẻ <td> dùng để làm gì?",
-    "options": {
-      "a": "Tạo một hàng mới.",
-      "b": "Tạo một ô dữ liệu trong hàng.",
-      "c": "Tạo đường viền cho bảng.",
-      "d": "Tạo tiêu đề cho bảng."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 116,
-    "topic": "HTML Cơ bản",
-    "level": "Biết",
-    "question": "Thẻ nào sau đây dùng để chèn một đường kẻ ngang phân cách các nội dung trang web?",
-    "options": {
-      "a": "<line>",
-      "b": "<br>",
-      "c": "<hr>",
-      "d": "<border>"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 117,
-    "topic": "HTML: Liên kết",
-    "level": "Biết",
-    "question": "Để tạo một liên kết đến trang web google.com, đoạn mã nào viết đúng thuộc tính?",
-    "options": {
-      "a": "<a src=\"google.com\"> Google </a>",
-      "b": "<a link=\"google.com\"> Google </a>",
-      "c": "<a href=\"google.com\"> Google </a>",
-      "d": "<a url=\"google.com\"> Google </a>"
-    },
-    "answer": "c"
-  },
-  {
-    "id": 118,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Trong đoạn mã <img src=\"hoa.jpg\" width=\"50\">, con số \"50\" có ý nghĩa gì?",
-    "options": {
-      "a": "Hình ảnh sẽ hiển thị 50 lần.",
-      "b": "Chiều rộng của ảnh là 50 pixel.",
-      "c": "Ảnh sẽ tự động xoay 50 độ.",
-      "d": "Độ mờ của ảnh là 50%."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 119,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Hiểu",
-    "question": "Đoạn mã nào tạo ra một nút bấm có chữ \"Gửi tin\" ở trên nút?",
-    "options": {
-      "a": "<input type=\"submit\" value=\"Gửi tin\">",
-      "b": "<input type=\"text\" value=\"Gửi tin\">",
-      "c": "<button type=\"click\">",
-      "d": "<input type=\"radio\" name=\"Gửi tin\">"
-    },
-    "answer": "a"
-  },
-  {
-    "id": 120,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Kết quả hiển thị của đoạn mã <i> <u> Bài học </u> </i> là gì?",
-    "options": {
-      "a": "Chữ Bài học vừa in đậm vừa gạch chân.",
-      "b": "Chữ Bài học vừa in nghiêng vừa gạch chân.",
-      "c": "Chữ Bài học chỉ in nghiêng.",
-      "d": "Chữ Bài học bị gạch ngang giữa chữ."
-    },
-    "answer": "b"
-  },
-  {
-    "id": 121,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Thiết bị mạng nào đóng vai trò “cổng kết nối” để chuyển đổi tín hiệu từ nhà cung cấp dịch vụ Internet (ISP) vào gia đình bạn?",
+    "topic": "Biết",
+    "question": "Thiết bị mạng nào làm việc ở lớp 2 và chuyển dữ liệu dựa trên địa chỉ MAC của thiết bị nhận?",
     "options": {
       "a": "Hub.",
-      "b": "Switch.",
-      "c": "Modem.",
-      "d": "Access Point."
+      "b": "Repeater.",
+      "c": "Switch.",
+      "d": "Router."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Switch sử dụng bảng địa chỉ MAC để chuyển mạch chính xác."
   },
   {
-    "id": 122,
-    "topic": "Mạng máy tính",
-    "level": "Biết",
-    "question": "Trong bộ giao thức TCP/IP, giao thức nào chịu trách nhiệm chia nhỏ dữ liệu thành các gói tin và đảm bảo chúng tới đích an toàn, không lỗi?",
+    "topic": "Biết",
+    "question": "Router là thiết bị dùng để làm gì?",
     "options": {
-      "a": "IP.",
-      "b": "HTTP.",
-      "c": "TCP.",
-      "d": "SMTP."
+      "a": "Khuếch đại sóng Wi-Fi.",
+      "b": "Kết nối các máy tính trong một mạng LAN đơn giản.",
+      "c": "Kết nối các mạng khác nhau và định tuyến dữ liệu.",
+      "d": "Lưu trữ dữ liệu trang web."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Router định tuyến gói tin giữa các mạng khác nhau (lớp 3)."
   },
   {
-    "id": 123,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Hiểu",
-    "question": "Đặc trưng nào của AI cho phép một hệ thống như ChatGPT có thể trò chuyện và phản hồi người dùng một cách tự nhiên như người thật?",
+    "topic": "Biết",
+    "question": "Chức năng chính của Repeater là gì?",
     "options": {
-      "a": "Khả năng vận động linh hoạt.",
-      "b": "Khả năng nhận thức và xử lý ngôn ngữ tự nhiên.",
-      "c": "Khả năng tính toán số học nhanh.",
-      "d": "Khả năng lưu trữ dữ liệu tĩnh."
+      "a": "Chia sẻ dữ liệu dùng chung.",
+      "b": "Khuếch đại và làm mới tín hiệu truyền dẫn.",
+      "c": "Chuyển đổi mạng có dây thành mạng không dây.",
+      "d": "Cấp địa chỉ IP cho máy tính."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Repeater giúp khắc phục sự suy hao tín hiệu trên đường truyền dài."
   },
   {
-    "id": 124,
-    "topic": "HTML Cơ bản",
-    "level": "Hiểu",
-    "question": "Trong cấu trúc HTML, tại sao thẻ <meta charset=”UTF-8”> lại rất quan trọng đối với các trang web tiếng Việt?",
+    "topic": "Biết",
+    "question": "Thiết bị Access Point thường được dùng để làm gì?",
     "options": {
-      "a": "Để trang web có màu sắc đẹp hơn.",
-      "b": "Để trình duyệt hiểu và hiển thị đúng các ký tự có dấu (tiếng Việt), tránh lỗi font.",
-      "c": "Để tăng tốc độ tải trang web.",
-      "d": "Để bảo mật thông tin người dùng."
+      "a": "Kết nối mạng có dây thành mạng Wi-Fi.",
+      "b": "Diệt virus cho toàn hệ thống mạng.",
+      "c": "Thay thế hoàn toàn cho máy chủ Web.",
+      "d": "Tăng dung lượng lưu trữ cho máy tính."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Access Point tạo ra vùng phủ sóng Wi-Fi từ mạng dây."
   },
   {
-    "id": 125,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Bạn muốn tạo một bảng mà ô tiêu đề đầu tiên chiếm diện tích của 2 cột. Bạn sẽ sử dụng thuộc tính nào trong thẻ <th>?",
+    "topic": "Biết",
+    "question": "Dịch vụ Server nào giúp lưu trữ tập trung các tệp tin để nhiều người có thể cùng sử dụng?",
     "options": {
-      "a": "rowspan=”2”",
-      "b": "border=”2”",
-      "c": "colspan=”2”",
-      "d": "align=”center”"
+      "a": "Web Server.",
+      "b": "Database Server.",
+      "c": "File Server.",
+      "d": "Mail Server."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "File Server dùng để lưu trữ và quản lý tập tin dùng chung."
   },
   {
-    "id": 126,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Cho đoạn mã sau: <a href=”lienhe.html”> <img src=”button.png” alt=”Liên hệ”> </a>. Nếu tệp ảnh button.png bị xóa hoặc đường dẫn bị sai, người dùng sẽ thấy gì trên trang web?",
+    "topic": "Biết",
+    "question": "Nhược điểm lớn nhất của Hub so với Switch là gì?",
     "options": {
-      "a": "Không thấy gì cả, vùng đó bị trống.",
-      "b": "Thấy dòng chữ “Liên hệ” và vẫn có thể nhấn vào đó để sang trang lienhe.html.",
-      "c": "Trình duyệt báo lỗi toàn bộ trang web và không hiển thị gì.",
-      "d": "Một ô vuông màu đỏ có dấu X và không thể tương tác."
+      "a": "Giá thành đắt hơn.",
+      "b": "Khó cài đặt hơn.",
+      "c": "Gây nghẽn mạng do gửi dữ liệu tới tất cả các cổng (broadcast).",
+      "d": "Không hỗ trợ kết nối dây cáp mạng."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Hub gửi dữ liệu đi tất cả các cổng, gây xung đột và nghẽn mạng."
   },
   {
-    "id": 127,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Trong một biểu mẫu đăng ký, bạn muốn người dùng chỉ được chọn duy nhất một giới tính (Nam hoặc Nữ). Bạn phải đặt thuộc tính name cho hai thẻ <input type=”radio”> như thế nào?",
+    "topic": "Biết",
+    "question": "\"Mail Server\" là loại máy chủ chuyên trách việc gì?",
     "options": {
-      "a": "Đặt tên (name) khác nhau cho mỗi thẻ.",
-      "b": "Đặt tên (name) giống hệt nhau cho cả hai thẻ.",
-      "c": "Không cần đặt thuộc tính name.",
-      "d": "Đặt thuộc tính id giống nhau cho cả hai thẻ."
+      "a": "Lưu trữ mã nguồn website.",
+      "b": "Quản lý việc gửi và nhận thư điện tử.",
+      "c": "Chụp ảnh màn hình người dùng.",
+      "d": "Cung cấp trò chơi trực tuyến."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Mail Server đóng vai trò như một bưu điện điện tử."
   },
   {
-    "id": 128,
-    "topic": "Trí tuệ nhân tạo (AI)",
-    "level": "Vận dụng cao",
-    "question": "Một doanh nghiệp muốn triển khai hệ thống AI để tự động phân loại thư rác và trả lời khách hàng theo ngữ cảnh. Đây là sự kết hợp của những lĩnh vực/đặc trưng nào của AI?",
+    "topic": "Biết",
+    "question": "Thiết bị mạng nào thường tích hợp cả chức năng định tuyến và phát sóng Wi-Fi trong gia đình?",
     "options": {
-      "a": "Khả năng vận động và khả năng học.",
-      "b": "Khả năng nhận thức (văn bản), khả năng học và khả năng suy luận.",
-      "c": "Chỉ cần khả năng tính toán vạn năng.",
-      "d": "Khả năng cảm nhận môi trường vật lý."
+      "a": "Wireless Router.",
+      "b": "Hub cơ bản.",
+      "c": "Card mạng (NIC).",
+      "d": "Repeater."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Wireless Router là thiết bị phổ biến nhất trong các hộ gia đình."
   },
   {
-    "id": 129,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng cao",
-    "question": "Quan sát đoạn mã sau và cho biết kết quả hiển thị của danh sách: <ol start=”5” type=”I”> <li> Tin học </li> <li> Toán học </li> </ol>",
+    "topic": "Hiểu",
+    "question": "Tại sao một tổ chức cần sử dụng Database Server thay vì chỉ lưu file Excel thông thường?",
     "options": {
-      "a": "1. Tin học, 2. Toán học.",
-      "b": "E. Tin học, F. Toán học.",
-      "c": "V. Tin học, VI. Toán học.",
-      "d": "5. Tin học, 6. Toán học."
+      "a": "Vì Database Server rẻ hơn.",
+      "b": "Vì giúp quản lý dữ liệu lớn, có cấu trúc và hỗ trợ nhiều người truy cập đồng thời an toàn hơn.",
+      "c": "Vì Database Server không cần dùng đến điện.",
+      "d": "Vì nó giúp máy tính chạy nhanh hơn gấp đôi."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Database Server tối ưu cho việc truy vấn và bảo mật dữ liệu lớn."
   },
   {
-    "id": 130,
-    "topic": "Mạng máy tính",
-    "level": "Vận dụng cao",
-    "question": "Khi bạn nhấp vào một liên kết trên một trang web (HTTP), quy trình nào sau đây mô tả đúng nhất sự phối hợp của các giao thức?",
+    "topic": "Hiểu",
+    "question": "Sự khác biệt về cách thức xử lý dữ liệu giữa Hub và Switch là gì?",
     "options": {
-      "a": "IP tìm địa chỉ máy chủ -> TCP thiết lập kết nối -> HTTP gửi yêu cầu tải trang.",
-      "b": "HTTP tìm địa chỉ -> IP thiết lập kết nối -> TCP gửi dữ liệu.",
-      "c": "TCP tìm địa chỉ -> HTTP thiết lập kết nối -> IP truyền gói tin.",
-      "d": "IP gửi yêu cầu -> TCP tìm địa chỉ -> HTTP thiết lập kết nối."
+      "a": "Hub chỉ làm việc với sóng Wi-Fi, Switch làm việc với dây cáp.",
+      "b": "Hub gửi dữ liệu cho tất cả mọi người, Switch chỉ gửi cho đúng người nhận.",
+      "c": "Switch làm chậm mạng hơn Hub.",
+      "d": "Hub có thể thay thế cho Router, còn Switch thì không."
     },
-    "answer": "a"
+    "answer": "b",
+    "explanation": "Đây là sự khác biệt về độ \"thông minh\" giữa hai thiết bị kết nối."
   },
   {
-    "id": 131,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Cho đoạn code sau: <h3 align=”center”> ÔN TẬP TIN HỌC 12 </h3>. Kết quả hiển thị của đoạn code này là gì?",
+    "topic": "Hiểu",
+    "question": "Khi một gói tin đi từ mạng này sang mạng khác, tại sao phải cần đến Router?",
     "options": {
-      "a": "Tiêu đề cỡ 3, in đậm và căn lề trái.",
-      "b": "Tiêu đề cỡ 3, căn lề giữa.",
-      "c": "Đoạn văn bản bình thường, căn lề giữa.",
-      "d": "Tiêu đề cỡ nhỏ nhất, căn lề phải."
+      "a": "Để gói tin có thể được nén lại nhỏ hơn.",
+      "b": "Để Router xác định đường đi tốt nhất dựa trên địa chỉ IP.",
+      "c": "Để Router chuyển đổi tín hiệu thành âm thanh.",
+      "d": "Để lưu trữ gói tin đó vĩnh viễn."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Router tìm đường (routing) dựa trên địa chỉ IP đích."
   },
   {
-    "id": 132,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Quan sát đoạn mã: <ul> <li> Máy tính </li> <li> Máy in </li> </ul>. Kết quả hiển thị trên trình duyệt sẽ là:",
+    "topic": "Hiểu",
+    "question": "Trong tình huống nào bạn nên lắp thêm một Repeater?",
     "options": {
-      "a": "1. Máy tính 2. Máy in",
-      "b": "Máy tính – Máy in (trên cùng một dòng)",
-      "c": "Danh sách có dấu chấm đầu dòng cho “Máy tính” và “Máy in”.",
-      "d": "Một bảng gồm 2 hàng."
+      "a": "Khi muốn máy tính chạy phần mềm nhanh hơn.",
+      "b": "Khi tín hiệu mạng bị suy yếu do khoảng cách truyền dẫn quá xa.",
+      "c": "Khi muốn ngăn chặn hacker tấn công.",
+      "d": "Khi muốn đổi tên mạng Wi-Fi."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Repeater được dùng để mở rộng khoảng cách kết nối vật lý."
   },
   {
-    "id": 133,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Để chèn ảnh logo.jpg nằm trong thư mục images, đoạn code nào sau đây là đúng?",
+    "topic": "Hiểu",
+    "question": "Việc tích hợp Access Point vào hệ thống mạng có dây mang lại lợi ích gì?",
     "options": {
-      "a": "<img src=”logo.jpg”>",
-      "b": "<img src=”images/logo.jpg”>",
-      "c": "<img link=”images/logo.jpg”>",
-      "d": "<a href=”images/logo.jpg”>"
+      "a": "Giảm chi phí tiền điện hàng tháng.",
+      "b": "Cho phép các thiết bị di động (smartphone, laptop) kết nối linh hoạt không cần dây.",
+      "c": "Giúp máy tính có thể in ấn mà không cần máy in.",
+      "d": "Tự động sửa lỗi phần cứng cho máy tính."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Giúp mạng trở nên linh động và tiện dụng cho thiết bị di động."
   },
   {
-    "id": 134,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Cho đoạn code tạo bảng: <table border=”1”> <tr> <th> STT </th> <th> Tên </th> </tr> </table>. Thẻ <th> trong đoạn mã trên sẽ làm cho chữ “STT” và “Tên” hiển thị như thế nào?",
+    "topic": "Vận dụng",
+    "question": "Một quán cà phê có 2 tầng, Router đặt ở tầng 1 nhưng khách ở tầng 2 không bắt được sóng. Thiết bị nào là giải pháp phù hợp nhất?",
     "options": {
-      "a": "Chữ bình thường, căn trái.",
-      "b": "Chữ in nghiêng, màu đỏ.",
-      "c": "Chữ in đậm và căn giữa ô.",
-      "d": "Chữ gạch chân."
+      "a": "Lắp thêm một Hub ở tầng 2.",
+      "b": "Lắp thêm một Repeater hoặc Access Point ở tầng 2.",
+      "c": "Mua thêm một Web Server.",
+      "d": "Thay đổi toàn bộ máy tính của khách hàng."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Giúp chuyển tiếp hoặc mở rộng vùng phủ sóng lên tầng cao."
   },
   {
-    "id": 135,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Đoạn mã nào sau đây tạo một liên kết hình ảnh (click vào ảnh để chuyển trang)?",
+    "topic": "Vận dụng",
+    "question": "Doanh nghiệp của bạn muốn xây dựng một hệ thống bán hàng trực tuyến cho hàng triệu người truy cập mỗi ngày. Bạn cần chú trọng đầu tư vào loại thiết bị nào?",
     "options": {
-      "a": "<img src=”home.png”> <a href=”index.html”></a>",
-      "b": "<a href=”index.html”> <img src=”home.png”> </a>",
-      "c": "<a src=”home.png”> index.html </a>",
-      "d": "<img href=”index.html” src=”home.png”>"
+      "a": "Hub công suất lớn.",
+      "b": "Hệ thống Web Server và Database Server mạnh mẽ.",
+      "c": "Thật nhiều Repeater quanh văn phòng.",
+      "d": "Chỉ cần một chiếc Router gia đình là đủ."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Đây là hai thành phần cốt lõi để vận hành một website thương mại điện tử."
   },
   {
-    "id": 136,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Trong biểu mẫu (Form), đoạn mã nào tạo ra ô nhập dữ liệu mà các ký tự bị ẩn đi?",
+    "topic": "Vận dụng",
+    "question": "Khi cắm dây mạng từ máy tính vào một thiết bị, bạn thấy máy tính khác trong phòng cũng nhận được gói tin rác đó gây chậm mạng. Thiết bị đó khả năng cao là?",
     "options": {
-      "a": "<input type=\"text\">",
-      "b": "<input type=\"hidden\">",
-      "c": "<input type=\"password\">",
-      "d": "<input type=\"checkbox\">"
+      "a": "Switch.",
+      "b": "Router.",
+      "c": "Hub.",
+      "d": "Server."
     },
-    "answer": "c"
+    "answer": "c",
+    "explanation": "Hiện tượng này gọi là xung đột (collision) do cơ chế hoạt động của Hub."
   },
   {
-    "id": 137,
-    "topic": "HTML: Liên kết",
-    "level": "Hiểu",
-    "question": "Cho đoạn code: <a href=https://google.com target=”_blank”> Tìm kiếm </a>. Khi người dùng nhấp vào chữ “Tìm kiếm”, điều gì sẽ xảy ra?",
+    "topic": "Vận dụng",
+    "question": "Để kết nối mạng LAN của trường học với mạng Internet toàn cầu, thiết bị bắt buộc phải có là?",
     "options": {
-      "a": "Trang Google mở đè lên trang hiện tại.",
-      "b": "Trang Google mở trong một thẻ (tab) mới hoặc cửa sổ mới.",
-      "c": "Trình duyệt sẽ tải trang Google về máy.",
-      "d": "Không có chuyện gì xảy ra."
+      "a": "Repeater.",
+      "b": "Router.",
+      "c": "Access Point.",
+      "d": "File Server."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Router là \"cửa ngõ\" nối mạng nội bộ với mạng công cộng."
   },
   {
-    "id": 138,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Biết",
-    "question": "Đoạn mã <textarea rows=”4” cols=”50”> Ý kiến của bạn... </textarea> dùng để làm gì?",
+    "topic": "Vận dụng",
+    "question": "Bạn đang ngồi ở phòng khách và muốn gửi một file tài liệu lên máy chủ của công ty. Quy trình truyền dữ liệu qua các thiết bị mạng nào là hợp lý?",
     "options": {
-      "a": "Tạo một ô nhập văn bản ngắn (1 dòng).",
-      "b": "Tạo một khung nhập văn bản lớn, nhiều dòng.",
-      "c": "Tạo một danh sách lựa chọn.",
-      "d": "Chèn một đoạn video vào trang web."
+      "a": "Laptop -> Wi-Fi Access Point -> Switch -> Router -> Internet -> Server công ty.",
+      "b": "Laptop -> Repeater -> Hub -> Laptop khác.",
+      "c": "Laptop -> Web Server -> Mail Server.",
+      "d": "Laptop -> Router -> Repeater -> Hub."
     },
-    "answer": "b"
+    "answer": "a",
+    "explanation": "Đây là sơ đồ truyền tin điển hình từ thiết bị đầu cuối ra internet."
   },
   {
-    "id": 139,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Vận dụng",
-    "question": "Để chèn video clip.mp4 có các nút tạm dừng và âm lượng, đoạn code nào đúng?",
+    "topic": "Biết",
+    "question": "Loại đường truyền nào sau đây sử dụng xung ánh sáng để truyền dữ liệu?",
     "options": {
-      "a": "<video src=”clip.mp4”></video>",
-      "b": "<video src=”clip.mp4” controls></video>",
-      "c": "<video src=”clip.mp4” autoplay></video>",
-      "d": "<source src=”clip.mp4” type=”video/mp4”>"
+      "a": "Cáp xoắn đôi.",
+      "b": "Cáp quang.",
+      "c": "Bluetooth.",
+      "d": "Wi-Fi."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Cáp quang truyền dữ liệu bằng tín hiệu ánh sáng (photon) qua các sợi thủy tinh hoặc nhựa."
   },
   {
-    "id": 140,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Quan sát cấu trúc bảng sau: <tr> <td> 1 </td> <td> Lan </td> </tr> <tr> <td> 2 </td> <td> Mai </td> </tr>. Bảng này có bao nhiêu hàng và bao nhiêu cột?",
+    "topic": "Biết",
+    "question": "Đặc điểm chính của cáp xoắn đôi là gì?",
     "options": {
-      "a": "1 hàng, 4 cột.",
-      "b": "4 hàng, 1 cột.",
-      "c": "2 hàng, 2 cột.",
-      "d": "2 hàng, 4 cột."
+      "a": "Truyền dữ liệu bằng sóng radio.",
+      "b": "Các cặp dây đồng xoắn lại để giảm nhiễu.",
+      "c": "Làm từ sợi thủy tinh.",
+      "d": "Chỉ dùng cho mạng vệ tinh."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Việc xoắn các cặp dây giúp triệt tiêu nhiễu điện từ giữa các cặp dây và từ môi trường bên ngoài."
   },
   {
-    "id": 141,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Biết",
-    "question": "Cho đoạn mã sau: <h3> <i> Chào mừng bạn! </i> </h3>. Trình duyệt sẽ hiển thị dòng chữ này như thế nào?",
+    "topic": "Biết",
+    "question": "Công nghệ nào sau đây là kết nối không dây tầm ngắn?",
     "options": {
-      "a": "Tiêu đề cỡ 3, in đậm.",
-      "b": "Tiêu đề cỡ 3, in nghiêng.",
-      "c": "Văn bản bình thường, in nghiêng.",
-      "d": "Tiêu đề cỡ 3, gạch chân."
+      "a": "Cáp quang.",
+      "b": "GSM.",
+      "c": "Bluetooth.",
+      "d": "Vệ tinh."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Bluetooth là chuẩn kết nối cá nhân tầm ngắn (PAN - Personal Area Network)."
   },
   {
-    "id": 142,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Biết",
-    "question": "Để tạo một danh sách hoa quả gồm: Táo, Chuối, Cam theo thứ tự số 1, 2, 3, đoạn mã nào là đúng?",
+    "topic": "Biết",
+    "question": "Mạng vệ tinh có ưu điểm nổi bật nhất là gì?",
     "options": {
-      "a": "<ul> <li>Táo</li> <li>Chuối</li> <li>Cam</li> </ul>",
-      "b": "<ol> <li>Táo</li> <li>Chuối</li> <li>Cam</li> </ol>",
-      "c": "<list> <li>Táo</li> <li>Chuối</li> <li>Cam</li> </list>",
-      "d": "<table tr=”3”> <td>Táo</td> <td>Chuối</td> <td>Cam</td> </table>"
+      "a": "Giá thành rẻ nhất.",
+      "b": "Tốc độ cao hơn cáp quang.",
+      "c": "Khả năng phủ sóng toàn cầu.",
+      "d": "Không bị trễ tín hiệu."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Vệ tinh có thể phủ sóng tới những nơi có địa hình hiểm trở mà dây dẫn hoặc trạm BTS không tới được."
   },
   {
-    "id": 143,
-    "topic": "HTML: Định dạng và Danh sách",
-    "level": "Hiểu",
-    "question": "Quan sát đoạn mã chèn ảnh: <img src=”images/logo.png” alt=”Logo trường” width=”100”>. Nếu ảnh logo.png hiển thị bình thường, chiều rộng của nó trên trang web là bao nhiêu?",
+    "topic": "Biết",
+    "question": "Hệ thống GSM chủ yếu phục vụ cho loại hình kết nối nào?",
     "options": {
-      "a": "Tự động theo kích thước gốc.",
-      "b": "100 pixel.",
-      "c": "100 % chiều rộng màn hình.",
-      "d": "Không hiển thị vì thiếu thuộc tính height."
+      "a": "Mạng cục bộ có dây.",
+      "b": "Mạng thông tin di động.",
+      "c": "Kết nối chuột không dây.",
+      "d": "Truyền hình cáp."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "GSM là nền tảng cho mạng di động (các thế hệ 2G, 3G, 4G...)."
   },
   {
-    "id": 144,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Hiểu",
-    "question": "Cho đoạn mã tạo bảng: <table border=”1”> <tr> <td> A </td> <td> B </td> </tr> <tr> <td> C </td> <td> D </td> </tr> </table>. Giá trị nằm ở hàng thứ 2, cột thứ 1 là gì?",
+    "topic": "Biết",
+    "question": "Thiết bị nào sau đây thường phát sóng Wi-Fi trong gia đình?",
     "options": {
-      "a": "A",
-      "b": "B",
-      "c": "C",
-      "d": "D"
+      "a": "Switch có dây.",
+      "b": "Bộ định tuyến không dây (Wireless Router).",
+      "c": "Cáp xoắn đôi.",
+      "d": "Tai nghe Bluetooth."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Wireless Router nhận tín hiệu Internet có dây và chuyển đổi thành sóng không dây (Wi-Fi)."
   },
   {
-    "id": 145,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng",
-    "question": "Đoạn mã nào sau đây tạo một liên kết mà khi bấm vào sẽ tự động soạn thư gửi đến địa chỉ admin@gmail.com?",
+    "topic": "Biết",
+    "question": "Đâu là ví dụ về đường truyền có dây?",
     "options": {
-      "a": "<a href=admin@gmail.com> Gửi thư </a>",
-      "b": "<a src=mailto:admin@gmail.com> Gửi thư </a>",
-      "c": "<a href=mailto:admin@gmail.com> Gửi thư </a>",
-      "d": "<link href=admin@gmail.com> Gửi thư </link>"
+      "a": "Sóng vô tuyến.",
+      "b": "Cáp quang.",
+      "c": "Hồng ngoại.",
+      "d": "Sóng cực ngắn."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "Cáp quang là phương tiện truyền dẫn hữu tuyến (có dây)."
   },
   {
-    "id": 146,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Trong biểu mẫu, đoạn mã nào sau đây cho phép người dùng chọn nhiều sở thích cùng một lúc?",
+    "topic": "Biết",
+    "question": "Phạm vi hoạt động hiệu quả của Bluetooth thường là bao nhiêu?",
     "options": {
-      "a": "<input type=”radio” name=”hobby”>",
-      "b": "<input type=\"checkbox\" name=\"hobby\">",
-      "c": "<input type=\"text\" name=\"hobby\">",
-      "d": "<select name=\"hobby\">"
+      "a": "Hàng trăm km.",
+      "b": "Toàn thế giới.",
+      "c": "Trong phạm vi vài mét đến vài chục mét.",
+      "d": "Không giới hạn."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "Bluetooth được thiết kế cho kết nối các thiết bị ngoại vi trong khoảng cách gần."
   },
   {
-    "id": 147,
-    "topic": "HTML: Đa phương tiện",
-    "level": "Vận dụng",
-    "question": "Cho đoạn mã nhúng nội dung: <iframe src=”video.html” width=”500” height=”300”> </iframe>. Nếu tệp video.html có kích thước thực tế là 1000x800 pixel, thì khi hiển thị qua iframe trên, kích thước vùng nhìn thấy sẽ là bao nhiêu?",
+    "topic": "Biết",
+    "question": "Loại cáp nào thường dùng đầu kết nối RJ45?",
     "options": {
-      "a": "1000x800 pixel.",
-      "b": "Tự động co giãn vừa vặn 500x300 pixel.",
-      "c": "500x300 pixel (người dùng phải cuộn để xem hết nội dung nếu cần).",
-      "d": "Trình duyệt báo lỗi vì kích thước không khớp."
+      "a": "Cáp quang.",
+      "b": "Cáp xoắn đôi.",
+      "c": "Cáp đồng trục.",
+      "d": "Dây điện thoại."
     },
-    "answer": "c"
+    "answer": "b",
+    "explanation": "RJ45 là đầu bấm tiêu chuẩn cho cáp xoắn đôi dùng trong mạng LAN."
   },
   {
-    "id": 148,
-    "topic": "HTML: Biểu mẫu",
-    "level": "Vận dụng",
-    "question": "Quan sát đoạn mã biểu mẫu: <form action=”process.php” method=”post”>... Khi người dùng nhấn nút “Đăng nhập”, dữ liệu sẽ được gửi về đâu?",
+    "topic": "Biết",
+    "question": "Mạng 5G là sự phát triển của công nghệ nào?",
     "options": {
-      "a": "Trang web hiện tại.",
-      "b": "Tệp tin có tên process.php.",
-      "c": "Địa chỉ email của người quản trị.",
-      "d": "Cơ sở dữ liệu của trình duyệt."
+      "a": "Wi-Fi 6.",
+      "b": "Bluetooth 5.0.",
+      "c": "Mạng di động GSM.",
+      "d": "Mạng vệ tinh."
     },
-    "answer": "b"
+    "answer": "c",
+    "explanation": "5G là thế hệ thứ 5 của mạng thông tin di động toàn cầu."
   },
   {
-    "id": 149,
-    "topic": "HTML: Bảng và Danh sách",
-    "level": "Vận dụng",
-    "question": "Để tạo một ô trong bảng chiếm diện tích của 2 hàng liên tiếp, bạn sử dụng thuộc tính nào?",
+    "topic": "Hiểu",
+    "question": "Tại sao cáp quang được ưu tiên sử dụng cho các đường truyền Internet xuyên đại dương?",
     "options": {
-      "a": "<td colspan=”2”>",
-      "b": "<td rowspan=”2”>",
-      "c": "<td headers=”2”>",
-      "d": "<td scope=”2”>"
+      "a": "Vì nó nhẹ và dễ nổi trên mặt nước.",
+      "b": "Vì băng thông rất lớn và ít bị suy hao tín hiệu trên khoảng cách xa.",
+      "c": "Vì cáp quang rẻ hơn cáp đồng rất nhiều.",
+      "d": "Vì nó không cần trạm lặp tín hiệu."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Cáp quang có suy hao cực thấp, cho phép truyền dữ liệu tốc độ cao đi hàng nghìn km."
   },
   {
-    "id": 150,
-    "topic": "HTML: Liên kết",
-    "level": "Vận dụng cao",
-    "question": "Cho đoạn mã phức tạp sau: <a href=https://zalo.me> <table border=”1”> <tr> <td> <img src=”zalo.png”> </td> </tr> </table> </a>. Cấu trúc này có ý nghĩa gì?",
+    "topic": "Hiểu",
+    "question": "Sự khác biệt cơ bản giữa Wi-Fi và Bluetooth là gì?",
     "options": {
-      "a": "Tạo một bảng chứa ảnh Zalo nhưng không thể nhấn vào.",
-      "b": "Tạo một liên kết đến Zalo, trong đó vùng nhấn (click) chính là toàn bộ cái bảng chứa ảnh Zalo.",
-      "c": "Lỗi mã nguồn vì không được đặt thẻ <table> bên trong thẻ <a>.",
-      "d": "Tạo một ảnh Zalo có đường viền dày bằng 1."
+      "a": "Wi-Fi dùng sóng radio, Bluetooth dùng ánh sáng.",
+      "b": "Wi-Fi có tốc độ và phạm vi hoạt động lớn hơn Bluetooth.",
+      "c": "Wi-Fi chỉ dùng cho điện thoại, Bluetooth chỉ dùng cho loa.",
+      "d": "Bluetooth bảo mật hơn Wi-Fi."
     },
-    "answer": "b"
+    "answer": "b",
+    "explanation": "Wi-Fi dùng cho mạng quy mô gia đình/văn phòng, trong khi Bluetooth dùng cho kết nối cá nhân phạm vi hẹp."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Tại sao trong các văn phòng cố định, người ta vẫn ưu tiên dùng cáp xoắn đôi thay vì Wi-Fi cho các máy tính để bàn?",
+    "options": {
+      "a": "Để tiết kiệm chi phí mua bộ phát.",
+      "b": "Vì kết nối có dây ổn định và bảo mật tốt hơn.",
+      "c": "Vì Wi-Fi không thể kết nối được với máy tính để bàn.",
+      "d": "Vì cáp xoắn đôi có tốc độ cao hơn cáp quang."
+    },
+    "answer": "b",
+    "explanation": "Đường truyền có dây không bị ảnh hưởng bởi vật cản và khó bị xâm nhập từ xa hơn Wi-Fi."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Hạn chế lớn nhất của mạng vệ tinh khi sử dụng để chơi game trực tuyến là gì?",
+    "options": {
+      "a": "Không có đủ băng thông.",
+      "b": "Độ trễ (latency) cao do quãng đường truyền tín hiệu rất xa.",
+      "c": "Dễ bị đứt dây cáp.",
+      "d": "Chỉ hoạt động được vào ban ngày."
+    },
+    "answer": "b",
+    "explanation": "Tín hiệu phải đi từ đất liền lên vệ tinh (cách ~36.000km) và ngược lại nên gây ra độ trễ lớn."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Khi bạn đi tàu cao tốc và vẫn giữ được kết nối Internet liên tục, đó là nhờ đặc tính nào của mạng GSM?",
+    "options": {
+      "a": "Khả năng xuyên thấu vật cản của sóng Wi-Fi.",
+      "b": "Hệ thống các trạm thu phát sóng (BTS) phủ khắp và khả năng chuyển vùng.",
+      "c": "Dây cáp quang được kéo theo dọc đường ray.",
+      "d": "Sóng Bluetooth công suất lớn."
+    },
+    "answer": "b",
+    "explanation": "Thiết bị di động tự động chuyển đổi kết nối giữa các cột sóng (BTS) khi bạn di chuyển."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Một quán cà phê có 3 tầng, nhiều phòng vách kính. Phương án nào tối ưu để khách hàng có mạng ổn định ở mọi vị trí?",
+    "options": {
+      "a": "Lắp 1 bộ phát Wi-Fi mạnh ở tầng 1.",
+      "b": "Dùng mạng vệ tinh.",
+      "c": "Lắp đặt hệ thống Wi-Fi Mesh (nhiều bộ phát kết nối nhau).",
+      "d": "Yêu cầu khách dùng Bluetooth."
+    },
+    "answer": "c",
+    "explanation": "Hệ thống Mesh giúp loại bỏ \"điểm chết\" sóng trong nhà nhiều tầng hoặc có nhiều vách ngăn."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Nếu cần truyền một tệp tin lớn giữa hai máy tính trong cùng một phòng mà không có Internet, cách nào nhanh nhất?",
+    "options": {
+      "a": "Gửi qua Bluetooth.",
+      "b": "Dùng cáp xoắn đôi kết nối trực tiếp hoặc qua Switch.",
+      "c": "Phát Hotspot từ điện thoại.",
+      "d": "Chờ mạng vệ tinh."
+    },
+    "answer": "b",
+    "explanation": "Kết nối có dây (như LAN Gigabit) có tốc độ thực tế cao hơn hẳn Wi-Fi hay Bluetooth."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Bạn đang ở trên một hòn đảo hoang sơ không có trạm phát sóng di động, công nghệ nào giúp bạn liên lạc cứu hộ?",
+    "options": {
+      "a": "Wi-Fi.",
+      "b": "Bluetooth.",
+      "c": "Điện thoại vệ tinh.",
+      "d": "Cáp quang."
+    },
+    "answer": "c",
+    "explanation": "Điện thoại vệ tinh kết nối trực tiếp với vệ tinh, không cần trạm BTS mặt đất."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Hiện tượng \"nhiễu Wi-Fi\" thường xảy ra khi nào?",
+    "options": {
+      "a": "Khi có quá nhiều bộ phát Wi-Fi ở gần nhau sử dụng cùng tần số.",
+      "b": "Khi trời mưa to làm ướt dây cáp.",
+      "c": "Khi điện thoại hết pin.",
+      "d": "Khi sử dụng cáp quang quá dài."
+    },
+    "answer": "a",
+    "explanation": "Sự chồng lấn tần số (đặc biệt băng tần 2.4GHz) gây nhiễu và làm giảm tốc độ mạng."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Tại sao các bệnh viện lớn thường dùng cáp quang để truyền hình ảnh chẩn đoán từ phòng chụp X-quang sang phòng bác sĩ?",
+    "options": {
+      "a": "Để trang trí cho đẹp.",
+      "b": "Vì hình ảnh y tế có dung lượng lớn, cần băng thông rộng của cáp quang để truyền tải tức thời.",
+      "c": "Vì cáp quang không dẫn điện, an toàn cho thiết bị y tế.",
+      "d": "Cả B và C đều đúng."
+    },
+    "answer": "d",
+    "explanation": "Cáp quang đáp ứng tốt cả về tốc độ truyền tải hình ảnh dung lượng cao và tính an toàn điện từ."
+  },
+  {
+    "topic": "Biết",
+    "question": "Quy trình thiết kế mạng cơ bản gồm bao nhiêu bước?",
+    "options": {
+      "a": "2 bước.",
+      "b": "3 bước.",
+      "c": "4 bước.",
+      "d": "5 bước."
+    },
+    "answer": "c",
+    "explanation": "Quy trình chuẩn gồm 4 bước: Khảo sát hiện trạng, Thiết kế logic, Thiết kế vật lý và Chọn hệ điều hành mạng."
+  },
+  {
+    "topic": "Biết",
+    "question": "Bước đầu tiên trong quy trình thiết kế mạng là gì?",
+    "options": {
+      "a": "Thiết kế vật lý.",
+      "b": "Thiết kế logic.",
+      "c": "Chọn hệ điều hành mạng.",
+      "d": "Khảo sát hiện trạng và phân tích nhu cầu."
+    },
+    "answer": "d",
+    "explanation": "Trước khi thiết kế, kỹ sư phải hiểu rõ môi trường triển khai và yêu cầu của người dùng để tránh sai sót về sau."
+  },
+  {
+    "topic": "Biết",
+    "question": "Việc xác định số lượng máy tính và vị trí lắp đặt thuộc bước nào?",
+    "options": {
+      "a": "Bước 1.",
+      "b": "Bước 2.",
+      "c": "Bước 3.",
+      "d": "Bước 4."
+    },
+    "answer": "a",
+    "explanation": "Đây là một phần của hoạt động khảo sát hiện trạng nhằm tìm hiểu thực tế nơi triển khai hệ thống mạng."
+  },
+  {
+    "topic": "Biết",
+    "question": "Việc lựa chọn sơ đồ hình học (Topology) cho mạng thuộc bước nào?",
+    "options": {
+      "a": "Bước 1.",
+      "b": "Bước 2 (Thiết kế logic).",
+      "c": "Bước 3.",
+      "d": "Bước 4."
+    },
+    "answer": "b",
+    "explanation": "Topology là cấu trúc hình học trừu tượng, mô tả cách các thiết bị kết nối về mặt lý thuyết, nên thuộc bước thiết kế logic."
+  },
+  {
+    "topic": "Biết",
+    "question": "Việc lựa chọn loại cáp cụ thể (ví dụ cáp Cat6) để đi dây thuộc bước nào?",
+    "options": {
+      "a": "Thiết kế logic.",
+      "b": "Thiết kế vật lý.",
+      "c": "Khảo sát nhu cầu.",
+      "d": "Chọn hệ điều hành."
+    },
+    "answer": "b",
+    "explanation": "Thiết kế vật lý tập trung vào các thiết bị hữu hình như loại cáp, sơ đồ đi dây và vị trí đặt tủ mạng."
+  },
+  {
+    "topic": "Biết",
+    "question": "Đâu là một ví dụ về hệ điều hành mạng?",
+    "options": {
+      "a": "Microsoft Word.",
+      "b": "Windows Server.",
+      "c": "Google Chrome.",
+      "d": "Photoshop."
+    },
+    "answer": "b",
+    "explanation": "Windows Server là hệ điều hành chuyên dụng cung cấp các dịch vụ quản lý và vận hành cho máy chủ mạng."
+  },
+  {
+    "topic": "Biết",
+    "question": "Trong thiết kế mạng, \"Topology\" dùng để chỉ điều gì?",
+    "options": {
+      "a": "Tốc độ mạng.",
+      "b": "Sơ đồ hình học kết nối các thiết bị.",
+      "c": "Giá tiền thiết bị.",
+      "d": "Tên người quản trị."
+    },
+    "answer": "b",
+    "explanation": "Topology định nghĩa cách sắp xếp và kết nối các thành phần trong mạng (như hình sao, hình vòng, tuyến tính)."
+  },
+  {
+    "topic": "Biết",
+    "question": "Mục đích chính của việc khảo sát hiện trạng là gì?",
+    "options": {
+      "a": "Để mua thiết bị rẻ nhất.",
+      "b": "Để hiểu rõ môi trường triển khai và yêu cầu người dùng.",
+      "c": "Để cài đặt phần mềm.",
+      "d": "Để vẽ sơ đồ IP."
+    },
+    "answer": "b",
+    "explanation": "Khảo sát kỹ giúp thiết kế bám sát thực tế, đáp ứng đúng nhu cầu và tránh lãng phí ngân sách."
+  },
+  {
+    "topic": "Biết",
+    "question": "Bước nào xác định các chính sách bảo mật và phân chia mạng con (VLAN)?",
+    "options": {
+      "a": "Bước 1.",
+      "b": "Bước 2.",
+      "c": "Bước 3.",
+      "d": "Bước 4."
+    },
+    "answer": "b",
+    "explanation": "Việc phân chia VLAN và thiết lập bảo mật thuộc về quy tắc vận hành hệ thống, nằm trong tầng thiết kế logic."
+  },
+  {
+    "topic": "Biết",
+    "question": "Thiết kế vật lý tập trung vào yếu tố nào sau đây?",
+    "options": {
+      "a": "Thuật toán định tuyến.",
+      "b": "Hạ tầng thiết bị và sơ đồ đi dây thực tế.",
+      "c": "Phân quyền người dùng.",
+      "d": "Phân tích tâm lý người dùng."
+    },
+    "answer": "b",
+    "explanation": "Thiết kế vật lý giải quyết các vấn đề hữu hình: thiết bị cụ thể là gì, đi dây qua các phòng ban như thế nào."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Tại sao bước Thiết kế logic nên thực hiện trước Thiết kế vật lý?",
+    "options": {
+      "a": "Vì thiết bị luôn có sẵn.",
+      "b": "Để có khung cấu trúc tổng thể trước khi chọn mua thiết bị cụ thể giúp tránh lãng phí.",
+      "c": "Vì thiết kế logic dễ vẽ hơn.",
+      "d": "Không nhất thiết phải thực hiện theo thứ tự."
+    },
+    "answer": "b",
+    "explanation": "Thiết kế logic là bản vẽ \"kiến trúc\", thiết kế vật lý là chọn \"vật liệu\". Có bản vẽ trước mới chọn đúng vật liệu cần thiết."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Sự khác biệt lớn nhất giữa Thiết kế logic và Thiết kế vật lý là gì?",
+    "options": {
+      "a": "Logic là thực tế, vật lý là lý thuyết.",
+      "b": "Logic tập trung vào cấu trúc và quy tắc; Vật lý tập trung vào thiết bị cụ thể và hạ tầng.",
+      "c": "Chỉ có thiết kế vật lý mới cần vẽ sơ đồ.",
+      "d": "Thiết kế logic chỉ dành cho mạng lớn."
+    },
+    "answer": "b",
+    "explanation": "Logic mô tả \"mạng hoạt động thế nào\", Vật lý mô tả \"mạng được lắp đặt bằng cái gì và ở đâu\"."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Nếu không khảo sát hiện trạng kỹ (Bước 1), hệ thống mạng dễ gặp vấn đề gì?",
+    "options": {
+      "a": "Thiếu thiết bị hoặc thiết bị không đáp ứng đủ nhu cầu thực tế.",
+      "b": "Máy tính không lên nguồn.",
+      "c": "Không cài được Windows.",
+      "d": "Người dùng không biết sử dụng chuột."
+    },
+    "answer": "a",
+    "explanation": "Thiếu dữ liệu thực tế dẫn đến việc mua sắm sai quy mô, gây lãng phí hoặc không đủ năng lực xử lý."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Việc chọn hệ điều hành mạng (Bước 4) phụ thuộc chủ yếu vào yếu tố nào?",
+    "options": {
+      "a": "Màu sắc của máy chủ.",
+      "b": "Các dịch vụ mạng cần cung cấp và trình độ của quản trị viên.",
+      "c": "Chiều dài dây cáp.",
+      "d": "Sơ đồ hình sao hay hình vòng."
+    },
+    "answer": "b",
+    "explanation": "Hệ điều hành phải hỗ trợ được các ứng dụng doanh nghiệp cần và phù hợp với năng lực vận hành của nhân sự kỹ thuật."
+  },
+  {
+    "topic": "Hiểu",
+    "question": "Tại sao sơ đồ địa chỉ IP lại thuộc về thiết kế logic?",
+    "options": {
+      "a": "Vì IP là địa chỉ ảo, không thể cầm nắm hay nhìn thấy trên phần cứng.",
+      "b": "Vì địa chỉ IP rất đắt tiền.",
+      "c": "Vì chỉ có máy tính mới hiểu được IP.",
+      "d": "Vì IP thuộc về nhà mạng cung cấp."
+    },
+    "answer": "a",
+    "explanation": "Địa chỉ IP là các thông số cài đặt phần mềm, không gắn cố định vào phần cứng nên thuộc phạm vi logic."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Một công ty yêu cầu mạng phải hoạt động liên tục ngay cả khi một đoạn dây bị đứt. Khi thiết kế logic, kỹ sư nên chọn Topology nào?",
+    "options": {
+      "a": "Hình sao (Star).",
+      "b": "Hình tuyến tính (Bus).",
+      "c": "Hình vòng (Ring) hoặc dạng lưới (Mesh).",
+      "d": "Không có Topology nào đáp ứng."
+    },
+    "answer": "c",
+    "explanation": "Các sơ đồ như Mesh (lưới) cung cấp nhiều đường truyền dự phòng, giúp hệ thống không bị gián đoạn khi có sự cố tại một điểm."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Khi lập bảng dự toán kinh phí để mua Router và Switch, bạn đang thực hiện công việc của bước nào?",
+    "options": {
+      "a": "Bước 1.",
+      "b": "Bước 2.",
+      "c": "Bước 3 (Thiết kế vật lý).",
+      "d": "Bước 4."
+    },
+    "answer": "c",
+    "explanation": "Việc chọn model thiết bị cụ thể và tính toán chi phí mua sắm là nội dung trọng tâm của thiết kế vật lý."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Bạn được giao thiết kế mạng cho một quán Game 100 máy. Việc bạn quyết định dùng cáp quang để nối giữa các Switch tầng thay vì dùng cáp đồng thể hiện bước nào?",
+    "options": {
+      "a": "Thiết kế vật lý.",
+      "b": "Chọn hệ điều hành.",
+      "c": "Phân tích nhu cầu.",
+      "d": "Thiết kế logic."
+    },
+    "answer": "a",
+    "explanation": "Quyết định về vật liệu truyền dẫn (cáp quang hay cáp đồng) là triển khai hạ tầng thực tế, thuộc thiết kế vật lý."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Trong bước chọn hệ điều hành, nếu doanh nghiệp ưu tiên tính miễn phí và khả năng tùy biến cao, họ nên chọn:",
+    "options": {
+      "a": "Windows Server 2022.",
+      "b": "Linux (ví dụ Ubuntu Server).",
+      "c": "Windows 11 Home.",
+      "d": "macOS."
+    },
+    "answer": "b",
+    "explanation": "Linux là hệ điều hành mã nguồn mở, không tốn phí bản quyền và cho phép can thiệp sâu vào hệ thống để tùy biến."
+  },
+  {
+    "topic": "Vận dụng",
+    "question": "Kỹ sư vẽ một sơ đồ mô tả cách các máy tính trao đổi dữ liệu với nhau qua các Router mà không ghi tên nhãn hiệu thiết bị. Bản vẽ này là:",
+    "options": {
+      "a": "Sơ đồ khảo sát.",
+      "b": "Sơ đồ vật lý.",
+      "c": "Sơ đồ logic.",
+      "d": "Sơ đồ hệ điều hành."
+    },
+    "answer": "c",
+    "explanation": "Sơ đồ chỉ tập trung vào luồng dữ liệu và cấu trúc kết nối mà bỏ qua chi tiết nhãn hiệu phần cứng thì đó là sơ đồ logic."
   }
 ]
