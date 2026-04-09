@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Trắc Nghiệm Pro</title>
+    <title>Ôn Tập Tin Học 12</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="update-toast" class="toast-hidden">
         <div class="toast-content">
             <span class="toast-icon">🚀</span>
             <div class="toast-text">
                 <strong>Cập nhật mới!</strong>
-                <p>Đã sửa lỗi hiển thị và tối ưu tốc độ tải.</p>
-                <div class="toast-options">
-                    <label>
-                        <input type="checkbox" id="hide-today-check"> 
-                        <span>Không hiện lại trong hôm nay</span>
-                    </label>
-                </div>
+                <p>Trắc nghiệm & Đúng/sai<br>Nguồn: TIN 12_ONTAP CKII</p>
             </div>
             <button id="close-toast" onclick="closeToast()">×</button>
         </div>
     </div>
 
-    <button id="theme-toggle"></button>
+    <button id="theme-toggle" title="Đổi giao diện"></button>
 
     <div class="app-container">
+        
         <div id="loading-screen" class="screen active">
             <div class="welcome-card">
-                <h1 class="app-title">Trắc Nghiệm Pro</h1>
-                <p id="status-text">Đang kết nối...</p>
+                <h1 class="app-title">Trắc Nghiệm</h1>
+                <p id="status-text">Đang kết nối dữ liệu...</p>
+                
                 <div id="setup-options" class="hidden">
                     <div class="toggle-wrapper">
                         <label class="toggle-switch">
@@ -40,12 +37,21 @@
                         </label>
                         <span class="label-text">Trộn câu hỏi</span>
                     </div>
+
                     <div class="mode-buttons">
                         <button class="btn-start btn-primary" id="btn-tracnghiem">Trắc nghiệm</button>
                         <button class="btn-start btn-secondary" id="btn-dungsai">Đúng / Sai</button>
+                        
                         <div class="qr-container">
-                            <p>Ủng hộ tác giả ❤️</p>
-                            <div class="qr-card-wrapper"><img src="snapedit_1766298911519.jpeg"></div>
+                            <p style="margin-bottom: 8px; font-size: 0.9em; font-weight: 500;">Ủng hộ tác giả ❤️</p>
+                            <div class="qr-card-wrapper">
+                                <img src="https://raw.githubusercontent.com/hoangvinhnguyen659-png/Meo/main/snapedit_1766298911519.jpeg" 
+                                     id="qr-trigger" 
+                                     alt="QR Code" 
+                                     style="cursor: pointer; width: 100px; border-radius: 8px;"
+                                     title="Nhấn để phóng to">
+                            </div>
+                            <p style="font-size: 0.75em; color: #888; margin-top: 5px;">(Bấm để phóng to & chuyển tiền)</p>
                         </div>
                     </div>
                 </div>
@@ -55,29 +61,65 @@
         <div id="quiz-screen" class="screen hidden">
             <div class="quiz-header sticky-header">
                 <div class="header-info">
-                    <div>Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
-                    <div class="info-item center">Điểm: <span id="live-score">0</span></div>
-                    <button id="btn-home-nav" onclick="location.reload()">Trang chủ</button>
+                    <div class="info-item left">Câu <span id="current-count">0</span>/<span id="total-count">0</span></div>
+                    <div class="info-item center">Đúng: <span id="live-score">0</span></div>
+                    <div class="info-item right">
+                        <button id="btn-home-nav" onclick="location.reload()">Thoát</button>
+                    </div>
                 </div>
                 <div class="progress-bg"><div id="progress-bar"></div></div>
             </div>
+            
             <div class="quiz-scroll-area">
                 <div id="quiz-feed" class="quiz-body"></div>
-                <div style="height: 80px;"></div> 
+                <div style="height: 100px;"></div> 
             </div>
         </div>
 
         <div id="result-screen" class="screen hidden">
             <div class="result-card">
-                <h2>Xong rồi!</h2>
-                <div class="score-box"><span id="final-score">0/0</span></div>
+                <div class="result-icon">🎉</div>
+                <h2 class="result-title">Hoàn thành!</h2>
+                <div class="score-label">Kết quả của bạn:</div>
+                <div class="score-box">
+                    <span id="final-score">0/0</span>
+                </div>
+                
                 <div class="result-actions">
-                    <button class="btn-start btn-primary" onclick="restartQuiz()">Làm Lại</button>
+                    <button class="btn-start btn-primary" onclick="location.reload()">Làm Lại</button>
                     <button class="btn-start btn-outline" onclick="location.reload()">Về Trang Chủ</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="qr-modal" class="qr-modal-overlay hidden">
+        <div class="qr-modal-content">
+            <span class="qr-close" id="qr-close">&times;</span>
+            <h3 style="margin-bottom: 15px; color: var(--text);">Cảm ơn bạn đã ủng hộ!</h3>
+            
+            <img id="qr-large" 
+                 src="https://raw.githubusercontent.com/hoangvinhnguyen659-png/Meo/main/snapedit_1766298911519.jpeg" 
+                 alt="Momo QR Large">
+
+            <div class="qr-action-buttons">
+                <a href="https://raw.githubusercontent.com/hoangvinhnguyen659-png/Meo/main/snapedit_1766298911519.jpeg" 
+                   download="Momo_QR_HoangVinh.jpeg" 
+                   class="btn-qr download">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Tải mã về máy
+                </a>
+
+                <a href="https://me.momo.vn/1MIVTysAtpi6FeUmU8f1UK" 
+                   target="_blank" 
+                   class="btn-qr open-momo">
+                    Mở ứng dụng Momo
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
