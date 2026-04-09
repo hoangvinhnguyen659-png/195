@@ -1,302 +1,782 @@
 [
   {
-    "question": "Xét về đặc điểm của phần tử khối (Block) và nội tuyến (Inline) trong HTML:",
+    "topic": "Sửa chữa và bảo trì máy tính",
+    "question": "Xét về các dịch vụ sửa chữa và bảo trì máy tính:",
     "subQuestions": [
       {
-        "content": "Các phần tử khối như <div>, <h1>, <p> luôn bắt đầu trên một dòng mới.",
-        "answer": "Đúng",
-        "explanation": "Phần tử khối (block) mặc định chiếm toàn bộ chiều rộng vùng chứa nên luôn tự động xuống dòng."
-      },
-      {
-        "content": "Các phần tử nội tuyến như <span>, <a> sẽ chiếm toàn bộ chiều rộng của trang web.",
+        "content": "Việc thay thế màn hình điện thoại bị nứt thuộc nhóm dịch vụ liên quan tới phần mềm.",
         "answer": "Sai",
-        "explanation": "Phần tử nội tuyến (inline) chỉ chiếm không gian vừa đủ theo nội dung bên trong nó."
+        "explanation": "Thay màn hình là can thiệp vật lý, thuộc dịch vụ phần cứng."
       },
       {
-        "content": "Thẻ <img> là một phần tử nội tuyến đặc biệt vì nó có thể thiết lập được chiều rộng và chiều cao.",
+        "content": "Vệ sinh bụi bẩn định kỳ bên trong máy tính giúp thiết bị tản nhiệt tốt hơn và bền hơn.",
         "answer": "Đúng",
-        "explanation": "<img> là thẻ nội tuyến đặc biệt (replaced element) cho phép tùy chỉnh kích thước vật lý."
+        "explanation": "Bụi bẩn là kẻ thù của linh kiện điện tử, vệ sinh giúp thông thoáng luồng khí."
       },
       {
-        "content": "Một phần tử nội tuyến có thể chứa một phần tử khối bên trong nó.",
+        "content": "Kỹ thuật viên sửa chữa máy tính chỉ cần giỏi về kỹ thuật, không cần quan tâm đến đạo đức nghề nghiệp.",
         "answer": "Sai",
-        "explanation": "Theo quy chuẩn HTML, phần tử nội tuyến không được phép chứa phần tử khối bên trong."
+        "explanation": "Đạo đức nghề nghiệp (bảo mật dữ liệu) là yêu cầu tiên quyết trong ngành IT."
+      },
+      {
+        "content": "Một trong những kỹ năng quan trọng của nghề sửa chữa máy tính là khả năng chẩn đoán đúng nguyên nhân gây lỗi.",
+        "answer": "Đúng",
+        "explanation": "Chẩn đoán đúng lỗi (troubleshooting) giúp tiết kiệm thời gian và chi phí sửa chữa."
       }
     ]
   },
   {
-    "question": "Về thuộc tính display và cách tổ chức các thành phần:",
+    "topic": "Sửa chữa và bảo trì máy tính",
+    "question": "Về nhu cầu nhân lực và ngành học liên quan:",
     "subQuestions": [
       {
-        "content": "Thuộc tính display: block; có thể biến một thẻ <span> từ nội tuyến thành phần tử khối.",
-        "answer": "Đúng",
-        "explanation": "CSS có thể ghi đè và thay đổi đặc tính hiển thị mặc định của bất kỳ thẻ HTML nào."
-      },
-      {
-        "content": "Giá trị display: inline-block; giúp phần tử vừa nằm cùng hàng với phần tử khác, vừa có thể chỉnh kích thước.",
-        "answer": "Đúng",
-        "explanation": "Inline-block kết hợp tính chất nằm cùng hàng của inline và khả năng chỉnh kích thước của block."
-      },
-      {
-        "content": "Khi sử dụng display: none;, phần tử sẽ bị ẩn đi nhưng vẫn giữ lại vị trí chiếm chỗ trên trang web.",
+        "content": "Trong tương lai, sự phát triển của công nghệ sẽ khiến nhu cầu về thợ sửa chữa máy tính biến mất hoàn toàn.",
         "answer": "Sai",
-        "explanation": "display: none loại bỏ hoàn toàn phần tử khỏi luồng hiển thị và không giữ lại khoảng trống."
+        "explanation": "Thiết bị càng hiện đại và phức tạp thì nhu cầu bảo trì chuyên nghiệp càng cao."
       },
       {
-        "content": "Thẻ <div> thường được dùng làm 'thùng chứa' để gom nhóm các phần tử nhằm mục đích dàn trang.",
+        "content": "Học ngành Kỹ thuật máy tính sẽ cung cấp kiến thức về cấu tạo, nguyên lý và cách vận hành của hệ thống máy tính.",
         "answer": "Đúng",
-        "explanation": "<div> là thẻ khối không mang ý nghĩa nội dung, chuyên dùng để bao bọc và phân chia bố cục."
+        "explanation": "Đây là nội dung đào tạo cốt lõi của ngành Kỹ thuật máy tính."
+      },
+      {
+        "content": "Nghề sửa chữa máy tính hiện nay chỉ cần học tháo lắp linh kiện, không cần hiểu về các hệ điều hành.",
+        "answer": "Sai",
+        "explanation": "Phần cứng và phần mềm luôn đi đôi, thợ sửa phải hiểu hệ điều hành để cài đặt Driver/Software."
+      },
+      {
+        "content": "Sự gia tăng của các thiết bị thông minh (IoT) làm tăng nhu cầu về dịch vụ bảo trì hệ thống mạng và thiết bị.",
+        "answer": "Đúng",
+        "explanation": "IoT làm hệ thống thiết bị số trở nên khổng lồ, cần nhiều nhân lực bảo trì hơn."
       }
     ]
   },
   {
-    "question": "Về khả năng chứa nhau và các thuộc tính kích thước của phần tử:",
+    "topic": "Sửa chữa và bảo trì máy tính",
+    "question": "Về các tình huống thực tế trong dịch vụ máy tính:",
     "subQuestions": [
       {
-        "content": "Các phần tử nội tuyến (Inline) như <a>, <span> không thể thiết lập trực tiếp thuộc tính width và height.",
+        "content": "Khi máy tính không lên hình, lỗi có thể do card đồ họa (phần cứng) hoặc do thiếu Driver (phần mềm).",
         "answer": "Đúng",
-        "explanation": "Kích thước của phần tử nội tuyến phụ thuộc hoàn toàn vào nội dung văn bản bên trong."
+        "explanation": "Sự cố máy tính thường kết hợp giữa yếu tố vật lý và trình điều khiển phần mềm."
       },
       {
-        "content": "Một phần tử khối (Block) có thể chứa nhiều phần tử khối khác và nhiều phần tử nội tuyến bên trong nó.",
+        "content": "Hỗ trợ người dùng cài đặt email vào điện thoại là một hoạt động thuộc dịch vụ hỗ trợ kỹ thuật.",
         "answer": "Đúng",
-        "explanation": "Thẻ khối được thiết kế để bao bọc mọi loại thành phần khác (trừ một số thẻ đặc biệt như <p>)."
+        "explanation": "Đây là việc hỗ trợ người dùng khai thác tính năng/ứng dụng của thiết bị."
       },
       {
-        "content": "Thuộc tính margin và padding phía trên và phía dưới luôn có tác dụng đầy đủ với các phần tử nội tuyến.",
+        "content": "Mọi sự cố máy tính đều có thể giải quyết bằng cách cài đặt lại hệ điều hành Windows.",
         "answer": "Sai",
-        "explanation": "Margin/padding trên-dưới của thẻ nội tuyến không đẩy được các phần tử khác ra xa."
+        "explanation": "Nếu lỗi do hỏng phần cứng (cháy RAM, hỏng nguồn) thì cài lại phần mềm không có tác dụng."
       },
       {
-        "content": "Thẻ <p> là phần tử khối nhưng nó không nên chứa các phần tử khối khác như <div> bên trong theo tiêu chuẩn HTML.",
+        "content": "Việc tư vấn cho khách hàng mua thêm bộ lưu điện (UPS) để tránh mất dữ liệu khi mất điện là một dạng dịch vụ hỗ trợ.",
         "answer": "Đúng",
-        "explanation": "Thẻ <p> chỉ dùng cho văn bản; việc chứa thẻ khối bên trong là sai cấu trúc ngữ nghĩa."
+        "explanation": "Tư vấn giải pháp bảo vệ hệ thống là một phần của dịch vụ hỗ trợ."
       }
     ]
   },
   {
-    "question": "Khi nói về Lớp giả (Pseudo-class) và Phần tử giả (Pseudo-element):",
+    "topic": "Sửa chữa và bảo trì máy tính",
+    "question": "Trong quy trình bảo trì và xử lý sự cố:",
     "subQuestions": [
       {
-        "content": "Lớp giả được sử dụng để định dạng phần tử dựa trên trạng thái (như di chuột qua, đã click).",
+        "content": "Để kiểm tra ổ cứng bị lỗi hay không, kỹ thuật viên có thể dùng các phần mềm kiểm tra thông số S.M.A.R.T.",
         "answer": "Đúng",
-        "explanation": "Lớp giả giúp thay đổi kiểu dáng phần tử theo tương tác người dùng như :hover, :active."
+        "explanation": "Các phần mềm chuyên dụng giúp kiểm tra các chỉ số kỹ thuật của linh kiện phần cứng."
       },
       {
-        "content": "Lớp giả :hover chỉ có tác dụng khi người dùng bôi đen đoạn văn bản.",
+        "content": "Khi sửa máy tính cho khách hàng, kỹ thuật viên có quyền sao chép dữ liệu của khách ra ổ cứng cá nhân để nghiên cứu.",
         "answer": "Sai",
-        "explanation": ":hover kích hoạt khi di chuyển con trỏ chuột vào vùng phần tử, không phải là bôi đen."
+        "explanation": "Vi phạm nghiêm trọng quyền riêng tư và đạo đức nghề nghiệp."
       },
       {
-        "content": "Theo chuẩn CSS3, phần tử giả (như ::first-line) nên được bắt đầu bằng dấu hai chấm kép ::.",
+        "content": "Việc cập nhật bản vá bảo mật cho hệ điều hành là một phần của công tác bảo trì phần mềm.",
         "answer": "Đúng",
-        "explanation": "Dấu :: giúp phân biệt phần tử giả (chọn 1 phần của thẻ) với lớp giả (chọn trạng thái)."
+        "explanation": "Bảo trì phần mềm bao gồm việc làm sạch rác và vá các lỗ hổng bảo mật."
       },
       {
-        "content": "Phần tử giả ::selection dùng để thay đổi định dạng của phần văn bản được người dùng lựa chọn (bôi đen).",
+        "content": "Quy trình sửa chữa máy tính chuyên nghiệp bao gồm bước bàn giao và hướng dẫn khách hàng kiểm tra lại máy.",
         "answer": "Đúng",
-        "explanation": "Đây là selector chuyên biệt dùng để định dạng phần chữ đang được người dùng quét chuột chọn."
+        "explanation": "Giúp khách hàng yên tâm về chất lượng dịch vụ và minh bạch linh kiện."
       }
     ]
   },
   {
-    "question": "Xét về mức độ ưu tiên và trọng số của các bộ chọn CSS:",
+    "topic": "Sửa chữa và bảo trì máy tính",
+    "question": "Khi vận dụng kiến thức vào thực tiễn:",
     "subQuestions": [
       {
-        "content": "Nếu một phần tử có cả ID và Class, các quy tắc trong bộ chọn ID sẽ được ưu tiên áp dụng hơn.",
+        "content": "Nếu máy tính chạy quá nóng, việc bôi thêm keo tản nhiệt vào CPU là phương án xử lý phần cứng đúng đắn.",
         "answer": "Đúng",
-        "explanation": "ID có tính cụ thể cao hơn nên có trọng số (100) mạnh hơn nhiều so với Class (10)."
+        "explanation": "Keo tản nhiệt giúp truyền nhiệt từ CPU sang phiến tản nhiệt tốt hơn."
       },
       {
-        "content": "Bộ chọn toàn cục (ký hiệu *) có mức ưu tiên cao hơn bộ chọn phần tử (thẻ HTML).",
-        "answer": "Sai",
-        "explanation": "Bộ chọn toàn cục (*) có trọng số bằng 0, là mức ưu tiên thấp nhất trong CSS."
-      },
-      {
-        "content": "Khi hai bộ chọn có cùng trọng số, trình duyệt sẽ ưu tiên quy tắc nào được viết ở vị trí sớm hơn trong file CSS.",
-        "answer": "Sai",
-        "explanation": "Khi cùng trọng số, trình duyệt áp dụng quy tắc xuất hiện muộn hơn (viết ở dòng dưới)."
-      },
-      {
-        "content": "Từ khóa !important sẽ ghi đè mọi mức ưu tiên khác, kể cả mã định danh ID.",
+        "content": "Để nâng cấp tốc độ truy cập dữ liệu nhanh nhất, người dùng nên thay ổ cứng HDD bằng ổ cứng SSD.",
         "answer": "Đúng",
-        "explanation": "!important là chỉ thị mạnh nhất, phá vỡ mọi quy trình tính toán trọng số thông thường."
+        "explanation": "SSD có tốc độ đọc/ghi vượt trội so với HDD truyền thống."
+      },
+      {
+        "content": "Khi máy tính bị nhiễm virus nặng, chỉ cần thay bàn phím mới là máy sẽ hoạt động bình thường trở lại.",
+        "answer": "Sai",
+        "explanation": "Virus nằm trong bộ nhớ/ổ cứng, không liên quan đến phần cứng bàn phím."
+      },
+      {
+        "content": "Kỹ năng giao tiếp tốt giúp kỹ thuật viên hiểu đúng yêu cầu của khách hàng và tư vấn giải pháp hiệu quả hơn.",
+        "answer": "Đúng",
+        "explanation": "Kỹ năng mềm giúp xử lý công việc trôi chảy và khách hàng hài lòng hơn."
       }
     ]
   },
   {
-    "question": "Về sự xung đột CSS và cách trình duyệt áp dụng quy tắc ưu tiên:",
+    "topic": "Quản trị mạng và Bảo mật",
+    "question": "Về nhóm nghề quản trị mạng:",
     "subQuestions": [
       {
-        "content": "Thuộc tính CSS viết trực tiếp trong thẻ (Inline Style) có mức ưu tiên cao hơn mã định danh (ID).",
-        "answer": "Đúng",
-        "explanation": "Style trực tiếp (inline style) có trọng số là 1000, cao hơn bộ chọn ID trong file ngoài."
-      },
-      {
-        "content": "Bộ chọn lớp (Class) và bộ chọn thuộc tính có mức ưu tiên ngang bằng nhau.",
-        "answer": "Đúng",
-        "explanation": "Theo bảng tính trọng số, Class, Selector thuộc tính và Pseudo-class đều bằng điểm nhau."
-      },
-      {
-        "content": "Việc sử dụng quá nhiều !important giúp mã nguồn CSS trở nên sạch sẽ và dễ bảo trì hơn.",
+        "content": "Quản trị mạng chỉ đơn thuần là việc kéo dây cáp mạng cho các máy tính trong văn phòng.",
         "answer": "Sai",
-        "explanation": "Lạm dụng !important gây khó khăn cho việc quản lý mã và ghi đè các định dạng sau này."
+        "explanation": "Kéo dây chỉ là thi công vật lý, quản trị mạng bao gồm cả cấu hình và vận hành logic hệ thống."
       },
       {
-        "content": "Khi một phần tử nhận thuộc tính màu sắc từ cả tệp CSS ngoài và thẻ <style> trong trang, quy tắc nào nằm xa phần tử đó hơn sẽ thắng.",
+        "content": "Người quản trị mạng phải có khả năng thiết lập các tham số cho bộ định tuyến (Router) và bộ chuyển mạch (Switch).",
+        "answer": "Đúng",
+        "explanation": "Đây là hai thiết bị quan trọng nhất mà quản trị mạng phải làm chủ."
+      },
+      {
+        "content": "Hiểu biết về các lớp trong mô hình OSI là kiến thức không cần thiết đối với người quản trị mạng.",
         "answer": "Sai",
-        "explanation": "Trình duyệt ưu tiên quy tắc được nạp sau cùng (theo thứ tự từ trên xuống dưới)."
+        "explanation": "Mô hình OSI là kiến thức nền tảng để hiểu cách dữ liệu truyền đi và xử lý lỗi mạng."
+      },
+      {
+        "content": "Quản trị mạng đóng vai trò quan trọng trong việc đảm bảo sự thông suốt của thông tin trong nội bộ doanh nghiệp.",
+        "answer": "Đúng",
+        "explanation": "Mạng là mạch máu của hệ thống thông tin doanh nghiệp."
       }
     ]
   },
   {
-    "question": "Về các nhiệm vụ chuyên môn trong nghề dịch vụ máy tính:",
+    "topic": "Quản trị mạng và Bảo mật",
+    "question": "Về bảo mật hệ thống thông tin:",
     "subQuestions": [
       {
-        "content": "Việc thay thế ổ cứng HDD bằng ổ cứng SSD được xếp vào nhóm nâng cấp thiết bị phần cứng.",
-        "answer": "Đúng",
-        "explanation": "Mọi thay đổi liên quan đến linh kiện vật lý của máy tính đều thuộc nhóm công việc phần cứng."
-      },
-      {
-        "content": "Cài đặt trình điều khiển (driver) cho máy in là một nhiệm vụ liên quan đến phần mềm.",
-        "answer": "Đúng",
-        "explanation": "Driver là các tệp phần mềm trung gian giúp hệ điều hành nhận diện và điều khiển phần cứng."
-      },
-      {
-        "content": "Quét mã độc và cập nhật các bản vá lỗi cho hệ điều hành là một phần của công việc bảo trì phần mềm.",
-        "answer": "Đúng",
-        "explanation": "Bảo trì phần mềm tập trung vào việc vá lỗi, bảo mật và tối ưu hóa hoạt động của hệ thống."
-      },
-      {
-        "content": "Sửa chữa bo mạch chủ (Mainboard) là nhiệm vụ thuộc nhóm hỗ trợ người dùng (Help Desk).",
+        "content": "Bảo mật hệ thống thông tin chỉ bao gồm việc cài đặt phần mềm diệt virus cho máy tính cá nhân.",
         "answer": "Sai",
-        "explanation": "Sửa chữa linh kiện điện tử chuyên sâu cần kỹ thuật viên sửa chữa, không phải Help Desk."
+        "explanation": "Bảo mật bao gồm cả hạ tầng, quy trình, nhận thức người dùng và nhiều lớp phòng thủ khác."
+      },
+      {
+        "content": "Việc thiết lập mật khẩu mạnh và xác thực 2 lớp (2FA) là những biện pháp bảo mật cơ bản.",
+        "answer": "Đúng",
+        "explanation": "Đây là những rào cản hiệu quả để bảo vệ tài khoản người dùng."
+      },
+      {
+        "content": "Chỉ những tập đoàn công nghệ lớn mới cần đến chuyên gia bảo mật hệ thống thông tin.",
+        "answer": "Sai",
+        "explanation": "Mọi tổ chức có dữ liệu số đều có nguy cơ bị tấn công và cần bảo mật."
+      },
+      {
+        "content": "Chuyên gia bảo mật cần thường xuyên cập nhật kiến thức về các phương thức tấn công mạng mới nhất.",
+        "answer": "Đúng",
+        "explanation": "Công nghệ tấn công thay đổi mỗi ngày, người làm bảo mật phải luôn cập nhật để đối phó."
       }
     ]
   },
   {
-    "question": "Về kỹ năng, phẩm chất và đào tạo trong nghề:",
+    "topic": "Quản trị mạng và Bảo mật",
+    "question": "Về quản trị và bảo trì hệ thống:",
     "subQuestions": [
       {
-        "content": "Kỹ năng giải quyết vấn đề (Problem-solving) giúp thợ kỹ thuật tìm ra nguyên nhân sự cố một cách logic.",
+        "content": "Quản trị hệ thống bao gồm việc quản lý các máy chủ (Server) và các dịch vụ chạy trên đó như Web server, Mail server.",
         "answer": "Đúng",
-        "explanation": "Tư duy logic giúp khoanh vùng và xác định đúng thành phần gây ra lỗi trong hệ thống phức tạp."
+        "explanation": "Quản lý server và các dịch vụ lõi là nhiệm vụ trọng tâm của System Admin."
       },
       {
-        "content": "Người thợ sửa chữa máy tính không cần trung thực vì khách hàng thường không am hiểu về kỹ thuật.",
+        "content": "Việc cài đặt bản vá (patch) cho hệ điều hành là một phần của công việc bảo trì hệ thống để tránh các lỗi bảo mật.",
+        "answer": "Đúng",
+        "explanation": "Các bản vá giúp lấp đầy các \"lỗ hổng\" mà hacker thường khai thác."
+      },
+      {
+        "content": "Người quản trị hệ thống không cần quan tâm đến việc người dùng làm gì với máy tính của họ.",
         "answer": "Sai",
-        "explanation": "Trung thực là đạo đức cốt lõi để bảo mật dữ liệu khách hàng và duy trì uy tín nghề nghiệp."
+        "explanation": "Hành vi người dùng có thể gây nguy cơ cho cả hệ thống, cần được giám sát và phân quyền."
       },
       {
-        "content": "Tại Việt Nam, nghề sửa chữa và bảo trì máy tính được đào tạo ở nhiều bậc như Sơ cấp, Trung cấp, Cao đẳng và Đại học.",
+        "content": "Hiệu suất hoạt động của hệ thống phụ thuộc rất lớn vào kỹ năng của người quản trị và bảo trì.",
         "answer": "Đúng",
-        "explanation": "Đây là ngành nghề có lộ trình đào tạo đa dạng từ cấp độ nghề đến chuyên gia kỹ sư."
-      },
-      {
-        "content": "Kỹ năng quản lý thời gian giúp đảm bảo hoàn thành việc sửa chữa đúng hạn cho khách hàng.",
-        "answer": "Đúng",
-        "explanation": "Giúp tối ưu hóa quy trình làm việc và đảm bảo sự hài lòng của khách hàng về tiến độ."
+        "explanation": "Kỹ thuật cấu hình tối ưu của quản trị viên giúp hệ thống chạy nhanh và ổn định hơn."
       }
     ]
   },
   {
-    "question": "Về quy trình và đạo đức nghề nghiệp trong dịch vụ máy tính:",
+    "topic": "Quản trị mạng và Bảo mật",
+    "question": "Về nhu cầu nhân lực và đào tạo:",
     "subQuestions": [
       {
-        "content": "Quy trình sửa chữa máy tính luôn bắt đầu bằng việc tháo rời tất cả linh kiện trước khi kiểm tra lỗi.",
-        "answer": "Sai",
-        "explanation": "Luôn cần chẩn đoán bằng phần mềm và kiểm tra sơ bộ trước khi thực hiện tháo lắp phần cứng."
-      },
-      {
-        "content": "Bảo trì máy tính định kỳ bao gồm cả việc vệ sinh bụi bẩn phần cứng và dọn dẹp tập tin rác phần mềm.",
+        "content": "Chứng chỉ quốc tế như CompTIA Security+ là một lợi thế lớn cho người muốn theo nghề bảo mật.",
         "answer": "Đúng",
-        "explanation": "Bảo trì cần thực hiện song song việc vệ sinh vật lý và tối ưu hóa phần mềm hệ thống."
+        "explanation": "Đây là chứng chỉ bảo mật trung lập được công nhận trên toàn thế giới."
       },
       {
-        "content": "Thợ sửa chữa có quyền truy cập và thay đổi mật khẩu cá nhân của khách hàng mà không cần hỏi ý kiến.",
+        "content": "Nhu cầu về chuyên gia an ninh mạng đang có xu hướng bão hòa và sẽ giảm trong 5 năm tới.",
         "answer": "Sai",
-        "explanation": "Hành vi tự ý truy cập mật khẩu cá nhân là vi phạm nghiêm trọng quyền riêng tư."
+        "explanation": "Ngược lại, nhu cầu này đang tăng trưởng phi mã do chuyển đổi số."
       },
       {
-        "content": "Nghề dịch vụ máy tính đòi hỏi người làm phải liên tục cập nhật kiến thức về các dòng linh kiện và công nghệ mới.",
+        "content": "Ngành Hệ thống thông tin quản lý (MIS) là sự kết hợp giữa kiến thức công nghệ thông tin và quản trị kinh doanh.",
         "answer": "Đúng",
-        "explanation": "Công nghệ thay đổi rất nhanh, đòi hỏi người làm nghề phải học hỏi liên tục để không bị lạc hậu."
+        "explanation": "Ngành này giúp ứng dụng CNTT vào quản lý doanh nghiệp một cách hiệu quả."
+      },
+      {
+        "content": "Làm nghề quản trị trong ngành CNTT đòi hỏi sự kiên nhẫn và khả năng học hỏi không ngừng do công nghệ thay đổi liên tục.",
+        "answer": "Đúng",
+        "explanation": "CNTT là ngành có tốc độ thay đổi nhanh nhất, đòi hỏi tự học suốt đời."
       }
     ]
   },
   {
-    "question": "Về các vị trí quản trị cụ thể trong doanh nghiệp:",
+    "topic": "Quản trị mạng và Bảo mật",
+    "question": "Trong các tình huống quản trị thực tế:",
     "subQuestions": [
       {
-        "content": "Quản trị viên hệ thống (System Admin) tập trung vào việc quản lý máy chủ và hệ điều hành.",
-        "answer": "Đúng",
-        "explanation": "Trách nhiệm chính là đảm bảo sự hoạt động ổn định của server và các dịch vụ phần mềm."
-      },
-      {
-        "content": "Quản trị viên mạng (Network Admin) chịu trách nhiệm chính về các kết nối LAN, WAN và Internet.",
-        "answer": "Đúng",
-        "explanation": "Tập trung quản lý hạ tầng truyền dẫn, thiết bị mạng và tính thông suốt của kết nối."
-      },
-      {
-        "content": "Quản trị viên cơ sở dữ liệu (DBA) có nhiệm vụ đi lắp đặt dây cáp mạng cho văn phòng.",
+        "content": "Khi hệ thống mạng bị chậm, bước đầu tiên nên làm là mua thêm máy tính mới cho nhân viên.",
         "answer": "Sai",
-        "explanation": "DBA chỉ làm việc với dữ liệu; lắp đặt hạ tầng mạng là nhiệm vụ của kỹ thuật viên mạng."
+        "explanation": "Mạng chậm thường do cấu hình hoặc nghẽn băng thông, không phải do cấu hình máy trạm yếu."
       },
       {
-        "content": "Quản trị an ninh mạng có vai trò bảo vệ hệ thống khỏi các cuộc tấn công và truy cập trái phép.",
+        "content": "Việc ghi chép (log) lại các hoạt động của hệ thống giúp ích cho việc điều tra sau khi có sự cố bảo mật xảy ra.",
         "answer": "Đúng",
-        "explanation": "Đảm nhận việc thiết lập bảo mật, giám sát và ngăn chặn các mối đe dọa từ mạng."
+        "explanation": "File log là \"bằng chứng\" để truy vết và tìm ra nguồn gốc sự cố."
+      },
+      {
+        "content": "Một người quản trị hệ thống giỏi là người có thể xử lý mọi việc mà không cần sự hỗ trợ của các công cụ giám sát.",
+        "answer": "Sai",
+        "explanation": "Hệ thống lớn rất phức tạp, cần công cụ giám sát để quản lý chính xác và tự động."
+      },
+      {
+        "content": "Chính sách bảo mật thông tin của công ty cần được tất cả nhân viên tuân thủ nghiêm ngặt, không chỉ riêng bộ phận IT.",
+        "answer": "Đúng",
+        "explanation": "An toàn thông tin là trách nhiệm của mọi cá nhân trong tổ chức."
       }
     ]
   },
   {
-    "question": "Về đặc điểm công việc và xu hướng hiện nay:",
+    "topic": "Tổ chức hội thảo hướng nghiệp",
+    "question": "Trong quá trình lập kế hoạch tổ chức hội thảo hướng nghiệp:",
     "subQuestions": [
       {
-        "content": "Công việc quản trị CNTT thường đòi hỏi sự cẩn trọng và khả năng làm việc dưới áp lực cao khi có sự cố.",
-        "answer": "Đúng",
-        "explanation": "Áp lực duy trì tính liên tục của hệ thống yêu cầu quản trị viên phải có thần kinh thép."
-      },
-      {
-        "content": "Sao lưu dữ liệu (Backup) định kỳ là một hoạt động không bắt buộc trong quản trị hệ thống.",
+        "content": "Mục tiêu của hội thảo chỉ cần tập trung vào việc giới thiệu các loại máy tính hiện đại nhất.",
         "answer": "Sai",
-        "explanation": "Sao lưu dữ liệu là quy trình bắt buộc để đảm bảo an toàn và phục hồi hệ thống khi có sự cố."
+        "explanation": "Mục tiêu là hướng nghiệp, không phải quảng cáo bán máy tính."
       },
       {
-        "content": "Xu hướng quản trị hiện đại ngày nay đang chuyển dịch mạnh sang điện toán đám mây (Cloud) và ảo hóa.",
+        "content": "Thời gian và địa điểm tổ chức phải được xác định rõ ràng để học sinh có thể tham gia đầy đủ.",
         "answer": "Đúng",
-        "explanation": "Điện toán đám mây và ảo hóa giúp tăng tính linh hoạt và tối ưu chi phí vận hành doanh nghiệp."
+        "explanation": "Đây là các yếu tố hậu cần cơ bản của một kế hoạch."
       },
       {
-        "content": "Người làm nghề quản trị CNTT cần có kỹ năng giao tiếp tốt để hỗ trợ người dùng và làm việc nhóm.",
+        "content": "Nội dung hội thảo không cần quan tâm đến xu hướng tuyển dụng của xã hội hiện nay.",
+        "answer": "Sai",
+        "explanation": "Hướng nghiệp mà không bám sát xu hướng tuyển dụng sẽ dẫn đến chọn nghề sai lầm."
+      },
+      {
+        "content": "Khi xây dựng kịch bản hội thảo, cần dự kiến các câu hỏi mà khán giả có thể thắc mắc để chuẩn bị câu trả lời.",
         "answer": "Đúng",
-        "explanation": "Kỹ năng mềm giúp quản trị viên hiểu nhu cầu khách hàng và phối hợp hiệu quả trong dự án."
+        "explanation": "Đây là sự chuẩn bị chủ động để buổi thảo luận diễn ra trôi chảy."
       }
     ]
   },
   {
-    "question": "Về quản trị dịch vụ và quyền hạn trong hệ thống:",
+    "topic": "Tổ chức hội thảo hướng nghiệp",
+    "question": "Về việc xây dựng bài trình bày:",
     "subQuestions": [
       {
-        "content": "Quản trị dịch vụ CNTT (ITSM) chỉ quan tâm đến việc máy tính chạy nhanh hay chậm, không cần quan tâm đến sự hài lòng của người dùng.",
+        "content": "Nội dung bài trình bày nên bao gồm các tiêu chí tuyển dụng và cơ hội thăng tiến của nghề nghiệp.",
+        "answer": "Đúng",
+        "explanation": "Đây là những thông tin cốt yếu mà người tìm việc quan tâm."
+      },
+      {
+        "content": "Bài trình bày càng nhiều hiệu ứng chuyển động và màu sắc sặc sỡ thì càng có tính khoa học cao.",
         "answer": "Sai",
-        "explanation": "ITSM lấy sự hài lòng của người dùng làm trọng tâm và mục tiêu đo lường chất lượng."
+        "explanation": "Hiệu ứng quá nhiều có thể gây nhiễu và làm mất tập trung vào nội dung chính."
       },
       {
-        "content": "Việc phân quyền (Authorization) giúp đảm bảo nhân viên chỉ truy cập được vào đúng những dữ liệu cần thiết cho công việc của họ.",
+        "content": "Sử dụng biểu đồ để minh họa sự tăng trưởng nhu cầu việc làm giúp thông tin thuyết phục hơn.",
         "answer": "Đúng",
-        "explanation": "Đây là nguyên tắc bảo mật cơ bản để bảo vệ dữ liệu nội bộ không bị rò rỉ hoặc lạm dụng."
+        "explanation": "Số liệu cụ thể luôn mang lại độ tin cậy cao hơn lời nói suông."
       },
       {
-        "content": "Hạ tầng điện toán đám mây (Cloud) giúp doanh nghiệp giảm bớt gánh nặng về việc quản lý máy chủ vật lý tại chỗ.",
+        "content": "Khi giới thiệu nghề Quản trị mạng, nếu lồng ghép thêm một tình huống giả định về xử lý sự cố sẽ giúp học sinh hứng thú hơn.",
         "answer": "Đúng",
-        "explanation": "Hạ tầng vật lý do nhà cung cấp quản lý, doanh nghiệp chỉ tập trung vào việc sử dụng dịch vụ."
+        "explanation": "Case study (tình huống thực tế) giúp nghề nghiệp trở nên gần gũi và dễ hiểu hơn."
+      }
+    ]
+  },
+  {
+    "topic": "Tổ chức hội thảo hướng nghiệp",
+    "question": "Về các nhiệm vụ trong tổ chức hội thảo:",
+    "subQuestions": [
+      {
+        "content": "Thư ký hội thảo có nhiệm vụ ghi chép các ý kiến thảo luận và kết quả của buổi làm việc.",
+        "answer": "Đúng",
+        "explanation": "Vai trò của thư ký là lưu trữ \"linh hồn\" của buổi thảo luận qua biên bản."
       },
       {
-        "content": "Một quản trị viên hệ thống giỏi cần có khả năng lập kế hoạch dự phòng để ứng phó với các thảm họa mất dữ liệu.",
+        "content": "Nhóm kỹ thuật chỉ cần chuẩn bị máy chiếu, còn âm thanh thì không cần thiết.",
+        "answer": "Sai",
+        "explanation": "Âm thanh rất quan trọng để tất cả mọi người trong phòng đều nghe rõ người trình bày."
+      },
+      {
+        "content": "Việc chuẩn bị tài liệu phát tay giúp học sinh có thể lưu giữ thông tin quan trọng sau khi hội thảo kết thúc.",
         "answer": "Đúng",
-        "explanation": "Kế hoạch khắc phục sau thảm họa là chỉ số quan trọng đánh giá năng lực của quản trị viên."
+        "explanation": "Tài liệu giúp học sinh xem lại kiến thức khi cần suy nghĩ về việc chọn trường/nghề."
+      },
+      {
+        "content": "Trong buổi thảo luận, người điều phối cần khơi gợi để có nhiều ý kiến trái chiều nhằm đào sâu vấn đề hướng nghiệp.",
+        "answer": "Đúng",
+        "explanation": "Thảo luận đa chiều giúp bộc lộ rõ các mặt thuận lợi và khó khăn của nghề."
+      }
+    ]
+  },
+  {
+    "topic": "Tổ chức hội thảo hướng nghiệp",
+    "question": "Đánh giá kết quả hội thảo hướng nghiệp:",
+    "subQuestions": [
+      {
+        "content": "Phiếu khảo sát ý kiến là công cụ duy nhất để đánh giá hiệu quả của buổi hội thảo.",
+        "answer": "Sai",
+        "explanation": "Có thể đánh giá qua quan sát trực tiếp, trò chơi kiểm tra hoặc phỏng vấn nhanh."
+      },
+      {
+        "content": "Đánh giá giúp nhóm tổ chức biết được nội dung nào đã rõ ràng, nội dung nào cần điều chỉnh.",
+        "answer": "Đúng",
+        "explanation": "Đây là mục đích của việc kiểm soát chất lượng (Quality Control)."
+      },
+      {
+        "content": "Nếu đa số học sinh không hài lòng về bài thuyết trình, điều đó có nghĩa là chủ đề hướng nghiệp đó không quan trọng.",
+        "answer": "Sai",
+        "explanation": "Không hài lòng có thể do cách tổ chức hoặc cách thuyết trình, không phải do tầm quan trọng của chủ đề."
+      },
+      {
+        "content": "Dựa trên kết quả khảo sát, ban tổ chức có thể đề xuất các chủ đề chuyên sâu hơn cho các buổi tiếp theo phù hợp với mong muốn của học sinh.",
+        "answer": "Đúng",
+        "explanation": "Đây là sự cải tiến dựa trên dữ liệu phản hồi thực tế."
+      }
+    ]
+  },
+  {
+    "topic": "Tổ chức hội thảo hướng nghiệp",
+    "question": "Khi vận dụng vào thực tiễn hướng nghiệp:",
+    "subQuestions": [
+      {
+        "content": "Hội thảo hướng nghiệp giúp học sinh nhận thức được rằng ngành Tin học chỉ dành cho những người giỏi lập trình.",
+        "answer": "Sai",
+        "explanation": "Ngành Tin học rất rộng, bao gồm cả thiết kế, quản trị, sửa chữa, tư vấn..."
+      },
+      {
+        "content": "Một kỹ năng quan trọng có thể học được thông qua việc tổ chức hội thảo là kỹ năng làm việc nhóm.",
+        "answer": "Đúng",
+        "explanation": "Tổ chức một sự kiện đòi hỏi sự phối hợp nhịp nhàng của cả tập thể."
+      },
+      {
+        "content": "Hiểu biết về lộ trình học tập (các trường đại học, chứng chỉ) là một phần không thể thiếu của nội dung hướng nghiệp.",
+        "answer": "Đúng",
+        "explanation": "Giúp học sinh biết được \"cửa ngõ\" để bước vào nghề nghiệp đó."
+      },
+      {
+        "content": "Nếu bạn muốn tổ chức hội thảo về nghề \"Dịch vụ bảo trì máy tính\", bạn nên mời một chuyên gia đang làm việc thực tế tại trung tâm bảo hành đến chia sẻ.",
+        "answer": "Đúng",
+        "explanation": "Người thật việc thật luôn mang lại những chia sẻ giá trị và thực tế nhất."
+      }
+    ]
+  },
+  {
+    "topic": "Thiết bị mạng và Máy chủ",
+    "question": "Xét về đặc điểm của máy chủ (Server):",
+    "subQuestions": [
+      {
+        "content": "Mọi máy tính Server đều phải có hình dáng là những chiếc thùng máy khổng lồ đặt trong phòng lạnh.",
+        "answer": "Sai",
+        "explanation": "Server có nhiều dạng khác nhau như: dạng tháp (tower), dạng phiến (blade) hoặc thậm chí là máy tính ảo."
+      },
+      {
+        "content": "Một máy chủ có thể cung cấp nhiều dịch vụ cùng lúc như Web, Mail và File Server.",
+        "answer": "Đúng",
+        "explanation": "Một máy chủ vật lý đủ mạnh có khả năng chạy đồng thời nhiều dịch vụ phần mềm khác nhau."
+      },
+      {
+        "content": "Sử dụng máy chủ chuyên dụng giúp hệ thống hoạt động ổn định và bảo mật tốt hơn so với dùng máy tính cá nhân làm máy chủ.",
+        "answer": "Đúng",
+        "explanation": "Server chuyên dụng được thiết kế đặc thù để hoạt động bền bỉ 24/7 và chịu tải cao."
+      },
+      {
+        "content": "Nếu một File Server bị hỏng và không có bản sao lưu, toàn bộ dữ liệu dùng chung của cơ quan có thể bị mất trắng.",
+        "answer": "Đúng",
+        "explanation": "File Server là nơi lưu trữ tập trung; việc hỏng hóc mà không có phương án dự phòng sẽ gây hậu quả nghiêm trọng."
+      }
+    ]
+  },
+  {
+    "topic": "Thiết bị mạng và Máy chủ",
+    "question": "Về thiết bị kết nối Hub và Switch:",
+    "subQuestions": [
+      {
+        "content": "Switch và Hub đều được sử dụng để kết nối nhiều máy tính lại với nhau trong một mạng cục bộ (LAN).",
+        "answer": "Đúng",
+        "explanation": "Cả hai đều đóng vai trò là thiết bị trung tâm (central device) để kết nối các nút mạng trong LAN."
+      },
+      {
+        "content": "Tốc độ truyền tải dữ liệu của mạng sử dụng Hub thường cao hơn mạng sử dụng Switch khi có nhiều máy cùng hoạt động.",
+        "answer": "Sai",
+        "explanation": "Ngược lại, Hub rất dễ xảy ra hiện tượng nghẽn do xung đột (collision), làm giảm tốc độ thực tế đáng kể so với Switch."
+      },
+      {
+        "content": "Switch giúp phân phối băng thông hiệu quả hơn vì nó tạo ra các kênh giao tiếp riêng biệt giữa các cổng.",
+        "answer": "Đúng",
+        "explanation": "Switch tạo ra các phân đoạn mạng nhỏ (micro-segment) giúp dữ liệu đi thẳng từ nguồn tới đích mà không ảnh hưởng cổng khác."
+      },
+      {
+        "content": "Trong một hệ thống mạng yêu cầu tính bảo mật cao, người quản trị nên thay thế toàn bộ Hub bằng Switch.",
+        "answer": "Đúng",
+        "explanation": "Switch ngăn chặn việc phát tán dữ liệu tới các máy không liên quan, tăng tính riêng tư và bảo mật."
+      }
+    ]
+  },
+  {
+    "topic": "Thiết bị mạng và Máy chủ",
+    "question": "Về vai trò của Router trong mạng:",
+    "subQuestions": [
+      {
+        "content": "Router chỉ có tác dụng phát sóng Wi-Fi chứ không có khả năng kết nối bằng dây cáp.",
+        "answer": "Sai",
+        "explanation": "Router thường tích hợp các cổng LAN (RJ45) để cho phép kết nối bằng dây dẫn rất ổn định."
+      },
+      {
+        "content": "Mỗi Router có ít nhất hai cổng mạng để kết nối hai mạng khác nhau (ví dụ mạng LAN và mạng WAN).",
+        "answer": "Đúng",
+        "explanation": "Đây là điều kiện kỹ thuật tối thiểu để Router thực hiện chức năng định tuyến giữa các lớp mạng."
+      },
+      {
+        "content": "Router giúp bảo vệ mạng nội bộ phần nào nhờ chức năng tường lửa (Firewall) cơ bản được tích hợp.",
+        "answer": "Đúng",
+        "explanation": "Router đóng vai trò là rào chắn kiểm soát dữ liệu giữa mạng nội bộ và Internet."
+      },
+      {
+        "content": "Nếu địa chỉ IP đích của một gói tin không nằm trong mạng cục bộ, Router sẽ chuyển gói tin đó ra cổng kết nối Internet (Default Gateway).",
+        "answer": "Đúng",
+        "explanation": "Đây là nguyên lý hoạt động cơ bản của quy trình định tuyến gói tin."
+      }
+    ]
+  },
+  {
+    "topic": "Thiết bị mạng và Máy chủ",
+    "question": "Về thiết bị mở rộng vùng phủ sóng (Repeater và Access Point):",
+    "subQuestions": [
+      {
+        "content": "Repeater cần được đặt ở nơi vẫn còn nhận được tín hiệu tốt từ nguồn phát để có thể phát lại hiệu quả.",
+        "answer": "Đúng",
+        "explanation": "Nếu đặt ở nơi sóng quá yếu, Repeater sẽ chỉ phát lại tín hiệu đã bị nhiễu hoặc lỗi."
+      },
+      {
+        "content": "Access Point giúp tăng tốc độ xử lý của CPU máy tính lên cao hơn.",
+        "answer": "Sai",
+        "explanation": "Access Point chỉ xử lý việc truyền dẫn tín hiệu mạng, không có tác dụng nâng cấp phần cứng CPU."
+      },
+      {
+        "content": "Một mạng Wi-Fi có thể có nhiều Access Point cùng tên (SSID) để phủ sóng cho một diện tích rộng lớn.",
+        "answer": "Đúng",
+        "explanation": "Điều này giúp người dùng di chuyển giữa các khu vực mà không bị ngắt kết nối Wi-Fi."
+      },
+      {
+        "content": "Khi sử dụng Repeater không dây (Wi-Fi Extender), tốc độ mạng có thể bị giảm đi một nửa do băng thông phải chia sẻ cho cả việc thu và phát.",
+        "answer": "Đúng",
+        "explanation": "Do thiết bị phải dùng tài nguyên để duy trì song song kết nối với Router gốc và thiết bị đầu cuối."
+      }
+    ]
+  },
+  {
+    "topic": "Thiết bị mạng và Máy chủ",
+    "question": "Khi vận dụng vào thực tế thiết kế mạng:",
+    "subQuestions": [
+      {
+        "content": "Card mạng (Network Interface Card) là thành phần bắt buộc phải có trên máy tính để kết nối vào mạng.",
+        "answer": "Đúng",
+        "explanation": "Đây là giao tiếp vật lý cần thiết để máy tính có thể gửi và nhận dữ liệu trên mạng."
+      },
+      {
+        "content": "Dây cáp mạng LAN hiện nay chủ yếu sử dụng đầu kết nối chuẩn RJ45.",
+        "answer": "Đúng",
+        "explanation": "RJ45 là chuẩn kết nối phổ biến nhất cho các loại cáp xoắn đôi hiện nay."
+      },
+      {
+        "content": "Khi mạng Internet bị mất, các máy tính trong mạng LAN vẫn có thể nhìn thấy và trao đổi file với nhau nếu Switch vẫn hoạt động.",
+        "answer": "Đúng",
+        "explanation": "Mạng nội bộ (LAN) có thể hoạt động độc lập mà không cần kết nối ra Internet bên ngoài."
+      },
+      {
+        "content": "Để tiết kiệm chi phí cho một tòa nhà cao tầng, ta nên đặt duy nhất một Router công suất cực lớn ở tầng hầm thay vì lắp nhiều Access Point ở các tầng.",
+        "answer": "Sai",
+        "explanation": "Sóng Wi-Fi bị cản mạnh bởi sàn bê tông; lắp đặt nhiều bộ phát ở các tầng sẽ hiệu quả hơn nhiều."
+      }
+    ]
+  },
+  {
+    "topic": "Đường truyền và công nghệ mạng",
+    "question": "Về đặc điểm của các loại đường truyền có dây:",
+    "subQuestions": [
+      {
+        "content": "Cáp xoắn đôi có giá thành rẻ và dễ lắp đặt hơn cáp quang.",
+        "answer": "Đúng",
+        "explanation": "Cáp xoắn đôi là lựa chọn kinh tế hàng đầu cho các mạng nội bộ quy mô nhỏ."
+      },
+      {
+        "content": "Tín hiệu trong cáp quang có thể bị nhiễu bởi các thiết bị điện công suất lớn đặt cạnh.",
+        "answer": "Sai",
+        "explanation": "Cáp quang truyền bằng xung ánh sáng nên hoàn toàn miễn nhiễm với nhiễu điện từ."
+      },
+      {
+        "content": "Cáp xoắn đôi loại Cat6 có thể hỗ trợ tốc độ truyền dữ liệu lên đến 10 Gbps trong khoảng cách ngắn.",
+        "answer": "Đúng",
+        "explanation": "Cat6 là chuẩn cáp hiện đại hỗ trợ băng thông lớn cho các kết nối tốc độ cao."
+      },
+      {
+        "content": "Cáp quang truyền dữ liệu bằng dòng điện chạy trong lõi thủy tinh.",
+        "answer": "Sai",
+        "explanation": "Cáp quang truyền bằng ánh sáng; chất liệu thủy tinh vốn không dẫn điện."
+      }
+    ]
+  },
+  {
+    "topic": "Đường truyền và công nghệ mạng",
+    "question": "Về các công nghệ mạng không dây:",
+    "subQuestions": [
+      {
+        "content": "Bluetooth và Wi-Fi đều sử dụng sóng vô tuyến nhưng có mục đích sử dụng khác nhau.",
+        "answer": "Đúng",
+        "explanation": "Wi-Fi phục vụ mạng diện rộng hơn, còn Bluetooth dùng kết nối thiết bị cá nhân."
+      },
+      {
+        "content": "Mạng 5G chỉ có tốc độ cao hơn mạng 4G chứ không có cải thiện về độ trễ.",
+        "answer": "Sai",
+        "explanation": "5G mang lại sự cải thiện vượt bậc cả về tốc độ lẫn độ trễ cực thấp."
+      },
+      {
+        "content": "Mạng vệ tinh là giải pháp duy nhất cho các phương tiện giao thông trên đại dương.",
+        "answer": "Đúng",
+        "explanation": "Giữa biển khơi không có trạm BTS hay dây cáp, chỉ có vệ tinh mới có thể phủ sóng."
+      },
+      {
+        "content": "Sóng Wi-Fi có thể bị suy yếu khi đi qua các bức tường bê tông dày.",
+        "answer": "Đúng",
+        "explanation": "Các vật cản rắn hấp thụ sóng vô tuyến làm giảm cường độ tín hiệu."
+      }
+    ]
+  },
+  {
+    "topic": "Đường truyền và công nghệ mạng",
+    "question": "Tình huống văn phòng dùng cáp quang và Router phát Wi-Fi:",
+    "subQuestions": [
+      {
+        "content": "Đây là sự kết hợp giữa đường truyền có dây và đường truyền không dây.",
+        "answer": "Đúng",
+        "explanation": "Cáp quang (có dây) dẫn tín hiệu vào văn phòng, sau đó Router (không dây) phân phối lại."
+      },
+      {
+        "content": "Nếu dây cáp quang từ nhà mạng bị đứt, Wi-Fi trong văn phòng vẫn có thể truy cập Internet bình thường.",
+        "answer": "Sai",
+        "explanation": "Nếu mất nguồn cấp tín hiệu từ nhà mạng thì toàn bộ hệ thống sẽ mất Internet."
+      },
+      {
+        "content": "Tốc độ truy cập Internet của nhân viên phụ thuộc vào cả băng thông gói cước cáp quang và chuẩn Wi-Fi của bộ định tuyến.",
+        "answer": "Đúng",
+        "explanation": "Tốc độ cuối cùng bị giới hạn bởi \"mắt xích\" yếu nhất trong hệ thống truyền dẫn."
+      },
+      {
+        "content": "Việc sử dụng Wi-Fi giúp nhân viên linh hoạt hơn trong việc di chuyển chỗ làm việc trong văn phòng.",
+        "answer": "Đúng",
+        "explanation": "Ưu điểm lớn nhất của mạng không dây chính là tính di động và linh hoạt."
+      }
+    ]
+  },
+  {
+    "topic": "Đường truyền và công nghệ mạng",
+    "question": "So sánh các loại đường truyền mạng:",
+    "subQuestions": [
+      {
+        "content": "Cáp quang có tính bảo mật cao hơn Wi-Fi vì khó thực hiện việc \"nghe lén\" tín hiệu trên đường truyền.",
+        "answer": "Đúng",
+        "explanation": "Việc xâm nhập cáp quang đòi hỏi thiết bị cực kỳ chuyên dụng và phải tác động vật lý trực tiếp."
+      },
+      {
+        "content": "Bluetooth là lựa chọn tốt nhất để kết nối các máy tính trong một mạng LAN quy mô 50 máy.",
+        "answer": "Sai",
+        "explanation": "Bluetooth không đủ băng thông và giới hạn số lượng kết nối cho một mạng LAN quy mô lớn."
+      },
+      {
+        "content": "Mạng GSM cho phép người dùng duy trì kết nối Internet ngay cả khi đang di chuyển trên xe khách.",
+        "answer": "Đúng",
+        "explanation": "Đây là đặc trưng cốt lõi của công nghệ mạng thông tin di động tế bào."
+      },
+      {
+        "content": "Cáp xoắn đôi hoàn toàn không bị ảnh hưởng bởi nhiễu điện từ nhờ lớp vỏ nhựa.",
+        "answer": "Sai",
+        "explanation": "Cấu trúc xoắn chỉ giúp giảm thiểu nhiễu, không thể chống nhiễu tuyệt đối như cáp quang."
+      }
+    ]
+  },
+  {
+    "topic": "Đường truyền và công nghệ mạng",
+    "question": "Tình huống thực tế (Minh dùng Hotspot điện thoại và tai nghe Bluetooth):",
+    "subQuestions": [
+      {
+        "content": "Điện thoại của Minh đang sử dụng mạng di động (GSM/4G/5G) để nhận dữ liệu từ Internet.",
+        "answer": "Đúng",
+        "explanation": "Chế độ Hotspot chuyển đổi dữ liệu từ mạng di động thành sóng Wi-Fi phát ra."
+      },
+      {
+        "content": "Máy tính xách tay đang kết nối với điện thoại thông qua đường truyền có dây.",
+        "answer": "Sai",
+        "explanation": "Máy tính đang kết nối thông qua sóng Wi-Fi phát ra từ điện thoại."
+      },
+      {
+        "content": "Kết nối giữa điện thoại và tai nghe là kết nối không dây tầm ngắn.",
+        "answer": "Đúng",
+        "explanation": "Bluetooth là chuẩn kết nối không dây cho các thiết bị cá nhân ở khoảng cách gần."
+      },
+      {
+        "content": "Nếu Minh tắt Bluetooth, máy tính xách tay sẽ bị mất kết nối Internet.",
+        "answer": "Sai",
+        "explanation": "Bluetooth và Wi-Fi hoạt động trên các dải sóng độc lập, tắt cái này không ảnh hưởng cái kia."
+      }
+    ]
+  },
+  {
+    "topic": "Quy trình thiết kế mạng",
+    "question": "Về bước Khảo sát hiện trạng và Phân tích nhu cầu:",
+    "subQuestions": [
+      {
+        "content": "Mục tiêu của bước này là xác định mạng sẽ dùng để làm gì và quy mô bao nhiêu thiết bị.",
+        "answer": "Đúng",
+        "explanation": "Đây là nội dung cốt lõi của bước 1 nhằm định hình hệ thống."
+      },
+      {
+        "content": "Trong bước này, chúngừa cần cài đặt xong hệ điều hành mạng cho các máy tính.",
+        "answer": "Sai",
+        "explanation": "Việc cài đặt hệ điều hành thuộc giai đoạn triển khai sau khi đã hoàn tất các bước thiết kế."
+      },
+      {
+        "content": "Khảo sát hiện trạng bao gồm việc tìm hiểu về kiến trúc tòa nhà nơi sẽ lắp đặt mạng.",
+        "answer": "Đúng",
+        "explanation": "Kiến trúc tòa nhà quyết định phương án đi dây và vị trí đặt thiết bị vật lý."
+      },
+      {
+        "content": "Ngân sách dự kiến không cần phải xem xét ở bước đầu tiên này.",
+        "answer": "Sai",
+        "explanation": "Ngân sách là yếu tố quan trọng hàng đầu để lựa chọn giải pháp thiết kế phù hợp ngay từ đầu."
+      }
+    ]
+  },
+  {
+    "topic": "Quy trình thiết kế mạng",
+    "question": "Về bước Thiết kế vật lý trong quy trình thiết kế mạng:",
+    "subQuestions": [
+      {
+        "content": "Thiết kế vật lý xác định các vị trí đặt bộ thu phát Wi-Fi để đảm bảo vùng phủ sóng.",
+        "answer": "Đúng",
+        "explanation": "Xác định vị trí đặt thiết bị vật lý là một phần của thiết kế hạ tầng."
+      },
+      {
+        "content": "Thiết kế vật lý bao gồm việc quyết định máy tính nào dùng địa chỉ IP nào.",
+        "answer": "Sai",
+        "explanation": "Việc quy hoạch địa chỉ IP thuộc về bước thiết kế logic."
+      },
+      {
+        "content": "Bước này xác định danh mục thiết bị cụ thể cần mua sắm (hãng sản xuất, model).",
+        "answer": "Đúng",
+        "explanation": "Đây là giai đoạn chọn \"vật liệu\" cụ thể cho hệ thống."
+      },
+      {
+        "content": "Sơ đồ đi dây cáp trong các ống gen nhựa thuộc về thiết kế vật lý.",
+        "answer": "Đúng",
+        "explanation": "Nội dung này liên quan trực tiếp đến hạ tầng cơ điện và đi dây thực tế."
+      }
+    ]
+  },
+  {
+    "topic": "Quy trình thiết kế mạng",
+    "question": "So sánh giữa Thiết kế logic và Thiết kế vật lý:",
+    "subQuestions": [
+      {
+        "content": "Bản thiết kế logic có thể áp dụng cho nhiều hãng thiết bị khác nhau.",
+        "answer": "Đúng",
+        "explanation": "Thiết kế logic mang tính nguyên lý, không phụ thuộc vào thương hiệu phần cứng cụ thể."
+      },
+      {
+        "content": "Thiết kế vật lý phụ thuộc hoàn toàn vào bản thiết kế logic đã duyệt.",
+        "answer": "Đúng",
+        "explanation": "Thiết kế vật lý phải hiện thực hóa những gì mà thiết kế logic đã vạch ra."
+      },
+      {
+        "content": "Nếu muốn thay đổi sơ đồ địa chỉ IP, chúng ta phải thay đổi thiết kế vật lý.",
+        "answer": "Sai",
+        "explanation": "Thay đổi IP chỉ là thay đổi cấu hình phần mềm (logic), không cần thay dây hay thiết bị vật lý."
+      },
+      {
+        "content": "Sơ đồ logic mô tả cách thức dữ liệu di chuyển, còn sơ đồ vật lý mô tả cách thiết bị được kết nối thực tế.",
+        "answer": "Đúng",
+        "explanation": "Đây là cách phân biệt đúng bản chất của hai loại sơ đồ này."
+      }
+    ]
+  },
+  {
+    "topic": "Quy trình thiết kế mạng",
+    "question": "Một kỹ sư đang thiết kế mạng cho một tòa nhà văn phòng 10 tầng.",
+    "subQuestions": [
+      {
+        "content": "Kỹ sư quyết định dùng Topology hình sao cho mỗi tầng là đang thực hiện bước Thiết kế vật lý.",
+        "answer": "Sai",
+        "explanation": "Lựa chọn Topology (hình sao, vòng...) thuộc bước thiết kế logic."
+      },
+      {
+        "content": "Việc tính toán băng thông đường truyền Internet dựa trên số lượng nhân viên là thuộc bước Phân tích nhu cầu.",
+        "answer": "Đúng",
+        "explanation": "Xác định năng lực mạng dựa trên người dùng là một phần của phân tích nhu cầu."
+      },
+      {
+        "content": "Kỹ sư lựa chọn phần mềm Linux để làm Firewall (tường lửa) là công việc của bước Chọn hệ điều hành mạng.",
+        "answer": "Đúng",
+        "explanation": "Lựa chọn phần mềm nền tảng cho các dịch vụ mạng là nội dung của bước 4."
+      },
+      {
+        "content": "Nếu tòa nhà có nhiễu điện từ cao, việc kỹ sư chọn cáp quang thay cho cáp đồng là một quyết định ở bước Thiết kế vật lý.",
+        "answer": "Đúng",
+        "explanation": "Chọn loại vật liệu truyền dẫn phù hợp với môi trường thực tế là công việc của bước 3."
+      }
+    ]
+  },
+  {
+    "topic": "Quy trình thiết kế mạng",
+    "question": "Giả sử bạn được giao thiết kế lại mạng cho một phòng máy tính đã cũ.",
+    "subQuestions": [
+      {
+        "content": "Việc đầu tiên bạn cần làm là kiểm tra xem các dây cáp cũ còn dùng được không (Khảo sát hiện trạng).",
+        "answer": "Đúng",
+        "explanation": "Đánh giá cái đang có là bước khởi đầu của khảo sát hiện trạng."
+      },
+      {
+        "content": "Bạn vẽ một sơ đồ mới trong đó chia phòng máy thành 2 mạng con (VLAN) là bạn đang thực hiện thiết kế vật lý.",
+        "answer": "Sai",
+        "explanation": "Chia VLAN là phân chia mạng về mặt cấu trúc logic, không phải vật lý."
+      },
+      {
+        "content": "Sau khi thiết kế xong sơ đồ logic, bạn lập danh sách mua 25 bộ máy tính Dell là thực hiện bước 3.",
+        "answer": "Đúng",
+        "explanation": "Việc chọn model máy cụ thể nằm trong bước thiết kế vật lý (bước 3)."
+      },
+      {
+        "content": "Việc cài đặt mật khẩu cho bộ phát Wi-Fi là công việc thuộc về bước 2 (Thiết kế logic) trong quá trình lập chính sách.",
+        "answer": "Đúng",
+        "explanation": "Thiết lập chính sách bảo mật (mật khẩu, quyền truy cập) thuộc về thiết kế logic."
       }
     ]
   }
-]
+    ]
