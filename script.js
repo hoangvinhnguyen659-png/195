@@ -87,7 +87,7 @@ function escapeHtml(text) {
 async function init() {
     initTheme();
     showUpdateNotification();
-    initQRModal(); // Khởi tạo tính năng phóng to QR
+    initMoMoRedirect(); // Khởi tạo tính năng mở thẳng app MoMo
 
     try {
         const response = await fetch('questions.json');
@@ -106,20 +106,16 @@ async function init() {
 init();
 
 // ==========================================
-// 4. LOGIC MODAL QR MOMO
+// 4. LOGIC MỞ TRỰC TIẾP APP MOMO
 // ==========================================
-function initQRModal() {
+function initMoMoRedirect() {
     const qrTrigger = document.getElementById('qr-trigger');
-    const qrModal = document.getElementById('qr-modal');
-    const qrClose = document.getElementById('qr-close');
 
-    if (qrTrigger && qrModal && qrClose) {
-        qrTrigger.onclick = () => qrModal.classList.remove('hidden');
-        qrClose.onclick = () => qrModal.classList.add('hidden');
-        
-        // Đóng khi click ra ngoài vùng trắng
-        qrModal.onclick = (e) => {
-            if (e.target === qrModal) qrModal.classList.add('hidden');
+    if (qrTrigger) {
+        qrTrigger.onclick = () => {
+            // Chuyển hướng trực tiếp để mở app MoMo
+            const momoDeepLink = "momo://?action=p2p&extra=%22{\%22dataExtract\%22:\%22eyJ1c2VySWQiOiIqKioqKioqKjQzMCIsImFtb3VudCI6MC4wLCJ0cmFuc2ZlclNvdXJjZSI6InRyYW5zZmVyX3ZpYV9saW5rIiwiYWdlbnRJZCI6NzI0NzE0MTMsInJlY2VpdmVyVHlwZSI6IjE0IiwiZW5hYmxlRWRpdEFtb3VudCI6dHJ1ZSwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXIubW9tb2Nkbi5uZXQvYXZhdGFyLzg0MjYvNzA3NjkwZTFmZjY2OTg4YmIzZjNmYTk0ZTA5YzI5MDQ2NmJjNGIyZDRmYjFjOTdkZmM3OGMxNDE0ZmFhLnBuZyIsIm1vbmV5UmVxdWVzdElkIjoiMU1JVlR5c0F0cGk2RmVVbVU4ZjFVSyJ9\%22}%22&url=https://momo.vn/download&serviceCode=transfer_p2p&refId=TransferInputMoney";
+            window.location.href = momoDeepLink;
         };
     }
 }
