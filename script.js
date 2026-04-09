@@ -1,3 +1,4 @@
+// --- CÁC BIẾN TOÀN CỤC ---
 let quizData = [];
 let userQuestions = [];
 let score = 0;
@@ -10,7 +11,9 @@ const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
+// ==========================================
 // 1. KHỞI TẠO GIAO DIỆN (DARK/LIGHT)
+// ==========================================
 function initTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -30,16 +33,28 @@ if(themeToggle) {
     };
 }
 
-// 2. LOGIC THÔNG BÁO CẬP NHẬT (Luôn hiện mỗi khi load lại trang)
-const UPDATE_VERSION = "v2_fixed_mode"; 
-
+// ==========================================
+// 2. LOGIC THÔNG BÁO CẬP NHẬT
+// ==========================================
 function showUpdateNotification() {
     const toast = document.getElementById('update-toast');
-    if (toast) { // Đã xóa điều kiện kiểm tra localStorage ở đây
+    const isClosedThisSession = sessionStorage.getItem('closedUpdateToast');
+
+    if (toast && !isClosedThisSession) { 
+        toast.classList.remove('toast-hidden'); 
         setTimeout(() => {
-            toast.classList.remove('toast-hidden'); // Hiện diện trong DOM
-            toast.classList.add('show');            // Chạy hiệu ứng CSS
-        }, 1000);
+            toast.classList.add('show');
+        }, 800); 
+    }
+}
+
+function hideToastTemporarily() {
+    const toast = document.getElementById('update-toast');
+    if(toast && toast.classList.contains('show')) {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.classList.add('toast-hidden');
+        }, 300);
     }
 }
 
@@ -47,11 +62,16 @@ function closeToast() {
     const toast = document.getElementById('update-toast');
     if(toast) {
         toast.classList.remove('show');
-        // Đã xóa dòng lưu localStorage ở đây để không lưu lại trạng thái đã đóng
+        sessionStorage.setItem('closedUpdateToast', 'true');
+        setTimeout(() => {
+            toast.classList.add('toast-hidden');
+        }, 300);
     }
 }
 
-// 3. KHỞI TẠO DỮ LIỆU & TRÒ CHƠI
+// ==========================================
+// 3. KHỞI TẠO DỮ LIỆU & GIAO DIỆN CHÍNH
+// ==========================================
 const statusText = document.getElementById('status-text');
 const setupOptions = document.getElementById('setup-options');
 const loadingScreen = document.getElementById('loading-screen');
@@ -66,12 +86,14 @@ function escapeHtml(text) {
 
 async function init() {
     initTheme();
+    showUpdateNotification();
+    initQRModal(); // Khởi tạo tính năng phóng to QR
+
     try {
         const response = await fetch('questions.json');
         if (response.ok) {
             statusText.innerText = "Sẵn sàng!";
             setupOptions.classList.remove('hidden');
-            showUpdateNotification();
         } else {
             throw new Error("File missing");
         }
@@ -81,22 +103,45 @@ async function init() {
     }
 }
 
-// Khởi chạy ngay khi trang load
 init();
 
-// 4. LOGIC TRÒ CHƠI
+// ==========================================
+// 4. LOGIC MODAL QR MOMO
+// ==========================================
+function initQRModal() {
+    const qrTrigger = document.getElementById('qr-trigger');
+    const qrModal = document.getElementById('qr-modal');
+    const qrClose = document.getElementById('qr-close');
+
+    if (qrTrigger && qrModal && qrClose) {
+        qrTrigger.onclick = () => qrModal.classList.remove('hidden');
+        qrClose.onclick = () => qrModal.classList.add('hidden');
+        
+        // Đóng khi click ra ngoài vùng trắng
+        qrModal.onclick = (e) => {
+            if (e.target === qrModal) qrModal.classList.add('hidden');
+        };
+    }
+}
+
+// ==========================================
+// 5. LOGIC TRÒ CHƠI
+// ==========================================
 async function startGame(fileName) {
+    hideToastTemporarily(); 
+
     statusText.innerText = "Đang tải dữ liệu...";
     setupOptions.classList.add('hidden');
     setTimeout(async () => {
         try {
             const res = await fetch(fileName);
+            if (!res.ok) throw new Error();
             quizData = await res.json();
             const isShuffle = document.getElementById('shuffle-checkbox')?.checked || false;
             userQuestions = isShuffle ? [...quizData].sort(() => Math.random() - 0.5) : [...quizData];
             resetAndRender();
         } catch (err) {
-            alert("Không tìm thấy file câu hỏi!");
+            alert("Không tìm thấy file câu hỏi: " + fileName);
             location.reload();
         }
     }, 200);
@@ -112,9 +157,6 @@ function resetAndRender() {
     if(scrollArea) scrollArea.scrollTop = 0;
 }
 
-function restartQuiz() { resetAndRender(); }
-
-// Gán sự kiện cho các nút chọn chế độ
 document.getElementById('btn-tracnghiem')?.addEventListener('click', () => startGame('questions.json'));
 document.getElementById('btn-dungsai')?.addEventListener('click', () => startGame('dungsai.json'));
 
@@ -126,40 +168,61 @@ function renderAllQuestions() {
         qBlock.className = 'question-block';
         qBlock.id = `q-block-${index}`;
         qBlock.dataset.subFinished = 0; 
-        const questionTitle = escapeHtml(data.question);
+        
+        let questionTitle = "";
+        if(data.topic) {
+            questionTitle = `<span style="color: #666; font-size: 0.85em; display: block; margin-bottom: 4px;">[${escapeHtml(data.topic)}]</span>`;
+        }
+        questionTitle += escapeHtml(data.question);
+
         let contentHtml = "";
         
+        // Chế độ Đúng/Sai (subQuestions)
         if (data.subQuestions && Array.isArray(data.subQuestions)) {
             contentHtml = data.subQuestions.map((sub, subIdx) => {
                 const explainHtml = sub.explanation ? `<div class="explanation explanation-box hidden"><strong>Giải thích:</strong> ${escapeHtml(sub.explanation)}</div>` : '';
                 return `<div class="sub-question-container" id="sub-container-${index}-${subIdx}" style="margin-bottom: 20px;">
                     <div style="margin-bottom: 12px; font-weight: 500; color: var(--text);"><strong>${subIdx + 1}.</strong> ${escapeHtml(sub.content)}</div>
-                    
                     <div class="sub-options-row">
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Đúng')"><span>Đúng</span></div>
                         <div class="option-item" onclick="handleSubSelect(this, ${index}, ${subIdx}, 'Sai')"><span>Sai</span></div>
                     </div>
-                    
                     ${explainHtml}
                 </div>`;
             }).join('');
-        } else {
+        } 
+        // Chế độ Trắc nghiệm (options)
+        else {
             const opts = data.options;
             let optionsHtml = "";
-            if (Array.isArray(opts)) {
-                optionsHtml = `<div class="option-item" onclick="handleSelect(this, ${index}, 'a')"><input type="radio" name="q${index}"><span>${escapeHtml(opts[0])}</span></div>
-                               <div class="option-item" onclick="handleSelect(this, ${index}, 'b')"><input type="radio" name="q${index}"><span>${escapeHtml(opts[1])}</span></div>`;
-            } else {
-                optionsHtml = Object.entries(opts).map(([key, val]) => `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')"><input type="radio" name="q${index}"><span>${escapeHtml(val)}</span></div>`).join('');
+            
+            if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
+                optionsHtml = Object.entries(opts).map(([key, val]) => {
+                    return `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                                <input type="radio" name="q${index}">
+                                <span><strong>${key.toUpperCase()}.</strong> ${escapeHtml(val)}</span>
+                            </div>`;
+                }).join('');
+            } else if (Array.isArray(opts)) {
+                const keys = ['a', 'b', 'c', 'd', 'e', 'f'];
+                optionsHtml = opts.map((opt, i) => {
+                    const key = keys[i] || 'z';
+                    return `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
+                                <input type="radio" name="q${index}">
+                                <span>${escapeHtml(opt)}</span>
+                            </div>`;
+                }).join('');
             }
+            
             const explainHtml = data.explanation ? `<div class="explanation explanation-box hidden"><strong>Giải thích:</strong> ${escapeHtml(data.explanation)}</div>` : '';
             contentHtml = `<div class="option-list">${optionsHtml}</div>${explainHtml}`;
         }
-        qBlock.innerHTML = `<div class="question-text">Câu ${index + 1}: ${questionTitle}</div><div class="content-area">${contentHtml}</div>`;
+        
+        qBlock.innerHTML = `<div class="question-text">Câu ${index + 1}: <br>${questionTitle}</div><div class="content-area">${contentHtml}</div>`;
         feed.appendChild(qBlock);
     });
     
-    document.getElementById('total-count').innerText = userQuestions.length;
+    if(document.getElementById('total-count')) document.getElementById('total-count').innerText = userQuestions.length;
     updateProgress();
 }
 
@@ -174,13 +237,7 @@ function handleSelect(element, qIndex, selectedKey) {
     if(radio) radio.checked = true;
     
     const data = userQuestions[qIndex];
-    let correctKey = "";
-    if (Array.isArray(data.options)) {
-        correctKey = (data.answer === data.options[0]) ? "a" : "b";
-    } else {
-        const entry = Object.entries(data.options).find(([k, v]) => v === data.answer);
-        correctKey = entry ? entry[0] : String(data.answer).toLowerCase();
-    }
+    const correctKey = String(data.answer).toLowerCase();
     
     if (selectedKey === correctKey) {
         element.classList.add('correct'); 
@@ -228,8 +285,8 @@ function updateProgress() {
     const percent = userQuestions.length > 0 ? (correctCount / userQuestions.length) * 100 : 0;
     if(progressBar) progressBar.style.width = percent + "%";
     
-    document.getElementById('current-count').innerText = correctCount;
-    document.getElementById('live-score').innerText = score;
+    if(document.getElementById('current-count')) document.getElementById('current-count').innerText = correctCount;
+    if(document.getElementById('live-score')) document.getElementById('live-score').innerText = score;
     
     if (correctCount === userQuestions.length && userQuestions.length > 0) {
         setTimeout(showFinalResults, 600);
@@ -240,4 +297,8 @@ function showFinalResults() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     document.getElementById('final-score').innerText = score + "/" + userQuestions.length;
+}
+
+function restartQuiz() {
+    location.reload();
 }
