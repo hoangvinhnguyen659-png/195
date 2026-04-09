@@ -87,7 +87,7 @@ function escapeHtml(text) {
 async function init() {
     initTheme();
     showUpdateNotification();
-    initQRModal(); // Khởi tạo tính năng phóng to QR
+    initQRModal(); // Khởi tạo tính năng mở MoMo
 
     try {
         const response = await fetch('questions.json');
@@ -106,20 +106,34 @@ async function init() {
 init();
 
 // ==========================================
-// 4. LOGIC MODAL QR MOMO
+// 4. LOGIC CLICK QR CHUYỂN THẲNG VÀO MOMO APP
 // ==========================================
 function initQRModal() {
     const qrTrigger = document.getElementById('qr-trigger');
-    const qrModal = document.getElementById('qr-modal');
-    const qrClose = document.getElementById('qr-close');
 
-    if (qrTrigger && qrModal && qrClose) {
-        qrTrigger.onclick = () => qrModal.classList.remove('hidden');
-        qrClose.onclick = () => qrModal.classList.add('hidden');
+    if (qrTrigger) {
+        // Đổi con trỏ chuột thành hình bàn tay để người dùng biết có thể bấm (nếu dùng trên web)
+        qrTrigger.style.cursor = 'pointer';
         
-        // Đóng khi click ra ngoài vùng trắng
-        qrModal.onclick = (e) => {
-            if (e.target === qrModal) qrModal.classList.add('hidden');
+        qrTrigger.onclick = () => {
+            // ID Momo lấy từ link của bạn
+            const momoId = '1MIVTysAtpi6FeUmU8f'; 
+            
+            // Kiểm tra hệ điều hành
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            
+            if (isAndroid) {
+                // Ép mở app trên Android
+                window.location.href = `intent://me.momo.vn/${momoId}#Intent;scheme=https;package=com.mservice.momotransfer;end`;
+            } else {
+                // Ép mở app trên iOS
+                window.location.href = `momo://app?action=OPEN_BROWSER_URL&url=https://me.momo.vn/${momoId}`;
+            }
+            
+            // Fallback: Nếu không có app (hoặc dùng trên PC), mở trang web trung gian của Momo sau 1.5s
+            setTimeout(() => {
+                window.location.href = `https://me.momo.vn/${momoId}`;
+            }, 1500);
         };
     }
 }
