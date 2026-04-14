@@ -87,7 +87,7 @@ function escapeHtml(text) {
 async function init() {
     initTheme();
     showUpdateNotification();
-    initMoMoRedirect(); // Khởi tạo tính năng mở thẳng app MoMo
+    initQRModal(); // Khởi tạo tính năng phóng to QR
 
     try {
         const response = await fetch('questions.json');
@@ -106,16 +106,20 @@ async function init() {
 init();
 
 // ==========================================
-// 4. LOGIC MỞ TRỰC TIẾP APP MOMO
+// 4. LOGIC MODAL QR MOMO
 // ==========================================
-function initMoMoRedirect() {
+function initQRModal() {
     const qrTrigger = document.getElementById('qr-trigger');
+    const qrModal = document.getElementById('qr-modal');
+    const qrClose = document.getElementById('qr-close');
 
-    if (qrTrigger) {
-        qrTrigger.onclick = () => {
-            // Chuyển hướng trực tiếp để mở app MoMo
-            const momoDeepLink = "momo://?action=p2p&extra=%22{\%22dataExtract\%22:\%22eyJ1c2VySWQiOiIqKioqKioqKjQzMCIsImFtb3VudCI6MC4wLCJ0cmFuc2ZlclNvdXJjZSI6InRyYW5zZmVyX3ZpYV9saW5rIiwiYWdlbnRJZCI6NzI0NzE0MTMsInJlY2VpdmVyVHlwZSI6IjE0IiwiZW5hYmxlRWRpdEFtb3VudCI6dHJ1ZSwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXIubW9tb2Nkbi5uZXQvYXZhdGFyLzg0MjYvNzA3NjkwZTFmZjY2OTg4YmIzZjNmYTk0ZTA5YzI5MDQ2NmJjNGIyZDRmYjFjOTdkZmM3OGMxNDE0ZmFhLnBuZyIsIm1vbmV5UmVxdWVzdElkIjoiMU1JVlR5c0F0cGk2RmVVbVU4ZjFVSyJ9\%22}%22&url=https://momo.vn/download&serviceCode=transfer_p2p&refId=TransferInputMoney";
-            window.location.href = momoDeepLink;
+    if (qrTrigger && qrModal && qrClose) {
+        qrTrigger.onclick = () => qrModal.classList.remove('hidden');
+        qrClose.onclick = () => qrModal.classList.add('hidden');
+        
+        // Đóng khi click ra ngoài vùng trắng
+        qrModal.onclick = (e) => {
+            if (e.target === qrModal) qrModal.classList.add('hidden');
         };
     }
 }
@@ -191,24 +195,37 @@ function renderAllQuestions() {
         else {
             const opts = data.options;
             let optionsHtml = "";
-            
+            let optionsArray = [];
+
+            // 1. Chuyển đổi options từ JSON thành một mảng để dễ xáo trộn
             if (opts && typeof opts === 'object' && !Array.isArray(opts)) {
-                optionsHtml = Object.entries(opts).map(([key, val]) => {
-                    return `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
-                                <input type="radio" name="q${index}">
-                                <span><strong>${key.toUpperCase()}.</strong> ${escapeHtml(val)}</span>
-                            </div>`;
-                }).join('');
+                optionsArray = Object.entries(opts).map(([key, val]) => ({ 
+                    originalKey: key, 
+                    text: val 
+                }));
             } else if (Array.isArray(opts)) {
                 const keys = ['a', 'b', 'c', 'd', 'e', 'f'];
-                optionsHtml = opts.map((opt, i) => {
-                    const key = keys[i] || 'z';
-                    return `<div class="option-item" onclick="handleSelect(this, ${index}, '${key}')">
-                                <input type="radio" name="q${index}">
-                                <span>${escapeHtml(opt)}</span>
-                            </div>`;
-                }).join('');
+                optionsArray = opts.map((opt, i) => ({ 
+                    originalKey: keys[i] || 'z', 
+                    text: opt 
+                }));
             }
+
+            // 2. Thuật toán Fisher-Yates để xáo trộn ngẫu nhiên vị trí các đáp án
+            for (let i = optionsArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [optionsArray[i], optionsArray[j]] = [optionsArray[j], optionsArray[i]];
+            }
+
+            // 3. Render HTML với nhãn hiển thị mới (A, B, C, D) 
+            const displayLabels = ['A', 'B', 'C', 'D', 'E', 'F'];
+            optionsHtml = optionsArray.map((opt, i) => {
+                const label = displayLabels[i] || '';
+                return `<div class="option-item" onclick="handleSelect(this, ${index}, '${opt.originalKey}')">
+                            <input type="radio" name="q${index}">
+                            <span><strong>${label}.</strong> ${escapeHtml(opt.text)}</span>
+                        </div>`;
+            }).join('');
             
             const explainHtml = data.explanation ? `<div class="explanation explanation-box hidden"><strong>Giải thích:</strong> ${escapeHtml(data.explanation)}</div>` : '';
             contentHtml = `<div class="option-list">${optionsHtml}</div>${explainHtml}`;
